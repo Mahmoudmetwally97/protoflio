@@ -3,110 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمود محمد متولي | Senior Conversion Copywriter & Growth Strategist 🔥</title>
     
-    <!-- Primary SEO Meta Tags -->
-    <title>محمود محمد متولي | Senior Conversion Copywriter & Content Strategist</title>
-    <meta name="title" content="محمود محمد متولي | Senior Conversion Copywriter & Content Strategist">
-    <meta name="description" content="البورتفوليو الرسمي لمحمود محمد متولي — كاتب محتوى إعلاني وكوبي رايتر متخصص في سيكولوجية التحويل، إعلانات Meta Ads، وأقماع البيع الموجهة لتحقيق أعلى عائد استثماري.">
-    <meta name="keywords" content="محمود متولي, كاتب محتوى, كوبي رايتر, Meta Ads, تسويق رقمي, سيكولوجية البيع, Copywriting, Content Strategy, السويس">
-    <meta name="author" content="Mahmoud Mohamed Metwally">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph Previews -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="محمود محمد متولي | كاتب محتوى وكوبي رايتر بيكتب كلام يبيع">
-    <meta property="og:description" content="استراتيجيات كتابة إعلانية، خطط قمع تسويقي متكاملة، ونماذج حقيقية حققت +479% زيادة وصول وتكلفة رسالة 4.41 ج.م.">
-    <meta property="og:image" content="mahmoud.png">
-
-    <!-- Favicon -->
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="البورتفوليو التفاعلي لمحمود محمد متولي — كاتب محتوى إعلاني وكوبي رايتر بيعمل إعلانات وسوشيال ميديا بتجيب مبيعات وأرقام حقيقية.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23e8722a'/><text x='50%' y='68%' font-size='55' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'>M</text></svg>">
 
-    <!-- Google Fonts: Cairo, Syne, & JetBrains Mono -->
+    <!-- Google Fonts: Cairo, Plus Jakarta Sans, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=JetBrains+Mono:wght@600;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Three.js for 3D WebGL Particle Universe -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Canvas Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <style>
         /* ==========================================================================
-           1. Elite Awwwards-Level Design Tokens
+           1. Elite Design Tokens & Micro-Interactions
            ========================================================================== */
         :root {
             --accent: #e8722a;
-            --accent-light: #ff8e47;
-            --accent-glow: rgba(232, 114, 42, 0.45);
+            --accent-glow: #ff853c;
+            --accent-rgba: rgba(232, 114, 42, 0.45);
             --accent-subtle: rgba(232, 114, 42, 0.12);
             --accent-border: rgba(232, 114, 42, 0.35);
             
             --success: #25D366;
-            --success-glow: rgba(37, 211, 102, 0.35);
             --facebook: #1877f2;
             --linkedin: #0a66c2;
 
-            --radius-xs: 8px;
-            --radius-sm: 12px;
-            --radius-md: 18px;
-            --radius-lg: 26px;
-            --radius-xl: 34px;
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
             --radius-full: 9999px;
+            --nav-height: 80px;
 
             --ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
             --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-            
-            --nav-height: 80px;
-            --container-max: 1200px;
         }
 
-        /* Deep Spatial Dark Theme */
         [data-theme="dark"] {
-            --bg-body: #060608;
-            --bg-surface: #0c0c10;
-            --bg-card: rgba(18, 18, 26, 0.72);
-            --bg-card-hover: rgba(26, 26, 38, 0.9);
-            --bg-inner: rgba(10, 10, 14, 0.88);
+            --bg-body: #060609;
+            --bg-surface: #0c0c12;
+            --bg-card: rgba(16, 16, 24, 0.85);
+            --bg-card-hover: rgba(24, 24, 36, 0.98);
+            --bg-inner: #09090e;
             
-            --text-primary: #f8f8fa;
-            --text-secondary: #a3a3b6;
-            --text-muted: #646478;
+            --text-primary: #f6f6f8;
+            --text-secondary: #a1a1b4;
+            --text-muted: #606072;
             
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-card: rgba(255, 255, 255, 0.12);
-            --border-highlight: rgba(232, 114, 42, 0.55);
-            
-            --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
-            --shadow-card: 0 16px 45px -10px rgba(0, 0, 0, 0.65);
-            --shadow-glow: 0 0 35px var(--accent-glow);
-            
-            --nav-bg: rgba(6, 6, 8, 0.84);
-            --banner-gradient: linear-gradient(135deg, #0d1224 0%, #1e1317 50%, #2e1509 100%);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(232, 114, 42, 0.55);
+            --nav-bg: rgba(6, 6, 9, 0.9);
+            --card-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.75);
         }
 
-        /* Clean Luxe Light Theme */
         [data-theme="light"] {
-            --bg-body: #f7f9fd;
+            --bg-body: #f6f8fd;
             --bg-surface: #ffffff;
-            --bg-card: rgba(255, 255, 255, 0.88);
+            --bg-card: rgba(255, 255, 255, 0.94);
             --bg-card-hover: #ffffff;
             --bg-inner: #edf0f8;
             
             --text-primary: #0f1118;
-            --text-secondary: #494c60;
-            --text-muted: #828598;
+            --text-secondary: #484b5c;
+            --text-muted: #808394;
             
-            --border-subtle: rgba(0, 0, 0, 0.06);
-            --border-card: rgba(0, 0, 0, 0.1);
-            --border-highlight: rgba(232, 114, 42, 0.6);
-            
-            --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
-            --shadow-card: 0 14px 40px -10px rgba(0, 0, 0, 0.08);
-            --shadow-glow: 0 0 25px rgba(232, 114, 42, 0.25);
-            
-            --nav-bg: rgba(247, 249, 253, 0.88);
-            --banner-gradient: linear-gradient(135deg, #18203c 0%, #2a1b22 50%, #3e1b0d 100%);
+            --border-card: rgba(0, 0, 0, 0.08);
+            --border-glow: rgba(232, 114, 42, 0.55);
+            --nav-bg: rgba(246, 248, 253, 0.92);
+            --card-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.08);
         }
 
         *, *::before, *::after {
@@ -117,18 +85,17 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
             scroll-padding-top: calc(var(--nav-height) + 20px);
         }
 
         html[dir="rtl"] body {
-            font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+            font-family: 'Cairo', sans-serif;
             direction: rtl;
             text-align: right;
         }
 
         html[dir="ltr"] body {
-            font-family: 'Syne', system-ui, -apple-system, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             direction: ltr;
             text-align: left;
         }
@@ -136,14 +103,14 @@
         body {
             background-color: var(--bg-body);
             color: var(--text-primary);
-            line-height: 1.75;
+            line-height: 1.85;
             overflow-x: hidden;
             position: relative;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* 3D WebGL Three.js Particle Universe */
-        #webglCanvas {
+        /* 100% Reliable GPU Canvas Starfield */
+        #bgCanvas {
             position: fixed;
             top: 0;
             left: 0;
@@ -154,75 +121,21 @@
             opacity: 0.85;
         }
 
-        /* Mouse Cursor Ambient Spotlight (Desktop) */
-        #cursorSpotlight {
-            position: fixed;
-            width: 480px;
-            height: 480px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(232, 114, 42, 0.1) 0%, transparent 65%);
-            pointer-events: none;
-            z-index: 1;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        }
-
-        /* Scroll Progress Bar at Top */
-        #scrollProgressBar {
+        /* Scroll Progress Bar */
+        #scrollBar {
             position: fixed;
             top: 0;
             left: 0;
-            height: 3.5px;
+            height: 4px;
             background: linear-gradient(90deg, var(--accent), #ffaa5b);
-            z-index: 9999;
+            z-index: 99999;
             width: 0%;
-            box-shadow: 0 0 12px var(--accent-glow);
-        }
-
-        ::-webkit-scrollbar {
-            width: 9px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-body);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-card);
-            border-radius: var(--radius-full);
-            border: 2px solid var(--bg-body);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
-
-        ::selection {
-            background: var(--accent);
-            color: #ffffff;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: 0.2s ease;
-        }
-
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            background: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            box-shadow: 0 0 15px var(--accent);
         }
 
         .container {
             width: 100%;
-            max-width: var(--container-max);
+            max-width: 1220px;
             margin: 0 auto;
             padding: 0 24px;
             position: relative;
@@ -237,53 +150,55 @@
 
         .highlight {
             color: var(--accent);
+            text-shadow: 0 0 24px var(--accent-rgba);
         }
 
         .font-mono {
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 55px;
+        /* ==========================================================================
+           2. 3D Tilt Card & Reveal System (Applied Everywhere!)
+           ========================================================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.97);
+            transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+            will-change: opacity, transform;
         }
 
-        .section-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--accent-subtle);
-            color: var(--accent);
-            padding: 6px 20px;
-            border-radius: var(--radius-full);
-            font-size: 0.88rem;
-            font-weight: 800;
-            border: 1px solid var(--accent-border);
-            margin-bottom: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
         }
 
-        .section-title {
-            font-size: 2.6rem;
-            font-weight: 900;
-            color: var(--text-primary);
-            line-height: 1.25;
-            margin-bottom: 14px;
-            letter-spacing: -0.5px;
+        .tilt-card {
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            overflow: hidden;
         }
 
-        .section-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.85;
+        .tilt-glare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 5;
+        }
+
+        .tilt-card:hover .tilt-glare {
+            opacity: 1;
         }
 
         /* ==========================================================================
-           2. Sticky Glassmorphic Navbar
+           3. Sticky Glass Navbar (Fixed Wrap & Perfect Spacing)
            ========================================================================== */
         .navbar {
             position: fixed;
@@ -292,19 +207,13 @@
             right: 0;
             height: var(--nav-height);
             background: var(--nav-bg);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border-subtle);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-card);
             z-index: 1000;
             display: flex;
             align-items: center;
             transition: 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border-bottom-color: var(--border-highlight);
-            height: 70px;
         }
 
         .navbar-content {
@@ -312,46 +221,63 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            gap: 16px;
         }
 
         .logo {
-            font-size: 1.55rem;
+            font-size: 1.45rem;
             font-weight: 900;
-            color: var(--text-primary);
             display: flex;
             align-items: center;
             gap: 10px;
-            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--text-primary);
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
-        .logo-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 15px var(--accent);
-            animation: pulseGlow 2s infinite ease-in-out;
+        .logo-badge {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent), #ff9955);
+            color: #ffffff;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.15rem;
+            box-shadow: 0 0 20px var(--accent-rgba);
+            animation: pulseBadge 3s infinite ease-in-out;
+            flex-shrink: 0;
         }
 
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.4); opacity: 0.6; }
+        @keyframes pulseBadge {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--accent-rgba); }
+            50% { transform: scale(1.08); box-shadow: 0 0 32px var(--accent); }
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 20px;
             list-style: none;
+            flex-wrap: nowrap;
         }
 
         .nav-link {
-            font-size: 0.96rem;
+            font-size: 0.92rem;
             font-weight: 700;
             color: var(--text-secondary);
+            text-decoration: none;
             position: relative;
-            padding: 6px 0;
-            transition: 0.2s ease;
+            padding: 6px 2px;
+            white-space: nowrap;
+            transition: color 0.25s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
         }
 
         .nav-link::after {
@@ -361,15 +287,10 @@
             left: 0;
             right: 0;
             width: 0;
-            height: 2px;
+            height: 2.5px;
             background: var(--accent);
-            border-radius: 2px;
             margin: auto;
-            transition: 0.3s ease;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--text-primary);
+            transition: width 0.3s ease;
         }
 
         .nav-link:hover::after, .nav-link.active::after {
@@ -380,21 +301,24 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-shrink: 0;
         }
 
         .icon-btn {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
             color: var(--text-primary);
-            padding: 8px 15px;
+            padding: 8px 16px;
             border-radius: var(--radius-full);
             font-size: 0.88rem;
             font-weight: 800;
+            cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            transition: 0.2s ease;
-            box-shadow: var(--shadow-subtle);
+            white-space: nowrap;
+            transition: 0.2s var(--ease-smooth);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         .icon-btn:hover {
@@ -403,63 +327,33 @@
             transform: translateY(-2px);
         }
 
-        .icon-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-
-        .theme-icon-sun { display: none; }
-        [data-theme="dark"] .theme-icon-sun { display: block; }
-        [data-theme="dark"] .theme-icon-moon { display: none; }
-        [data-theme="light"] .theme-icon-sun { display: none; }
-        [data-theme="light"] .theme-icon-moon { display: block; }
-
         .btn-nav-cta {
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent), var(--accent-glow));
             color: #ffffff !important;
             font-weight: 800;
             font-size: 0.92rem;
-            padding: 9px 22px;
+            padding: 10px 22px;
             border-radius: var(--radius-full);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 18px var(--accent-glow);
-            transition: 0.3s var(--ease-smooth);
             white-space: nowrap;
+            box-shadow: 0 4px 18px var(--accent-rgba);
+            transition: 0.3s var(--ease-smooth);
         }
 
         .btn-nav-cta:hover {
-            background: var(--accent-light);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px var(--accent-glow);
-        }
-
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            padding: 8px;
-            cursor: pointer;
-        }
-
-        .mobile-toggle span {
-            width: 24px;
-            height: 2.5px;
-            background-color: var(--text-primary);
-            border-radius: 3px;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px var(--accent-rgba);
         }
 
         /* ==========================================================================
-           3. Hero Section
+           4. Hero Section & Animated Floating Elements
            ========================================================================== */
         .hero-section {
-            padding-top: calc(var(--nav-height) + 50px);
-            padding-bottom: 90px;
-            min-height: 92vh;
-            display: flex;
-            align-items: center;
+            padding-top: calc(var(--nav-height) + 35px);
+            padding-bottom: 70px;
             text-align: center;
             position: relative;
         }
@@ -468,87 +362,129 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 920px;
+            max-width: 940px;
             margin: 0 auto;
+            position: relative;
         }
 
-        .hero-avatar-box {
+        .avatar-stage {
             position: relative;
             width: 220px;
             height: 220px;
             margin-bottom: 28px;
         }
 
-        .avatar-glow-ring {
+        .avatar-glowing-halo {
             position: absolute;
-            inset: -8px;
+            inset: -10px;
             border-radius: 50%;
-            background: conic-gradient(from 0deg, var(--accent), #ff9e5e, transparent 65%, var(--accent));
-            animation: rotateHalo 8s linear infinite;
+            background: conic-gradient(from 0deg, var(--accent), #ff9955, transparent 65%, var(--accent));
+            animation: spinHalo 6s linear infinite;
             filter: blur(14px);
             opacity: 0.85;
         }
 
-        @keyframes rotateHalo {
+        @keyframes spinHalo {
             100% { transform: rotate(360deg); }
         }
 
-        .hero-avatar-img {
+        .avatar-img {
             position: relative;
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent);
-            box-shadow: 0 0 40px var(--accent-glow);
-            background-color: var(--bg-card);
+            box-shadow: 0 0 35px var(--accent-rgba);
+            background: var(--bg-card);
             z-index: 2;
             transition: transform 0.4s ease;
         }
 
-        .hero-avatar-box:hover .hero-avatar-img {
-            transform: scale(1.04);
+        .avatar-stage:hover .avatar-img {
+            transform: scale(1.06);
         }
 
-        .hero-motto-pill {
+        .float-badge {
+            position: absolute;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.86rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 3;
+            animation: floatUpDown 4s ease-in-out infinite alternate;
+            backdrop-filter: blur(10px);
+            white-space: nowrap;
+        }
+
+        .float-badge-1 {
+            top: 15px;
+            inset-inline-start: -85px;
+            animation-delay: 0s;
+        }
+
+        .float-badge-2 {
+            bottom: 20px;
+            inset-inline-end: -90px;
+            animation-delay: -2s;
+        }
+
+        @keyframes floatUpDown {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-14px); }
+        }
+
+        .hero-pill-tag {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: var(--accent-subtle);
             color: var(--accent);
             border: 1px solid var(--accent-border);
-            padding: 7px 22px;
+            padding: 7px 24px;
             border-radius: var(--radius-full);
-            font-size: 1.02rem;
+            font-size: 1.05rem;
             font-weight: 800;
-            margin-bottom: 18px;
-            box-shadow: var(--shadow-subtle);
+            margin-bottom: 16px;
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 rgba(232, 114, 42, 0); }
+            50% { box-shadow: 0 0 22px var(--accent-rgba); }
         }
 
         .hero-name {
-            font-size: 3.4rem;
+            font-size: 3.6rem;
             font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 12px;
+            line-height: 1.15;
+            margin-bottom: 14px;
             letter-spacing: -0.5px;
         }
 
         /* Typewriter Hook */
-        .hero-typing-wrap {
-            font-size: 1.55rem;
+        .typewriter-box {
+            font-size: 1.6rem;
             font-weight: 800;
             color: var(--text-primary);
-            min-height: 2.3rem;
+            min-height: 2.5rem;
             margin-bottom: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
         }
 
-        .typed-cursor {
+        .typewriter-cursor {
             color: var(--accent);
-            border-inline-end: 2.5px solid var(--accent);
+            border-inline-end: 3.5px solid var(--accent);
             animation: blinkCursor 0.8s infinite;
             padding-inline-end: 4px;
         }
@@ -559,15 +495,14 @@
         }
 
         .hero-bio {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-secondary);
-            max-width: 780px;
+            max-width: 800px;
             line-height: 1.85;
             margin-bottom: 34px;
-            font-weight: 500;
         }
 
-        .hero-badges-list {
+        .badges-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -575,270 +510,442 @@
             margin-bottom: 40px;
         }
 
-        .hero-badge-pill {
+        .badge-chip {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
-            color: var(--text-primary);
-            padding: 9px 18px;
+            padding: 10px 20px;
             border-radius: var(--radius-full);
             font-size: 0.94rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: var(--shadow-card);
-            transition: 0.2s ease;
+            box-shadow: var(--card-shadow);
+            transition: 0.3s ease;
         }
 
-        .hero-badge-pill:hover {
+        .badge-chip:hover {
             border-color: var(--accent);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             background: var(--bg-card-hover);
         }
 
-        .hero-buttons-grid {
+        .hero-cta-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 14px;
             width: 100%;
-            max-width: 880px;
+            max-width: 860px;
         }
 
-        .btn-action {
+        .btn-hero {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             padding: 14px 24px;
             border-radius: var(--radius-md);
-            font-size: 0.98rem;
+            font-size: 1rem;
             font-weight: 800;
-            transition: 0.3s var(--ease-smooth);
+            text-decoration: none;
             flex: 1 1 190px;
             max-width: 220px;
-            box-shadow: var(--shadow-card);
-            position: relative;
+            transition: 0.3s var(--ease-smooth);
+            box-shadow: var(--card-shadow);
+            cursor: pointer;
+            white-space: nowrap;
         }
 
-        .btn-action svg {
+        .btn-hero svg {
             width: 20px;
             height: 20px;
-            flex-shrink: 0;
             fill: currentColor;
+            flex-shrink: 0;
         }
 
-        .btn-primary-accent {
-            background: var(--accent);
+        .btn-hero-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-glow));
             color: #ffffff !important;
-            border: 1px solid var(--accent);
+            border: none;
         }
 
-        .btn-primary-accent:hover {
-            background: var(--accent-light);
-            box-shadow: 0 8px 25px var(--accent-glow);
-            transform: translateY(-3px);
+        .btn-hero-accent:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 10px 30px var(--accent-rgba);
         }
 
-        .btn-whatsapp-theme {
+        .btn-hero-wa {
             background: rgba(37, 211, 102, 0.12);
             color: var(--success);
             border: 1px solid rgba(37, 211, 102, 0.35);
         }
 
-        .btn-whatsapp-theme:hover {
+        .btn-hero-wa:hover {
             background: var(--success);
             color: #ffffff;
-            box-shadow: 0 8px 25px var(--success-glow);
-            transform: translateY(-3px);
-            border-color: var(--success);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
         }
 
-        .btn-facebook-theme {
+        .btn-hero-fb {
             background: rgba(24, 119, 242, 0.12);
             color: #3b8cf8;
             border: 1px solid rgba(24, 119, 242, 0.35);
         }
 
-        .btn-facebook-theme:hover {
+        .btn-hero-fb:hover {
             background: var(--facebook);
             color: #ffffff;
-            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.35);
-            transform: translateY(-3px);
-            border-color: var(--facebook);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.35);
         }
 
-        .btn-linkedin-theme {
+        .btn-hero-in {
             background: rgba(10, 102, 194, 0.12);
             color: #2e8fee;
             border: 1px solid rgba(10, 102, 194, 0.35);
         }
 
-        .btn-linkedin-theme:hover {
+        .btn-hero-in:hover {
             background: var(--linkedin);
             color: #ffffff;
-            box-shadow: 0 8px 25px rgba(10, 102, 194, 0.35);
-            transform: translateY(-3px);
-            border-color: var(--linkedin);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(10, 102, 194, 0.35);
         }
 
         /* ==========================================================================
-           4. About Me & Live Numbers Section
+           5. Infinite Animated Skills Ribbon
            ========================================================================== */
-        .about-section {
-            background-color: var(--bg-surface);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-card);
+            border-bottom: 1px solid var(--border-card);
+            padding: 18px 0;
+            margin-top: 45px;
+            display: flex;
+            white-space: nowrap;
+            position: relative;
         }
 
-        .about-card-box {
+        .marquee-content {
+            display: flex;
+            gap: 20px;
+            animation: scrollMarquee 25s linear infinite;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-pill {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
+            color: var(--text-primary);
+            padding: 8px 22px;
+            border-radius: var(--radius-full);
+            font-size: 0.96rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            transition: 0.2s ease;
+        }
+
+        .marquee-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ==========================================================================
+           6. Interactive Full-Stack Widgets (3D Tilt Cards)
+           ========================================================================== */
+        .interactive-widget-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
             border-radius: var(--radius-xl);
+            padding: 45px 36px;
+            box-shadow: var(--card-shadow);
+            backdrop-filter: blur(14px);
+        }
+
+        .widget-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .widget-badge {
+            display: inline-block;
+            background: var(--accent-subtle);
+            color: var(--accent);
+            padding: 5px 18px;
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            font-weight: 800;
+            border: 1px solid var(--accent-border);
+            margin-bottom: 10px;
+        }
+
+        .widget-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        /* ROI Calculator Grid */
+        .calc-slider-wrap {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .calc-slider-label {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .calc-slider {
+            width: 100%;
+            max-width: 600px;
+            height: 10px;
+            border-radius: 5px;
+            background: var(--bg-inner);
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 15px var(--accent);
+            cursor: pointer;
+            border: 3px solid #ffffff;
+        }
+
+        .calc-results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .calc-res-card {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 22px 16px;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .calc-res-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .calc-res-digit {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 4px;
+        }
+
+        .calc-res-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 700;
+        }
+
+        /* Hook Vault Industry Selector */
+        .industry-tabs-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .btn-ind-tab {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-card);
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            font-size: 0.94rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-ind-tab:hover, .btn-ind-tab.active {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--accent-rgba);
+        }
+
+        .hook-display-box {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-card);
+            border-inline-start: 4px solid var(--accent);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            font-size: 1.12rem;
+            line-height: 1.85;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* ==========================================================================
+           7. Section Headings & Interactive 3D Cards
+           ========================================================================== */
+        .section-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-tag-pill {
+            display: inline-block;
+            background: var(--accent-subtle);
+            color: var(--accent);
+            padding: 6px 20px;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 800;
+            border: 1px solid var(--accent-border);
+            margin-bottom: 12px;
+        }
+
+        .section-main-title {
+            font-size: 2.6rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-sub-desc {
+            font-size: 1.18rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* About & Metrics */
+        .about-wrap {
+            background: var(--bg-surface);
+        }
+
+        .narrative-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
             padding: 42px;
             margin-bottom: 45px;
-            box-shadow: var(--shadow-card);
-            backdrop-filter: blur(12px);
-            line-height: 1.95;
-        }
-
-        .about-card-box p {
+            box-shadow: var(--card-shadow);
+            line-height: 2;
             font-size: 1.15rem;
-            color: var(--text-primary);
-            margin-bottom: 18px;
+            backdrop-filter: blur(10px);
         }
 
-        .about-card-box p:last-child {
+        .narrative-card p {
+            margin-bottom: 16px;
+        }
+
+        .narrative-card p:last-child {
             margin-bottom: 0;
             color: var(--text-secondary);
         }
 
-        .skills-header-title {
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 22px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 55px;
-        }
-
-        .skill-pill {
-            background: var(--bg-card);
-            color: var(--text-primary);
-            border: 1px solid var(--border-card);
-            padding: 11px 22px;
-            border-radius: var(--radius-full);
-            font-size: 0.95rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.2s ease;
-            box-shadow: var(--shadow-subtle);
-        }
-
-        .skill-pill .pill-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .skill-pill:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(232, 114, 42, 0.2);
-        }
-
-        /* 4 Key Numbers with 3D Tilt */
-        .stats-grid {
+        .metrics-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
-        .stat-card-box {
+        .metric-card {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
-            border-radius: var(--radius-lg);
-            padding: 32px 20px;
+            border-radius: var(--radius-md);
+            padding: 32px 18px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-card);
+            box-shadow: var(--card-shadow);
             transition: 0.3s var(--ease-smooth);
         }
 
-        .stat-card-box::before {
+        .metric-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), #ff9e5e);
+            height: 3.5px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-glow));
         }
 
-        .stat-card-box:hover {
+        .metric-card:hover {
             transform: translateY(-6px);
-            border-color: var(--border-highlight);
+            border-color: var(--border-glow);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .stat-digit {
-            font-size: 2.7rem;
+        .metric-value {
+            font-size: 2.8rem;
             font-weight: 900;
             color: var(--accent);
-            margin-bottom: 6px;
-            line-height: 1.1;
             font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 6px;
         }
 
-        .stat-label {
-            font-size: 0.92rem;
+        .metric-label {
+            font-size: 0.94rem;
             color: var(--text-secondary);
             font-weight: 700;
             line-height: 1.5;
         }
 
         /* ==========================================================================
-           5. Featured Projects & Interactive Accordions
+           8. Featured Projects & Interactive Accordion
            ========================================================================== */
-        .projects-section {
-            background-color: var(--bg-body);
-        }
-
-        .projects-stack {
+        .projects-list {
             display: flex;
             flex-direction: column;
             gap: 36px;
         }
 
-        .project-card-interactive {
+        .project-item {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
-            border-radius: var(--radius-xl);
-            padding: 38px;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--card-shadow);
             transition: 0.3s var(--ease-smooth);
-            box-shadow: var(--shadow-card);
-            position: relative;
+            backdrop-filter: blur(10px);
         }
 
-        .project-card-interactive:hover {
-            border-color: var(--border-highlight);
-            transform: translateY(-3px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+        .project-item:hover {
+            border-color: var(--border-glow);
         }
 
-        .project-top-row {
+        .project-head-row {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
@@ -847,14 +954,14 @@
             margin-bottom: 20px;
         }
 
-        .project-title-cluster {
+        .project-icon-title {
             display: flex;
             align-items: center;
             gap: 16px;
         }
 
-        .project-icon-box {
-            font-size: 2.2rem;
+        .project-symbol {
+            font-size: 2.3rem;
             width: 58px;
             height: 58px;
             background: var(--accent-subtle);
@@ -866,20 +973,19 @@
             flex-shrink: 0;
         }
 
-        .project-heading {
+        .project-name {
             font-size: 1.55rem;
             font-weight: 800;
-            color: var(--text-primary);
             line-height: 1.3;
         }
 
-        .project-subhead {
-            font-size: 0.92rem;
+        .project-cat {
+            font-size: 0.94rem;
             color: var(--accent);
             font-weight: 700;
         }
 
-        .project-pill-meta {
+        .project-category-badge {
             background: var(--accent-subtle);
             border: 1px solid var(--border-card);
             color: var(--text-secondary);
@@ -887,33 +993,34 @@
             border-radius: var(--radius-full);
             font-size: 0.85rem;
             font-weight: 700;
+            white-space: nowrap;
         }
 
-        .project-body-text {
-            font-size: 1.08rem;
+        .project-desc-text {
+            font-size: 1.1rem;
             color: var(--text-secondary);
             line-height: 1.85;
             margin-bottom: 25px;
         }
 
-        .project-tags-row {
+        .project-pills-row {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 26px;
         }
 
-        .tag-pill-sm {
+        .project-pill {
             background: var(--bg-inner);
             border: 1px solid var(--border-card);
             padding: 6px 14px;
-            border-radius: var(--radius-xs);
-            font-size: 0.86rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
             color: var(--text-secondary);
             font-weight: 700;
         }
 
-        .btn-expand-samples {
+        .btn-toggle-samples {
             background: var(--accent-subtle);
             color: var(--accent);
             border: 1px solid var(--accent-border);
@@ -924,50 +1031,41 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: 0.2s ease;
             cursor: pointer;
+            transition: 0.2s ease;
         }
 
-        .btn-expand-samples:hover {
+        .btn-toggle-samples:hover {
             background: var(--accent);
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--accent-glow);
+            box-shadow: 0 6px 20px var(--accent-rgba);
         }
 
-        .btn-expand-samples svg {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.3s ease;
-            fill: currentColor;
-        }
-
-        .btn-expand-samples.active svg {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content-panel {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
-            opacity: 0;
-        }
-
-        .accordion-content-panel.open {
-            max-height: 4000px;
-            opacity: 1;
+        .accordion-panel {
+            display: none;
             margin-top: 28px;
             padding-top: 28px;
             border-top: 1px dashed var(--border-card);
         }
 
-        .samples-vertical-stack {
+        .accordion-panel.open {
+            display: block;
+            animation: expandFade 0.4s ease;
+        }
+
+        @keyframes expandFade {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .samples-container {
             display: flex;
             flex-direction: column;
             gap: 22px;
         }
 
-        .copy-sample-box {
+        .sample-card {
             background: var(--bg-inner);
             border: 1px solid var(--border-card);
             border-radius: var(--radius-md);
@@ -975,126 +1073,142 @@
             position: relative;
         }
 
-        .badge-stage-tag {
+        .sample-stage-badge {
             display: inline-block;
             background: var(--accent-subtle);
             color: var(--accent);
             border: 1px solid var(--accent-border);
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 800;
             padding: 4px 14px;
             border-radius: var(--radius-full);
             margin-bottom: 12px;
         }
 
-        .sample-headline {
-            font-size: 1.16rem;
+        .sample-title {
+            font-size: 1.18rem;
             font-weight: 800;
-            color: var(--text-primary);
             margin-bottom: 12px;
         }
 
-        .sample-text-code {
-            font-size: 0.98rem;
+        .sample-content-box {
+            font-size: 1rem;
             color: var(--text-secondary);
-            line-height: 1.85;
+            line-height: 1.9;
             white-space: pre-line;
             background: var(--bg-card);
-            padding: 18px 22px;
+            padding: 20px 22px;
             border-radius: var(--radius-sm);
             border-inline-start: 4px solid var(--accent);
+            position: relative;
         }
 
-        .character-bible-grid {
+        .btn-copy-text {
+            position: absolute;
+            top: 12px;
+            inset-inline-end: 12px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-card);
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .btn-copy-text:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .bible-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 16px;
         }
 
-        .bible-spec-card {
+        .bible-card {
             background: var(--bg-card);
             padding: 18px;
             border-radius: var(--radius-sm);
             border: 1px solid var(--border-card);
         }
 
-        .bible-spec-title {
+        .bible-card-title {
             color: var(--accent);
             font-weight: 800;
-            font-size: 0.94rem;
-            margin-bottom: 6px;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
         }
 
-        .bible-spec-text {
+        .bible-card-desc {
             color: var(--text-secondary);
-            font-size: 0.92rem;
-            line-height: 1.6;
+            font-size: 0.94rem;
         }
 
         /* ==========================================================================
-           6. Experience Timeline
+           9. Experience Timeline
            ========================================================================== */
-        .experience-section {
-            background-color: var(--bg-surface);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
+        .timeline-section {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-card);
+            border-bottom: 1px solid var(--border-card);
         }
 
-        .timeline-container {
-            position: relative;
-            max-width: 900px;
+        .timeline-wrap {
+            max-width: 880px;
             margin: 0 auto;
-            padding-inline-start: 45px;
+            position: relative;
+            padding-inline-start: 38px;
         }
 
-        .timeline-container::before {
+        .timeline-wrap::before {
             content: '';
             position: absolute;
             top: 10px;
             bottom: 10px;
-            inset-inline-start: 14px;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--accent), rgba(232, 114, 42, 0.15));
-            border-radius: 3px;
+            inset-inline-start: 12px;
+            width: 2.5px;
+            background: linear-gradient(to bottom, var(--accent), rgba(232, 114, 42, 0.2));
         }
 
-        .timeline-row {
+        .timeline-block {
             position: relative;
-            margin-bottom: 42px;
+            margin-bottom: 40px;
         }
 
-        .timeline-row:last-child {
+        .timeline-block:last-child {
             margin-bottom: 0;
         }
 
-        .timeline-dot-pulse {
+        .timeline-node {
             position: absolute;
             top: 26px;
-            inset-inline-start: -41px;
-            width: 20px;
-            height: 20px;
+            inset-inline-start: -33px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: var(--bg-surface);
-            border: 3px solid var(--accent);
+            background: var(--accent);
             box-shadow: 0 0 14px var(--accent);
-            z-index: 2;
         }
 
-        .timeline-card-box {
+        .timeline-box {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            transition: 0.3s var(--ease-smooth);
-            box-shadow: var(--shadow-card);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: 0.3s ease;
         }
 
-        .timeline-card-box:hover {
-            border-color: var(--border-highlight);
+        .timeline-box:hover {
+            border-color: var(--border-glow);
             transform: translateY(-3px);
         }
 
-        .timeline-head-row {
+        .timeline-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
@@ -1103,19 +1217,18 @@
             margin-bottom: 12px;
         }
 
-        .timeline-role-name {
+        .timeline-position {
             font-size: 1.3rem;
             font-weight: 800;
-            color: var(--text-primary);
         }
 
-        .timeline-company-name {
+        .timeline-org {
             color: var(--accent);
             font-weight: 700;
             font-size: 1.05rem;
         }
 
-        .timeline-period-badge {
+        .timeline-date-chip {
             background: var(--accent-subtle);
             border: 1px solid var(--accent-border);
             padding: 4px 14px;
@@ -1123,103 +1236,119 @@
             font-size: 0.85rem;
             color: var(--text-secondary);
             font-weight: 700;
+            white-space: nowrap;
         }
 
-        .timeline-details {
-            font-size: 1.02rem;
+        .timeline-narrative {
+            font-size: 1.04rem;
             color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 16px;
+            line-height: 1.85;
+            margin-bottom: 14px;
         }
 
-        .timeline-tags-flex {
+        .timeline-pills-flex {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .timeline-tag-item {
+        .timeline-pill-item {
             background: var(--bg-inner);
             color: var(--text-secondary);
-            font-size: 0.82rem;
-            padding: 5px 12px;
-            border-radius: var(--radius-xs);
+            font-size: 0.84rem;
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
             border: 1px solid var(--border-card);
         }
 
         /* ==========================================================================
-           7. Grand Contact Card
+           10. Grand Contact Section
            ========================================================================== */
-        .contact-section {
-            background-color: var(--bg-body);
-        }
-
-        .grand-contact-card {
-            background: var(--banner-gradient);
-            border: 1px solid var(--border-highlight);
+        .grand-cta-box {
+            background: linear-gradient(135deg, #0e1224 0%, #1c1219 50%, #2b1408 100%);
+            border: 1px solid var(--border-glow);
             border-radius: var(--radius-xl);
             padding: 70px 40px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(232, 114, 42, 0.22);
+            box-shadow: 0 20px 60px rgba(232, 114, 42, 0.25);
             position: relative;
             overflow: hidden;
         }
 
-        .contact-title {
+        .grand-cta-title {
             font-size: 2.5rem;
             font-weight: 900;
             color: #ffffff;
             margin-bottom: 18px;
         }
 
-        .contact-desc {
-            font-size: 1.18rem;
-            color: #d8d8e6;
-            max-width: 680px;
-            margin: 0 auto 38px;
-            line-height: 1.85;
+        .grand-cta-desc {
+            font-size: 1.2rem;
+            color: #d6d6e6;
+            max-width: 700px;
+            margin: 0 auto 36px;
+            line-height: 1.9;
         }
 
-        .contact-btn-row {
+        .grand-cta-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 16px;
+            gap: 14px;
         }
 
-        .contact-btn-row .btn-action {
+        .grand-cta-buttons .btn-hero {
             flex: 1 1 200px;
             max-width: 230px;
-            padding: 15px 26px;
         }
 
-        /* ==========================================================================
-           8. Footer & Back-To-Top Button
-           ========================================================================== */
-        .footer {
-            background: var(--bg-body);
-            border-top: 1px solid var(--border-subtle);
+        /* Footer & Toast */
+        .site-footer {
             padding: 40px 0;
             text-align: center;
             color: var(--text-secondary);
             font-size: 0.95rem;
+            border-top: 1px solid var(--border-card);
             position: relative;
             z-index: 2;
         }
 
-        .footer-brand {
-            color: var(--text-primary);
+        .footer-logo-text {
             font-weight: 800;
-            font-size: 1.05rem;
-            margin-bottom: 6px;
+            color: var(--text-primary);
+            margin-bottom: 4px;
         }
 
-        .btn-floating-top {
+        #toastAlert {
             position: fixed;
-            bottom: 30px;
-            inset-inline-start: 30px;
-            width: 50px;
-            height: 50px;
+            bottom: 25px;
+            inset-inline-end: 25px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            color: var(--text-primary);
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            font-size: 0.94rem;
+            font-weight: 800;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(15px);
+            transition: 0.3s ease;
+            pointer-events: none;
+            z-index: 99999;
+        }
+
+        #toastAlert.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-top-float {
+            position: fixed;
+            bottom: 25px;
+            inset-inline-start: 25px;
+            width: 48px;
+            height: 48px;
             background: var(--bg-card);
             border: 1px solid var(--border-card);
             color: var(--accent);
@@ -1227,151 +1356,62 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 99;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+            z-index: 999;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             opacity: 0;
             visibility: hidden;
-            transform: translateY(20px);
+            transform: translateY(15px);
             transition: 0.3s ease;
-            cursor: pointer;
         }
 
-        .btn-floating-top.show {
+        .btn-top-float.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
 
-        .btn-floating-top:hover {
+        .btn-top-float:hover {
             background: var(--accent);
             color: #ffffff;
-            border-color: var(--accent);
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px var(--accent-glow);
         }
 
-        .btn-floating-top svg {
-            width: 22px;
-            height: 22px;
+        .btn-top-float svg {
+            width: 20px;
+            height: 20px;
             fill: currentColor;
         }
 
-        #toastContainer {
-            position: fixed;
-            bottom: 30px;
-            inset-inline-end: 30px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .toast-msg {
-            background: var(--bg-card);
-            border: 1px solid var(--accent-border);
-            color: var(--text-primary);
-            padding: 12px 24px;
-            border-radius: var(--radius-full);
-            font-size: 0.9rem;
-            font-weight: 800;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* ==========================================================================
-           9. Responsive Breakpoints
-           ========================================================================== */
         @media (max-width: 992px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .character-bible-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar .nav-links, .navbar .btn-nav-cta {
+            .nav-links {
                 display: none;
             }
+        }
 
-            .mobile-toggle {
-                display: flex;
+        @media (max-width: 880px) {
+            .calc-results-grid, .bible-grid, .metrics-grid {
+                grid-template-columns: 1fr;
             }
-
-            .nav-links.mobile-menu-active {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: var(--nav-height);
-                left: 0;
-                right: 0;
-                background: var(--bg-body);
-                padding: 30px 24px;
-                border-bottom: 1px solid var(--border-card);
-                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-                gap: 22px;
-                z-index: 999;
-            }
-
             .hero-name {
                 font-size: 2.5rem;
             }
-
-            .hero-typing-wrap {
-                font-size: 1.25rem;
+            .typewriter-box {
+                font-size: 1.3rem;
             }
-
-            .hero-bio {
-                font-size: 1.1rem;
+            .section-main-title {
+                font-size: 2.1rem;
             }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-container {
-                padding-inline-start: 28px;
-            }
-
-            .timeline-container::before {
-                inset-inline-start: 6px;
-            }
-
-            .timeline-dot-pulse {
-                inset-inline-start: -27px;
-            }
-
-            .grand-contact-card {
-                padding: 45px 22px;
-            }
-
-            .contact-title {
-                font-size: 2rem;
-            }
-
-            .about-card-box, .project-card-interactive {
-                padding: 26px;
+            .float-badge {
+                display: none;
             }
         }
 
         @media (max-width: 480px) {
-            .hero-avatar-box {
-                width: 185px;
-                height: 185px;
-            }
-
-            .hero-buttons-grid .btn-action, .contact-btn-row .btn-action {
+            .hero-cta-grid .btn-hero, .grand-cta-buttons .btn-hero {
                 max-width: 100%;
                 flex: 1 1 100%;
             }
-
             .section-padding {
                 padding: 70px 0;
             }
@@ -1380,226 +1420,265 @@
 </head>
 <body>
 
-    <!-- Smooth Scroll Progress Indicator -->
-    <div id="scrollProgressBar"></div>
+    <div id="scrollBar"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div id="toastAlert">تم نسخ البوست الإعلاني بنجاح! 🚀</div>
 
-    <!-- Mouse Ambient Spotlight (Desktop) -->
-    <div id="cursorSpotlight"></div>
+    <button class="btn-top-float" id="btnScrollTop" aria-label="Top">
+        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
 
-    <!-- Three.js 3D WebGL Canvas -->
-    <canvas id="webglCanvas"></canvas>
-
-    <!-- Toast Notifications Wrap -->
-    <div id="toastContainer"></div>
-
-    <!-- ==========================================================================
-       1. Sticky Navbar
-       ========================================================================== -->
-    <header class="navbar" id="navbar">
+    <!-- Header Navbar -->
+    <header class="navbar">
         <div class="container navbar-content">
-            <a href="#hero" class="logo" aria-label="Home">
-                <span class="logo-dot"></span>
-                <span id="logoText">محمود <span class="highlight">متولي</span></span>
+            <a href="#hero" class="logo">
+                <span class="logo-badge">M</span>
+                <span id="logoBrand">محمود <span class="highlight">متولي</span></span>
             </a>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about" class="nav-link" id="navAbout">عنّي</a></li>
-                <li><a href="#projects" class="nav-link" id="navProjects">أعمالي</a></li>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link" id="navAbout">مين أنا؟</a></li>
+                <li><a href="#calculator" class="nav-link" id="navCalc">حاسبة الأرباح</a></li>
+                <li><a href="#hooks" class="nav-link" id="navHooks">مولد الهوكات</a></li>
+                <li><a href="#projects" class="nav-link" id="navProjects">شغلي ونماذجي</a></li>
                 <li><a href="#experience" class="nav-link" id="navExperience">خبراتي</a></li>
-                <li><a href="#contact" class="nav-link" id="navContact">تواصل معايا</a></li>
+                <li><a href="#contact" class="nav-link" id="navContact">يلا نتكلم</a></li>
             </ul>
 
             <div class="nav-actions">
-                <!-- Language Toggle Button -->
-                <button class="icon-btn" id="langToggleBtn" aria-label="Language Switch">
-                    <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
-                    <span id="langBtnText">EN</span>
+                <button class="icon-btn" id="langBtn">
+                    <span id="langBtnLabel">English</span>
                 </button>
 
-                <!-- Dark / Light Theme Toggle -->
-                <button class="icon-btn" id="themeToggleBtn" aria-label="Theme Toggle">
-                    <svg class="theme-icon-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
-                    <svg class="theme-icon-moon" viewBox="0 0 24 24"><path d="M12.3 2a10 10 0 0 0-.19 14 10 10 0 0 0 14-.19 1 1 0 0 0-.81-1.63 8 8 0 1 1-11.37-11.37A1 1 0 0 0 12.3 2z"/></svg>
+                <button class="icon-btn" id="themeBtn">
+                    <span id="themeBtnIcon">☀️</span>
                 </button>
 
-                <!-- Fast Nav CTA -->
-                <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D9%80%20Portfolio%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D9%83%D9%84%D9%85%D9%83%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9" target="_blank" rel="noopener noreferrer" class="btn-nav-cta">
-                    <span id="navCtaText">ابدأ مشروعك</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D9%80%20Portfolio%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D9%83%D9%84%D9%85%D9%83%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9" target="_blank" rel="noopener noreferrer" class="btn-nav-cta" id="navCtaBtn">
+                    يلا نبدأ مشروعك
                 </a>
-
-                <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Menu">
-                    <span></span><span></span><span></span>
-                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- ==========================================================================
-           2. Hero Section
-           ========================================================================== -->
+        <!-- 1. Hero Section -->
         <section class="hero-section" id="hero">
             <div class="container hero-content">
-                
-                <div class="hero-avatar-box">
-                    <div class="avatar-glow-ring"></div>
-                    <img src="mahmoud.png" alt="محمود محمد متولي" class="hero-avatar-img" onerror="this.src='profile.jpg'">
+                <div class="avatar-stage reveal">
+                    <div class="avatar-glowing-halo"></div>
+                    <img src="mahmoud.png" alt="محمود محمد متولي" class="avatar-img" onerror="this.src='profile.jpg'">
+                    
+                    <div class="float-badge float-badge-1">
+                        <span>📈</span>
+                        <span>+479% وصول الصفحة</span>
+                    </div>
+
+                    <div class="float-badge float-badge-2">
+                        <span>🔥</span>
+                        <span>كلام بيكسب ويبيع</span>
+                    </div>
                 </div>
 
-                <div class="hero-motto-pill" id="heroMotto">
-                    ⚡ من لحام المعدن لصياغة الكلمات اللي بتوصل
+                <div class="hero-pill-tag reveal" id="heroTag">
+                    ⚡ من لحام المعدن لصياغة الكلمات اللي بتوصل وتبيع
                 </div>
 
-                <h1 class="hero-name" id="heroName">
+                <h1 class="hero-name reveal" id="heroTitle">
                     محمود محمد <span class="highlight">متولي</span>
                 </h1>
 
-                <!-- Typewriter Dynamic Role Hook -->
-                <div class="hero-typing-wrap">
-                    <span id="typingPrefix">أنا</span>
-                    <span class="typed-cursor" id="typedText">كاتب محتوى إعلاني</span>
+                <div class="typewriter-box reveal">
+                    <span id="typePrefix">أنا</span>
+                    <span class="typewriter-cursor" id="typeDynamic">كوبي رايتر مبيعات وتحويل</span>
                 </div>
 
-                <p class="hero-bio" id="heroBio">
-                    كاتب محتوى وكوبي رايتر بيكتب كلام يبيع — محتوى سوشيال ميديا، إعلانات Meta Ads، وخطط محتوى مبنية على فهم الجمهور والقمع التسويقي.
+                <p class="hero-bio reveal" id="heroDesc">
+                    كاتب محتوى وكوبي رايتر بيكتب كلام يبيع — مش مجرد رص كلام على السوشيال ميديا، لكن إعلانات Meta Ads وخطط محتوى مبنية على سيكولوجية الزبون وقمع تسويقي بيجيب أرباح حقيقية.
                 </p>
 
-                <div class="hero-badges-list">
-                    <div class="hero-badge-pill">
+                <div class="badges-row reveal">
+                    <div class="badge-chip">
                         <span>📍</span>
-                        <span id="badgeLocation">السويس، مصر</span>
+                        <span id="chipLoc">السويس، مصر</span>
                     </div>
-                    <div class="hero-badge-pill">
+                    <div class="badge-chip">
                         <span>🎓</span>
-                        <span id="badgeCert">معتمد من OnTrack — Content 101</span>
+                        <span id="chipCert">خريج معتمد من OnTrack — Content 101</span>
                     </div>
-                    <div class="hero-badge-pill">
+                    <div class="badge-chip">
                         <span>✍️</span>
-                        <span id="badgeJob">Content Writer في Zeva Agency</span>
+                        <span id="chipJob">Content Writer في Zeva Agency</span>
                     </div>
                 </div>
 
-                <div class="hero-buttons-grid">
-                    <a href="Mahmoud-Metwally-CV.pdf" target="_blank" download="Mahmoud-Metwally-CV.pdf" class="btn-action btn-primary-accent" id="btnDownloadCv">
+                <div class="hero-cta-grid reveal">
+                    <button class="btn-hero btn-hero-accent" id="btnDownloadCv">
                         <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                        <span id="btnCvText">تحميل الـ CV</span>
-                    </a>
+                        <span id="btnCvLabel">نزّل الـ CV بتاعي</span>
+                    </button>
 
-                    <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D9%80%20Portfolio%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D9%83%D9%84%D9%85%D9%83%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9" target="_blank" rel="noopener noreferrer" class="btn-action btn-whatsapp-theme">
+                    <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D9%80%20Portfolio%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D9%83%D9%84%D9%85%D9%83%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9" target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-wa">
                         <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.46-.04 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.16-.47-.28z"/></svg>
-                        <span id="btnWaText">واتساب مباشر</span>
+                        <span id="btnWaLabel">شات واتساب فوري</span>
                     </a>
 
-                    <a href="https://www.facebook.com/MahmoudMetwally97" target="_blank" rel="noopener noreferrer" class="btn-action btn-facebook-theme">
+                    <a href="https://www.facebook.com/MahmoudMetwally97" target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-fb">
                         <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        <span id="btnFbText">فيسبوك</span>
+                        <span id="btnFbLabel">فيسبوك</span>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/mahmoud-metwally-499ba7381" target="_blank" rel="noopener noreferrer" class="btn-action btn-linkedin-theme">
+                    <a href="https://www.linkedin.com/in/mahmoud-metwally-499ba7381" target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-in">
                         <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.46 1.46 0 1 0 0-2.92 1.46 1.46 0 0 0 0 2.92M7.86 18.5V9.95H5.07V18.5h2.79z"/></svg>
-                        <span id="btnInText">لينكدإن</span>
+                        <span id="btnInLabel">لينكدإن</span>
                     </a>
                 </div>
-
             </div>
         </section>
 
-        <!-- ==========================================================================
-           3. About Me Section
-           ========================================================================== -->
-        <section class="about-section section-padding" id="about">
+        <!-- Moving Skills Ribbon Marquee -->
+        <div class="marquee-wrapper">
+            <div class="marquee-content" id="marqueeTrack">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+
+        <!-- 2. Interactive Widget 1: Direct-Response ROI Calculator -->
+        <section class="section-padding" id="calculator">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag" id="aboutTag">نبذة عنّي</span>
-                    <h2 class="section-title" id="aboutTitle">من أنا وماذا أقدم لعلامتك التجارية؟</h2>
-                    <p class="section-subtitle" id="aboutSubtitle">صناعة المحتوى ليست مجرد كلمات منمقة، بل هي استراتيجية علمية تقود العميل للشراء وتصنع ولاء حقيقي للبراند.</p>
-                </div>
+                <div class="interactive-widget-box tilt-card reveal">
+                    <div class="tilt-glare"></div>
+                    <div class="widget-header">
+                        <span class="widget-badge" id="calcBadge">⚡ سيموليشن تفاعلي</span>
+                        <h2 class="widget-title" id="calcTitle">احسب العائد المتوقع لما نشتغل سوا على إعلاناتك 📊</h2>
+                        <p style="color: var(--text-secondary);" id="calcSub">حرّك السلايدر عشان تشوف تأثير الكوبي رايتنج المضبوط على ميزانيتك الإعلانية:</p>
+                    </div>
 
-                <div class="about-card-box" id="aboutNarrative">
-                    <!-- Rendered by JS -->
-                </div>
+                    <div class="calc-slider-wrap">
+                        <label class="calc-slider-label">
+                            <span id="calcSpendLabel">ميزانيتك الإعلانية الشهرية:</span>
+                            <span class="highlight font-mono" id="calcBudgetValue">10,000 ج.م</span>
+                        </label>
+                        <input type="range" min="3000" max="60000" step="1000" value="10000" class="calc-slider" id="budgetSlider">
+                    </div>
 
-                <div class="skills-wrapper">
-                    <h3 class="skills-header-title">
-                        <span>🛠️</span>
-                        <span id="skillsTitle">أبرز المهارات والأدوات الاحترافية:</span>
-                    </h3>
-                    <div class="skills-grid" id="skillsGrid">
-                        <!-- Rendered by JS -->
+                    <div class="calc-results-grid">
+                        <div class="calc-res-card">
+                            <div class="calc-res-digit" id="resReach">~85,000</div>
+                            <div class="calc-res-label" id="resReachLbl">وصول متوقع مستهدف (Reach)</div>
+                        </div>
+
+                        <div class="calc-res-card">
+                            <div class="calc-res-digit" id="resLeads">~2,260</div>
+                            <div class="calc-res-label" id="resLeadsLbl">محادثة شراء وتفاعل (Conversations)</div>
+                        </div>
+
+                        <div class="calc-res-card">
+                            <div class="calc-res-digit" id="resSavings">4.41 ج.م</div>
+                            <div class="calc-res-label" id="resSavingsLbl">تكلفة اقتصادية للرسالة (Cost/Msg)</div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="stats-grid" id="statsGrid">
-                    <!-- Rendered by JS -->
+        <!-- 3. Interactive Widget 2: Instant Hook & Headline Vault -->
+        <section class="section-padding" id="hooks">
+            <div class="container">
+                <div class="interactive-widget-box tilt-card reveal">
+                    <div class="tilt-glare"></div>
+                    <div class="widget-header">
+                        <span class="widget-badge" id="hookBadge">⚡ معمل الأفكار الفورية</span>
+                        <h2 class="widget-title" id="hookTitle">مولد الهوكات البيعية الفوري — اختار مجالك وشوف السحر 🔥</h2>
+                        <p style="color: var(--text-secondary);" id="hookSub">اضغط على نوع البيزنس بتاعك عشان تشوف عينة هوك إعلاني بيخطف العين فوراً:</p>
+                    </div>
+
+                    <div class="industry-tabs-flex" id="industryTabs">
+                        <button class="btn-ind-tab active" data-ind="dental">🦷 عيادة أسنان</button>
+                        <button class="btn-ind-tab" data-ind="fashion">👕 براند ملابس</button>
+                        <button class="btn-ind-tab" data-ind="candles">🕯️ ديكور وشموع</button>
+                        <button class="btn-ind-tab" data-ind="mobile">📱 موبايلات وإلكترونيات</button>
+                        <button class="btn-ind-tab" data-ind="realestate">🏢 عقارات وتشطيبات</button>
+                    </div>
+
+                    <div class="hook-display-box" id="hookTextDisplay">
+                        "مبتصحاش من النوم تلاقي ضرسك اتكسر فجأة! الموضوع بيبدأ بنقطة سودا صغيرة بتفتكرها سمسم.. لكن جلسة فحص 10 دقايق هتوفر عليك علاج عصب وآلاف الجنيهات بعدين!"
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================================================
-           4. Projects Section
-           ========================================================================== -->
-        <section class="projects-section section-padding" id="projects">
+        <!-- 4. About Me Section -->
+        <section class="about-wrap section-padding" id="about">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag" id="projectsTag">معرض الأعمال</span>
-                    <h2 class="section-title" id="projectsTitle">نماذج من أعمالي واستراتيجياتي</h2>
-                    <p class="section-subtitle" id="projectsSubtitle">شاهد عينات واقعية من خطط المحتوى، بناء الشخصيات التسويقية، والنصوص الإعلانية القائمة على علم النفس البيعي.</p>
+                <div class="section-head reveal">
+                    <span class="section-tag-pill" id="aboutTag">مين محمود متولي؟</span>
+                    <h2 class="section-main-title" id="aboutTitle">أنا مين وهقدّم إيه للبيزنس بتاعك؟</h2>
+                    <p class="section-sub-desc" id="aboutSub">صناعة المحتوى مش إنك ترص كلام شكله حلو وخلاص، دي استراتيجية بتفهم دماغ العميل وتخليه يطلع المحفظة ويشتري وهو راضي ومبسوط!</p>
                 </div>
 
-                <div class="projects-stack" id="projectsList">
-                    <!-- Rendered by JS -->
+                <div class="narrative-card tilt-card reveal" id="narrativeBox">
+                    <div class="tilt-glare"></div>
                 </div>
+                <div class="metrics-grid reveal" id="metricsGrid"></div>
             </div>
         </section>
 
-        <!-- ==========================================================================
-           5. Experience Section
-           ========================================================================== -->
-        <section class="experience-section section-padding" id="experience">
+        <!-- 5. Projects Section -->
+        <section class="section-padding" id="projects">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag" id="expTag">المسيرة المهنية</span>
-                    <h2 class="section-title" id="expTitle">خبراتي العملية وسجل الإنجازات</h2>
-                    <p class="section-subtitle" id="expSubtitle">خبرة عملية ميدانية في بناء المحتوى، إدارة الحملات، وتحقيق نتائج تجارية حقيقية وملموسة.</p>
+                <div class="section-head reveal">
+                    <span class="section-tag-pill" id="projectsTag">شغلي العملي</span>
+                    <h2 class="section-main-title" id="projectsTitle">نماذج حقيقية من خططي ونصوصي الإعلانية</h2>
+                    <p class="section-sub-desc" id="projectsSub">شوف نماذج حية ومكتوبة من واقع السوق: خطط أقماع بيع، شخصيات مشترين، ونصوص إعلانات بتخلي العميل يتفاعل ويشتري.</p>
                 </div>
 
-                <div class="timeline-container" id="timelineBox">
-                    <!-- Rendered by JS -->
-                </div>
+                <div class="projects-list" id="projectsList"></div>
             </div>
         </section>
 
-        <!-- ==========================================================================
-           6. Grand Contact Section
-           ========================================================================== -->
-        <section class="contact-section section-padding" id="contact">
+        <!-- 6. Experience Section -->
+        <section class="timeline-section section-padding" id="experience">
             <div class="container">
-                <div class="grand-contact-card">
-                    <h2 class="contact-title" id="contactTitle">عندك مشروع محتاج محتوى بيكتب كلام يبيع؟</h2>
-                    <p class="contact-desc" id="contactDesc">
-                        ابعتلي رسالة على واتساب وهرد عليك في أسرع وقت. خلينا نناقش فكرتك، نحلل جمهورك، ونبني مع بعض خطة محتوى تحقق أعلى مبيعات لبيزنس بتاعك!
+                <div class="section-head reveal">
+                    <span class="section-tag-pill" id="expTag">رحلتي في السوق</span>
+                    <h2 class="section-main-title" id="expTitle">خبراتي وسجل الإنجازات على أرض الواقع</h2>
+                    <p class="section-sub-desc" id="expSub">شغل ميداني حقيقي مش نظريات.. بنيت محتوى، أدرت حملات ميتا، وحققت نتائج مبيعات ووصول بالأرقام.</p>
+                </div>
+
+                <div class="timeline-wrap" id="timelineList"></div>
+            </div>
+        </section>
+
+        <!-- 7. Grand Contact Section -->
+        <section class="section-padding" id="contact">
+            <div class="container">
+                <div class="grand-cta-box tilt-card reveal">
+                    <div class="tilt-glare"></div>
+                    <h2 class="grand-cta-title" id="ctaTitle">عندك براند أو بيزنس ومحتاج كلام يجيب مبيعات؟</h2>
+                    <p class="grand-cta-desc" id="ctaDesc">
+                        ابعتلي رسالة دلوقتي على واتساب وهرد عليك علطول.. خلينا نقعد نحلل جمهورك، ونظبط نبرة صوت البراند، ونعمل خطة محتوى تطير بمبيعاتك للسما!
                     </p>
 
-                    <div class="contact-btn-row">
-                        <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D9%80%20Portfolio%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D9%83%D9%84%D9%85%D9%83%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9" target="_blank" rel="noopener noreferrer" class="btn-action btn-whatsapp-theme">
+                    <div class="grand-cta-buttons">
+                        <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D9%80%20Portfolio%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D9%83%D9%84%D9%85%D9%83%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9" target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-wa">
                             <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.46-.04 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.22-.16-.47-.28z"/></svg>
-                            <span class="cnt-wa">واتساب مباشر</span>
+                            <span class="lbl-wa">يلا نتكلم واتساب</span>
                         </a>
 
-                        <a href="Mahmoud-Metwally-CV.pdf" target="_blank" download="Mahmoud-Metwally-CV.pdf" class="btn-action btn-primary-accent">
+                        <a href="Mahmoud-Metwally-CV.pdf" target="_blank" download="Mahmoud-Metwally-CV.pdf" class="btn-hero btn-hero-accent" id="btnDownloadCvBottom">
                             <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                            <span class="cnt-cv">تحميل الـ CV</span>
+                            <span class="lbl-cv">تحميل الـ CV بتاعي</span>
                         </a>
 
-                        <a href="https://www.facebook.com/MahmoudMetwally97" target="_blank" rel="noopener noreferrer" class="btn-action btn-facebook-theme">
+                        <a href="https://www.facebook.com/MahmoudMetwally97" target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-fb">
                             <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            <span class="cnt-fb">فيسبوك</span>
+                            <span class="lbl-fb">فيسبوك</span>
                         </a>
 
-                        <a href="https://www.linkedin.com/in/mahmoud-metwally-499ba7381" target="_blank" rel="noopener noreferrer" class="btn-action btn-linkedin-theme">
+                        <a href="https://www.linkedin.com/in/mahmoud-metwally-499ba7381" target="_blank" rel="noopener noreferrer" class="btn-hero btn-hero-in">
                             <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.46 1.46 0 1 0 0-2.92 1.46 1.46 0 0 0 0 2.92M7.86 18.5V9.95H5.07V18.5h2.79z"/></svg>
-                            <span class="cnt-in">لينكدإن</span>
+                            <span class="lbl-in">لينكدإن</span>
                         </a>
                     </div>
                 </div>
@@ -1607,96 +1686,109 @@
         </section>
     </main>
 
-    <!-- ==========================================================================
-           7. Footer & Back-To-Top Button
-           ========================================================================== -->
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="container">
-            <p class="footer-brand" id="footerCredit">محمود محمد متولي — كاتب محتوى وكوبي رايتر © 2026</p>
-            <p style="color: var(--text-muted); font-size: 0.85rem;" id="footerSub">جميع الحقوق محفوظة | صُنع بشغف وإتقان مع WebGL 3D Particles</p>
+            <p class="footer-logo-text" id="footerBrand">محمود محمد متولي — كاتب محتوى وكوبي رايتر © 2026</p>
+            <p style="color: var(--text-muted); font-size: 0.88rem;" id="footerRights">جميع الحقوق محفوظة | اتعمل بحب وشغف وسيكولوجية إقناع</p>
         </div>
     </footer>
 
-    <button class="btn-floating-top" id="btnBackToTop" aria-label="Top">
-        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
-    </button>
-
-    <!-- ==========================================================================
-           JavaScript: Three.js 3D WebGL Engine + Dynamic Logic
-           ========================================================================== */
+    <!-- Native Dynamic Logic Engine -->
     <script>
         const store = {
             ar: {
                 langCode: 'ar',
                 dir: 'rtl',
-                langBtnText: 'EN',
-                docTitle: 'محمود محمد متولي | Senior Conversion Copywriter & Content Strategist',
-                logoText: 'محمود <span class="highlight">متولي</span>',
-                navAbout: 'عنّي',
-                navProjects: 'أعمالي',
+                langBtnLabel: 'English',
+                docTitle: 'محمود محمد متولي | Senior Conversion Copywriter & Growth Strategist 🔥',
+                logoBrand: 'محمود <span class="highlight">متولي</span>',
+                navAbout: 'مين أنا؟',
+                navCalc: 'حاسبة الأرباح',
+                navHooks: 'مولد الهوكات',
+                navProjects: 'شغلي ونماذجي',
                 navExperience: 'خبراتي',
-                navContact: 'تواصل معايا',
-                navCtaText: 'ابدأ مشروعك',
-                heroMotto: '⚡ من لحام المعدن لصياغة الكلمات اللي بتوصل',
-                heroName: 'محمود محمد <span class="highlight">متولي</span>',
-                typingPrefix: 'أنا',
-                typingWords: ['كاتب محتوى إعلاني ✍️', 'كوبي رايتر مبيعات وتحويل 🔥', 'مهندس خطط قمع تسويقي 📈', 'ميديا باير حملات Meta Ads 🚀'],
-                heroBio: 'كاتب محتوى وكوبي رايتر بيكتب كلام يبيع — محتوى سوشيال ميديا، إعلانات Meta Ads، وخطط محتوى مبنية على فهم الجمهور والقمع التسويقي.',
-                badgeLocation: 'السويس، مصر',
-                badgeCert: 'معتمد من OnTrack — Content 101',
-                badgeJob: 'Content Writer في Zeva Agency',
-                btnCv: 'تحميل الـ CV',
-                btnWa: 'واتساب مباشر',
-                btnFb: 'فيسبوك',
-                btnIn: 'لينكدإن',
-                aboutTag: 'نبذة عنّي',
-                aboutTitle: 'من أنا وماذا أقدم لعلامتك التجارية؟',
-                aboutSubtitle: 'صناعة المحتوى ليست مجرد كلمات منمقة، بل هي استراتيجية علمية تقود العميل للشراء وتصنع ولاء حقيقي للبراند.',
+                navContact: 'يلا نتكلم',
+                navCtaBtn: 'يلا نبدأ مشروعك',
+                heroTag: '⚡ من لحام المعدن لصياغة الكلمات اللي بتوصل وتبيع',
+                heroTitle: 'محمود محمد <span class="highlight">متولي</span>',
+                typePrefix: 'أنا',
+                typingWords: ['كوبي رايتر مبيعات وتحويل 🔥', 'كاتب محتوى إعلاني بيجيب نتايج ✍️', 'مهندس خطط قمع تسويقي كامل 📈', 'ميديا باير حملات Meta Ads 🚀'],
+                heroDesc: 'كاتب محتوى وكوبي رايتر بيكتب كلام يبيع — مش مجرد رص كلام على السوشيال ميديا، لكن إعلانات Meta Ads وخطط محتوى مبنية على سيكولوجية الزبون وقمع تسويقي بيجيب أرباح حقيقية.',
+                chipLoc: 'السويس، مصر',
+                chipCert: 'خريج معتمد من OnTrack — Content 101',
+                chipJob: 'Content Writer في Zeva Agency',
+                btnCvLabel: 'نزّل الـ CV بتاعي',
+                btnWaLabel: 'شات واتساب فوري',
+                btnFbLabel: 'فيسبوك',
+                btnInLabel: 'لينكدإن',
+                calcBadge: '⚡ سيموليشن تفاعلي',
+                calcTitle: 'احسب العائد المتوقع لما نشتغل سوا على إعلاناتك 📊',
+                calcSub: 'حرّك السلايدر عشان تشوف تأثير الكوبي رايتنج المضبوط على ميزانيتك الإعلانية:',
+                calcSpendLabel: 'ميزانيتك الإعلانية الشهرية:',
+                resReachLbl: 'وصول متوقع مستهدف (Reach)',
+                resLeadsLbl: 'محادثة شراء وتفاعل (Conversations)',
+                resSavingsLbl: 'تكلفة اقتصادية للرسالة (Cost/Msg)',
+                hookBadge: '⚡ معمل الأفكار الفورية',
+                hookTitle: 'مولد الهوكات البيعية الفوري — اختار مجالك وشوف السحر 🔥',
+                hookSub: 'اضغط على نوع البيزنس بتاعك عشان تشوف عينة هوك إعلاني بيخطف العين فوراً:',
+                hooksData: {
+                    dental: '"مبتصحاش من النوم تلاقي ضرسك اتكسر فجأة! الموضوع بيبدأ بنقطة سودا صغيرة بتفتكرها سمسم.. لكن جلسة فحص 10 دقايق هتوفر عليك علاج عصب وآلاف الجنيهات بعدين! احجز كشفك واطمّن على ضحكتك دلوقتي."',
+                    fashion: '"أحلى حاجة في يوم الإجازة.. إن المنبه مش هيرن 7 الصبح لسيكشن 8! الهودي الأوفر سايز من HALIM مبيسألكش رايح فين.. بيلبس في ثانية ويديك الشياكة والراحة اللي بتدور عليها من غير تفكير."',
+                    candles: '"مهما كان يومك برة كان فيه زحمة ودوشة.. أول ما ترجعي وتولعي الشمعة دي، بتحسي إن العالم كله هدي فجأة. تفصيلة صغيرة في أوضتك بس كفيلة تظبط مودك 💆‍♀️✨"',
+                    mobile: '"مفيش أصعب من إنك تشتري إكسسوار موبايل ويبوظ بعد أسبوع! في مكة ستور كل قطعة عليها ضمان حقيقي وأصلية 100% عشان تريح دماغك من وجع القلب 📱"',
+                    realestate: '"الشقة مش مجرد حيطان وسقف.. دي المكان اللي هتجمع فيه ذكريات عمرك كلها. وفرنا لك أنظمة سداد مرنة بدون فوايد في أرقى لوكيشن 🏢"'
+                },
+                aboutTag: 'مين محمود متولي؟',
+                aboutTitle: 'أنا مين وهقدّم إيه للبيزنس بتاعك؟',
+                aboutSub: 'صناعة المحتوى مش إنك ترص كلام شكله حلو وخلاص، دي استراتيجية بتفهم دماغ العميل وتخليه يطلع المحفظة ويشتري وهو راضي ومبسوط!',
                 aboutNarrative: `
-                    <p>أنا <strong>محمود محمد متولي</strong>، كاتب محتوى وكوبي رايتر من مدينة السويس. أعمل مع براندات حقيقية وأنشطة تجارية في مجالات متنوعة (عيادات أسنان متخصصة، براندات أزياء وملابس شبابية، محلات إلكترونيات وأجهزة ذكية، ومواد ديكور وفايبرجلاس).</p>
-                    <p>شغفي وصناعتي مبنية على <strong>الفهم العميق للجمهور</strong>: بدءاً من بحث العميل المثالي وبناء شخصية المشتري (Buyer Persona)، وضبط نبرة صوت البراند (Brand Voice)، وصولاً لتصميم رحلة عميل متكاملة عبر القمع التسويقي (Marketing Funnel) وأطر الإقناع البيعي مثل FAB وPAS.</p>
-                    <p>حاصل على اعتماد واجتياز برنامج <strong>Content 101 من OnTrack</strong> (بواقع 18 ساعة تدريبية مكثفة)، وأواصل تطوير مهاراتي باستمرار في مجالات الميديا باينج (Media Buying)، تحليل الحملات الرقمية، وإدارة حسابات السوشيال ميديا بالذكاء الاصطناعي لتحقيق أعلى عائد استثماري للعملاء.</p>
+                    <p>أنا <strong>محمود محمد متولي</strong>، كاتب محتوى وكوبي رايتر من السويس. شغال مع براندات حقيقية وأنشطة تجارية في مجالات مختلفة (عيادات أسنان، براندات ملابس شبابية واستريت وير، محلات موبايلات وإلكترونيات، وخامات ديكور وفايبر جلاس).</p>
+                    <p>شغلي كله مبني على <strong>الفهم العميق لدماغ الزبون</strong>: ببدأ ببحث السوق وتحليل العميل وبناء الـ Buyer Persona، وبظبط نبرة صوت البراند (Brand Voice) عشان ترن في ودان الجمهور، وببني رحلة بيع كاملة (Marketing Funnel) باستخدام أساليب الإقناع اللي بتبيع زي FAB وPAS.</p>
+                    <p>معتمد رسمياً من كورس <strong>Content 101 من OnTrack</strong> (18 ساعة تدريب وتطبيق عملي مكثف)، وبطور نفسي دايماً في إعلانات الميديا باينج (Meta Ads) وتحليل أرقام الحملات وكتابة البرومبتات بالذكاء الاصطناعي عشان أحقق أعلى مكسب بأقل تكلفة للعميل.</p>
                 `,
-                skillsTitle: 'أبرز المهارات والأدوات الاحترافية:',
                 skills: [
-                    'كتابة المحتوى والكوبي رايتنج',
-                    'محتوى السوشيال ميديا',
-                    'Buyer Persona وبحث الجمهور',
-                    'خطط وتقويم المحتوى (Calendar)',
-                    'محتوى القمع التسويقي (Funnel)',
-                    'نبرة الصوت (Brand Voice)',
-                    'أطر الكتابة الإعلانية (FAB & PAS)',
-                    'المحتوى التعليمي والتفاعلي',
-                    'تحليل المنافسين والسوق',
+                    'كتابة المحتوى والكوبي رايتنج البيعي',
+                    'صناعة محتوى السوشيال ميديا التفاعلي',
+                    'Buyer Persona ودراسة سيكولوجية الزبون',
+                    'جداول وتقاويم المحتوى الشهرية (Calendar)',
+                    'خطط القمع التسويقي (TOFU - MOFU - BOFU)',
+                    'تحديد نبرة صوت البراند (Brand Voice)',
+                    'أطر الكتابة الإعلانية (FAB & PAS & AIDA)',
+                    'المحتوى التعليمي وتثقيف العميل',
+                    'تحليل المنافسين وفجوات السوق',
                     'استراتيجيات فيسبوك، انستجرام ولينكدإن',
-                    'Canva & Canva AI للتصميم',
-                    'إنتاج المحتوى بالذكاء الاصطناعي (AI Prompting)'
+                    'Canva والتصميم بالذكاء الاصطناعي',
+                    'AI Prompting وهندسة الأوامر'
                 ],
-                stats: [
-                    { rawNum: 479, prefix: '+', suffix: '%', label: 'زيادة في وصول الصفحة (Page Reach) خلال 28 يوم' },
-                    { rawNum: 66.7, prefix: '', suffix: '%', label: 'زيادة معدل تفاعل الجمهور والمشاركات' },
-                    { rawNum: 4.41, prefix: '', suffix: ' ج.م', label: 'تكلفة الرسالة البيعية في الحملات الإعلانية' },
-                    { rawNum: 400, prefix: '+', suffix: '', label: 'متابع جديد ومستهدف في أقل من شهر' }
+                metrics: [
+                    { raw: 479, prefix: '+', suffix: '%', lbl: 'زيادة في وصول الصفحة (Reach) في 28 يوم بس' },
+                    { raw: 66.7, prefix: '', suffix: '%', lbl: 'زيادة معدل تفاعل الناس وشير البوستات' },
+                    { raw: 4.41, prefix: '', suffix: ' ج.م', lbl: 'تكلفة رسالة الشراء في إعلانات الميتا' },
+                    { raw: 400, prefix: '+', suffix: '', lbl: 'فولور حقيقي ومهتم في أقل من شهر' }
                 ],
-                projectsTag: 'معرض الأعمال',
-                projectsTitle: 'نماذج من أعمالي واستراتيجياتي',
-                projectsSubtitle: 'شاهد عينات واقعية من خطط المحتوى، بناء الشخصيات التسويقية، والنصوص الإعلانية القائمة على علم النفس البيعي.',
-                btnShowSamples: 'شوف نماذج البوستات',
-                btnHideSamples: 'إخفي النماذج',
+                projectsTag: 'شغلي العملي',
+                projectsTitle: 'نماذج حقيقية من خططي ونصوصي الإعلانية',
+                projectsSub: 'شوف نماذج حية ومكتوبة من واقع السوق: خطط أقماع بيع، شخصيات مشترين، ونصوص إعلانات بتخلي العميل يتفاعل ويشتري.',
+                btnShow: 'افتح وشوف نماذج البوستات 👁️',
+                btnHide: 'اقفل النماذج ✖',
+                btnCopy: 'انسخ البوست 📋',
+                toastCopied: 'تم نسخ البوست الإعلاني بنجاح! 🚀',
+                toastCv: 'جاري تحميل السيرة الذاتية الآن...',
                 projects: [
                     {
-                        id: 'samples-dental',
+                        id: 'proj-dental',
                         icon: '🦷',
-                        title: 'عيادة أسنان — حملة قمع تسويقي متكاملة',
+                        title: 'عيادة أسنان — قمع تسويقي كامل من أول البوست لحد الحجز',
                         category: 'خطة محتوى وقمع بيعي كامل (Full Marketing Funnel)',
-                        meta: 'Healthcare & Dental',
-                        desc: 'خطة محتوى متكاملة بدأت من تحليل المخاوف والاحتياجات وبناء الـ Buyer Persona للمرضى المحتملين، وصياغة بوستات متسلسلة لكل مرحلة من مراحل رحلة العميل (توعية، اهتمام، تقييم، وقرار الشراء) لزيادة حجوزات العيادة وبناء الثقة في الفريق الطبي.',
-                        pills: ['🎯 استهداف دقيق للمخاوف', '📈 مراحل TOFU - MOFU - BOFU', '💎 عروض حصرية وCTA قوي'],
+                        meta: 'طب أسنان ورعاية صحية',
+                        desc: 'خطة محتوى متفصلة على مخاوف واحتياجات المرضى، بدأنا بدراسة الـ Buyer Persona وصيغنا بوستات مخصصة لكل مرحلة (توعية، اهتمام، مقارنة وتقييم، وقرار الحجز) عشان نملى مواعيد العيادة ونبني ثقة حديد في الدكاترة.',
+                        pills: ['🎯 ضرب نقط الوجع والمخاوف', '📈 مراحل TOFU - MOFU - BOFU', '💎 عروض متتفوتش وCTA مباشر'],
                         samples: [
                             {
                                 stage: 'مرحلة الاهتمام (Consideration)',
                                 title: 'بوست: "النقطة السوداء.. حبة سمسم ولا تسوس؟"',
-                                content: `مبتصحاش من النوم تلاقي ضرسك اتكسر فجأة!\nالموضوع بيبدأ بنقطة سودا صغيرة جداً، بتفضل تقول لنفسك "دي حبة سمسم علقت في أسناني.. أو تصبغات شاي وقهوة وهتروح لوحدها".\n\nلكن الحقيقة؟ \nالنقطة دي غالباً بداية تسوس سطحي.. لو اتلحق في 10 دقايق بجلسة بسيطة وبدون أي بنج أو وجع، هتوفر على نفسك جلسات علاج عصب ومبالغ مضاعفة بعدين!\n\n💡 متأجلش صحة ضحكتك، ابعتلنا صورة النقطة دي في رسالة أو احجز كشفك واطمّن في عيادتنا.`
+                                content: `مبتصحاش من النوم تلاقي ضرسك اتكسر فجأة!\nالموضوع بيبدأ بنقطة سودا صغيرة جداً، بتفضل تقول لنفسك "دي حبة سمسم علقت في سناني.. أو تصبغات شاي وقهوة وهتروح لوحدها".\n\nلكن الحقيقة؟ \nالنقطة دي غالباً بداية تسوس سطحي.. لو اتلحق في 10 دقايق بجلسة بسيطة وبدون أي بنج أو وجع، هتوفر على نفسك جلسات علاج عصب ومبالغ مضاعفة بعدين!\n\n💡 متأجلش صحة ضحكتك، ابعتلنا صورة النقطة دي في رسالة أو احجز كشفك واطمّن في عيادتنا.`
                             },
                             {
                                 stage: 'مرحلة التقييم (Evaluation)',
@@ -1711,16 +1803,16 @@
                         ]
                     },
                     {
-                        id: 'samples-halim',
+                        id: 'proj-halim',
                         icon: '👕',
-                        title: 'براند ملابس شبابي HALIM',
-                        category: 'تحليل 4 شخصيات للجمهور ونبرة صوت مخصصة (Tone of Voice)',
-                        meta: 'Apparel & Streetwear',
-                        desc: 'دراسة معمقة لـ 4 شخصيات مختلفة من جمهور الشباب المستهدف (طلاب الجامعة، الخريجون الجدد، محبو الستايل الكاجوال المريح، والموظفون في بيئات العمل المرنة)، وتطوير نبرة صوت وسرد قصصي يلامس اهتمامات ولغة كل فئة لزيادة التفاعل والطلبات.',
-                        pills: ['👥 4 شرائح Buyer Persona', '🗣️ نبرة صوت شبابية وعصرية', '🔥 كتابة عاطفية وسرد قصصي'],
+                        title: 'براند ملابس HALIM — نبرة شبابية وسرد قصصي',
+                        category: 'تحليل 4 شخصيات للجمهور ونبرة صوت كاجوال شبابية',
+                        meta: 'أزياء وملابس كاجوال',
+                        desc: 'تشريح كامل لـ 4 شخصيات من الشباب (طلبة الجامعة، الخريجين، عشاق الراحة، وموظفي الشركات المرنة)، وكتبنا كلام يعبر عن يومهم وتفاصيلهم بلغتهم وطريقتهم عشان يحسوا إن البراند شبههم ويطلبوا فوراً.',
+                        pills: ['👥 4 شرائح Buyer Persona', '🗣️ نبرة صوت شبابية روشة', '🔥 ستوري تيلينج بيحرك المشاعر'],
                         samples: [
                             {
-                                stage: 'نبرة كاجوال لطلاب الجامعة (Casual & Energetic)',
+                                stage: 'نبرة كاجوال لطلبة الجامعة (Casual & Energetic)',
                                 title: 'بوست: "يوم إجازة من غير معاد جامعة"',
                                 content: `أحلى حاجة في يوم الإجازة.. إن المنبه مش هيرن الساعة 7 الصبح عشان تلحق سكشن 8! 😴\n\nخروجة سريعة مع الشلة؟ قهوة الصبح؟ ولا قعدة رايقة مع اللابتوب؟\nالهودي الأوفر سايز من HALIM مبيسألكش رايح فين.. بيلبس في ثانية ويديك الشياكة والراحة اللي بتدور عليها من غير تفكير.\n\nخامة قطن 100% مبطنة تدفيك ومتوبرش.. اطلبه دلوقتي وخلي دولابك جاهز للشتاء!`
                             },
@@ -1732,29 +1824,29 @@
                         ]
                     },
                     {
-                        id: 'samples-koby',
+                        id: 'proj-koby',
                         icon: '💡',
-                        title: 'شخصية المحتوى "كوبي" — Character Bible',
-                        category: 'بناء هوية شخصية براند كاملة (Brand Mascot & Persona Guide)',
-                        meta: 'Brand Identity & AI Assets',
-                        desc: 'ابتكار وبناء شخصية تسويقية متكاملة (Brand Mascot) باسم "كوبي"، لتكون الصوت المرئي والرقمي للمحتوى التعليمي والتسويقي، مما يزيد من معدلات الحفظ والألفة مع المتابعين ويسهل تبسيط المفاهيم المعقدة.',
-                        pills: ['🎭 هوية بصرية ونفسية متكاملة', '📢 شعار "معلومة في دقيقة!"', '🎨 لوحة ألوان دقيقة و6 تعبيرات وجه'],
+                        title: 'شخصية "كوبي" — دليل وهوية الماسكوت (Character Bible)',
+                        category: 'بناء شخصية وماسكوت كامل للبراند (Brand Mascot Guide)',
+                        meta: 'هوية براند ومحتوى AI',
+                        desc: 'ابتكار وبناء شخصية تسويقية متكاملة باسم "كوبي"، عشان تكون هي الصوت والوجه لكل الفيديوهات التعليمية والتسويقية للبراند، وتبسط أصعب المصطلحات التسويقية في ثواني بدون تعقيد.',
+                        pills: ['🎭 هوية وشخصية كاملة', '📢 شعار "معلومة في دقيقة!"', '🎨 6 تعبيرات وجه مرسومة بدقة'],
                         isBible: true,
                         bible: [
-                            { title: '👤 الشكل والمظهر (Visual Appearance)', desc: 'شاب مصري طموح في منتصف العشرينات (24–26 سنة)، يرتدي نظارة دائرية كلاسيكية وهودي كحلي عصري يجمع بين الاحترافية والبساطة الشبابية.' },
-                            { title: '🧠 الشخصية والنبرة (Personality & Tone)', desc: 'ذكي، سريع البديهة، دمه خفيف، يبسّط أصعب استراتيجيات التسويق والأرقام في ثوانٍ معدودة دون تعقيد أو مصطلحات جامدة.' },
-                            { title: '🏷️ التاجلاين والشعار (Catchphrase)', desc: '"معلومة في دقيقة!" — وعد دائم للمتابع بالحصول على فائدة عملية فورية ومباشرة بدون إطالة.' },
-                            { title: '🎭 تعبيرات الوجه الـ 6 (Facial Expressions)', desc: 'مكتبة كاملة تشمل: الحماس، الشرح والتوضيح، الاستغراب والفضول، التوجيه الذكي، الاحتفال بالنجاح، والتفكير الاستراتيجي.' }
+                            { title: '👤 الشكل والمظهر الخارجي', desc: 'شاب مصري طموح في منتصف العشرينات (24–26 سنة)، لابس نظارة دائرية شيك وهودي كحلي كاجوال يجمع بين الشياكة والروح الشبابية القريبة من الناس.' },
+                            { title: '🧠 الشخصية وطريقة الكلام', desc: 'ذكي، حاضر البديهة، دمه خفيف، بيبسط أعتى استراتيجيات التسويق والأرقام في ثواني معدودة من غير رغي ولا فزلكة.' },
+                            { title: '🏷️ الشعار واللازمة بتاعته', desc: '"معلومة في دقيقة!" — وعد دائم للمتابع إنه هياخد الخلاصة المفيدة علطول من غير تضييع وقت.' },
+                            { title: '🎭 تعبيرات الوش الـ 6 المعتمدة', desc: 'مكتبة تعبيرات كاملة: الحماس للبداية، الشرح والتبسيط، الاستغراب والفضول، نصيحة الكوبي رايتر الذكي، الاحتفال بالأرباح، والتفكير الاستراتيجي.' }
                         ]
                     },
                     {
-                        id: 'samples-candles',
+                        id: 'proj-candles',
                         icon: '🕯️',
-                        title: 'بزنس الشموع والكونكريت — خطة محتوى وسكربتات AI',
-                        category: 'خطة محتوى شهرية متكاملة (4 أسابيع) + سكربتات ريلز وبرومبتات VEO AI',
-                        meta: 'E-Commerce & Home Decor',
-                        desc: 'دليل عملي شامل واستراتيجية شهرية متكاملة مكتوبة بنبرة دافية وكاجوال تناسب جمهور الشموع والديكور والروقان؛ تشمل 4 شرائح عملاء (سالي بنت الروقان، مريم صاحبة الهدية، فرح العروسة، وعميل الواتساب VIP)، وجدول نشر 4 أسابيع، وسكربتات ريلز ASMR مع برومبتات توليد الفيديو بالذكاء الاصطناعي (Google Flow / VEO AI)، واستراتيجيات إغلاق المبيعات على الواتساب.',
-                        pills: ['🕯️ خطة 4 أسابيع كاملة', '🎬 سكربتات ريلز + برومبتات AI VEO', '💬 استراتيجيات مبيعات الواتساب'],
+                        title: 'بزنس الشموع والكونكريت — خطة شهر كامل وسكربتات ريلز AI',
+                        category: 'خطة محتوى شهرية (4 أسابيع) + سكربتات ريلز وبرومبتات VEO AI',
+                        meta: 'تجارة إلكترونية وديكور منزلي',
+                        desc: 'دليل عملي كامل وخطة شهرية مكتوبة بنبرة دافية ورايقة تناسب جمهور الشموع والديكور؛ فيها 4 شخصيات للجمهور، وجدول نشر 4 أسابيع، وسكربتات ريلز ASMR مع برومبتات توليد الفيديو بالـ AI، وطرق قفل الأوردرات على الواتساب.',
+                        pills: ['🕯️ خطة 4 أسابيع كاملة بالبوستات', '🎬 سكربتات ريلز + برومبتات AI VEO', '💬 تكتيكات بيع الواتساب VIP'],
                         samples: [
                             {
                                 stage: 'الأسبوع 1: الوعي والاكتشاف (Awareness & Discovery)',
@@ -1779,111 +1871,130 @@
                         ]
                     }
                 ],
-                expTag: 'المسيرة المهنية',
-                expTitle: 'خبراتي العملية وسجل الإنجازات',
-                expSubtitle: 'خبرة عملية ميدانية في بناء المحتوى، إدارة الحملات، وتحقيق نتائج تجارية حقيقية وملموسة.',
+                expTag: 'رحلتي في السوق',
+                expTitle: 'خبراتي وسجل الإنجازات على أرض الواقع',
+                expSub: 'شغل ميداني حقيقي مش نظريات.. بنيت محتوى، أدرت حملات ميتا، وحققت نتائج مبيعات ووصول بالأرقام.',
                 experiences: [
                     {
-                        role: 'كاتب محتوى تسويقي',
+                        role: 'كاتب محتوى تسويقي وإعلاني',
                         company: 'Zeva Agency (السويس)',
-                        date: 'حاليًا',
-                        desc: 'كتابة وصياغة محتوى إبداعي وتسويقي لعملاء الوكالة في قطاعات متنوعة، تطوير أفكار وسكربتات فيديو مبنية على رحلة العميل والقمع البيعي، والتعاون مع فرق التصميم والميديا باينج لضمان اتساق الرسالة التسويقية.',
+                        date: 'شغال حاليًا',
+                        desc: 'صياغة وكتابة المحتوى التسويقي والإعلاني لعملاء الوكالة في مجالات مختلفة، كتابة سكربتات فيديو بتخاطب رحلة العميل والقمع البيعي، والتنسيق المباشر مع تيم الديزاين والميديا بايرز عشان الرسالة الإعلانية تطلع مظبوطة ومقنعة.',
                         tags: ['Copywriting', 'Content Strategy', 'Creative Concepts']
                     },
                     {
-                        role: 'صانع محتوى وميديا باير (Freelance)',
+                        role: 'صانع محتوى وميديا باير فريلانسر',
                         company: 'Eleven 11 — براند ملابس رجالي',
-                        date: '2025 – حاليًا',
-                        desc: 'قيادة إدارة المحتوى والحملات الإعلانية على منصات Meta؛ تحقيق قفزة نوعية في الأداء تضمنت: زيادة الوصول بنسبة <strong>479%</strong>، نمو المتابعين من 2,600 إلى أكثر من <strong>3,000+</strong> في 28 يوماً، زيادة التفاعل بنسبة <strong>66.7%</strong>، وتوليد 16 محادثة شراء مباشرة بتكلفة اقتصادية استثنائية بلغت <strong>4.41 جنيه</strong> فقط للرسالة.',
+                        date: '2025 – شغال حاليًا',
+                        desc: 'مسكت إدارة المحتوى وحملات إعلانات Meta Ads وحققنا قفزة قوية بالأرقام: زيادة وصول الصفحة بنسبة <strong>479%</strong>، نمو المتابعين من 2,600 لأكتر من <strong>3,000+</strong> في 28 يوم بس، زيادة التفاعل <strong>66.7%</strong>، وتوليد 16 محادثة شراء مباشرة بتكلفة رسالة خرافية <strong>4.41 جنيه</strong> بس.',
                         tags: ['Meta Ads', 'Media Buying', 'E-commerce Fashion', 'Growth Tracking']
                     },
                     {
-                        role: 'إدارة وتطوير المحتوى الرقمي',
-                        company: 'Makka Store — محل موبايلات وإكسسوارات',
+                        role: 'إدارة وتطوير محتوى السوشيال ميديا',
+                        company: 'Makka Store — محلات موبايلات وإكسسوارات',
                         date: 'سابقاً',
-                        desc: 'الإشراف الكامل على صفحة تضم أكثر من <strong>3,400+ متابع</strong>، كتابة وجدولة المنشورات الترويجية والتعليمية عن أحدث الهواتف والإكسسوارات، إدارة الردود وتفاعل العملاء، ودعم وإطلاق إعلانات ميتا الممولة لزيادة المبيعات المباشرة بالمحل.',
+                        desc: 'إدارة كاملة لصفحة فيها أكتر من <strong>3,400+ متابع</strong>، كتابة وجدولة بوستات تعليمية وترويجية لأحدث الموبايلات والإكسسوارات، متابعة والرد على العملاء، وإطلاق إعلانات ميتا عشان نزود مبيعات المحل المباشرة.',
                         tags: ['Page Management', 'Customer Engagement', 'Product Copy']
                     },
                     {
-                        role: 'مشاريع استشارية وتطبيقية إضافية',
-                        company: 'مشاريع متنوعة (Freelance & Training)',
-                        date: 'متنوع',
-                        desc: 'إعداد خطط وتقاويم محتوى متخصصة لأنشطة مختلفة تشمل: عيادات طب الأسنان، محلات ومصانع الدهانات والفايبرجلاس، ومتاجر الإلكترونيات الذكية؛ مع التركيز على كتابة نصوص إعلانية موجهة للتحويل (High-Converting Copy).',
+                        role: 'استشارات وكتابة مشاريع خاصة',
+                        company: 'مشاريع فريلانس وتدريب تطبيقي',
+                        date: 'مشاريع متنوعة',
+                        desc: 'تجهيز خطط وتقاويم محتوى متخصصة لأنشطة كتيرة منها: عيادات أسنان، مصانع ومعارض دهانات وفايبر جلاس، ومحلات إلكترونيات ذكية، مع التركيز على كتابة كلام بيحول المتابع لعميل مشتري.',
                         tags: ['Multi-Industry Copy', 'Market Research', 'Consulting']
                     }
                 ],
-                contactTitle: 'عندك مشروع محتاج محتوى بيكتب كلام يبيع؟',
-                contactDesc: 'ابعتلي رسالة على واتساب وهرد عليك في أسرع وقت. خلينا نناقش فكرتك، نحلل جمهورك، ونبني مع بعض خطة محتوى تحقق أعلى مبيعات لبيزنس بتاعك!',
-                footerCredit: 'محمود محمد متولي — كاتب محتوى وكوبي رايتر © 2026',
-                footerSub: 'جميع الحقوق محفوظة | صُنع بشغف وإتقان مع WebGL 3D Particles',
-                toastCv: 'جاري تحميل السيرة الذاتية الآن...',
-                toastWa: 'جاري فتح محادثة واتساب المباشرة...'
+                ctaTitle: 'عندك براند أو بيزنس ومحتاج كلام يجيب مبيعات؟',
+                ctaDesc: 'ابعتلي رسالة دلوقتي على واتساب وهرد عليك علطول.. خلينا نقعد نحلل جمهورك، ونظبط نبرة صوت البراند، ونعمل خطة محتوى تطير بمبيعاتك للسما!',
+                footerBrand: 'محمود محمد متولي — كاتب محتوى وكوبي رايتر © 2026',
+                footerRights: 'جميع الحقوق محفوظة | اتعمل بحب وشغف وسيكولوجية إقناع'
             },
             en: {
                 langCode: 'en',
                 dir: 'ltr',
-                langBtnText: 'العربية',
-                docTitle: 'Mahmoud Mohamed Metwally | Senior Conversion Copywriter & Strategist',
-                logoText: 'Mahmoud <span class="highlight">Metwally</span>',
+                langBtnLabel: 'العربية',
+                docTitle: 'Mahmoud Mohamed Metwally | Senior Conversion Copywriter & Growth Strategist 🔥',
+                logoBrand: 'Mahmoud <span class="highlight">Metwally</span>',
                 navAbout: 'About',
+                navCalc: 'Calculator',
+                navHooks: 'Hooks',
                 navProjects: 'Projects',
                 navExperience: 'Experience',
                 navContact: 'Contact',
-                navCtaText: 'Start Project',
-                heroMotto: '⚡ From welding metal to words that connect',
-                heroName: 'Mahmoud Mohamed <span class="highlight">Metwally</span>',
-                typingPrefix: 'I am a',
-                typingWords: ['Direct-Response Copywriter ✍️', 'Conversion Copy Specialist 🔥', 'Full-Funnel Content Strategist 📈', 'High-ROI Meta Ads Scaler 🚀'],
-                heroBio: 'Content Writer & Copywriter crafting words that sell — high-impact social media content, paid ad copy, and strategic marketing funnels built on deep consumer research.',
-                badgeLocation: 'Suez, Egypt',
-                badgeCert: 'Certified by OnTrack — Content 101',
-                badgeJob: 'Content Writer at Zeva Agency',
-                btnCv: 'Download CV',
-                btnWa: 'WhatsApp Chat',
-                btnFb: 'Facebook',
-                btnIn: 'LinkedIn',
-                aboutTag: 'About Me',
-                aboutTitle: 'Who I Am & What I Bring to Your Brand',
-                aboutSubtitle: 'Great content is not just poetic phrasing; it is a proven scientific strategy that drives conversions, scales revenue, and builds genuine customer loyalty.',
+                navCtaBtn: 'Start Project',
+                heroTag: '⚡ From welding metal to crafting words that sell',
+                heroTitle: 'Mahmoud Mohamed <span class="highlight">Metwally</span>',
+                typePrefix: 'I am a',
+                typingWords: ['Direct-Response Copywriter 🔥', 'Conversion Copy Specialist ✍️', 'Full-Funnel Content Strategist 📈', 'High-ROI Meta Ads Scaler 🚀'],
+                heroDesc: 'Senior Content Writer & Copywriter crafting words that sell — high-impact social media content, Meta ad campaigns, and full-funnel strategies engineered on consumer psychology.',
+                chipLoc: 'Suez, Egypt',
+                chipCert: 'Certified by OnTrack — Content 101',
+                chipJob: 'Content Writer at Zeva Agency',
+                btnCvLabel: 'Download Resume',
+                btnWaLabel: 'Chat on WhatsApp',
+                btnFbLabel: 'Facebook',
+                btnInLabel: 'LinkedIn',
+                calcBadge: '⚡ Interactive Simulation',
+                calcTitle: 'Simulate Your Campaign Growth & ROI With Conversion Copy 📊',
+                calcSub: 'Drag the slider to preview the measurable impact of psychology-driven copywriting on your ad budget:',
+                calcSpendLabel: 'Monthly Advertising Budget:',
+                resReachLbl: 'Targeted Estimated Reach',
+                resLeadsLbl: 'Qualified Buyer Conversations',
+                resSavingsLbl: 'Optimized Cost Per Message',
+                hookBadge: '⚡ Instant Ideation Studio',
+                hookTitle: 'Instant Ad Hook Generator — Pick an Industry to Preview 🔥',
+                hookSub: 'Click your business vertical below to reveal a battle-tested attention-grabbing hook:',
+                hooksData: {
+                    dental: '"You don\'t wake up with a broken tooth overnight! It starts with a tiny dark dot you brush off as breakfast.. yet a quick 10-minute checkup saves you root canals and thousands down the road! Book your checkup and protect your smile today."',
+                    fashion: '"The best part about having a day off? Your alarm won\'t buzz at 7:00 AM for that 8:00 AM class! HALIM\'s oversized hoodie doesn\'t ask questions.. you throw it on in one second and get unmatched comfort and sharp style effortlessly."',
+                    candles: '"No matter how hectic things got outside.. the second you light this up, everything slows down. One small aesthetic touch that completely transforms your evening 💆‍♀️✨"',
+                    mobile: '"Nothing is worse than buying phone accessories that break in a week! At Makka Store, every item comes with genuine warranty to keep your tech safe 📱"',
+                    realestate: '"A home is not just four walls; it\'s where life\'s best memories happen. Explore flexible installment plans with 0% interest in prime locations 🏢"'
+                },
+                aboutTag: 'About Mahmoud',
+                aboutTitle: 'Who I Am & What I Bring to Your Business',
+                aboutSub: 'Content is not just pretty wording; it is a proven commercial strategy that drives conversions, scales revenue, and builds lasting customer loyalty.',
                 aboutNarrative: `
-                    <p>I am <strong>Mahmoud Mohamed Metwally</strong>, a strategic Content Writer & Copywriter based in Suez, Egypt. I collaborate with real brands across diverse verticals (specialized dental clinics, streetwear fashion labels, smart electronics stores, and industrial paint & fiberglass manufacturers).</p>
-                    <p>My work is built on <strong>deep audience empathy and analytical market research</strong>: from developing granular Buyer Personas and sculpting distinctive Brand Voices to architecting seamless full-funnel customer journeys (TOFU - MOFU - BOFU) utilizing conversion copywriting frameworks like FAB and PAS.</p>
-                    <p>Certified graduate of the intensive <strong>Content 101 program by OnTrack</strong> (18 hours of hands-on strategy), continuously leveling up in Meta Ads / Media Buying, campaign data analytics, and cutting-edge AI-assisted content production to maximize client ROI.</p>
+                    <p>I am <strong>Mahmoud Mohamed Metwally</strong>, a strategic Content Writer & Direct-Response Copywriter based in Suez, Egypt. I collaborate with real brands across diverse verticals (dental clinics, streetwear fashion labels, smart tech retail, and industrial fiberglass & paint manufacturers).</p>
+                    <p>My work is built on <strong>deep audience empathy and market research</strong>: from developing actionable Buyer Personas and sculpting distinctive Brand Voices to architecting seamless full-funnel customer journeys (TOFU - MOFU - BOFU) utilizing conversion frameworks like FAB and PAS.</p>
+                    <p>Certified graduate of the intensive <strong>Content 101 program by OnTrack</strong> (18 hours of hands-on strategy), continuously leveling up in Meta Ads / Media Buying, campaign analytics, and AI-assisted production workflows to maximize client ROI.</p>
                 `,
-                skillsTitle: 'Core Competencies & Toolset:',
                 skills: [
-                    'Content Writing & Direct-Response Copywriting',
-                    'Social Media Marketing Strategy',
-                    'Buyer Persona & Market Research',
-                    'Content Calendars & Editorial Planning',
-                    'Full Marketing Funnel Strategy (TOFU/MOFU/BOFU)',
-                    'Brand Voice & Tone Guidelines',
-                    'Copy Frameworks (PAS, FAB, AIDA)',
-                    'Educational & Interactive Engagement Content',
+                    'Conversion Copywriting & Direct Response',
+                    'Social Media Engagement Strategies',
+                    'Buyer Persona & Psychological Profiling',
+                    'Editorial Calendars & Campaign Planning',
+                    'Full Marketing Funnels (TOFU - MOFU - BOFU)',
+                    'Brand Voice & Tone Systemization',
+                    'Persuasive Copy Frameworks (PAS, FAB, AIDA)',
+                    'Educational & Customer Nurturing Content',
                     'Competitor Benchmarking & Gap Analysis',
-                    'Platform Mastery (Facebook, Instagram, LinkedIn)',
-                    'Canva & Canva AI Visual Ideation',
-                    'AI-Powered Workflow Prompting'
+                    'Facebook, Instagram & LinkedIn Optimization',
+                    'Canva & AI Visual Ideation',
+                    'AI Prompt Engineering for Fast Production'
                 ],
-                stats: [
-                    { rawNum: 479, prefix: '+', suffix: '%', label: 'Increase in Page Reach over 28 days' },
-                    { rawNum: 66.7, prefix: '', suffix: '%', label: 'Boost in audience engagement & shares' },
-                    { rawNum: 4.41, prefix: '', suffix: ' EGP', label: 'Ultra-low cost per sales conversation' },
-                    { rawNum: 400, prefix: '+', suffix: '', label: 'Targeted new followers in under a month' }
+                metrics: [
+                    { raw: 479, prefix: '+', suffix: '%', lbl: 'Increase in Page Reach over 28 days' },
+                    { raw: 66.7, prefix: '', suffix: '%', lbl: 'Boost in audience engagement & shares' },
+                    { raw: 4.41, prefix: '', suffix: ' EGP', lbl: 'Ultra-low cost per qualified buying conversation' },
+                    { raw: 400, prefix: '+', suffix: '', lbl: 'Targeted new followers in under a month' }
                 ],
                 projectsTag: 'Featured Work',
-                projectsTitle: 'Case Studies & Copy Samples',
-                projectsSubtitle: 'Explore real-world marketing funnel strategies, consumer persona builds, and psychology-driven conversion copy.',
-                btnShowSamples: 'View Copy Samples',
-                btnHideSamples: 'Hide Samples',
+                projectsTitle: 'Case Studies & High-Converting Copy Samples',
+                projectsSub: 'Explore real-world marketing funnel strategies, consumer persona builds, and psychology-driven conversion copy.',
+                btnShow: 'View Copy Samples 👁️',
+                btnHide: 'Hide Samples ✖',
+                btnCopy: 'Copy Ad Copy 📋',
+                toastCopied: 'Ad copy copied to clipboard! 🚀',
+                toastCv: 'Downloading resume now...',
                 projects: [
                     {
-                        id: 'samples-dental',
+                        id: 'proj-dental',
                         icon: '🦷',
-                        title: 'Dental Clinic — Full Marketing Funnel',
-                        category: 'End-to-End Patient Journey Strategy',
+                        title: 'Dental Clinic — Full Acquisition Marketing Funnel',
+                        category: 'End-to-End Patient Decision Funnel',
                         meta: 'Healthcare & Dental',
-                        desc: 'A complete content and acquisition funnel designed from patient pain points and fear triggers. Engineered sequential copy for each stage of the decision journey (Awareness, Consideration, Evaluation, and Decision) to maximize bookings and establish clinician authority.',
+                        desc: 'A complete content and acquisition funnel designed from patient pain points and fear triggers. Engineered sequential copy for each stage of the decision journey (Awareness, Consideration, Evaluation, and Decision) to maximize bookings.',
                         pills: ['🎯 Pain Point Targeting', '📈 TOFU - MOFU - BOFU Alignment', '💎 Irresistible Offers & Clear CTA'],
                         samples: [
                             {
@@ -1904,12 +2015,12 @@
                         ]
                     },
                     {
-                        id: 'samples-halim',
+                        id: 'proj-halim',
                         icon: '👕',
                         title: 'HALIM Streetwear & Youth Fashion',
                         category: '4 Buyer Personas & Tailored Tone of Voice',
                         meta: 'Apparel & Streetwear',
-                        desc: 'In-depth audience breakdown across 4 distinct customer archetypes (university students, fresh graduates, comfort-first casual wearers, and smart-casual workplace professionals). Crafted distinctive copy voices that speak directly to each segment\'s daily lifestyle.',
+                        desc: 'In-depth audience breakdown across 4 distinct customer archetypes (university students, fresh graduates, comfort-first casual wearers, and workplace professionals). Crafted distinctive copy voices that speak directly to each segment.',
                         pills: ['👥 4 Buyer Personas', '🗣️ Authentic Youth Voice', '🔥 Emotional & Storytelling Hooks'],
                         samples: [
                             {
@@ -1925,7 +2036,7 @@
                         ]
                     },
                     {
-                        id: 'samples-koby',
+                        id: 'proj-koby',
                         icon: '💡',
                         title: 'Content Mascot "Koby" — Character Bible',
                         category: 'Brand Mascot & Visual Persona Strategy',
@@ -1941,12 +2052,12 @@
                         ]
                     },
                     {
-                        id: 'samples-candles',
+                        id: 'proj-candles',
                         icon: '🕯️',
                         title: 'Scented Candles & Concrete Decor — 4-Week Playbook & AI Prompts',
                         category: 'Full Monthly Content Calendar + ASMR Video Scripts & VEO AI Prompts',
                         meta: 'E-Commerce & Home Decor',
-                        desc: 'A comprehensive, warm and lifestyle-driven 4-week content playbook crafted for an artisanal scented candle & concrete home decor brand. Built upon 4 core Buyer Personas (Aesthetic Lovers, Thoughtful Gifters, New Home Brides, and VIP Repeat Buyers), accompanied by production-ready ASMR video scripts with AI video generation prompts (Google Flow / VEO AI) and WhatsApp chat closing tactics.',
+                        desc: 'A comprehensive, warm and lifestyle-driven 4-week content playbook crafted for an artisanal scented candle & concrete home decor brand. Built upon 4 core Buyer Personas, accompanied by production-ready ASMR video scripts with AI video generation prompts, and WhatsApp chat closing tactics.',
                         pills: ['🕯️ Full 4-Week Calendar', '🎬 Video Scripts + VEO AI Prompts', '💬 WhatsApp Sales Closing'],
                         samples: [
                             {
@@ -1974,7 +2085,7 @@
                 ],
                 expTag: 'Career Journey',
                 expTitle: 'Work Experience & Proven Track Record',
-                expSubtitle: 'Hands-on field experience crafting high-converting copy, managing campaigns, and driving measurable business growth.',
+                expSub: 'Hands-on field experience crafting high-converting copy, managing campaigns, and driving measurable business growth.',
                 experiences: [
                     {
                         role: 'Marketing Content Writer',
@@ -2005,12 +2116,10 @@
                         tags: ['Multi-Industry Copy', 'Market Research', 'Consulting']
                     }
                 ],
-                contactTitle: 'Have a Project That Needs Copy That Converts?',
-                contactDesc: 'Send me a message on WhatsApp and let\'s talk. We will analyze your audience, map out your customer journey, and craft a winning content plan for your business!',
-                footerCredit: 'Mahmoud Mohamed Metwally — Content Writer & Copywriter © 2026',
-                footerSub: 'All Rights Reserved | Crafted with Passion with WebGL 3D Particles',
-                toastCv: 'Downloading CV now...',
-                toastWa: 'Opening WhatsApp chat...'
+                ctaTitle: 'Have a Project That Needs Copy That Converts?',
+                ctaDesc: 'Send me a message on WhatsApp and let\'s talk. We will analyze your audience, map out your customer journey, and craft a winning content plan for your business!',
+                footerBrand: 'Mahmoud Mohamed Metwally — Content Writer & Copywriter © 2026',
+                footerRights: 'All Rights Reserved | Crafted with Conversion Psychology'
             }
         };
 
@@ -2018,37 +2127,30 @@
         let currentTheme = localStorage.getItem('metwally_theme') || 'dark';
 
         function showToast(msg) {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = 'toast-msg';
-            toast.innerHTML = `<span>✨</span> <span>${msg}</span>`;
-            container.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(10px)';
-                toast.style.transition = '0.3s ease';
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
+            const toast = document.getElementById('toastAlert');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
         }
 
         function applyTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
             localStorage.setItem('metwally_theme', theme);
             currentTheme = theme;
+            document.getElementById('themeBtnIcon').textContent = theme === 'dark' ? '☀️' : '🌙';
         }
 
-        // Live Counter Animation
-        function animateNumbers() {
-            document.querySelectorAll('.stat-counter').forEach(el => {
-                const target = parseFloat(el.getAttribute('data-num'));
+        // Live Counting Numbers
+        function animateMetrics() {
+            document.querySelectorAll('.count-up').forEach(el => {
+                const target = parseFloat(el.getAttribute('data-target'));
                 const prefix = el.getAttribute('data-prefix') || '';
                 const suffix = el.getAttribute('data-suffix') || '';
-                const duration = 1600;
-                const startTime = performance.now();
+                const duration = 1500;
+                const start = performance.now();
 
-                function frame(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
+                function frame(now) {
+                    const progress = Math.min((now - start) / duration, 1);
                     const ease = 1 - Math.pow(1 - progress, 3);
                     const current = target * ease;
 
@@ -2065,14 +2167,14 @@
             });
         }
 
-        // Typewriter Effect
+        // Typewriter Engine
         let typewriterTimer = null;
         function initTypewriter(words) {
             if (typewriterTimer) clearTimeout(typewriterTimer);
-            const el = document.getElementById('typedText');
+            const el = document.getElementById('typeDynamic');
             let wIdx = 0, cIdx = 0, isDeleting = false, speed = 80;
 
-            function typeStep() {
+            function step() {
                 const word = words[wIdx];
                 if (isDeleting) {
                     el.textContent = word.substring(0, cIdx - 1);
@@ -2086,88 +2188,221 @@
 
                 if (!isDeleting && cIdx === word.length) {
                     isDeleting = true;
-                    speed = 1600;
+                    speed = 1800;
                 } else if (isDeleting && cIdx === 0) {
                     isDeleting = false;
                     wIdx = (wIdx + 1) % words.length;
                     speed = 300;
                 }
-                typewriterTimer = setTimeout(typeStep, speed);
+                typewriterTimer = setTimeout(step, speed);
             }
-            typeStep();
+            step();
         }
 
-        function renderLanguage(lang) {
+        // Scroll Reveal Observer & Navbar Active Highlight
+        function setupScrollObserver() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        if (entry.target.id === 'metricsGrid') {
+                            animateMetrics();
+                        }
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            reveals.forEach(el => observer.observe(el));
+        }
+
+        // 3D Card Hover Tilt Physics (Smooth & Native)
+        function init3DTiltPhysics() {
+            if (window.innerWidth < 768) return;
+            const cards = document.querySelectorAll('.tilt-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -5;
+                    const rotateY = ((x - centerX) / centerX) * 5;
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
+                    
+                    const glare = card.querySelector('.tilt-glare');
+                    if (glare) {
+                        glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.12) 0%, transparent 60%)`;
+                    }
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                });
+            });
+        }
+
+        // Background Particle Starfield
+        function initParticleCanvas() {
+            const canvas = document.getElementById('bgCanvas');
+            const ctx = canvas.getContext('2d');
+            let w, h, particles = [];
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const count = Math.min(Math.floor(window.innerWidth / 25), 45);
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    r: Math.random() * 2 + 1,
+                    alpha: Math.random() * 0.5 + 0.2
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, w, h);
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0) p.x = w;
+                    if (p.x > w) p.x = 0;
+                    if (p.y < 0) p.y = h;
+                    if (p.y > h) p.y = 0;
+
+                    ctx.fillStyle = `rgba(232, 114, 42, ${p.alpha})`;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 115) {
+                            ctx.strokeStyle = `rgba(232, 114, 42, ${(1 - dist / 115) * 0.18})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        // Full-Stack ROI Calculator Simulation Engine
+        function updateRoiCalculator(budget) {
+            const budgetVal = parseInt(budget);
+            const reach = Math.round(budgetVal * 8.5);
+            const leads = Math.round(budgetVal / 4.41);
+            
+            document.getElementById('calcBudgetValue').textContent = budgetVal.toLocaleString() + (currentLang === 'ar' ? ' ج.م' : ' EGP');
+            document.getElementById('resReach').textContent = '~' + reach.toLocaleString();
+            document.getElementById('resLeads').textContent = '~' + leads.toLocaleString();
+        }
+
+        function renderLang(lang) {
             const t = store[lang];
             if (!t) return;
 
             document.documentElement.setAttribute('lang', t.langCode);
             document.documentElement.setAttribute('dir', t.dir);
             document.title = t.docTitle;
-            document.getElementById('langBtnText').textContent = t.langBtnText;
+            document.getElementById('langBtnLabel').textContent = t.langBtnLabel;
 
             // Nav
-            document.getElementById('logoText').innerHTML = t.logoText;
+            document.getElementById('logoBrand').innerHTML = t.logoBrand;
             document.getElementById('navAbout').textContent = t.navAbout;
+            document.getElementById('navCalc').textContent = t.navCalc;
+            document.getElementById('navHooks').textContent = t.navHooks;
             document.getElementById('navProjects').textContent = t.navProjects;
             document.getElementById('navExperience').textContent = t.navExperience;
             document.getElementById('navContact').textContent = t.navContact;
-            document.getElementById('navCtaText').textContent = t.navCtaText;
+            document.getElementById('navCtaBtn').textContent = t.navCtaBtn;
 
             // Hero
-            document.getElementById('heroMotto').textContent = t.heroMotto;
-            document.getElementById('heroName').innerHTML = t.heroName;
-            document.getElementById('typingPrefix').textContent = t.typingPrefix;
-            document.getElementById('heroBio').textContent = t.heroBio;
-            document.getElementById('badgeLocation').textContent = t.badgeLocation;
-            document.getElementById('badgeCert').textContent = t.badgeCert;
-            document.getElementById('badgeJob').textContent = t.badgeJob;
-            document.getElementById('btnCvText').textContent = t.btnCv;
-            document.getElementById('btnWaText').textContent = t.btnWa;
-            document.getElementById('btnFbText').textContent = t.btnFb;
-            document.getElementById('btnInText').textContent = t.btnIn;
+            document.getElementById('heroTag').textContent = t.heroTag;
+            document.getElementById('heroTitle').innerHTML = t.heroTitle;
+            document.getElementById('typePrefix').textContent = t.typePrefix;
+            document.getElementById('heroDesc').textContent = t.heroDesc;
+            document.getElementById('chipLoc').textContent = t.chipLoc;
+            document.getElementById('chipCert').textContent = t.chipCert;
+            document.getElementById('chipJob').textContent = t.chipJob;
+            document.getElementById('btnCvLabel').textContent = t.btnCvLabel;
+            document.getElementById('btnWaLabel').textContent = t.btnWaLabel;
+            document.getElementById('btnFbLabel').textContent = t.btnFbLabel;
+            document.getElementById('btnInLabel').textContent = t.btnInLabel;
 
             initTypewriter(t.typingWords);
+
+            // Calculator
+            document.getElementById('calcBadge').textContent = t.calcBadge;
+            document.getElementById('calcTitle').textContent = t.calcTitle;
+            document.getElementById('calcSub').textContent = t.calcSub;
+            document.getElementById('calcSpendLabel').textContent = t.calcSpendLabel;
+            document.getElementById('resReachLbl').textContent = t.resReachLbl;
+            document.getElementById('resLeadsLbl').textContent = t.resLeadsLbl;
+            document.getElementById('resSavingsLbl').textContent = t.resSavingsLbl;
+
+            // Hooks
+            document.getElementById('hookBadge').textContent = t.hookBadge;
+            document.getElementById('hookTitle').textContent = t.hookTitle;
+            document.getElementById('hookSub').textContent = t.hookSub;
+            document.getElementById('hookTextDisplay').textContent = t.hooksData.dental;
+
+            // Marquee Ribbon
+            const marqueeList = [...t.skills, ...t.skills];
+            document.getElementById('marqueeTrack').innerHTML = marqueeList.map(s => `
+                <div class="marquee-pill">⚡ ${s}</div>
+            `).join('');
 
             // About
             document.getElementById('aboutTag').textContent = t.aboutTag;
             document.getElementById('aboutTitle').textContent = t.aboutTitle;
-            document.getElementById('aboutSubtitle').textContent = t.aboutSubtitle;
-            document.getElementById('aboutNarrative').innerHTML = t.aboutNarrative;
-            document.getElementById('skillsTitle').textContent = t.skillsTitle;
-            
-            document.getElementById('skillsGrid').innerHTML = t.skills.map(s => `
-                <div class="skill-pill"><span class="pill-dot"></span> ${s}</div>
-            `).join('');
+            document.getElementById('aboutSub').textContent = t.aboutSub;
+            document.getElementById('narrativeBox').innerHTML = `<div class="tilt-glare"></div>${t.aboutNarrative}`;
 
-            document.getElementById('statsGrid').innerHTML = t.stats.map(st => `
-                <div class="stat-card-box">
-                    <div class="stat-digit stat-counter" data-num="${st.rawNum}" data-prefix="${st.prefix}" data-suffix="${st.suffix}">
-                        ${st.prefix}0${st.suffix}
+            document.getElementById('metricsGrid').innerHTML = t.metrics.map(m => `
+                <div class="metric-card tilt-card">
+                    <div class="tilt-glare"></div>
+                    <div class="metric-value count-up" data-target="${m.raw}" data-prefix="${m.prefix}" data-suffix="${m.suffix}">
+                        ${m.prefix}${m.raw}${m.suffix}
                     </div>
-                    <div class="stat-label">${st.label}</div>
+                    <div class="metric-label">${m.lbl}</div>
                 </div>
             `).join('');
-
-            animateNumbers();
 
             // Projects
             document.getElementById('projectsTag').textContent = t.projectsTag;
             document.getElementById('projectsTitle').textContent = t.projectsTitle;
-            document.getElementById('projectsSubtitle').textContent = t.projectsSubtitle;
-            
+            document.getElementById('projectsSub').textContent = t.projectsSub;
+
             document.getElementById('projectsList').innerHTML = t.projects.map(p => {
                 let inner = '';
                 if (p.isBible) {
                     inner = `
-                        <div class="samples-vertical-stack">
-                            <div class="copy-sample-box">
-                                <span class="badge-stage-tag">${currentLang === 'ar' ? 'دليل الهوية الكامل' : 'Brand Mascot Guidelines'}</span>
-                                <div class="character-bible-grid">
+                        <div class="samples-container">
+                            <div class="sample-card">
+                                <span class="sample-stage-badge">${currentLang === 'ar' ? 'دليل الهوية الكامل' : 'Brand Identity'}</span>
+                                <div class="bible-grid">
                                     ${p.bible.map(b => `
-                                        <div class="bible-spec-card">
-                                            <div class="bible-spec-title">${b.title}</div>
-                                            <div class="bible-spec-text">${b.desc}</div>
+                                        <div class="bible-card">
+                                            <div class="bible-card-title">${b.title}</div>
+                                            <div class="bible-card-desc">${b.desc}</div>
                                         </div>
                                     `).join('')}
                                 </div>
@@ -2176,12 +2411,15 @@
                     `;
                 } else {
                     inner = `
-                        <div class="samples-vertical-stack">
+                        <div class="samples-container">
                             ${p.samples.map(s => `
-                                <div class="copy-sample-box">
-                                    <span class="badge-stage-tag">${s.stage}</span>
-                                    <h4 class="sample-headline">${s.title}</h4>
-                                    <div class="sample-text-code">${s.content}</div>
+                                <div class="sample-card">
+                                    <span class="sample-stage-badge">${s.stage}</span>
+                                    <h4 class="sample-title">${s.title}</h4>
+                                    <div class="sample-content-box">
+                                        <button class="btn-copy-text" onclick="copyAdText(this)">${t.btnCopy}</button>
+                                        <div class="text-to-copy">${s.content}</div>
+                                    </div>
                                 </div>
                             `).join('')}
                         </div>
@@ -2189,26 +2427,26 @@
                 }
 
                 return `
-                    <div class="project-card-interactive">
-                        <div class="project-top-row">
-                            <div class="project-title-cluster">
-                                <div class="project-icon-box">${p.icon}</div>
+                    <div class="project-item tilt-card reveal">
+                        <div class="tilt-glare"></div>
+                        <div class="project-head-row">
+                            <div class="project-icon-title">
+                                <div class="project-symbol">${p.icon}</div>
                                 <div>
-                                    <h3 class="project-heading">${p.title}</h3>
-                                    <span class="project-subhead">${p.category}</span>
+                                    <h3 class="project-name">${p.title}</h3>
+                                    <span class="project-cat">${p.category}</span>
                                 </div>
                             </div>
-                            <span class="project-pill-meta">${p.meta}</span>
+                            <span class="project-category-badge">${p.meta}</span>
                         </div>
-                        <p class="project-body-text">${p.desc}</p>
-                        <div class="project-tags-row">
-                            ${p.pills.map(tag => `<span class="tag-pill-sm">${tag}</span>`).join('')}
+                        <p class="project-desc-text">${p.desc}</p>
+                        <div class="project-pills-row">
+                            ${p.pills.map(tag => `<span class="project-pill">${tag}</span>`).join('')}
                         </div>
-                        <button class="btn-expand-samples" data-target="${p.id}">
-                            <span>${t.btnShowSamples}</span>
-                            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                        <button class="btn-toggle-samples" data-target="${p.id}">
+                            <span>${t.btnShow}</span>
                         </button>
-                        <div class="accordion-content-panel" id="${p.id}">
+                        <div class="accordion-panel" id="${p.id}">
                             ${inner}
                         </div>
                     </div>
@@ -2216,7 +2454,7 @@
             }).join('');
 
             // Accordion click handlers
-            document.querySelectorAll('.btn-expand-samples').forEach(btn => {
+            document.querySelectorAll('.btn-toggle-samples').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const targetId = btn.getAttribute('data-target');
                     const target = document.getElementById(targetId);
@@ -2224,12 +2462,10 @@
 
                     if (isOpen) {
                         target.classList.remove('open');
-                        btn.classList.remove('active');
-                        btn.querySelector('span').textContent = t.btnShowSamples;
+                        btn.querySelector('span').textContent = t.btnShow;
                     } else {
                         target.classList.add('open');
-                        btn.classList.add('active');
-                        btn.querySelector('span').textContent = t.btnHideSamples;
+                        btn.querySelector('span').textContent = t.btnHide;
                     }
                 });
             });
@@ -2237,179 +2473,134 @@
             // Experience
             document.getElementById('expTag').textContent = t.expTag;
             document.getElementById('expTitle').textContent = t.expTitle;
-            document.getElementById('expSubtitle').textContent = t.expSubtitle;
-            
-            document.getElementById('timelineBox').innerHTML = t.experiences.map(exp => `
-                <div class="timeline-row">
-                    <div class="timeline-dot-pulse"></div>
-                    <div class="timeline-card-box">
-                        <div class="timeline-head-row">
+            document.getElementById('expSub').textContent = t.expSub;
+
+            document.getElementById('timelineList').innerHTML = t.experiences.map(exp => `
+                <div class="timeline-block reveal">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-box tilt-card">
+                        <div class="tilt-glare"></div>
+                        <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-role-name">${exp.role}</h3>
-                                <span class="timeline-company-name">${exp.company}</span>
+                                <h3 class="timeline-position">${exp.role}</h3>
+                                <span class="timeline-org">${exp.company}</span>
                             </div>
-                            <span class="timeline-period-badge">${exp.date}</span>
+                            <span class="timeline-date-chip">${exp.date}</span>
                         </div>
-                        <p class="timeline-details">${exp.desc}</p>
-                        <div class="timeline-tags-flex">
-                            ${exp.tags.map(tag => `<span class="timeline-tag-item">${tag}</span>`).join('')}
+                        <p class="timeline-narrative">${exp.desc}</p>
+                        <div class="timeline-pills-flex">
+                            ${exp.tags.map(tag => `<span class="timeline-pill-item">${tag}</span>`).join('')}
                         </div>
                     </div>
                 </div>
             `).join('');
 
             // Contact
-            document.getElementById('contactTitle').textContent = t.contactTitle;
-            document.getElementById('contactDesc').textContent = t.contactDesc;
-            document.querySelectorAll('.cnt-wa').forEach(el => el.textContent = t.btnWa);
-            document.querySelectorAll('.cnt-cv').forEach(el => el.textContent = t.btnCv);
-            document.querySelectorAll('.cnt-fb').forEach(el => el.textContent = t.btnFb);
-            document.querySelectorAll('.cnt-in').forEach(el => el.textContent = t.btnIn);
+            document.getElementById('ctaTitle').textContent = t.ctaTitle;
+            document.getElementById('ctaDesc').textContent = t.ctaDesc;
+            document.querySelectorAll('.lbl-wa').forEach(el => el.textContent = t.btnWaLabel);
+            document.querySelectorAll('.lbl-cv').forEach(el => el.textContent = t.btnCvLabel);
+            document.querySelectorAll('.lbl-fb').forEach(el => el.textContent = t.btnFbLabel);
+            document.querySelectorAll('.lbl-in').forEach(el => el.textContent = t.btnInLabel);
 
             // Footer
-            document.getElementById('footerCredit').textContent = t.footerCredit;
-            document.getElementById('footerSub').textContent = t.footerSub;
+            document.getElementById('footerBrand').textContent = t.footerBrand;
+            document.getElementById('footerRights').textContent = t.footerRights;
 
             localStorage.setItem('metwally_lang', lang);
             currentLang = lang;
+
+            setupScrollObserver();
+            init3DTiltPhysics();
         }
 
-        // ==========================================================================
-        // Three.js 3D WebGL Particle Mesh Engine
-        // ==========================================================================
-        function init3DWebGLUniverse() {
-            if (typeof THREE === 'undefined') return;
-            const canvas = document.getElementById('webglCanvas');
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-            const particleCount = 180;
-            const geometry = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-
-            for (let i = 0; i < particleCount * 3; i += 3) {
-                positions[i] = (Math.random() - 0.5) * 22;
-                positions[i + 1] = (Math.random() - 0.5) * 22;
-                positions[i + 2] = (Math.random() - 0.5) * 15;
-            }
-
-            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-            const material = new THREE.PointsMaterial({
-                color: 0xe8722a,
-                size: 0.12,
-                transparent: true,
-                opacity: 0.75,
-                blending: THREE.AdditiveBlending
+        window.copyAdText = function(btn) {
+            const container = btn.closest('.sample-content-box');
+            const text = container.querySelector('.text-to-copy').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(store[currentLang].toastCopied);
             });
+        };
 
-            const particles = new THREE.Points(geometry, material);
-            scene.add(particles);
-            camera.position.z = 10;
-
-            let mouseX = 0, mouseY = 0;
-            window.addEventListener('mousemove', (e) => {
-                mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-                mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-            });
-
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-
-            function animate() {
-                requestAnimationFrame(animate);
-                particles.rotation.y += 0.0015;
-                particles.rotation.x += 0.0008;
-
-                particles.rotation.y += (mouseX * 0.15 - particles.rotation.y) * 0.05;
-                particles.rotation.x += (-mouseY * 0.15 - particles.rotation.x) * 0.05;
-
-                renderer.render(scene, camera);
-            }
-            animate();
-        }
-
-        // Initialize on load
         document.addEventListener('DOMContentLoaded', () => {
             applyTheme(currentTheme);
-            renderLanguage(currentLang);
-            init3DWebGLUniverse();
+            renderLang(currentLang);
+            initParticleCanvas();
 
-            // Lang toggle
-            document.getElementById('langToggleBtn').addEventListener('click', () => {
-                const nextLang = currentLang === 'ar' ? 'en' : 'ar';
-                renderLanguage(nextLang);
+            // Language switch
+            document.getElementById('langBtn').addEventListener('click', () => {
+                renderLang(currentLang === 'ar' ? 'en' : 'ar');
             });
 
-            // Theme toggle
-            document.getElementById('themeToggleBtn').addEventListener('click', () => {
-                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                applyTheme(nextTheme);
+            // Theme switch
+            document.getElementById('themeBtn').addEventListener('click', () => {
+                applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
             });
 
-            // Mobile menu toggle
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            mobileMenuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('mobile-menu-active');
+            // Interactive ROI Slider
+            const slider = document.getElementById('budgetSlider');
+            slider.addEventListener('input', (e) => {
+                updateRoiCalculator(e.target.value);
             });
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('mobile-menu-active');
+            // Interactive Hook Selector
+            document.querySelectorAll('.btn-ind-tab').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.btn-ind-tab').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const ind = btn.getAttribute('data-ind');
+                    const text = store[currentLang].hooksData[ind];
+                    const display = document.getElementById('hookTextDisplay');
+                    display.style.opacity = '0';
+                    display.style.transform = 'translateY(6px)';
+                    display.style.transition = '0.25s ease';
+                    setTimeout(() => {
+                        display.textContent = text;
+                        display.style.opacity = '1';
+                        display.style.transform = 'translateY(0)';
+                    }, 250);
                 });
             });
 
-            // Mouse Ambient Cursor Spotlight
-            const spotlight = document.getElementById('cursorSpotlight');
-            if (window.innerWidth > 992) {
-                window.addEventListener('mousemove', (e) => {
-                    spotlight.style.opacity = '1';
-                    spotlight.style.left = e.clientX + 'px';
-                    spotlight.style.top = e.clientY + 'px';
-                });
+            // CV Download celebration confetti
+            function triggerCvDownload() {
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 90,
+                        spread: 80,
+                        origin: { y: 0.6 },
+                        colors: ['#e8722a', '#ff853c', '#25D366', '#ffffff']
+                    });
+                }
+                showToast(store[currentLang].toastCv);
+                setTimeout(() => {
+                    const a = document.createElement('a');
+                    a.href = 'Mahmoud-Metwally-CV.pdf';
+                    a.download = 'Mahmoud-Metwally-CV.pdf';
+                    a.click();
+                }, 400);
             }
 
-            // Scroll progress & navbar
-            const progressBar = document.getElementById('scrollProgressBar');
-            const navbar = document.getElementById('navbar');
-            const btnBackToTop = document.getElementById('btnBackToTop');
+            document.getElementById('btnDownloadCv').addEventListener('click', triggerCvDownload);
+            const btnBottom = document.getElementById('btnDownloadCvBottom');
+            if (btnBottom) btnBottom.addEventListener('click', triggerCvDownload);
+
+            // Scroll Top Button & Progress Bar
+            const bar = document.getElementById('scrollBar');
+            const btnTop = document.getElementById('btnScrollTop');
 
             window.addEventListener('scroll', () => {
                 const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
                 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrolled = (winScroll / height) * 100;
-                progressBar.style.width = scrolled + '%';
+                bar.style.width = scrolled + '%';
 
-                if (winScroll > 40) navbar.classList.add('scrolled');
-                else navbar.classList.remove('scrolled');
-
-                if (winScroll > 400) btnBackToTop.classList.add('show');
-                else btnBackToTop.classList.remove('show');
+                if (winScroll > 400) btnTop.classList.add('show');
+                else btnTop.classList.remove('show');
             });
 
-            btnBackToTop.addEventListener('click', () => {
+            btnTop.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // CV Download Confetti Celebration
-            document.getElementById('btnDownloadCv').addEventListener('click', () => {
-                if (typeof confetti === 'function') {
-                    confetti({
-                        particleCount: 85,
-                        spread: 70,
-                        origin: { y: 0.6 },
-                        colors: ['#e8722a', '#ff8e47', '#25D366', '#ffffff']
-                    });
-                }
-                showToast(store[currentLang].toastCv);
             });
         });
     </script>
