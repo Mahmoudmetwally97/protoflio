@@ -1658,6 +1658,29 @@
         }
 
         @media (max-width: 768px) {
+            .navbar {
+                height: 56px;
+            }
+            .navbar-content {
+                padding: 0 10px;
+                gap: 6px;
+            }
+            .logo {
+                font-size: 1.05rem;
+                gap: 6px;
+            }
+            .logo-badge {
+                width: 28px;
+                height: 28px;
+                font-size: 0.95rem;
+            }
+            .btn-nav-cta {
+                display: none !important;
+            }
+            .icon-btn {
+                padding: 5px 9px;
+                font-size: 0.76rem;
+            }
             .studio-grid, .bible-grid, .metrics-grid, .calc-results-grid {
                 grid-template-columns: 1fr;
             }
@@ -2266,17 +2289,20 @@
                 hookTitle: 'مولد الهوكات البيعية الفوري — اكتب مجالك وشوف السحر 🔥',
                 hookSub: 'اكتب اسم البيزنس أو المنتج اللي بتقدمه، وشوف 3 زوايا إعلانية نفسية تخطف العميل فوراً مع إمكانية التقييم والطلب المباشر:',
                 hookInputPlaceholder: 'اكتب مجالك أو منتجك.. مثلاً: كورس إنجليزي، مطعم برجر، عبايات، جيم، عيادة، عقارات...',
-                hookBtnGenerate: '⚡ ولّد هوكات بيزنسي',
                 hookPresets: [
                     { id: 'dental', label: '🦷 عيادة أسنان', query: 'عيادة أسنان وتجميل' },
-                    { id: 'fashion', label: '👕 براند ملابس شبابي', query: 'براند ملابس وهوديز' },
+                    { id: 'derma', label: '✨ جلدية وليزر', query: 'عيادة جلدية وليزر' },
+                    { id: 'fashion', label: '👕 براند ملابس', query: 'براند ملابس وهوديز' },
+                    { id: 'shoes', label: '👟 أحذية وسنيكرز', query: 'محل أحذية وسنيكرز' },
                     { id: 'food', label: '🍔 مطاعم وبرجر', query: 'مطعم أكل وبرجر' },
-                    { id: 'courses', label: '📚 كورسات وتعليم', query: 'كورس إنجليزي وتطوير' },
-                    { id: 'gym', label: '🏋️‍♂️ جيم وفيتنس', query: 'جيم وتخسيس وفيتنس' },
-                    { id: 'beauty', label: '💄 ميكب وتجميل', query: 'ميكب وعناية بالبشرة' },
+                    { id: 'courses', label: '📚 كورسات وإنجليزي', query: 'كورس إنجليزي وتطوير' },
+                    { id: 'gym', label: '🏋️‍♂️ جيم وفتنس', query: 'جيم وتخسيس وفتنس' },
+                    { id: 'beauty', label: '💄 ميكب وعناية', query: 'ميكب وعناية بالبشرة' },
                     { id: 'mobile', label: '📱 موبايلات وإلكترونيات', query: 'موبايلات وإكسسوارات' },
                     { id: 'realestate', label: '🏢 عقارات وتشطيبات', query: 'شقق وعقارات واستثمار' },
-                    { id: 'candles', label: '🕯️ ديكور وشموع', query: 'شموع وديكور منزلي' }
+                    { id: 'candles', label: '🕯️ شموع وديكور', query: 'شموع وديكور منزلي' },
+                    { id: 'cars', label: '🚗 سيارات وتلميع', query: 'مركز سيارات وكماليات' },
+                    { id: 'furniture', label: '🛋️ أثاث ومفروشات', query: 'معرض أثاث ومفروشات' }
                 ],
                 expTag: 'رحلتي في السوق',
                 expTitle: 'خبراتي وسجل الإنجازات على أرض الواقع',
@@ -2498,14 +2524,18 @@
                 hookBtnGenerate: '⚡ Generate My Hooks',
                 hookPresets: [
                     { id: 'dental', label: '🦷 Dental Clinics', query: 'Dental & Cosmetic Clinic' },
-                    { id: 'fashion', label: '👕 Streetwear Brand', query: 'Hoodies & Streetwear Brand' },
+                    { id: 'derma', label: '✨ Derma & Laser', query: 'Derma & Skincare Clinic' },
+                    { id: 'fashion', label: '👕 Streetwear Brand', query: 'Streetwear & Hoodies Brand' },
+                    { id: 'shoes', label: '👟 Shoes & Sneakers', query: 'Sneakers & Shoes Store' },
                     { id: 'food', label: '🍔 Burger & Dining', query: 'Gourmet Burger Restaurant' },
                     { id: 'courses', label: '📚 Online Courses', query: 'English & Career Coaching' },
                     { id: 'gym', label: '🏋️‍♂️ Fitness & Gym', query: 'Gym & Personal Training' },
-                    { id: 'beauty', label: '💄 Cosmetics & Skincare', query: 'Skincare & Beauty Clinic' },
+                    { id: 'beauty', label: '💄 Beauty & Makeup', query: 'Makeup & Cosmetics Store' },
                     { id: 'mobile', label: '📱 Tech & Gadgets', query: 'Smartphones & Tech Accessories' },
-                    { id: 'realestate', label: '🏢 Real Estate', query: 'Prime Real Estate & Living' },
-                    { id: 'candles', label: '🕯️ Candles & Decor', query: 'Handmade Scented Candles' }
+                    { id: 'realestate', label: '🏢 Real Estate', query: 'Prime Real Estate & Finishing' },
+                    { id: 'candles', label: '🕯️ Candles & Decor', query: 'Handmade Scented Candles' },
+                    { id: 'cars', label: '🚗 Auto & Detailing', query: 'Auto Detailing & Accessories' },
+                    { id: 'furniture', label: '🛋️ Modern Furniture', query: 'Modern Furniture & Home' }
                 ],
                 expTag: 'Career Journey',
                 expTitle: 'Work Experience & Proven Track Record',
@@ -2746,14 +2776,20 @@
         // ==========================================================================
         // SMART NLP PARSER (Extracts Niche & Brand Name from Natural Language Input)
         // ==========================================================================
+        // ==========================================================================
+        // SMART NLP PARSER (Extracts Niche & Brand Name from Natural Language Input)
+        // ==========================================================================
         function parseBusinessAndNiche(rawInput, lang) {
-            const isAr = (lang === 'ar');
             let text = (rawInput || '').trim();
+            const hasArabicLetters = /[\u0600-\u06FF]/.test(text);
+            const isAr = hasArabicLetters || (lang === 'ar');
+
             if (!text) {
                 return {
                     brandName: isAr ? 'البيزنس بتاعك' : 'your business',
                     niche: 'general',
-                    nicheLabel: isAr ? 'نشاط تجاري عام' : 'General Business'
+                    nicheLabel: isAr ? 'نشاط تجاري عام' : 'General Business',
+                    isArabicInput: isAr
                 };
             }
 
@@ -2761,46 +2797,61 @@
             let nicheLabel = isAr ? 'نشاط تجاري عام' : 'General Business';
             const lower = text.toLowerCase();
 
-            // 1. Detect Niche Category
+            // 1. Detect Niche Category (13 Distinct Industries)
             if (/أسنان|اسنان|dental|doctor|طبيب|عياد|تقويم|زراعة|تبييض/i.test(lower)) {
                 detectedNiche = 'dental';
                 nicheLabel = isAr ? 'عيادات الأسنان والطب' : 'Dental & Healthcare';
-            } else if (/ملابس|هودي|fashion|لبس|عبايات|عباية|قميص|streetwear|أزياء|ازياء|شوز|بوتيك|طرح|سويت شيرت|كولكشن|فساتين|بدل|تيشيرت|جينز/i.test(lower)) {
+            } else if (/جلدية|ليزر|تجميل|فيلر|بوتوكس|بشرة|هيدرافيشل|derma|laser|clinic|نضارة/i.test(lower)) {
+                detectedNiche = 'derma';
+                nicheLabel = isAr ? 'الجلدية والليزر والتجميل' : 'Derma & Skincare Clinic';
+            } else if (/أحذية|احذية|شوزات|شوز|سنيكرز|كوتشيات|كوتشي|shoes|sneakers|صنادل/i.test(lower)) {
+                detectedNiche = 'shoes';
+                nicheLabel = isAr ? 'الأحذية والسنيكرز' : 'Shoes & Sneakers';
+            } else if (/ملابس|هودي|هوديز|fashion|لبس|عبايات|عباية|قميص|streetwear|أزياء|ازياء|بوتيك|طرح|سويت شيرت|كولكشن|فساتين|بدل|تيشيرت|جينز|ملبوسات|هدوم/i.test(lower)) {
                 detectedNiche = 'fashion';
                 nicheLabel = isAr ? 'الملابس والأزياء' : 'Fashion & Streetwear';
-            } else if (/مطعم|برجر|أكل|اكل|food|burger|كافيه|شاورما|بيتزا|حلويات|مشويات|ساندوتش|وجبات|كريب|عصير|فراخ/i.test(lower)) {
+            } else if (/مطعم|برجر|أكل|اكل|food|burger|كافيه|شاورما|بيتزا|حلويات|مشويات|ساندوتش|وجبات|كريب|عصير|فراخ|مشاوي|مشروبات|أكلات/i.test(lower)) {
                 detectedNiche = 'food';
                 nicheLabel = isAr ? 'المطاعم والأغذية' : 'Food & Dining';
-            } else if (/كورس|تعليم|إنجليزي|انجليزي|course|english|تدريب|أكاديم|اكاديم|لغات|برمجة|تسويق|دورة|مستر/i.test(lower)) {
+            } else if (/كورس|تعليم|إنجليزي|انجليزي|course|english|تدريب|أكاديم|اكاديم|لغات|برمجة|تسويق|دورة|مستر|سنتر تعليم/i.test(lower)) {
                 detectedNiche = 'courses';
                 nicheLabel = isAr ? 'الكورسات والتعليم' : 'Courses & Education';
-            } else if (/جيم|فتنس|تخسيس|دايت|gym|fitness|عضلات|تمرين|مدرب|لياقة|كمال أجسام/i.test(lower)) {
+            } else if (/جيم|فتنس|تخسيس|دايت|gym|fitness|عضلات|تمرين|مدرب|لياقة|كمال أجسام|كروس فيت/i.test(lower)) {
                 detectedNiche = 'gym';
                 nicheLabel = isAr ? 'الجيم والفتنس' : 'Gym & Fitness';
-            } else if (/موبايل|موبايلات|إلكترونيات|الكترونيات|هواتف|phone|tech|آيفون|ايفون|سامسونج|لابتوب/i.test(lower)) {
+            } else if (/ميكب|مكياج|عناية|كوزمتكس|makeup|beauty|سيروم|شعر|برفيوم|عطور|مستحضرات/i.test(lower)) {
+                detectedNiche = 'beauty';
+                nicheLabel = isAr ? 'الميكب والعناية والتجميل' : 'Beauty & Cosmetics';
+            } else if (/موبايل|موبايلات|إلكترونيات|الكترونيات|هواتف|phone|tech|آيفون|ايفون|سامسونج|لابتوب|صيانة موبايل/i.test(lower)) {
                 detectedNiche = 'tech';
                 nicheLabel = isAr ? 'الموبايلات والإلكترونيات' : 'Tech & Gadgets';
-            } else if (/عقار|عقارات|شقق|شقة|فلل|فيلا|كمبوند|تشطيب|ديكور|real estate/i.test(lower)) {
+            } else if (/عقار|عقارات|شقق|شقة|فلل|فيلا|كمبوند|تشطيب|ديكور|real estate|استثمار عقاري/i.test(lower)) {
                 detectedNiche = 'realestate';
                 nicheLabel = isAr ? 'العقارات والتشطيبات' : 'Real Estate';
-            } else if (/شمع|شموع|candles|ديكور منزلي|كونكريت/i.test(lower)) {
+            } else if (/شمع|شموع|candles|ديكور منزلي|كونكريت|فخار/i.test(lower)) {
                 detectedNiche = 'candles';
                 nicheLabel = isAr ? 'الشموع والديكور' : 'Candles & Decor';
+            } else if (/سيارات|سيارة|عربيات|عربية|تلميع|نانو سيراميك|كماليات|صيانة سيارات|auto|cars/i.test(lower)) {
+                detectedNiche = 'cars';
+                nicheLabel = isAr ? 'السيارات والكماليات' : 'Cars & Auto Detailing';
+            } else if (/أثاث|اثاث|مفروشات|صالون|انتريه|غرف نوم|مطابخ|furniture/i.test(lower)) {
+                detectedNiche = 'furniture';
+                nicheLabel = isAr ? 'الأثاث والمفروشات' : 'Furniture & Living';
             }
 
             // 2. Extract Clean Brand Name using Smart Pattern Recognition
             let extractedBrand = text;
 
             // Pattern A: "براند ملابس واسمه زارا" or "محل برجر اسمه برجر فاكتوري" or "باسم كذا"
-            const nameKeywordsRegex = /(?:واسمه|واسمها|واسمهن|اسمه|اسمها|باسم|بإسم|اسم البراند|اسم المحل|اسم الصفحة|اسم العيادة|اسم المطعم|اسم الكورس|اسم الشركة|اسم البوتيك|called|named|brand name is|named as)\s+[:\-]?\s*(.+)/i;
+            const nameKeywordsRegex = /(?:واسمه|واسمها|واسمهن|اسمه|اسمها|باسم|بإسم|اسم البراند|اسم المحل|اسم الصفحة|اسم العيادة|اسم المطعم|اسم الكورس|اسم الشركة|اسم البوتيك|اسم المعرض|اسم السنتر|called|named|brand name is|named as)\s+[:\-]?\s*(.+)/i;
             const match = text.match(nameKeywordsRegex);
 
             if (match && match[1]) {
                 extractedBrand = match[1].trim();
             } else {
-                // Pattern B: Strip conversational and descriptive prefix noise (e.g., "براند ملابس زارا" -> "زارا")
+                // Pattern B: Strip leading conversational & descriptive noise words even without "براند"
                 let cleaned = text;
-                cleaned = cleaned.replace(/^(?:براند|محل|صفحة|شركة|أكاديمية|اكاديمية|ستور|متجر|وكالة|عيادة|مركز|مطعم|كافيه|مشروع|خدمة|كورس|برنامج|بوتيك)\s+(?:ملابس|أزياء|ازياء|برجر|أكل|اكل|شاورما|بيتزا|أسنان|اسنان|إنجليزي|انجليزي|فتنس|تخسيس|جيم|موبايلات|عقارات|شموع)?\s*/i, '');
+                cleaned = cleaned.replace(/^(?:براند|محل|صفحة|شركة|أكاديمية|اكاديمية|ستور|متجر|وكالة|عيادة|مركز|مطعم|كافيه|مشروع|خدمة|كورس|برنامج|بوتيك|سنتر|معرض|مصنع|براندات)?\s*(?:ملابس|أزياء|ازياء|عبايات|عباية|هوديز|هودي|أحذية|احذية|شوزات|شوز|سنيكرز|برجر|أكل|اكل|طعام|شاورما|بيتزا|أسنان|اسنان|جلدية|ليزر|تجميل|دكتور|طبيب|إنجليزي|انجليزي|فتنس|تخسيس|دايت|جيم|موبايل|موبايلات|إلكترونيات|الكترونيات|هواتف|عقارات|عقار|شقق|تشطيب|تشطيبات|شموع|شمع|ديكور|ميكب|مكياج|عناية|كوزمتكس|سيارات|عربيات|أثاث|اثاث|مفروشات)\s+/i, '');
                 
                 if (cleaned.trim().length > 1) {
                     extractedBrand = cleaned.trim();
@@ -2811,19 +2862,20 @@
             extractedBrand = extractedBrand.replace(/^["'(\[«]+|["')\]»]+$/g, '').trim();
 
             // Safety fallback if cleaned text was purely a generic category word
-            if (!extractedBrand || /^(ملابس|برجر|أسنان|كورس|جيم|أكل|طعام|أزياء|عقارات|موبايلات)$/i.test(extractedBrand)) {
+            if (!extractedBrand || /^(ملابس|برجر|أسنان|كورس|جيم|أكل|طعام|أزياء|عقارات|موبايلات|أحذية|جلدية|سيارات|أثاث)$/i.test(extractedBrand)) {
                 extractedBrand = text;
             }
 
             return {
                 brandName: extractedBrand,
                 niche: detectedNiche,
-                nicheLabel: nicheLabel
+                nicheLabel: nicheLabel,
+                isArabicInput: isAr
             };
         }
 
         // ==========================================================================
-        // SMART DYNAMIC HOOK GENERATOR ENGINE (Multi-Niche & Brand-Injected)
+        // SMART DYNAMIC HOOK GENERATOR ENGINE (13 Rich Multi-Variant Niches)
         // ==========================================================================
         let lastActiveTopic = 'عيادات الأسنان';
 
@@ -2841,8 +2893,8 @@
         }
 
         function generateHooksForTopic(topic, lang) {
-            const isAr = (lang === 'ar');
             const parsed = parseBusinessAndNiche(topic, lang);
+            const isAr = parsed.isArabicInput;
             const brandName = parsed.brandName;
             const niche = parsed.niche;
 
@@ -2875,7 +2927,6 @@
                 const f = getRandomItem(fears);
                 const c = getRandomItem(curiosities);
                 const o = getRandomItem(offers);
-
                 return [
                     { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
                     { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
@@ -2883,7 +2934,40 @@
                 ];
             }
 
-            // 2. Fashion, Clothing & Streetwear
+            // 2. Derma, Laser & Skincare Clinics
+            if (niche === 'derma') {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية حروق وتجارب الليزر (Safe Treatment)', text: `"بتخافي من جلسات الليزر عشان الحروق والغمقان؟ في (${brandName}) بنستخدم أحدث أجهزة الليزر البارد المزودة بخاصية التبريد المزدوج لجلسة مريحة بدون أي ألم!"` },
+                    { label: '⚠️ زاوية الفلوس الضايعة على كريمات بدون فايدة (Wasted Creams)', text: `"صرفتي آلاف على كريمات التفتيح وحبوب الشباب ومفيش نتيجة؟ مع أطباء (${brandName}) خطة علاج سريرية بتعالج جذر المشكلة في 4 أسابيع بس."` }
+                ] : [
+                    { label: '⚠️ Treatment Safety Angle', text: `"Worried about laser burns or post-session dark spots? (${brandName}) uses dual-cooling cryo technology for 100% painless, safe sessions."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '💡 زاوية نضارة فورية قبل المناسبة (Instant Glow Story)', text: `"عندك مناسبة مهمة ومحتاجة بشرتك تكون منورة وبتلمع؟ جلسة الهيدرافيشل الملكي + ماسك الذهب في (${brandName}) بتنضف المسام بعمق وتديكي نضارة فلتر في 45 دقيقة!"` },
+                    { label: '🧠 زاوية كسر الخرافات (Contrarian Skincare)', text: `"مشكلتك مش إن بشرتك مبتقبلش علاج.. مشكلتك إن المسام مقفولة بالدهون والجلد الميت! في (${brandName}) بنعيد تهيئة حاجز البشرة ببروتوكول طبي معتمد."` }
+                ] : [
+                    { label: '💡 Instant Glow Angle', text: `"Have a big event coming up? (${brandName}) Royal Hydrafacial deep cleanses pores to deliver camera-ready glass skin in 45 minutes."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية باقة النضارة الشاملة (Full Glow Offer)', text: `"عرض روقان البشرة من (${brandName}): جلسة هيدرافيشل + ليزر كربوني + توريد شفايف بخصم 50% لأول 15 حجز هذا الأسبوع! ابعتي رسالة واحجزي جلستك."` },
+                    { label: '🔥 زاوية الكشف والاستشارة المجانية (Free Derma Audit)', text: `"احجزي كشف الجلدية وفحص البشرة بجهاز الـ 3D مجاناً تماماً في (${brandName}) واعرفي الروتين المناسب لبشرتك!"` }
+                ] : [
+                    { label: '🔥 Complete Glow Bundle', text: `"Hydrafacial + Carbon Laser + Lip Hydration at 50% OFF at (${brandName}) for the first 15 bookings this week!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+                return [
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
+                ];
+            }
+
+            // 3. Fashion, Clothing & Streetwear
             if (niche === 'fashion') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية إهدار الفلوس والوبر (Quality & Longevity)', text: `"مفيش أسوأ من إنك تشتري هودي شيك وبعد أول غسلة تلاقيه وبر وخامته كشت! في (${brandName}) بنصنع قطن 100% مبطن مبيغيرش لونه ولا بيوبر حتى بعد 100 غسلة."` },
@@ -2909,7 +2993,6 @@
                 const f = getRandomItem(fears);
                 const c = getRandomItem(curiosities);
                 const o = getRandomItem(offers);
-
                 return [
                     { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
                     { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
@@ -2917,7 +3000,40 @@
                 ];
             }
 
-            // 3. Food, Dining & Cafes
+            // 4. Shoes & Sneakers
+            if (niche === 'shoes') {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية وجع الضهر والشوز الناشف (Orthopedic & Comfort)', text: `"بتلبس سنيكرز شكله حلو بس بعد ساعتين مشي رجلك وضهرك بيوجعوك؟ في (${brandName}) بنصنع نعل فوم طبي مرن بيمتص الصدمات ويخليك تمشي طول اليوم كأنك ماشي عالهوا!"` },
+                    { label: '⚠️ زاوية الشوز اللي بيقشر ويفك (Durability & Glue)', text: `"أكبر غيظ إنك تدفع مبلغ في كوتشي وتلاقيه فك من الجنب بعد أسبوعين! كوتشيات (${brandName}) خياطة دبل وتقفيل ليزر بضمان استبدال حقيقي 6 شهور."` }
+                ] : [
+                    { label: '⚠️ Foot Pain & Comfort Trigger', text: `"Tired of aesthetic shoes that kill your feet after two hours? (${brandName}) engineered orthopedic air-foam soles cushion every step."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '💡 زاوية ماتشينج الطقم الكامل (Outfit Complete Story)', text: `"الطقم الشيك ميكملش من غير سنيكرز يظبط الستايل! كولكشن (${brandName}) الجديد مصمم ليكون القطعة الأساسية اللي تليق على كل بنطلون وهودي في دولابك."` },
+                    { label: '🧠 زاوية الخامات الأصلية (Premium Build)', text: `"الفرق بين الكوتشي العادي وكوتشيات (${brandName}) هو الجلد الطبيعي المقاوم للماء والتنفس الداخلي اللي بيمنع أي روائح طول اليوم."` }
+                ] : [
+                    { label: '💡 Sneakerhead Style Angle', text: `"The perfect outfit demands the right footwear. (${brandName}) sneakers bridge athletic comfort with versatile street style."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية عرض الشوزين والشحن (Two Pairs Offer)', text: `"عرض الشارع من (${brandName}): اطلب أي شوزين وخد خصم 30% وشحن مجاني ومعاهم 3 أزواج شرابات قطن هدية! اطلب مقاسك دلوقتي."` },
+                    { label: '🔥 زاوية المعاينة قبل الاستلام (Zero-Risk Try On)', text: `"اطلب من (${brandName}) وعاين وقيس الشوز مع المندوب قبل ما تدفع جنيه واحد! لو المقاس مظبطش بنبدله فوراً مجاناً."` }
+                ] : [
+                    { label: '🔥 Double Sneaker Deal', text: `"Order any 2 pairs from (${brandName}) and get 30% OFF plus free express shipping today!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+                return [
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
+                ];
+            }
+
+            // 5. Food, Dining & Cafes
             if (niche === 'food') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية الجوع وخيبة الأمل (Cravings & Freshness)', text: `"لما تكون ميت من الجوع بعد يوم شغل طويل.. آخر حاجة محتاجها ساندوتش ناشف أو دليفري بارد! في (${brandName}) الأكل بيطلع فريش وسايح وبيوصلك سخن مولع."` },
@@ -2943,7 +3059,6 @@
                 const f = getRandomItem(fears);
                 const c = getRandomItem(curiosities);
                 const o = getRandomItem(offers);
-
                 return [
                     { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
                     { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
@@ -2951,7 +3066,7 @@
                 ];
             }
 
-            // 4. Courses, Coaching & Education
+            // 6. Courses, Coaching & Education
             if (niche === 'courses') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية ضياع الفرص والإنترفيو (Career Loss Anxiety)', text: `"مفيش إحساس أصعب من إنك تترفض في إنترفيو مرتبه بالدولار عشان لسانك تقيل في الإنجليزي! في (${brandName}) بنعلمك تفكر بالإنجليزي وتتكلم بطلاقة في 60 يوم."` },
@@ -2977,7 +3092,6 @@
                 const f = getRandomItem(fears);
                 const c = getRandomItem(curiosities);
                 const o = getRandomItem(offers);
-
                 return [
                     { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
                     { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
@@ -2985,7 +3099,7 @@
                 ];
             }
 
-            // 5. Gym, Fitness & Nutrition
+            // 7. Gym, Fitness & Nutrition
             if (niche === 'gym') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية إحباط الدايت والملل (Frustration Trigger)', text: `"مفيش أصعب من إنك تمنع نفسك من الأكل ومفيش نتيجة على الميزان! مع كباتن (${brandName}) هتاخد خطة تمرين وتغذية متفصلة على جيناتك بتجيب نتايج من أول أسبوعين."` },
@@ -3011,7 +3125,6 @@
                 const f = getRandomItem(fears);
                 const c = getRandomItem(curiosities);
                 const o = getRandomItem(offers);
-
                 return [
                     { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
                     { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
@@ -3019,7 +3132,40 @@
                 ];
             }
 
-            // 6. Tech, Gadgets & Smartphones
+            // 8. Makeup & Beauty Cosmetics
+            if (niche === 'beauty') {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية الميكب المضروب وحبوب البشرة (Original vs Fake)', text: `"مفيش أصعب من إنك تشتري فاونديشن أو روج وبعد يومين تلاقي بشرتك طالع فيها حبوب وتحسس! في (${brandName}) كل المنتجات أصلية 100% بالباركود الدولي وضمان استرجاع كامل."` },
+                    { label: '⚠️ زاوية الميكب اللي بيجير ويسيح في الحر (Melting Makeup)', text: `"تعبتي من الفاونديشن اللي بيجير ويسيح بعد ساعتين في الحر؟ مع مثبتات وميكب (${brandName}) المات المقاوم للرطوبة، لوكك هيفضل ثابت 16 ساعة كأنه لسه معمول!"` }
+                ] : [
+                    { label: '⚠️ 100% Authentic Guarantee', text: `"Stop risking skin breakouts from counterfeit cosmetics! (${brandName}) guarantees 100% authentic original products with verification codes."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '💡 زاوية النو ميكب لوك (No-Makeup Makeup)', text: `"سر الـ Clean Girl Look اللي كل البنات بتسأل عليه: مش كتر طبقات.. السر في تنت ومرطب (${brandName}) اللي بيديكي نضارة ولون طبيعي وصحي بدون أي مجهود!"` },
+                    { label: '🧠 زاوية بدائل البراندات العالمية (Smart Dupe)', text: `"ليه تدفعي 3000 جنيه في براند عالمي لما في (${brandName}) وفرنالك نفس الماتريال والثبات ونفس درجات الألوان بس بربع التكلفة؟"` }
+                ] : [
+                    { label: '💡 Clean Girl Aesthetic Angle', text: `"Master the effortless glow with (${brandName}) natural tints and hydrating serums that elevate your everyday routine."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية بوكس الجمال المتكامل (Beauty Bundle)', text: `"بوكس الدلع من (${brandName}): (باليت شادو + 2 روج مات + تنت طبيعي + بيوتي بلندر أصلية) بخصم 45% وشحن مجاني! اطلبيه دلوقتي قبل نفاد الكمية."` },
+                    { label: '🔥 زاوية هدية مع كل أوردر (Free Gift Offer)', text: `"اطلبي أي منتجين من (${brandName}) النهاردة وتاخدي معاهم ليب جلوس هيدريتنج هدية مجانية فورية!"` }
+                ] : [
+                    { label: '🔥 Complete Beauty Bundle', text: `"Claim (${brandName}) Ultimate Glam Box at 45% OFF with free express delivery today!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+                return [
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
+                ];
+            }
+
+            // 9. Tech, Gadgets & Smartphones
             if (niche === 'tech') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية الخوف من المقلب والصيانة (Fake & Refurbished Fear)', text: `"أكبر مقلب تشربه وأنت بتشتري جهاز إن الشاشة تكون متغيرة أو البطارية ملعوب فيها! في (${brandName}) كل جهاز بيعدي على فحص شامل من 35 نقطة مع ضمان استبدال حقيقي."` }
@@ -3042,7 +3188,6 @@
                 const f = getRandomItem(fears);
                 const c = getRandomItem(curiosities);
                 const o = getRandomItem(offers);
-
                 return [
                     { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
                     { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
@@ -3050,7 +3195,131 @@
                 ];
             }
 
-            // 7. Universal Dynamic Fallback (Explicitly Brand-Injected)
+            // 10. Real Estate & Finishing
+            if (niche === 'realestate') {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية حرق الفلوس وتأخير الاستلام (Delay & Loss)', text: `"مفيش كابوس أصعب من إنك تدفع تحويشة عمرك في شقة وتلاقي المطور مأخر الاستلام سنتين! مع مستشاري (${brandName}) بنرشحلك مشاريع موثوقة بعقود استلام قانونية وصارمة."` },
+                    { label: '⚠️ زاوية فوضى وصداع التشطيب (Finishing Stress)', text: `"شايل هم الصنايعية والأسعار اللي بتزيد كل يوم؟ في (${brandName}) بنستلم شقتك على الطوب ونسلمهالك على المفتاح بأعلى معايير التشطيب الفندقي في الميعاد المحدد."` }
+                ] : [
+                    { label: '⚠️ Delivery & Safety Trigger', text: `"Protect your life savings from untrustworthy developers. (${brandName}) guides you strictly to top-tier projects with guaranteed on-time delivery."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '💡 زاوية العائد الاستثماري الحقيقي (High ROI Story)', text: `"ليه المستثمرين الأذكياء بيشتروا في (${brandName}) قبل طرح المرحلة الجديدة؟ لأن الشراء بسعر اللونش بيكسبك 35% زيادة في قيمة العقار قبل أول قسط!"` },
+                    { label: '🧠 زاوية امتلاك فيلا بسعر شقة (Smart Space)', text: `"بدل ما تدفع كل فلوسك في شقة تقليدية.. شوف إزاي تصميمات (${brandName}) بتديك مساحات دوبلكس مع جاردن خاصة بنفس نظام السداد المريح."` }
+                ] : [
+                    { label: '💡 Launch Equity Angle', text: `"Discover why elite investors buy into (${brandName}) at ground-zero launch pricing to secure 35%+ immediate equity."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية أطول فترة سداد ومقدم بسيط (Flexible Payment)', text: `"امتلك وحدتك الفاخرة مع (${brandName}) بمقدم 10% فقط وتقسيط مريح يصل حتى 8 سنوات بدون فوائد! كلمنا واحجز وحدتك."` },
+                    { label: '🔥 زاوية الاستشارة العقارية المجانية (Free Real Estate Audit)', text: `"ابعتلنا ميزانيتك دلوقتي مع (${brandName}) وهنعملك دراسة جدوى استثمارية مجانية لأفضل 3 مشاريع تضاعف قيمة فلوسك!"` }
+                ] : [
+                    { label: '🔥 Flexible Payment Offer', text: `"Own your premium unit with (${brandName}) at only 10% down and up to 8 years flexible interest-free installments!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+                return [
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
+                ];
+            }
+
+            // 11. Candles & Home Decor
+            if (niche === 'candles') {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية الشمع اللي ملوش ريحة (Scent Throw Fear)', text: `"مفيش أسوأ من إنك تشتري شمعة شكلها شيك وأول ما تولعيها متشميش أي ريحة! في (${brandName}) بنستخدم شمع صويا طبيعي 100% مع زيوت عطرية أصلية بتملى البيت روقان."` }
+                ] : [
+                    { label: '⚠️ Scent Throw Trigger', text: `"Hate candles that smell great in the jar but vanish when lit? (${brandName}) 100% natural soy wax fills entire rooms with premium scent."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '💡 زاوية الروقان بعد يوم طويل (ASMR Evening Story)', text: `"مهما كان يومك برة كان فيه زحمة ودوشة.. أول ما ترجعي وتولعي شمعة (${brandName})، بتحسي إن العالم كله هدي فجأة! تفصيلة صغيرة في أوضتك بتغير مودك بالكامل."` }
+                ] : [
+                    { label: '💡 Cozy Evening Mood Angle', text: `"After a hectic day, light a (${brandName}) candle and feel the instant calmness take over your sanctuary."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية بوكس الهدية والروقان (Gift Box Offer)', text: `"بوكس الروقان من (${brandName}): (شمعتين كبار + صينية كونكريت ماربل + كبريت عتيق) بخصم 30% مع تغليف فاخر وكارت إهداء مجاني!"` }
+                ] : [
+                    { label: '🔥 Luxury Candle Bundle', text: `"Order (${brandName}) signature relaxation gift box today and save 30% with custom gift wrapping included!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+                return [
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
+                ];
+            }
+
+            // 12. Cars, Detailing & Auto Accessories
+            if (niche === 'cars') {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية تجريح الدهان وبهتان الشمس (Paint Loss & Scratches)', text: `"عربيتك بتتعرض للشمس والتراب يومياً والدهان بيفقد لمعته؟ في (${brandName}) طبقات النانو سيراميك 9H بتحمي دهان عربيتك من الخدوش والبهتان وتخليها تلمع زي المراية!"` },
+                    { label: '⚠️ زاوية الصيانة المغشوشة (Fake Parts Fear)', text: `"خايف تركب قطع غيار أو كماليات تضرب كهرباء العربية؟ في (${brandName}) كل قطعة معتمدة ومطابقة لكتالوج الوكيل مع ضمان شامل."` }
+                ] : [
+                    { label: '⚠️ Paint Protection Trigger', text: `"Sun oxidation and micro-scratches ruin your car's resale value! (${brandName}) 9H Nano-Ceramic coating shields your paint for years."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '💡 زاوية عربية زيرو من الصالون للدهان (Showroom Finish Story)', text: `"عايز تركب عربيتك وتحس بنفس ريحة وفخامة الزيرو كل يوم؟ باقة الـ Detailing الشاملة في (${brandName}) بترجع الصالون والفرش والموتور لحالة الفابريكا في 4 ساعات بس!"` }
+                ] : [
+                    { label: '💡 Showroom Restoration Angle', text: `"Drive a car that feels, smells, and shines like day one. Experience (${brandName}) master detailing transformation."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية باقة حماية وتلميع VIP (Auto Care Package)', text: `"باقة الـ VIP من (${brandName}): تلميع طبقات + نانو سيراميك + غسيل جاف للموتور والصالون بخصم 35% هذا الأسبوع فقط! احجز ميعادك."` }
+                ] : [
+                    { label: '🔥 VIP Auto Package', text: `"Full Exterior Compound + 9H Ceramic + Interior Deep Steam Clean at 35% OFF at (${brandName}) this week only!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+                return [
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
+                ];
+            }
+
+            // 13. Furniture & Interior Living
+            if (niche === 'furniture') {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية الخشب الرديء والكسر (Solid Wood vs Weak)', text: `"مفيش أصعب من إنك تشتري صالون أو سفرة وبعد سنة تلاقي الخشب اتفكك والقماش بهت! في (${brandName}) بنصنع بخشب زان أحمر روماني طبيعي 100% مع ضمان 10 سنين."` }
+                ] : [
+                    { label: '⚠️ Solid Wood Quality Trigger', text: `"Avoid fragile MDF furniture that sags after one year. (${brandName}) crafts exclusively with natural solid beechwood backed by a 10-year warranty."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '💡 زاوية استغلال المساحات الضيقة (Smart Space Living)', text: `"شقتك مساحتها صغيرة ومحتار تفرشها إزاي؟ تصميمات (${brandName}) المودرن الذكية بتديك شياكة وفخامة القصور مع استغلال كل سنتيمتر في شقتك!"` }
+                ] : [
+                    { label: '💡 Smart Living Space Angle', text: `"Make compact apartments feel like luxury suites with (${brandName}) modern space-saving interior pieces."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية باقة فرش العرايس الشاملة (Full Home Package)', text: `"باقة العروسة من (${brandName}): غرفتين + ركنة مودرن + سفرة كاملة بخصم 30% مع شحن وتركيب مجاني لحد باب شقتك! احجزي ميعاد المعاينة."` }
+                ] : [
+                    { label: '🔥 Complete Home Bundle', text: `"Furnish your dream home with (${brandName}): Living + Master Bedroom + Dining set at 30% OFF with free delivery & installation!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+                return [
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
+                ];
+            }
+
+            // 14. Universal Dynamic Fallback (Explicitly Brand-Injected)
             const universalFears = isAr ? [
                 { label: '⚠️ زاوية الوجع والفرصة الضايعة (Pain & Lost Revenue)', text: `"بتصرف فلوس على إعلانات السوشيال ميديا لـ (${brandName}) بس الزباين بتدخل تسأل وتمشي من غير ما تشتري؟ المشكلة مش في المنتج.. المشكلة في الكلمات اللي مبتلمسش وجع العميل الحقيقي!"` },
                 { label: '⚠️ زاوية حرق الميزانية في الهوا (Ad Budget Waste)', text: `"حرقت ميزانيات على حملات (${brandName}) والرسالة بتكلفك كتير ومفيش مبيعات؟ أول 3 ثواني في الإعلان هي اللي بتحدد إذا كانت فلوسك هترجعلك أرباح ولا هتضيع!"` },
