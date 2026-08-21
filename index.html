@@ -360,34 +360,37 @@
             bottom: max(10px, env(safe-area-inset-bottom, 10px));
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(18, 20, 26, 0.92);
+            background: rgba(18, 20, 26, 0.94);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(232, 114, 42, 0.35);
-            padding: 4px 6px;
+            border: 1px solid rgba(232, 114, 42, 0.45);
+            padding: 3px 5px;
             border-radius: var(--radius-full);
             z-index: 9999;
-            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.75);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85);
             gap: 2px;
-            width: auto;
-            max-width: calc(100vw - 20px);
-            justify-content: space-around;
+            width: max-content;
+            max-width: calc(100vw - 12px);
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
         }
 
         .mobile-nav-btn {
             background: transparent;
             border: none;
             color: var(--text-secondary);
-            font-size: 0.75rem;
+            font-size: 0.70rem;
             font-weight: 800;
-            padding: 6px 9px;
+            padding: 5px 7px;
             border-radius: var(--radius-full);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 3px;
+            gap: 2px;
             white-space: nowrap;
             transition: all 0.2s ease;
+            flex-shrink: 0;
         }
 
         .mobile-nav-btn.active, .mobile-nav-btn:hover {
@@ -2122,6 +2125,11 @@
                 navCalc: 'الأدوات والهوكات',
                 navExperience: 'الخبرات',
                 navCtaBtn: 'يلا نبدأ',
+                mobNavProjects: '📂 المشاريع',
+                mobNavBrands: '🏢 البراندات',
+                mobNavHooks: '⚡ الهوكات',
+                mobNavAbout: '👤 عنّي',
+                mobNavContact: '💬 تواصل',
                 heroTag: '⚡ من لحام المعدن لصياغة الكلمات اللي بتوصل وتبيع',
                 heroTitle: 'محمود محمد <span class="highlight">متولي</span>',
                 typePrefix: 'أنا',
@@ -2289,20 +2297,21 @@
                 hookTitle: 'مولد الهوكات البيعية الفوري — اكتب مجالك وشوف السحر 🔥',
                 hookSub: 'اكتب اسم البيزنس أو المنتج اللي بتقدمه، وشوف 3 زوايا إعلانية نفسية تخطف العميل فوراً مع إمكانية التقييم والطلب المباشر:',
                 hookInputPlaceholder: 'اكتب مجالك أو منتجك.. مثلاً: كورس إنجليزي، مطعم برجر، عبايات، جيم، عيادة، عقارات...',
+                hookBtnGenerate: '⚡ ولّد هوكات بيزنسي',
                 hookPresets: [
-                    { id: 'dental', label: '🦷 عيادة أسنان', query: 'عيادة أسنان وتجميل' },
-                    { id: 'derma', label: '✨ جلدية وليزر', query: 'عيادة جلدية وليزر' },
-                    { id: 'fashion', label: '👕 براند ملابس', query: 'براند ملابس وهوديز' },
-                    { id: 'shoes', label: '👟 أحذية وسنيكرز', query: 'محل أحذية وسنيكرز' },
-                    { id: 'food', label: '🍔 مطاعم وبرجر', query: 'مطعم أكل وبرجر' },
-                    { id: 'courses', label: '📚 كورسات وإنجليزي', query: 'كورس إنجليزي وتطوير' },
-                    { id: 'gym', label: '🏋️‍♂️ جيم وفتنس', query: 'جيم وتخسيس وفتنس' },
-                    { id: 'beauty', label: '💄 ميكب وعناية', query: 'ميكب وعناية بالبشرة' },
-                    { id: 'mobile', label: '📱 موبايلات وإلكترونيات', query: 'موبايلات وإكسسوارات' },
-                    { id: 'realestate', label: '🏢 عقارات وتشطيبات', query: 'شقق وعقارات واستثمار' },
-                    { id: 'candles', label: '🕯️ شموع وديكور', query: 'شموع وديكور منزلي' },
-                    { id: 'cars', label: '🚗 سيارات وتلميع', query: 'مركز سيارات وكماليات' },
-                    { id: 'furniture', label: '🛋️ أثاث ومفروشات', query: 'معرض أثاث ومفروشات' }
+                    { id: 'dental', label: '🦷 عيادة أسنان', query: 'عيادة أسنان' },
+                    { id: 'derma', label: '✨ جلدية وليزر', query: 'عيادة جلدية' },
+                    { id: 'fashion', label: '👕 براند ملابس', query: 'براند ملابس' },
+                    { id: 'shoes', label: '👟 أحذية وسنيكرز', query: 'محل أحذية' },
+                    { id: 'food', label: '🍔 مطاعم وبرجر', query: 'مطعم برجر' },
+                    { id: 'courses', label: '📚 كورسات وإنجليزي', query: 'كورس إنجليزي' },
+                    { id: 'gym', label: '🏋️‍♂️ جيم وفتنس', query: 'جيم وتخسيس' },
+                    { id: 'beauty', label: '💄 ميكب وعناية', query: 'ميكب وعناية' },
+                    { id: 'mobile', label: '📱 موبايلات وإلكترونيات', query: 'محل موبايلات' },
+                    { id: 'realestate', label: '🏢 عقارات وتشطيبات', query: 'شركة عقارات' },
+                    { id: 'candles', label: '🕯️ شموع وديكور', query: 'براند شموع' },
+                    { id: 'cars', label: '🚗 سيارات وتلميع', query: 'مركز سيارات' },
+                    { id: 'furniture', label: '🛋️ أثاث ومفروشات', query: 'معرض أثاث' }
                 ],
                 expTag: 'رحلتي في السوق',
                 expTitle: 'خبراتي وسجل الإنجازات على أرض الواقع',
@@ -2354,6 +2363,11 @@
                 navCalc: 'Tools & Hooks',
                 navExperience: 'Experience',
                 navCtaBtn: 'Start Project',
+                mobNavProjects: '📂 Projects',
+                mobNavBrands: '🏢 Brands',
+                mobNavHooks: '⚡ Hooks',
+                mobNavAbout: '👤 About',
+                mobNavContact: '💬 Contact',
                 heroTag: '⚡ From welding metal to crafting words that sell',
                 heroTitle: 'Mahmoud Mohamed <span class="highlight">Metwally</span>',
                 typePrefix: 'I am a',
@@ -2851,19 +2865,37 @@
             } else {
                 // Pattern B: Strip leading conversational & descriptive noise words even without "براند"
                 let cleaned = text;
-                cleaned = cleaned.replace(/^(?:براند|محل|صفحة|شركة|أكاديمية|اكاديمية|ستور|متجر|وكالة|عيادة|مركز|مطعم|كافيه|مشروع|خدمة|كورس|برنامج|بوتيك|سنتر|معرض|مصنع|براندات)?\s*(?:ملابس|أزياء|ازياء|عبايات|عباية|هوديز|هودي|أحذية|احذية|شوزات|شوز|سنيكرز|برجر|أكل|اكل|طعام|شاورما|بيتزا|أسنان|اسنان|جلدية|ليزر|تجميل|دكتور|طبيب|إنجليزي|انجليزي|فتنس|تخسيس|دايت|جيم|موبايل|موبايلات|إلكترونيات|الكترونيات|هواتف|عقارات|عقار|شقق|تشطيب|تشطيبات|شموع|شمع|ديكور|ميكب|مكياج|عناية|كوزمتكس|سيارات|عربيات|أثاث|اثاث|مفروشات)\s+/i, '');
+                cleaned = cleaned.replace(/^(?:براند|محل|صفحة|شركة|أكاديمية|اكاديمية|ستور|متجر|وكالة|عيادة|مركز|مطعم|كافيه|مشروع|خدمة|كورس|برنامج|بوتيك|سنتر|معرض|مصنع|براندات)?\s*(?:ملابس|أزياء|ازياء|عبايات|عباية|هوديز|هودي|أحذية|احذية|شوزات|شوز|سنيكرز|برجر|أكل|اكل|طعام|شاورما|بيتزا|أسنان|اسنان|جلدية|ليزر|تجميل|دكتور|طبيب|إنجليزي|انجليزي|فتنس|تخسيس|دايت|جيم|موبايل|موبايلات|إلكترونيات|الكترونيات|هواتف|عقارات|عقار|شقق|تشطيب|تشطيبات|شموع|شمع|ديكور|ميكب|مكياج|عناية|كوزمتكس|سيارات|عربيات|أثاث|اثاث|مفروشات)\s*/i, '');
                 
-                if (cleaned.trim().length > 1) {
+                if (cleaned.trim().length > 0) {
                     extractedBrand = cleaned.trim();
+                } else {
+                    extractedBrand = '';
                 }
             }
 
             // Strip wrapping quotes or parentheses
             extractedBrand = extractedBrand.replace(/^["'(\[«]+|["')\]»]+$/g, '').trim();
 
-            // Safety fallback if cleaned text was purely a generic category word
-            if (!extractedBrand || /^(ملابس|برجر|أسنان|كورس|جيم|أكل|طعام|أزياء|عقارات|موبايلات|أحذية|جلدية|سيارات|أثاث)$/i.test(extractedBrand)) {
-                extractedBrand = text;
+            // Safety fallback if cleaned text was empty, starts with "و", or was purely a generic category word
+            if (!extractedBrand || /^(ملابس|برجر|أسنان|كورس|جيم|أكل|طعام|أزياء|عقارات|موبايلات|أحذية|جلدية|سيارات|أثاث|وتجميل|وديكور|وليزر|وتخسيس|وإلكترونيات|واستثمار|وكماليات|ومفروشات|وسنيكرز|وعناية|وإكسسوارات)$/i.test(extractedBrand) || /^[وف]\s+/i.test(extractedBrand)) {
+                const defaultBrandMap = {
+                    dental: isAr ? 'العيادة' : 'the clinic',
+                    derma: isAr ? 'العيادة' : 'the clinic',
+                    fashion: isAr ? 'البراند' : 'the brand',
+                    shoes: isAr ? 'المحل' : 'the store',
+                    food: isAr ? 'المطعم' : 'the restaurant',
+                    courses: isAr ? 'الأكاديمية' : 'the academy',
+                    gym: isAr ? 'الجيم' : 'the gym',
+                    beauty: isAr ? 'البراند' : 'the brand',
+                    tech: isAr ? 'المحل' : 'the store',
+                    realestate: isAr ? 'الشركة' : 'the company',
+                    candles: isAr ? 'البراند' : 'the brand',
+                    cars: isAr ? 'المركز' : 'the auto center',
+                    furniture: isAr ? 'المعرض' : 'the gallery',
+                    general: isAr ? 'البيزنس بتاعك' : 'your business'
+                };
+                extractedBrand = defaultBrandMap[detectedNiche] || (isAr ? 'البيزنس بتاعك' : 'your business');
             }
 
             return {
@@ -3438,7 +3470,7 @@
             lastActiveTopic = topic;
             const parsed = parseBusinessAndNiche(topic, currentLang);
             const hooks = generateHooksForTopic(topic, currentLang);
-            const isAr = (currentLang === 'ar');
+            const isAr = (currentLang === 'ar') || parsed.isArabicInput;
 
             const statusEl = document.getElementById('lblActiveTopic');
             if (statusEl) {
@@ -3651,6 +3683,15 @@
             document.getElementById('navCalc').textContent = t.navCalc;
             document.getElementById('navExperience').textContent = t.navExperience;
             document.getElementById('navCtaBtn').textContent = t.navCtaBtn;
+
+            const mobBtns = document.querySelectorAll('.mobile-quick-nav .mobile-nav-btn');
+            if (mobBtns.length === 5) {
+                mobBtns[0].textContent = t.mobNavProjects;
+                mobBtns[1].textContent = t.mobNavBrands;
+                mobBtns[2].textContent = t.mobNavHooks;
+                mobBtns[3].textContent = t.mobNavAbout;
+                mobBtns[4].textContent = t.mobNavContact;
+            }
 
             // Hero
             document.getElementById('heroTag').textContent = t.heroTag;
