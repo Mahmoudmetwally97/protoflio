@@ -357,38 +357,43 @@
         .mobile-quick-nav {
             display: none;
             position: fixed;
-            bottom: 15px;
+            bottom: max(10px, env(safe-area-inset-bottom, 10px));
             left: 50%;
             transform: translateX(-50%);
-            background: var(--nav-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-glow);
-            padding: 6px 12px;
+            background: rgba(18, 20, 26, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(232, 114, 42, 0.35);
+            padding: 4px 6px;
             border-radius: var(--radius-full);
-            z-index: 999;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-            gap: 6px;
+            z-index: 9999;
+            box-shadow: 0 10px 32px rgba(0, 0, 0, 0.75);
+            gap: 2px;
+            width: auto;
+            max-width: calc(100vw - 20px);
+            justify-content: space-around;
         }
 
         .mobile-nav-btn {
             background: transparent;
             border: none;
             color: var(--text-secondary);
-            font-size: 0.82rem;
+            font-size: 0.75rem;
             font-weight: 800;
-            padding: 6px 12px;
+            padding: 6px 9px;
             border-radius: var(--radius-full);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
             white-space: nowrap;
+            transition: all 0.2s ease;
         }
 
         .mobile-nav-btn.active, .mobile-nav-btn:hover {
             background: var(--accent);
             color: #ffffff;
+            box-shadow: 0 2px 10px var(--accent-rgba);
         }
 
         /* ==========================================================================
@@ -1638,6 +1643,9 @@
            13. Mobile Responsive Breakpoints
            ========================================================================== */
         @media (max-width: 992px) {
+            body {
+                padding-bottom: calc(70px + env(safe-area-inset-bottom, 10px));
+            }
             .nav-links {
                 display: none;
             }
@@ -1645,7 +1653,7 @@
                 display: flex;
             }
             .section-padding {
-                padding: 65px 0;
+                padding: 55px 0;
             }
         }
 
@@ -1654,22 +1662,76 @@
                 grid-template-columns: 1fr;
             }
             .hero-name {
-                font-size: 2.3rem;
+                font-size: 2.1rem;
             }
             .typewriter-box {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             .section-main-title {
-                font-size: 1.9rem;
+                font-size: 1.75rem;
             }
             .float-badge {
                 display: none;
             }
             .project-item {
-                padding: 24px 18px;
+                padding: 20px 14px;
             }
-            .narrative-card, .interactive-studio, .interactive-widget-box, .grand-cta-box {
-                padding: 26px 18px;
+            .narrative-card, .interactive-studio, .interactive-widget-box, .grand-cta-box, .top-hooks-bank-box {
+                padding: 20px 14px !important;
+            }
+            .widget-title {
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
+            }
+            .widget-sub {
+                font-size: 0.85rem !important;
+                line-height: 1.55 !important;
+            }
+            .industry-tabs-flex {
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                justify-content: flex-start !important;
+                padding: 4px 4px 12px 4px !important;
+                gap: 8px !important;
+                -webkit-overflow-scrolling: touch !important;
+                scrollbar-width: none !important;
+            }
+            .industry-tabs-flex::-webkit-scrollbar {
+                display: none !important;
+            }
+            .btn-ind-tab {
+                flex-shrink: 0 !important;
+                padding: 7px 13px !important;
+                font-size: 0.82rem !important;
+            }
+            .hook-card-box {
+                padding: 16px 14px !important;
+            }
+            .hook-card-body {
+                font-size: 0.96rem !important;
+                line-height: 1.7 !important;
+            }
+            .hook-card-actions {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 10px !important;
+            }
+            .hook-left-actions {
+                display: flex !important;
+                gap: 8px !important;
+                width: 100% !important;
+            }
+            .hook-left-actions .btn-hook-action {
+                flex: 1 1 50% !important;
+                justify-content: center !important;
+                padding: 8px 10px !important;
+                font-size: 0.8rem !important;
+            }
+            .btn-hook-wa-order {
+                width: 100% !important;
+                justify-content: center !important;
+                padding: 9px 12px !important;
+                font-size: 0.82rem !important;
             }
             .hero-cta-grid .btn-hero, .grand-cta-buttons .btn-hero {
                 max-width: 100%;
@@ -2682,7 +2744,86 @@
         }
 
         // ==========================================================================
-        // SMART DYNAMIC HOOK GENERATOR ENGINE (Brand-Injected + Persistent Leaderboard)
+        // SMART NLP PARSER (Extracts Niche & Brand Name from Natural Language Input)
+        // ==========================================================================
+        function parseBusinessAndNiche(rawInput, lang) {
+            const isAr = (lang === 'ar');
+            let text = (rawInput || '').trim();
+            if (!text) {
+                return {
+                    brandName: isAr ? 'البيزنس بتاعك' : 'your business',
+                    niche: 'general',
+                    nicheLabel: isAr ? 'نشاط تجاري عام' : 'General Business'
+                };
+            }
+
+            let detectedNiche = 'general';
+            let nicheLabel = isAr ? 'نشاط تجاري عام' : 'General Business';
+            const lower = text.toLowerCase();
+
+            // 1. Detect Niche Category
+            if (/أسنان|اسنان|dental|doctor|طبيب|عياد|تقويم|زراعة|تبييض/i.test(lower)) {
+                detectedNiche = 'dental';
+                nicheLabel = isAr ? 'عيادات الأسنان والطب' : 'Dental & Healthcare';
+            } else if (/ملابس|هودي|fashion|لبس|عبايات|عباية|قميص|streetwear|أزياء|ازياء|شوز|بوتيك|طرح|سويت شيرت|كولكشن|فساتين|بدل|تيشيرت|جينز/i.test(lower)) {
+                detectedNiche = 'fashion';
+                nicheLabel = isAr ? 'الملابس والأزياء' : 'Fashion & Streetwear';
+            } else if (/مطعم|برجر|أكل|اكل|food|burger|كافيه|شاورما|بيتزا|حلويات|مشويات|ساندوتش|وجبات|كريب|عصير|فراخ/i.test(lower)) {
+                detectedNiche = 'food';
+                nicheLabel = isAr ? 'المطاعم والأغذية' : 'Food & Dining';
+            } else if (/كورس|تعليم|إنجليزي|انجليزي|course|english|تدريب|أكاديم|اكاديم|لغات|برمجة|تسويق|دورة|مستر/i.test(lower)) {
+                detectedNiche = 'courses';
+                nicheLabel = isAr ? 'الكورسات والتعليم' : 'Courses & Education';
+            } else if (/جيم|فتنس|تخسيس|دايت|gym|fitness|عضلات|تمرين|مدرب|لياقة|كمال أجسام/i.test(lower)) {
+                detectedNiche = 'gym';
+                nicheLabel = isAr ? 'الجيم والفتنس' : 'Gym & Fitness';
+            } else if (/موبايل|موبايلات|إلكترونيات|الكترونيات|هواتف|phone|tech|آيفون|ايفون|سامسونج|لابتوب/i.test(lower)) {
+                detectedNiche = 'tech';
+                nicheLabel = isAr ? 'الموبايلات والإلكترونيات' : 'Tech & Gadgets';
+            } else if (/عقار|عقارات|شقق|شقة|فلل|فيلا|كمبوند|تشطيب|ديكور|real estate/i.test(lower)) {
+                detectedNiche = 'realestate';
+                nicheLabel = isAr ? 'العقارات والتشطيبات' : 'Real Estate';
+            } else if (/شمع|شموع|candles|ديكور منزلي|كونكريت/i.test(lower)) {
+                detectedNiche = 'candles';
+                nicheLabel = isAr ? 'الشموع والديكور' : 'Candles & Decor';
+            }
+
+            // 2. Extract Clean Brand Name using Smart Pattern Recognition
+            let extractedBrand = text;
+
+            // Pattern A: "براند ملابس واسمه زارا" or "محل برجر اسمه برجر فاكتوري" or "باسم كذا"
+            const nameKeywordsRegex = /(?:واسمه|واسمها|واسمهن|اسمه|اسمها|باسم|بإسم|اسم البراند|اسم المحل|اسم الصفحة|اسم العيادة|اسم المطعم|اسم الكورس|اسم الشركة|اسم البوتيك|called|named|brand name is|named as)\s+[:\-]?\s*(.+)/i;
+            const match = text.match(nameKeywordsRegex);
+
+            if (match && match[1]) {
+                extractedBrand = match[1].trim();
+            } else {
+                // Pattern B: Strip conversational and descriptive prefix noise (e.g., "براند ملابس زارا" -> "زارا")
+                let cleaned = text;
+                cleaned = cleaned.replace(/^(?:براند|محل|صفحة|شركة|أكاديمية|اكاديمية|ستور|متجر|وكالة|عيادة|مركز|مطعم|كافيه|مشروع|خدمة|كورس|برنامج|بوتيك)\s+(?:ملابس|أزياء|ازياء|برجر|أكل|اكل|شاورما|بيتزا|أسنان|اسنان|إنجليزي|انجليزي|فتنس|تخسيس|جيم|موبايلات|عقارات|شموع)?\s*/i, '');
+                
+                if (cleaned.trim().length > 1) {
+                    extractedBrand = cleaned.trim();
+                }
+            }
+
+            // Strip wrapping quotes or parentheses
+            extractedBrand = extractedBrand.replace(/^["'(\[«]+|["')\]»]+$/g, '').trim();
+
+            // Safety fallback if cleaned text was purely a generic category word
+            if (!extractedBrand || /^(ملابس|برجر|أسنان|كورس|جيم|أكل|طعام|أزياء|عقارات|موبايلات)$/i.test(extractedBrand)) {
+                extractedBrand = text;
+            }
+
+            return {
+                brandName: extractedBrand,
+                niche: detectedNiche,
+                nicheLabel: nicheLabel
+            };
+        }
+
+        // ==========================================================================
+        // SMART DYNAMIC HOOK GENERATOR ENGINE (Multi-Niche & Brand-Injected)
         // ==========================================================================
         let lastActiveTopic = 'عيادات الأسنان';
 
@@ -2700,12 +2841,13 @@
         }
 
         function generateHooksForTopic(topic, lang) {
-            const clean = topic.trim().toLowerCase();
             const isAr = (lang === 'ar');
-            const brandName = topic.trim().length > 0 ? topic.trim() : (isAr ? 'البيزنس بتاعك' : 'your business');
+            const parsed = parseBusinessAndNiche(topic, lang);
+            const brandName = parsed.brandName;
+            const niche = parsed.niche;
 
             // 1. Dental Clinics & Doctors
-            if (clean.includes('أسنان') || clean.includes('اسنان') || clean.includes('dental') || clean.includes('doctor') || clean.includes('طبيب') || clean.includes('عياد')) {
+            if (niche === 'dental') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية الوجع والخسارة (Loss & Pain)', text: `"مبتصحاش من النوم تلاقي ضرسك اتكسر فجأة! مع (${brandName}) جلسة فحص 10 دقايق هتوفر عليك علاج عصب وآلاف الجنيهات بعدين!"` },
                     { label: '⚠️ زاوية الإحراج والمناسبات (Social Anxiety)', text: `"بتخبي ضحكتك ورا إيدك في الصور والمناسبات؟ في (${brandName}) تبييض الليزر البارد في 45 دقيقة بيفتح أسنانك 4 درجات وبدون أي حساسية."` },
@@ -2742,7 +2884,7 @@
             }
 
             // 2. Fashion, Clothing & Streetwear
-            if (clean.includes('ملابس') || clean.includes('هودي') || clean.includes('fashion') || clean.includes('لبس') || clean.includes('عبايات') || clean.includes('قميص') || clean.includes('streetwear') || clean.includes('أزياء') || clean.includes('شوز') || clean.includes('بوتيك')) {
+            if (niche === 'fashion') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية إهدار الفلوس والوبر (Quality & Longevity)', text: `"مفيش أسوأ من إنك تشتري هودي شيك وبعد أول غسلة تلاقيه وبر وخامته كشت! في (${brandName}) بنصنع قطن 100% مبطن مبيغيرش لونه ولا بيوبر حتى بعد 100 غسلة."` },
                     { label: '⚠️ زاوية الهيبة والانطباع الأول (First Impression)', text: `"اللبس هو أول انطباع بتسيبه قبل ما تنطق بكلمة! كولكشن (${brandName}) الجديد معمول مخصوص عشان يفرض هيبتك وشياكتك في أي مكان تروحه."` }
@@ -2776,7 +2918,7 @@
             }
 
             // 3. Food, Dining & Cafes
-            if (clean.includes('مطعم') || clean.includes('برجر') || clean.includes('أكل') || clean.includes('food') || clean.includes('burger') || clean.includes('كافيه') || clean.includes('شاورما') || clean.includes('بيتزا') || clean.includes('حلويات') || clean.includes('مشويات')) {
+            if (niche === 'food') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية الجوع وخيبة الأمل (Cravings & Freshness)', text: `"لما تكون ميت من الجوع بعد يوم شغل طويل.. آخر حاجة محتاجها ساندوتش ناشف أو دليفري بارد! في (${brandName}) الأكل بيطلع فريش وسايح وبيوصلك سخن مولع."` },
                     { label: '⚠️ زاوية جوع نص الليل (Late Night Hunger)', text: `"الساعة 2 بالليل وجوع الشتا بيقرصك؟ مطبخ (${brandName}) شغال والدليفري بيطير بالساندوتش غرقان صوص واصلك في أقل من 35 دقيقة!"` }
@@ -2810,7 +2952,7 @@
             }
 
             // 4. Courses, Coaching & Education
-            if (clean.includes('كورس') || clean.includes('تعليم') || clean.includes('إنجليزي') || clean.includes('انجليزي') || clean.includes('course') || clean.includes('english') || clean.includes('تدريب') || clean.includes('أكاديم')) {
+            if (niche === 'courses') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية ضياع الفرص والإنترفيو (Career Loss Anxiety)', text: `"مفيش إحساس أصعب من إنك تترفض في إنترفيو مرتبه بالدولار عشان لسانك تقيل في الإنجليزي! في (${brandName}) بنعلمك تفكر بالإنجليزي وتتكلم بطلاقة في 60 يوم."` },
                     { label: '⚠️ زاوية تضييع الشهور والسنين (Wasted Time)', text: `"بقالك كام سنة بتأجل تطوير نفسك؟ في (${brandName}) خطة الممارسة الحية هتوفر عليك سنين من الحفظ النظري العقيم."` }
@@ -2844,7 +2986,7 @@
             }
 
             // 5. Gym, Fitness & Nutrition
-            if (clean.includes('جيم') || clean.includes('فتنس') || clean.includes('تخسيس') || clean.includes('دايت') || clean.includes('gym') || clean.includes('fitness') || clean.includes('عضلات') || clean.includes('تمرين')) {
+            if (niche === 'gym') {
                 const fears = isAr ? [
                     { label: '⚠️ زاوية إحباط الدايت والملل (Frustration Trigger)', text: `"مفيش أصعب من إنك تمنع نفسك من الأكل ومفيش نتيجة على الميزان! مع كباتن (${brandName}) هتاخد خطة تمرين وتغذية متفصلة على جيناتك بتجيب نتايج من أول أسبوعين."` },
                     { label: '⚠️ زاوية اللبس اللي ضاق (Confidence & Clothes)', text: `"الهدوم الشيك المركونة في دولابك ومستني تخس عشان تلبسها؟ مع برنامج (${brandName}) بعد 60 يوم بس هترجع تلبسها وأنت فخور بجسمك في المراية."` }
@@ -2877,7 +3019,38 @@
                 ];
             }
 
-            // 6. Universal Dynamic Fallback (Explicitly Brand-Injected)
+            // 6. Tech, Gadgets & Smartphones
+            if (niche === 'tech') {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية الخوف من المقلب والصيانة (Fake & Refurbished Fear)', text: `"أكبر مقلب تشربه وأنت بتشتري جهاز إن الشاشة تكون متغيرة أو البطارية ملعوب فيها! في (${brandName}) كل جهاز بيعدي على فحص شامل من 35 نقطة مع ضمان استبدال حقيقي."` }
+                ] : [
+                    { label: '⚠️ Device Quality Trigger', text: `"Never risk buying used gadgets with hidden defects! (${brandName}) runs a 35-point diagnostic check with full replacement warranty."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '🧠 زاوية كسر الأسعار (Smart Value)', text: `"ليه تدفع ميزانية فلكية في جهاز جديد لما تقدر تاخد نفس الأداء بحالة الزيرو (Open Box) مع ضمان كامل من (${brandName}) وتوفر 40% من فلوسك؟"` }
+                ] : [
+                    { label: '🧠 Smart Value Angle', text: `"Why pay exorbitant prices for brand-new when (${brandName}) offers mint-condition devices with full warranty at 40% less?"` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية عرض الإكسسوارات الفوري (Free Bundle Offer)', text: `"اشتري أي هاتف من (${brandName}) النهاردة وخد معاه جراب أصلي + سكرين حماية 11D + شاحن سريع هدية مجانية فورية!"` }
+                ] : [
+                    { label: '🔥 Free Bundle Offer', text: `"Buy any phone from (${brandName}) today and receive an original case, 11D glass, and fast charger on the house!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+
+                return [
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
+                ];
+            }
+
+            // 7. Universal Dynamic Fallback (Explicitly Brand-Injected)
             const universalFears = isAr ? [
                 { label: '⚠️ زاوية الوجع والفرصة الضايعة (Pain & Lost Revenue)', text: `"بتصرف فلوس على إعلانات السوشيال ميديا لـ (${brandName}) بس الزباين بتدخل تسأل وتمشي من غير ما تشتري؟ المشكلة مش في المنتج.. المشكلة في الكلمات اللي مبتلمسش وجع العميل الحقيقي!"` },
                 { label: '⚠️ زاوية حرق الميزانية في الهوا (Ad Budget Waste)', text: `"حرقت ميزانيات على حملات (${brandName}) والرسالة بتكلفك كتير ومفيش مبيعات؟ أول 3 ثواني في الإعلان هي اللي بتحدد إذا كانت فلوسك هترجعلك أرباح ولا هتضيع!"` },
@@ -2994,12 +3167,15 @@
         function renderGeneratedHooks(topic) {
             const container = document.getElementById('hookResultsStack');
             lastActiveTopic = topic;
+            const parsed = parseBusinessAndNiche(topic, currentLang);
             const hooks = generateHooksForTopic(topic, currentLang);
             const isAr = (currentLang === 'ar');
 
             const statusEl = document.getElementById('lblActiveTopic');
             if (statusEl) {
-                statusEl.textContent = isAr ? `🎯 الهوكات الحالية لـ: "${topic}"` : `🎯 Active Hooks for: "${topic}"`;
+                statusEl.innerHTML = isAr 
+                    ? `🎯 المجال المكتشف: <strong style="color: var(--accent);">${parsed.nicheLabel}</strong> | 🏷️ اسم البراند: <strong style="color: var(--text-primary);">"${parsed.brandName}"</strong>`
+                    : `🎯 Detected Niche: <strong style="color: var(--accent);">${parsed.nicheLabel}</strong> | 🏷️ Brand: <strong style="color: var(--text-primary);">"${parsed.brandName}"</strong>`;
             }
 
             // Retrieve stored likes & ledger
@@ -3013,7 +3189,7 @@
                 if (!ledger[hookKey]) {
                     ledger[hookKey] = {
                         text: h.text.replace(/"/g, ''),
-                        topic: topic,
+                        topic: `${parsed.nicheLabel} (${parsed.brandName})`,
                         angle: h.angleLabel,
                         likes: likesMap[hookKey] || (18 + idx * 7)
                     };
@@ -3024,8 +3200,8 @@
                 const isLiked = likesMap[`liked_${hookKey}`] ? 'liked' : '';
                 const encodedWaText = encodeURIComponent(
                     isAr 
-                        ? `أهلاً يا محمود، جربت مولد الهوكات في البورتفوليو بتاعك لمجال "${topic}" وعجبني الهوك ده:\n\n${h.text}\n\nوعايز أعمل حملة إعلانية وكتابة محتوى كاملة للبيزنس بتاعي!`
-                        : `Hi Mahmoud! I used the Smart Hook Generator on your portfolio for "${topic}" and loved this hook:\n\n${h.text}\n\nI want to collaborate on a full copy campaign for my business!`
+                        ? `أهلاً يا محمود، جربت مولد الهوكات في البورتفوليو بتاعك لـ "${parsed.brandName}" (${parsed.nicheLabel}) وعجبني الهوك ده:\n\n${h.text}\n\nوعايز أعمل حملة إعلانية وكتابة محتوى كاملة للبيزنس بتاعي!`
+                        : `Hi Mahmoud! I used the Smart Hook Generator on your portfolio for "${parsed.brandName}" (${parsed.nicheLabel}) and loved this hook:\n\n${h.text}\n\nI want to collaborate on a full copy campaign for my business!`
                 );
 
                 return `
@@ -3377,6 +3553,14 @@
             // Theme switch
             document.getElementById('themeBtn').addEventListener('click', () => {
                 applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+
+            // Mobile Quick Nav Active State
+            document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.mobile-nav-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
             });
 
             // Interactive ROI Slider
