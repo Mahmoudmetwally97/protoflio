@@ -32,29 +32,42 @@
 
 ## ✨ Features & Interactive Suite
 
-### 1. 🎯 Smart Hook Studio & Psychological Copy Engine
-- **3 Dynamic Conversion Angles**: Generates instant direct-response hooks categorized into:
-  - 💥 *Pain & Problem Triggers (Fear of Loss / Urgent Need)*
-  - 💡 *Contrarian Insights (Challenging industry norms & myths)*
-  - 🎁 *Irresistible Value Offers (No-brainer risk reversals & bundles)*
-- **🎲 Fresh Angle Reroller**: Generate infinite fresh copywriting angles and creative hooks on the fly.
-- **🏆 Live Hooks Leaderboard**: Community-driven upvoting ledger that ranks top-performing hooks in real-time.
-- **💬 Direct WhatsApp Ordering**: One-click custom message generator that prefills WhatsApp with the selected hook for quick campaign setup.
+### 1. ⚡ Free Ad & Creative Audit Widget (Lead Magnet)
+- Instant diagnosis tool for brand owners experiencing:
+  - 💸 *High CPA & Low ROAS*
+  - 🦗 *Lots of Inquiries but Zero Completed Orders*
+  - 💤 *Ad Creative Fatigue & Performance Collapse*
+  - 🎯 *New Campaign Angle & Hook Formulation*
+- Generates a customized, one-click WhatsApp message to initiate a targeted copy & creative audit.
 
-### 2. ⚡ Interactive Growth & ROI Simulator
+### 2. 🧠 The 4-Step Scientific Growth & Campaign Framework
+- **Step 01: Psychological Audience Diagnosis** — Deep PAS & FAB consumer profiling, mapping unspoken objections and desires.
+- **Step 02: Creative Angle Matrix (8 Angles)** — Developing 6 to 8 distinct angles per offer (Pain, Contrarian, Social Proof, Risk Reversal).
+- **Step 03: Full-Funnel Conversion Copy** — Full-spectrum assets from top-of-funnel Reels scripts (TOFU) down to closing copy (BOFU).
+- **Step 04: WhatsApp Sales Closing & ROAS** — Equipping sales and support teams with conversion scripts to close leads and maximize ROAS.
+
+### 3. 🎯 Smart Hook Studio & Psychological Copy Engine (13+ Niches)
+- **3 Dynamic Conversion Angles**: Instant direct-response hooks categorized into:
+  - 💥 *Pain & Problem Triggers (Loss Aversion)*
+  - 💡 *Contrarian Insights (Challenging Beliefs)*
+  - 🎁 *Irresistible Value Offers (No-Brainer Bundles)*
+- **🎲 Fresh Angle Reroller**: Generate infinite fresh copywriting angles on the fly.
+- **🏆 Live Hooks Leaderboard**: Community-driven upvoting ledger that ranks top hooks in real-time.
+- **💬 Direct WhatsApp Ordering**: One-click custom message generator prefilling WhatsApp with the chosen hook.
+
+### 4. ⚡ Interactive Growth & ROI Simulator
 - Real-time calculator estimating **Reach**, **Qualified Conversations**, and **Expected Revenue** based on dynamic monthly ad spend sliders.
-- Demonstrates conversion economics and marketing budget efficiency.
 
-### 3. 📂 Comprehensive Case Studies & Copy Samples
-- **🦷 Dental Clinic Acquisition Funnel**: Step-by-step patient acquisition journey across TOFU (Awareness), MOFU (Consideration), and BOFU (High-ticket Treatment Booking).
+### 5. 📂 Comprehensive Case Studies & Copy Samples
+- **🦷 Dental Clinic Acquisition Funnel**: Step-by-step patient acquisition journey across TOFU, MOFU, and BOFU.
 - **👕 HALIM Streetwear**: 4 Detailed Buyer Personas, youth lifestyle storytelling, and product drops.
-- **💡 "Koby" Mascot Persona Bible**: Complete Brand Mascot Character Sheet, visual direction, and tone of voice guidelines.
+- **💡 "Koby" Mascot Persona Bible**: Complete Brand Mascot Character Sheet and tone of voice guidelines.
 - **🕯️ Scented Candles & Home Decor**: 4-Week launch playbook, seasonal emotional triggers, and ASMR video scripts.
 
-### 4. 🏢 Brand Portfolio & Industry Experience
-- Real work samples and strategies across **Eleven 11 (Menswear)**, **Zeva Agency**, **Makka Store**, **Medical & Dental Clinics**, and **E-commerce Stores**.
+### 6. 🏢 Brand Portfolio & Industry Experience
+- Real work samples and strategies across **Eleven 11 (Menswear)**, **Zeva Agency**, **Makka Store**, **Medical & Dental Clinics**, **Furniture**, **Cars & Detailing**, and **E-commerce Stores**.
 
-### 5. 🌍 Seamless Bilingual Experience & Modern UI
+### 7. 🌍 Seamless Bilingual Experience & Modern UI
 - **100% Bilingual**: Instant zero-lag toggle between **Egyptian Arabic (RTL)** and **English (LTR)**.
 - **🌓 Dark & Light Mode Support**: Tailored high-contrast aesthetics and custom glassmorphism styling.
 - **📱 3D Tilt Physics & Micro-Interactions**: Engaging cards, hover animations, and fully responsive layout for all mobile and desktop screens.
