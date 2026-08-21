@@ -2897,21 +2897,6 @@
 
             init3DTiltPhysics();
         }
-                                <button class="btn-hook-action ${isLiked}" id="btn_like_${hookKey}" onclick="likeHook('${hookKey}')">
-                                    <span>👍 ${isAr ? 'عجبني' : 'Upvote'}</span>
-                                    <span class="font-mono font-bold" id="cnt_${hookKey}">(${initialLikes})</span>
-                                </button>
-                            </div>
-                            <a href="https://wa.me/201065760983?text=${encodedWaText}" target="_blank" rel="noopener noreferrer" class="btn-hook-wa-order">
-                                <span>💬 ${isAr ? 'عايز إعلان كامل بالهوك ده؟ كلم محمود' : 'Order full campaign with this hook'}</span>
-                            </a>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
-            init3DTiltPhysics();
-        }
 
         window.copySpecificHook = function(hookKey) {
             const text = document.getElementById(`text_${hookKey}`).innerText;
