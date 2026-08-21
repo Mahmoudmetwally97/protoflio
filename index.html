@@ -1935,8 +1935,32 @@
                     <!-- Quick Preset Inspiration Pills -->
                     <div class="industry-tabs-flex" id="industryTabs"></div>
 
+                    <!-- Re-roll and Dynamic Status Bar -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 18px 0 10px 0; flex-wrap: wrap; gap: 10px;">
+                        <span style="font-size: 0.88rem; color: var(--text-secondary); font-weight: 700;" id="lblActiveTopic">🎯 الهوكات الحالية: عيادات الأسنان</span>
+                        <button class="btn-hook-action" id="btnRerollHooks" style="padding: 8px 18px; border-color: var(--accent); color: var(--accent); background: rgba(232, 114, 42, 0.12); font-weight: 800; cursor: pointer;">
+                            <span>🎲 <strong id="lblReroll">ولّد زوايا وأفكار تانية</strong></span>
+                        </button>
+                    </div>
+
                     <!-- Dynamic Hooks Results Stack -->
                     <div class="hook-results-stack" id="hookResultsStack"></div>
+
+                    <!-- Top Rated Hooks Leaderboard / Hook Bank -->
+                    <div class="top-hooks-bank-box tilt-card reveal" style="margin-top: 32px; background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        <div class="tilt-glare"></div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 1.4rem;">🏆</span>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin: 0;" id="lblTopHooksTitle">بنك الهوكات الأعلى تصويتاً وإعجاباً في السوق 🔥</h4>
+                                    <p style="font-size: 0.82rem; color: var(--text-muted); margin: 2px 0 0 0;" id="lblTopHooksSub">أكتر هوكات جابت تفاعل وإعجابات من زوار البورتفوليو وأصحاب البيزنس</p>
+                                </div>
+                            </div>
+                            <span style="font-size: 0.8rem; color: var(--accent); font-weight: 800; background: rgba(232,114,42,0.12); border: 1px solid var(--accent); padding: 5px 12px; border-radius: var(--radius-full);" id="lblLeaderboardStatus">مُحدّث لحظياً ⚡</span>
+                        </div>
+                        <div id="topHooksLeaderboardList" style="display: flex; flex-direction: column; gap: 12px;"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2658,204 +2682,345 @@
         }
 
         // ==========================================================================
-        // SMART DYNAMIC HOOK GENERATOR ENGINE (Powered by Growth Marketing OS)
+        // SMART DYNAMIC HOOK GENERATOR ENGINE (Brand-Injected + Persistent Leaderboard)
         // ==========================================================================
+        let lastActiveTopic = 'عيادات الأسنان';
+
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function getStableHookKey(text) {
+            let hash = 0;
+            for (let i = 0; i < text.length; i++) {
+                hash = ((hash << 5) - hash) + text.charCodeAt(i);
+                hash |= 0;
+            }
+            return 'hk_' + Math.abs(hash);
+        }
+
         function generateHooksForTopic(topic, lang) {
             const clean = topic.trim().toLowerCase();
             const isAr = (lang === 'ar');
+            const brandName = topic.trim().length > 0 ? topic.trim() : (isAr ? 'البيزنس بتاعك' : 'your business');
 
-            // 1. Dental Clinics
-            if (clean.includes('أسنان') || clean.includes('اسنان') || clean.includes('dental') || clean.includes('doctor')) {
+            // 1. Dental Clinics & Doctors
+            if (clean.includes('أسنان') || clean.includes('اسنان') || clean.includes('dental') || clean.includes('doctor') || clean.includes('طبيب') || clean.includes('عياد')) {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية الوجع والخسارة (Loss & Pain)', text: `"مبتصحاش من النوم تلاقي ضرسك اتكسر فجأة! مع (${brandName}) جلسة فحص 10 دقايق هتوفر عليك علاج عصب وآلاف الجنيهات بعدين!"` },
+                    { label: '⚠️ زاوية الإحراج والمناسبات (Social Anxiety)', text: `"بتخبي ضحكتك ورا إيدك في الصور والمناسبات؟ في (${brandName}) تبييض الليزر البارد في 45 دقيقة بيفتح أسنانك 4 درجات وبدون أي حساسية."` },
+                    { label: '⚠️ زاوية مفاجآت نص الليل (Emergency Pain)', text: `"مفيش أصعب من وجع ضرس يصحيك 3 الفجر! فحص دوري بسيط في (${brandName}) هيحميك من مفاجآت الألم وخسارة الضرس نهائياً."` }
+                ] : [
+                    { label: '⚠️ Pain & Loss Aversion Angle', text: `"You don't wake up with a broken tooth overnight! A 10-minute checkup at (${brandName}) saves you root canals and thousands down the road!"` },
+                    { label: '⚠️ Social Confidence Angle', text: `"Hiding your smile in photos? Our 45-minute cold laser whitening at (${brandName}) lifts stains by 4 shades with zero sensitivity."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '🧠 زاوية كسر المعتقد (Contrarian Belief)', text: `"مشكلتك مش إن أسنانك ضعيفة.. في (${brandName}) بنعمل إزالة جير بالموجات الصوتية Ultrasonic بترجع لثتك تتنفس بدون أي ألم!"` },
+                    { label: '💡 زاوية روقان العروسة (Bride Story)', text: `"الفستان جاهز، القاعة اتحجزت.. بس فيه تفصيلة صغيرة في كل صورة مع (${brandName}): 'ابتسامتك'! باقة روقان العروسة لتنظيف وتبييض الأسنان بدون حساسية."` },
+                    { label: '💡 زاوية فحص الـ 5 دقائق (Effort Collapse)', text: `"كشف 10 دقائق بالأشعة البانورامية في (${brandName}) هيعرفك خريطة أسنانك كاملة، ويكشف أي تسوس مخفي قبل ما يوصل للعصب."` }
+                ] : [
+                    { label: '🧠 Contrarian Angle', text: `"Your teeth aren't fragile; (${brandName}) Ultrasonic scaling quietly cleans deep tartar without pain to restore healthy gums."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية العرض الحصري (Irresistible Offer)', text: `"ضحكة نضيفة من غير جير مع (${brandName}) ومزاج رايق بأحلى آيس كوفي هدية! ☕️ احجز جلسة التنظيف واحصل على مشروبك مجاناً لأول 20 حجز."` },
+                    { label: '🔥 زاوية باقة الفحص الشامل (Zero Risk Checkup)', text: `"كشف + تنظيف جير وتلميع + أشعة بانورامية بخصم 40% في (${brandName}) طوال هذا الأسبوع فقط! احجز ميعادك دلوقتي."` }
+                ] : [
+                    { label: '🔥 Irresistible Offer Angle', text: `"Spotless smile at (${brandName}) + chilled iced coffee on the house! ☕️ Book your ultrasonic scaling today (Limited slots)."` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+
                 return [
-                    {
-                        angleId: 'fear',
-                        angleLabel: isAr ? '⚠️ زاوية الوجع والخسارة (Loss & Pain Trigger)' : '⚠️ Pain & Loss Aversion Angle',
-                        tagClass: 'tag-fear',
-                        text: isAr 
-                            ? `"مبتصحاش من النوم تلاقي ضرسك اتكسر فجأة! الموضوع بيبدأ بنقطة سودا صغيرة بتفتكرها سمسم.. لكن جلسة فحص 10 دقايق هتوفر عليك علاج عصب وآلاف الجنيهات بعدين!"`
-                            : `"You don't wake up with a broken tooth overnight! It starts with a tiny dark dot you dismiss as breakfast.. yet a 10-minute checkup saves you root canals and thousands down the road!"`
-                    },
-                    {
-                        angleId: 'contrarian',
-                        angleLabel: isAr ? '🧠 زاوية كسر المعتقد (Contrarian Belief)' : '🧠 Contrarian Angle',
-                        tagClass: 'tag-curiosity',
-                        text: isAr 
-                            ? `"مشكلتك مش إن أسنانك ضعيفة.. مشكلتك إنك مأجل إزالة الجير اللي بيآكل في عضم اللثة من غير ما تحس بأي ألم! جلسة تلميع Ultrasonic واحدة بترجع لثتك تتنفس."`
-                            : `"Your teeth aren't fragile; you've just delayed removing calcified tartar that quietly erodes bone support without pain! One Ultrasonic session restores healthy gums."`
-                    },
-                    {
-                        angleId: 'offer',
-                        angleLabel: isAr ? '🔥 زاوية العرض الحصري والتحويل السريع (Irresistible Offer)' : '🔥 Irresistible Offer Angle',
-                        tagClass: 'tag-offer',
-                        text: isAr 
-                            ? `"ضحكة نضيفة من غير جير.. ومزاج رايق بأحلى آيس كوفي هدية! ☕️ احجز جلسة إزالة الجير بالموجات الصوتية واحصل على مشروبك المفضل مجاناً لأول 20 حجز هذا الأسبوع."`
-                            : `"Spotless tartar-free smile + your favorite chilled iced coffee on the house! ☕️ Book your ultrasonic scaling today (Limited to first 20 bookings)."`
-                    }
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
                 ];
             }
 
-            // 2. Fashion & Apparel
-            if (clean.includes('ملابس') || clean.includes('هودي') || clean.includes('fashion') || clean.includes('لبس') || clean.includes('عبايات') || clean.includes('قميص') || clean.includes('streetwear')) {
+            // 2. Fashion, Clothing & Streetwear
+            if (clean.includes('ملابس') || clean.includes('هودي') || clean.includes('fashion') || clean.includes('لبس') || clean.includes('عبايات') || clean.includes('قميص') || clean.includes('streetwear') || clean.includes('أزياء') || clean.includes('شوز') || clean.includes('بوتيك')) {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية إهدار الفلوس والوبر (Quality & Longevity)', text: `"مفيش أسوأ من إنك تشتري هودي شيك وبعد أول غسلة تلاقيه وبر وخامته كشت! في (${brandName}) بنصنع قطن 100% مبطن مبيغيرش لونه ولا بيوبر حتى بعد 100 غسلة."` },
+                    { label: '⚠️ زاوية الهيبة والانطباع الأول (First Impression)', text: `"اللبس هو أول انطباع بتسيبه قبل ما تنطق بكلمة! كولكشن (${brandName}) الجديد معمول مخصوص عشان يفرض هيبتك وشياكتك في أي مكان تروحه."` }
+                ] : [
+                    { label: '⚠️ Quality & Longevity Trigger', text: `"Tired of outfits that shrink and pill after one wash? (${brandName}) crafts 100% heavyweight cotton that retains its premium fit for years."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '🧠 زاوية الراحة والأناقة (Contrarian Comfort)', text: `"مش محتاج تضيع نص ساعة الصبح تفكر هتلبس إيه.. قطع (${brandName}) بتلبس في ثانية وتديك الشياكة والراحة والروقان اللي بتدور عليهم."` },
+                    { label: '💡 زاوية الروقان والويك إند (Weekend Story)', text: `"أحلى حاجة في يوم الإجازة.. إن المنبه مش هيرن 7 الصبح! البس السويت شيرت المفضل من (${brandName}) وعيش يومك بأعلى ستايل."` }
+                ] : [
+                    { label: '🧠 Effortless Drip Angle', text: `"Stop overthinking your outfit. (${brandName}) delivers effortless street style and premium comfort in seconds."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية العرض والشحن المجاني (Bundle Offer)', text: `"عايز تجدد دولابك من (${brandName})؟ اشتري أي قطعتين من الكولكشن الجديد وخد التالتة بخصم 50% مع شحن مجاني لباب بيتك!"` },
+                    { label: '🔥 زاوية الكمية المحدودة (Limited Drop)', text: `"الكولكشن ده من (${brandName}) اتصنع منه كمية محدودة ومفيش إعادة تصنيع لنفس الرسمة! احجز مقاسك دلوقتي قبل ما يخلص."` }
+                ] : [
+                    { label: '🔥 Limited Drop Offer', text: `"Buy 2 pieces from (${brandName}) and get the 3rd at 50% OFF with free express delivery today!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+
                 return [
-                    {
-                        angleId: 'fear',
-                        angleLabel: isAr ? '⚠️ زاوية إهدار الفلوس والوبر (Quality & Fear Trigger)' : '⚠️ Quality & Longevity Trigger',
-                        tagClass: 'tag-fear',
-                        text: isAr 
-                            ? `"مفيش أسوأ من إنك تشتري هودي أو طقم شيك وبعد أول غسلة تلاقيه وبر وخامته كشت وباظت! إحنا بنصنع قطن 100% مبطن مبيغيرش لونه ولا بيوبر حتى بعد 100 غسلة."`
-                            : `"Nothing is worse than buying an aesthetic outfit that shrinks and pills after the first wash! We craft 100% heavyweight cotton that retains its premium structure for years."`
-                    },
-                    {
-                        angleId: 'contrarian',
-                        angleLabel: isAr ? '🧠 زاوية الراحة والأناقة (Contrarian Comfort)' : '🧠 Effortless Drip Angle',
-                        tagClass: 'tag-curiosity',
-                        text: isAr 
-                            ? `"مش محتاج تضيع نص ساعة الصبح تفكر هتلبس إيه.. الهودي الأوفر سايز بتاعنا مبيسألكش رايح فين؛ بيلبس في ثانية ويديك الشياكة والراحة اللي بتدور عليها."`
-                            : `"Stop wasting 30 minutes wondering what to wear. Our oversized hoodie doesn't ask questions.. throw it on in one second for effortless drip and warmth."`
-                    },
-                    {
-                        angleId: 'offer',
-                        angleLabel: isAr ? '🔥 زاوية العرض والشحن المجاني (Bundle Offer)' : '🔥 Limited Drop Offer',
-                        tagClass: 'tag-offer',
-                        text: isAr 
-                            ? `"عايز تجدد دولابك من غير ما تدفع ميزانية فلكية؟ اشتري أي قطعتين من الكولكشن الجديد وخد التالتة بخصم 50% مع شحن مجاني لباب بيتك!"`
-                            : `"Upgrade your wardrobe without breaking the bank: Buy 2 pieces from our new drop and get the 3rd at 50% OFF with free express delivery!"`
-                    }
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
                 ];
             }
 
-            // 3. Food & Restaurants
-            if (clean.includes('مطعم') || clean.includes('برجر') || clean.includes('أكل') || clean.includes('food') || clean.includes('burger') || clean.includes('كافيه') || clean.includes('شاورما') || clean.includes('بيتزا')) {
+            // 3. Food, Dining & Cafes
+            if (clean.includes('مطعم') || clean.includes('برجر') || clean.includes('أكل') || clean.includes('food') || clean.includes('burger') || clean.includes('كافيه') || clean.includes('شاورما') || clean.includes('بيتزا') || clean.includes('حلويات') || clean.includes('مشويات')) {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية الجوع وخيبة الأمل (Cravings & Freshness)', text: `"لما تكون ميت من الجوع بعد يوم شغل طويل.. آخر حاجة محتاجها ساندوتش ناشف أو دليفري بارد! في (${brandName}) الأكل بيطلع فريش وسايح وبيوصلك سخن مولع."` },
+                    { label: '⚠️ زاوية جوع نص الليل (Late Night Hunger)', text: `"الساعة 2 بالليل وجوع الشتا بيقرصك؟ مطبخ (${brandName}) شغال والدليفري بيطير بالساندوتش غرقان صوص واصلك في أقل من 35 دقيقة!"` }
+                ] : [
+                    { label: '⚠️ Visual Craving Trigger', text: `"When you are starving after a long day, (${brandName}) serves smashed burgers dripping with cheese, delivered piping hot."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '💡 زاوية السر والنكهة الحقيقية (Secret Flavor Story)', text: `"ليه كل الناس اللي جربت الأكل من (${brandName}) بتقول 'مكناش بناكل كده قبل كده'؟ السر في تسوية اللحمة الفريش 100% مع الصوص السري المميز!"` },
+                    { label: '🧠 زاوية البرجر الحقيقي (Contrarian Taste)', text: `"مش كل لحمة عليها شريحة جبنة يتقال عليها برجر! في (${brandName}) جرب طعم الـ Smashed الحقيقي على جريل حديد مولع مع ميكس الجبنة المدخنة."` }
+                ] : [
+                    { label: '💡 Secret Flavor Story', text: `"Why do first-timers at (${brandName}) say 'we never tasted real burgers before'? Fresh aged beef smashed on smoking cast iron."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية عرض الشلة والعزومة (Combo Offer)', text: `"عزومة الشلة الليلة من (${brandName})! اطلب بوكس الأكيلة ووفر 30% من الحساب مع بطاطس لودد ولتر كولا هدية! اطلب دلوقتي."` },
+                    { label: '🔥 زاوية التوصيل المجاني (Free Delivery Offer)', text: `"اطلب أي وجبتين من (${brandName}) النهاردة واستمتع بالتوصيل مجاناً لحد باب بيتك!"` }
+                ] : [
+                    { label: '🔥 Ultimate Feast Offer', text: `"Feast night with the squad: Order (${brandName}) Big Squad Box and save 30% instantly!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+
                 return [
-                    {
-                        angleId: 'fear',
-                        angleLabel: isAr ? '⚠️ زاوية الجوع وخيبة الأمل (Cravings & Freshness)' : '⚠️ Visual Craving Trigger',
-                        tagClass: 'tag-fear',
-                        text: isAr 
-                            ? `"لما تكون ميت من الجوع بعد يوم شغل طويل.. آخر حاجة محتاجها هي ساندوتش ناشف أو دليفري يجيلك بارد بعد ساعتين! في مكاننا الساندوتش بيطلع سايح ومقرمش وبيوصلك سخن مولع."`
-                            : `"When you are starving after a long grind, the last thing you need is a dry cold burger! Every single bite here is freshly smashed, dripping with cheese, and arrives piping hot."`
-                    },
-                    {
-                        angleId: 'curiosity',
-                        angleLabel: isAr ? '💡 زاوية السر والنكهة الحقيقية (Secret Flavor Story)' : '💡 Secret Flavor Story',
-                        tagClass: 'tag-curiosity',
-                        text: isAr 
-                            ? `"ليه كل الناس اللي جربت الساندوتش ده أول مرة بتقول 'مكناش بناكل برجر قبل كده'؟ السر مش في الصوص بس.. السر في تسوية اللحمة الفريش 100% مع ميكس الجبنة السايحة المدخنة!"`
-                            : `"Why does everyone trying our burger for the first time say 'we never knew what real burgers tasted like'? The secret lies in 100% fresh aged beef smashed on smoking cast iron."`
-                    },
-                    {
-                        angleId: 'offer',
-                        angleLabel: isAr ? '🔥 زاوية عرض الشلة والعزومة (Combo Offer)' : '🔥 Ultimate Feast Offer',
-                        tagClass: 'tag-offer',
-                        text: isAr 
-                            ? `"عزومة الشلة الليلة علينا! اطلب بوكس الأكيلة (4 ساندوتشات دبل + بطاطس لودد بالجبنة + لتر كولا) ووفر 30% من الحساب! اطلب دلوقتي على الواتساب."`
-                            : `"Feast night with the squad: Order our Big Squad Box (4 Double Smashed Burgers + Loaded Cheese Fries + 1L Drink) and save 30% instantly!"`
-                    }
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
                 ];
             }
 
-            // 4. Courses & Education
-            if (clean.includes('كورس') || clean.includes('تعليم') || clean.includes('إنجليزي') || clean.includes('انجليزي') || clean.includes('course') || clean.includes('english') || clean.includes('تدريب')) {
+            // 4. Courses, Coaching & Education
+            if (clean.includes('كورس') || clean.includes('تعليم') || clean.includes('إنجليزي') || clean.includes('انجليزي') || clean.includes('course') || clean.includes('english') || clean.includes('تدريب') || clean.includes('أكاديم')) {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية ضياع الفرص والإنترفيو (Career Loss Anxiety)', text: `"مفيش إحساس أصعب من إنك تترفض في إنترفيو مرتبه بالدولار عشان لسانك تقيل في الإنجليزي! في (${brandName}) بنعلمك تفكر بالإنجليزي وتتكلم بطلاقة في 60 يوم."` },
+                    { label: '⚠️ زاوية تضييع الشهور والسنين (Wasted Time)', text: `"بقالك كام سنة بتأجل تطوير نفسك؟ في (${brandName}) خطة الممارسة الحية هتوفر عليك سنين من الحفظ النظري العقيم."` }
+                ] : [
+                    { label: '⚠️ Career Loss & Interview Anxiety', text: `"Stop losing high-paying jobs because you freeze during speaking! (${brandName}) coaches you to speak fluent English in 60 days."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '🧠 زاوية كسر خرافة حفظ القواعد (Contrarian Fluency)', text: `"مشكلتك مش إنك محتاج تحفظ 1000 كلمة جديدة.. في (${brandName}) بنعلمك التحدث التلقائي بدون ترجمة في دماغك بأسلوب المحاكاة الحية."` },
+                    { label: '💡 زاوية المحاكاة الواقعية (Active Immersion)', text: `"ساعة واحدة تطبيق عملي يومياً مع خبراء (${brandName}) بتعادل سنة كاملة من الكورسات النظرية في المراكز القديمة."` }
+                ] : [
+                    { label: '🧠 Fast Immersion Blueprint', text: `"Master fluent conversational English with (${brandName}) active immersion method without dry memorization."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية تقييم المستوى المجاني (Zero-Risk Placement)', text: `"احجز جلستك لتحديد المستوى وتقييم النطق مجاناً 100% مع مدرب معتمد من (${brandName})، واعرف خطتك المخصصة اليوم!"` },
+                    { label: '🔥 زاوية ضمان استرجاع الرسوم (Guaranteed Fluency)', text: `"لو بعد أول أسبوعين في (${brandName}) حسيت إنك متطورتش بنسبة 50% على الأقل، بنرجعلك فلوسك كاملة بدون نقاش."` }
+                ] : [
+                    { label: '🔥 Free Diagnostic Placement', text: `"Claim your 100% free speaking diagnostic session with (${brandName}) certified fluency coach today!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+
                 return [
-                    {
-                        angleId: 'fear',
-                        angleLabel: isAr ? '⚠️ زاوية ضياع الفرص والإنترفيو (Career Loss Anxiety)' : '⚠️ Career Loss & Interview Anxiety',
-                        tagClass: 'tag-fear',
-                        text: isAr 
-                            ? `"مفيش إحساس أصعب من إنك تترفض في إنترفيو مرتبه بالدولار عشان بس لسانك تقيل في الإنجليزي وبتقعد تتهته! الحل مش في كتب القواعد المعقدة.. الحل في ممارسة المحادثة اليومية الحية."`
-                            : `"Nothing stings more than losing a high-paying remote job offer just because you freeze during English speaking interviews! You don't need dry grammar books; you need real fluent practice."`
-                    },
-                    {
-                        angleId: 'contrarian',
-                        angleLabel: isAr ? '🧠 زاوية كسر خرافة حفظ القواعد (Contrarian Fluency)' : '🧠 Fast Immersion Blueprint',
-                        tagClass: 'tag-curiosity',
-                        text: isAr 
-                            ? `"مشكلتك في الإنجليزي مش إنك محتاج تحفظ 1000 كلمة جديدة.. مشكلتك إنك بتترجم في دماغك قبل ما تتكلم! في البرنامج بتاعنا بنعلمك تفكر بالإنجليزي وتتكلم بطلاقة في 60 يوم."`
-                            : `"You don't need to memorize 1,000 new vocabulary words; you need to stop translating in your head before speaking! Master natural English thinking in 60 days."`
-                    },
-                    {
-                        angleId: 'offer',
-                        angleLabel: isAr ? '🔥 زاوية تقييم المستوى المجاني (Zero-Risk Placement)' : '🔥 Free Diagnostic Placement',
-                        tagClass: 'tag-offer',
-                        text: isAr 
-                            ? `"احجز جلستك لتحديد المستوى وتقييم النطق مجاناً 100% مع مدرب معتمد، واعرف خطتك المخصصة للوصول لدرجة الطلاقة في خلال شهرين بس!"`
-                            : `"Claim your 100% free speaking diagnostic session with a certified fluency coach and receive your custom 60-day roadmap today!"`
-                    }
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
                 ];
             }
 
-            // 5. Gym & Fitness
-            if (clean.includes('جيم') || clean.includes('فتنس') || clean.includes('تخسيس') || clean.includes('دايت') || clean.includes('gym') || clean.includes('fitness') || clean.includes('عضلات')) {
+            // 5. Gym, Fitness & Nutrition
+            if (clean.includes('جيم') || clean.includes('فتنس') || clean.includes('تخسيس') || clean.includes('دايت') || clean.includes('gym') || clean.includes('fitness') || clean.includes('عضلات') || clean.includes('تمرين')) {
+                const fears = isAr ? [
+                    { label: '⚠️ زاوية إحباط الدايت والملل (Frustration Trigger)', text: `"مفيش أصعب من إنك تمنع نفسك من الأكل ومفيش نتيجة على الميزان! مع كباتن (${brandName}) هتاخد خطة تمرين وتغذية متفصلة على جيناتك بتجيب نتايج من أول أسبوعين."` },
+                    { label: '⚠️ زاوية اللبس اللي ضاق (Confidence & Clothes)', text: `"الهدوم الشيك المركونة في دولابك ومستني تخس عشان تلبسها؟ مع برنامج (${brandName}) بعد 60 يوم بس هترجع تلبسها وأنت فخور بجسمك في المراية."` }
+                ] : [
+                    { label: '⚠️ Diet Fatigue Trigger', text: `"Tired of starving with zero scale progress? (${brandName}) custom training & macro plans are built for your exact body genetics."` }
+                ];
+
+                const curiosities = isAr ? [
+                    { label: '🧠 زاوية كسر خرافة الحرمان (Contrarian Lifestyle)', text: `"مش محتاج تقطع رز ولا عيش عشان تبني فورمة.. مع (${brandName}) تمرين 45 دقيقة صح 3 مرات أسبوعياً كافي يغير شكل عضلاتك بالكامل!"` },
+                    { label: '💡 زاوية تمرين الـ 45 دقيقة (Effort Collapse)', text: `"مش محتاج تقضي ساعتين في الجيم.. تكنيك التدريب الذكي في (${brandName}) بيضاعف الحرق والبناء العضلي في نص الوقت."` }
+                ] : [
+                    { label: '🧠 No-Starvation Blueprint', text: `"You don't need to starve to get shredded. (${brandName}) delivers proven results with 45-minute smart sessions 3x a week."` }
+                ];
+
+                const offers = isAr ? [
+                    { label: '🔥 زاوية الأسبوع التجريبي المجاني (Free Trial Offer)', text: `"ابدأ أول 7 أيام تدريب ومتابعة غذائية مجاناً في (${brandName}) وشوف أول تغيير في طاقتك وجسمك قبل ما تدفع جنيه واحد!"` },
+                    { label: '🔥 زاوية اشتراك الصحاب (Buddy Discount)', text: `"اشترك أنت وصاحبك في (${brandName}) وخودوا خصم 35% مع خطة دايت وإنبادي مجاني هدية."` }
+                ] : [
+                    { label: '🔥 Risk-Free Transformation Offer', text: `"Start your first 7 days of 1-on-1 coaching at (${brandName}) completely free. Experience the transformation today!"` }
+                ];
+
+                const f = getRandomItem(fears);
+                const c = getRandomItem(curiosities);
+                const o = getRandomItem(offers);
+
                 return [
-                    {
-                        angleId: 'fear',
-                        angleLabel: isAr ? '⚠️ زاوية إحباط الدايت والملل (Frustration Trigger)' : '⚠️ Diet Fatigue Trigger',
-                        tagClass: 'tag-fear',
-                        text: isAr 
-                            ? `"مفيش أصعب من إنك تمنع نفسك من الأكل وتتمرن أسبوعين وفي الآخر تقف على الميزان متلاقيش فرق! المشكلة مش في مجهودك.. المشكلة في خطة تمرين وتغذية مش متفصلة على جيناتك."`
-                            : `"Nothing is more frustrating than starving yourself for weeks only to see zero scale progress! The issue isn't effort; it's a generic plan that ignores your metabolic profile."`
-                    },
-                    {
-                        angleId: 'contrarian',
-                        angleLabel: isAr ? '🧠 زاوية كسر خرافة الحرمان (Contrarian Lifestyle)' : '🧠 No-Starvation Blueprint',
-                        tagClass: 'tag-curiosity',
-                        text: isAr 
-                            ? `"مش محتاج تقطع رز ولا عيش عشان تبني جسم مشدود وفورمة.. السر في حساب السعرات بذكاء وتمرين المقاومة الصح 45 دقيقة بس 3 مرات أسبوعياً!"`
-                            : `"You don't need to cut carbs to build a lean physique. The secret is smart progressive overload and macro budgeting in just 45-minute sessions 3x a week!"`
-                    },
-                    {
-                        angleId: 'offer',
-                        angleLabel: isAr ? '🔥 زاوية الأسبوع التجريبي المجاني (Free Trial Offer)' : '🔥 Risk-Free Transformation Offer',
-                        tagClass: 'tag-offer',
-                        text: isAr 
-                            ? `"ابدأ أول 7 أيام متابعة وتمرين مجاناً مع مدربك الخاص، وشوف أول تغيير في طاقتك وجسمك قبل ما تدفع جنيه واحد!"`
-                            : `"Start your first 7 days of 1-on-1 personalized coaching completely free. Experience the transformation before committing to a membership!"`
-                    }
+                    { angleId: 'fear', angleLabel: f.label, tagClass: 'tag-fear', text: f.text },
+                    { angleId: 'curiosity', angleLabel: c.label, tagClass: 'tag-curiosity', text: c.text },
+                    { angleId: 'offer', angleLabel: o.label, tagClass: 'tag-offer', text: o.text }
                 ];
             }
 
-            // Universal high-converting dynamic fallback algorithm (GrowthOS-Engine)
-            const brandTerm = topic.length > 0 ? topic : (isAr ? 'البيزنس بتاعك' : 'your business');
+            // 6. Universal Dynamic Fallback (Explicitly Brand-Injected)
+            const universalFears = isAr ? [
+                { label: '⚠️ زاوية الوجع والفرصة الضايعة (Pain & Lost Revenue)', text: `"بتصرف فلوس على إعلانات السوشيال ميديا لـ (${brandName}) بس الزباين بتدخل تسأل وتمشي من غير ما تشتري؟ المشكلة مش في المنتج.. المشكلة في الكلمات اللي مبتلمسش وجع العميل الحقيقي!"` },
+                { label: '⚠️ زاوية حرق الميزانية في الهوا (Ad Budget Waste)', text: `"حرقت ميزانيات على حملات (${brandName}) والرسالة بتكلفك كتير ومفيش مبيعات؟ أول 3 ثواني في الإعلان هي اللي بتحدد إذا كانت فلوسك هترجعلك أرباح ولا هتضيع!"` },
+                { label: '⚠️ زاوية خطأ التسعير والمنافسة (Pricing Mistake)', text: `"أكبر غلطة بيقع فيها أصحاب (${brandName}) إنهم يفتكروا إن حرق الأسعار هو الحل.. في الحقيقة الزبون بيشتري الثقة والقيمة اللي بتصنعها هيبة (${brandName})!"` }
+            ] : [
+                { label: '⚠️ Pain & Loss Aversion Angle', text: `"Spending money on ads for (${brandName}) only to see leads bounce without buying? The bottleneck is copy that fails to trigger emotional buying urgency!"` },
+                { label: '⚠️ Ad Waste Trigger', text: `"Burning budgets on (${brandName}) ads without positive ROAS? The first 3 seconds of your creative dictate whether your budget generates profit or waste."` }
+            ];
+
+            const universalCuriosities = isAr ? [
+                { label: '💡 زاوية كسر المألوف والتميز (Contrarian Advantage)', text: `"ليه أغلب المنافسين في مجال (${brandName}) بيحرقوا أسعار وخسرانين.. وبراندات تانية بتبيع بأعلى سعر والناس واقفة عليها طوابير؟ السر في صياغة القيمة وسيكولوجية الإقناع!"` },
+                { label: '🧠 زاوية السر المخفي في السوق (Hidden Strategy)', text: `"السر اللي كبار براندات (${brandName}) مبيقولوهوش في العلن: إزاي تخلي العميل يجيلك جاهز للشراء ومبيسألش عن السعر قبل ما يطلب!"` },
+                { label: '⚡ زاوية اختصار الوقت والمجهود (Effort Collapse)', text: `"بدل ما تضيع شهور تجارب وميزانيات في الهوا في (${brandName}).. خطة محتوى متفصلة على سيكولوجية زبونك هتختصر عليك الطريق وتبدأ تجيب مبيعات من أول أسبوع."` }
+            ] : [
+                { label: '💡 Contrarian Differentiation Angle', text: `"Why do standard competitors in (${brandName}) compete on low margins, while category leaders charge premium pricing with waiting lists? The secret is psychological positioning!"` }
+            ];
+
+            const universalOffers = isAr ? [
+                { label: '🔥 زاوية العرض المغري والتحويل المباشر (Irresistible Offer)', text: `"عرض خاص لعملاء (${brandName}) الجدد: اطلب دلوقتي واستمتع بخصم حصري وضمان استرجاع كامل لو مكنتش مبسوط 100%! ابعتلنا رسالة وابدأ فوراً."` },
+                { label: '🔥 زاوية الاستشارة والتقييم المجاني (Free Audit)', text: `"ابعتلنا تفاصيل (${brandName}) دلوقتي واحصل على تحليل مجاني لنقاط القوة والضعف في إعلاناتك وخطة زيادة المبيعات خلال 48 ساعة فقط!"` }
+            ] : [
+                { label: '🔥 High-Conversion Offer Angle', text: `"Exclusive offer for (${brandName}): Claim special introductory pricing plus 100% satisfaction guarantee. Message us directly to unlock your benefits!"` }
+            ];
+
+            const uf = getRandomItem(universalFears);
+            const uc = getRandomItem(universalCuriosities);
+            const uo = getRandomItem(universalOffers);
+
             return [
-                {
-                    angleId: 'fear',
-                    angleLabel: isAr ? '⚠️ زاوية الوجع والفرصة الضايعة (Pain & Lost Revenue)' : '⚠️ Pain & Loss Aversion Angle',
-                    tagClass: 'tag-fear',
-                    text: isAr 
-                        ? `"بتصرف فلوس على إعلانات السوشيال ميديا لـ (${brandTerm}) بس الزباين بتدخل تسأل وتمشي من غير ما تشتري؟ المشكلة مش في المنتج.. المشكلة في الكلمات اللي مبتلمسش وجع العميل الحقيقي!"`
-                        : `"Spending money on ads for (${brandTerm}) only to see leads bounce without buying? The bottleneck is not the product; it is copy that fails to trigger emotional urgency!"`
-                },
-                {
-                    angleId: 'contrarian',
-                    angleLabel: isAr ? '💡 زاوية كسر المألوف والتميز عن المنافسين (Distinct Advantage)' : '💡 Contrarian Differentiation Angle',
-                    tagClass: 'tag-curiosity',
-                    text: isAr 
-                        ? `"ليه أغلب المنافسين في مجال (${brandTerm}) بيحرقوا أسعار وخسرانين.. وبراندات تانية بتبيع بأعلى سعر والناس واقفة عليها طوابير؟ السر في صياغة القيمة وسيكولوجية الإقناع!"`
-                        : `"Why do standard competitors in (${brandTerm}) compete on low margins, while category leaders charge premium pricing with waiting lists? The secret is psychological positioning!"`
-                },
-                {
-                    angleId: 'offer',
-                    angleLabel: isAr ? '🔥 زاوية العرض المغري والتحويل المباشر (Irresistible Offer)' : '🔥 High-Conversion Offer Angle',
-                    tagClass: 'tag-offer',
-                    text: isAr 
-                        ? `"عرض خاص لعملاء (${brandTerm}) الجدد: اطلب دلوقتي واستمتع بخصم حصري وضمان استرجاع كامل لو مكنتش مبسوط 100%! ابعتلنا رسالة وابدأ فوراً."`
-                        : `"Exclusive offer for (${brandTerm}): Claim special introductory pricing plus 100% satisfaction guarantee. Message us directly to unlock your benefits!"`
-                }
+                { angleId: 'fear', angleLabel: uf.label, tagClass: 'tag-fear', text: uf.text },
+                { angleId: 'curiosity', angleLabel: uc.label, tagClass: 'tag-curiosity', text: uc.text },
+                { angleId: 'offer', angleLabel: uo.label, tagClass: 'tag-offer', text: uo.text }
             ];
         }
 
-        // Render Generated Hooks in UI
+        // Leaderboard Persistent Storage Engine
+        function getLikesLedger() {
+            const defaultLedger = {
+                'hk_contrarian_offer': {
+                    text: 'مشكلتك مش في الإعلانات.. مشكلتك في الـ Offer نفسه اللي محدش قادر يقتنع بيه!',
+                    topic: 'استراتيجية تسويق عامة',
+                    angle: '🧠 كسر المعتقد (Contrarian)',
+                    likes: 89
+                },
+                'hk_dental_decay': {
+                    text: 'مبتصحاش من النوم تلاقي ضرسك اتكسر فجأة! جلسة فحص 10 دقايق هتوفر عليك علاج عصب وآلاف الجنيهات بعدين!',
+                    topic: 'عيادات الأسنان',
+                    angle: '⚠️ وجع وخسارة (Loss Aversion)',
+                    likes: 76
+                },
+                'hk_eleven11_roas': {
+                    text: 'من تكلفة رسالة 18 جنيه لـ 4.41 جنيه في أقل من أسبوعين بحملات براند Eleven 11!',
+                    topic: 'براندات الملابس',
+                    angle: '📈 نتائج وأرقام (Proof)',
+                    likes: 64
+                },
+                'hk_hoodie_pills': {
+                    text: 'مفيش أسوأ من إنك تشتري هودي شيك وبعد أول غسلة تلاقيه وبر وخامته كشت وباظت! قطن 100% مبطن مبيغيرش لونه.',
+                    topic: 'ملابس وأزياء',
+                    angle: '⚠️ خوف وجودة (Quality)',
+                    likes: 58
+                }
+            };
+
+            const stored = localStorage.getItem('metwally_hook_ledger');
+            return stored ? JSON.parse(stored) : defaultLedger;
+        }
+
+        function saveLikesLedger(ledger) {
+            localStorage.setItem('metwally_hook_ledger', JSON.stringify(ledger));
+        }
+
+        function updateLeaderboardUI() {
+            const listEl = document.getElementById('topHooksLeaderboardList');
+            if (!listEl) return;
+
+            const ledger = getLikesLedger();
+            const sortedKeys = Object.keys(ledger).sort((a, b) => (ledger[b].likes || 0) - (ledger[a].likes || 0)).slice(0, 4);
+            const isAr = (currentLang === 'ar');
+            const medals = ['🥇', '🥈', '🥉', '⭐'];
+
+            listEl.innerHTML = sortedKeys.map((k, idx) => {
+                const item = ledger[k];
+                const encodedWa = encodeURIComponent(
+                    isAr
+                        ? `أهلاً يا محمود، شفت الهوك المتصدر رقم (${idx + 1}) في البورتفوليو بتاعك لمجال "${item.topic}":\n\n"${item.text}"\n\nوعايز أعمل حملة إعلانية بنفس القوة لمشروعي!`
+                        : `Hi Mahmoud! I saw the top-ranked hook (#${idx + 1}) in your portfolio for "${item.topic}":\n\n"${item.text}"\n\nI want to run a campaign with this conversion angle!`
+                );
+
+                return `
+                    <div style="background: var(--bg-surface); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: flex-start; gap: 12px; flex: 1 1 300px;">
+                            <span style="font-size: 1.3rem; flex-shrink: 0; margin-top: 2px;">${medals[idx] || '⭐'}</span>
+                            <div>
+                                <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px; flex-wrap: wrap;">
+                                    <span style="font-size: 0.76rem; font-weight: 800; color: var(--accent); background: rgba(232,114,42,0.1); padding: 2px 8px; border-radius: var(--radius-sm);">${item.topic}</span>
+                                    <span style="font-size: 0.74rem; color: var(--text-muted);">${item.angle || ''}</span>
+                                </div>
+                                <p style="margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--text-primary); line-height: 1.5;">"${item.text}"</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+                            <span style="font-size: 0.86rem; font-weight: 800; color: #25D366; background: rgba(37,211,102,0.1); padding: 4px 10px; border-radius: var(--radius-full); font-family: var(--font-mono);">👍 ${item.likes} تصويت</span>
+                            <a href="https://wa.me/201065760983?text=${encodedWa}" target="_blank" rel="noopener noreferrer" style="background: var(--accent); color: #ffffff; text-decoration: none; padding: 6px 14px; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 800; display: inline-flex; align-items: center; gap: 4px;">
+                                <span>💬 ${isAr ? 'اطلب بالهوك ده' : 'Order Hook'}</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Render Generated Hooks in UI with Stable Persistent Key Mapping
         function renderGeneratedHooks(topic) {
             const container = document.getElementById('hookResultsStack');
+            lastActiveTopic = topic;
             const hooks = generateHooksForTopic(topic, currentLang);
             const isAr = (currentLang === 'ar');
 
-            // Retrieve stored likes
+            const statusEl = document.getElementById('lblActiveTopic');
+            if (statusEl) {
+                statusEl.textContent = isAr ? `🎯 الهوكات الحالية لـ: "${topic}"` : `🎯 Active Hooks for: "${topic}"`;
+            }
+
+            // Retrieve stored likes & ledger
             let likesMap = JSON.parse(localStorage.getItem('metwally_hook_likes') || '{}');
+            let ledger = getLikesLedger();
 
             container.innerHTML = hooks.map((h, idx) => {
-                const hookKey = `hook_${topic.replace(/\s+/g, '_')}_${idx}`;
-                const initialLikes = likesMap[hookKey] || (14 + idx * 7);
+                const hookKey = getStableHookKey(h.text);
+                
+                // Initialize in ledger if not present
+                if (!ledger[hookKey]) {
+                    ledger[hookKey] = {
+                        text: h.text.replace(/"/g, ''),
+                        topic: topic,
+                        angle: h.angleLabel,
+                        likes: likesMap[hookKey] || (18 + idx * 7)
+                    };
+                    likesMap[hookKey] = ledger[hookKey].likes;
+                }
+
+                const currentCount = ledger[hookKey].likes;
                 const isLiked = likesMap[`liked_${hookKey}`] ? 'liked' : '';
                 const encodedWaText = encodeURIComponent(
                     isAr 
@@ -2864,7 +3029,7 @@
                 );
 
                 return `
-                    <div class="hook-card-box tilt-card reveal active">
+                    <div class="hook-card-box tilt-card reveal active" style="animation: fadeInUp 0.4s ease forwards;">
                         <div class="tilt-glare"></div>
                         <div class="hook-card-header">
                             <span class="hook-angle-tag ${h.tagClass}">${h.angleLabel}</span>
@@ -2875,9 +3040,9 @@
                                 <button class="btn-hook-action" onclick="copySpecificHook('${hookKey}')">
                                     <span>📋 ${isAr ? 'نسخ الهوك' : 'Copy Hook'}</span>
                                 </button>
-                                <button class="btn-hook-action ${isLiked}" id="btn_like_${hookKey}" onclick="likeHook('${hookKey}')">
+                                <button class="btn-hook-action ${isLiked}" id="btn_like_${hookKey}" onclick="likeHook('${hookKey}', '${topic.replace(/'/g, "\\'")}', '${h.angleLabel.replace(/'/g, "\\'")}')">
                                     <span>👍 ${isAr ? 'عجبني' : 'Upvote'}</span>
-                                    <span class="font-mono font-bold" id="cnt_${hookKey}">(${initialLikes})</span>
+                                    <span class="font-mono font-bold" id="cnt_${hookKey}">(${currentCount})</span>
                                 </button>
                             </div>
                             <a href="https://wa.me/201065760983?text=${encodedWaText}" target="_blank" rel="noopener noreferrer" class="btn-hook-wa-order">
@@ -2888,6 +3053,9 @@
                 `;
             }).join('');
 
+            saveLikesLedger(ledger);
+            localStorage.setItem('metwally_hook_likes', JSON.stringify(likesMap));
+            updateLeaderboardUI();
             init3DTiltPhysics();
         }
 
@@ -2898,29 +3066,40 @@
             });
         };
 
-        window.likeHook = function(hookKey) {
+        window.likeHook = function(hookKey, topic, angleLabel) {
             let likesMap = JSON.parse(localStorage.getItem('metwally_hook_likes') || '{}');
+            let ledger = getLikesLedger();
             const cntEl = document.getElementById(`cnt_${hookKey}`);
             const btnEl = document.getElementById(`btn_like_${hookKey}`);
+            const hookTextEl = document.getElementById(`text_${hookKey}`);
+            const hookText = hookTextEl ? hookTextEl.innerText.replace(/"/g, '') : '';
 
-            let currentCount = likesMap[hookKey] || parseInt(cntEl.innerText.replace(/\D/g, '')) || 15;
+            let currentCount = (ledger[hookKey] && ledger[hookKey].likes) ? ledger[hookKey].likes : (parseInt(cntEl.innerText.replace(/\D/g, '')) || 20);
             
             if (!likesMap[`liked_${hookKey}`]) {
                 currentCount += 1;
-                likesMap[hookKey] = currentCount;
                 likesMap[`liked_${hookKey}`] = true;
                 btnEl.classList.add('liked');
-                cntEl.innerText = `(${currentCount})`;
-                showToast(currentLang === 'ar' ? 'شكراً على تقييمك للهوك! ❤️' : 'Thanks for your feedback! ❤️');
+                showToast(currentLang === 'ar' ? 'شكراً على تقييمك للهوك! ❤️ تم إضافته لبنك الهوكات' : 'Thanks for your feedback! ❤️ Added to top hooks bank');
             } else {
-                currentCount -= 1;
-                likesMap[hookKey] = currentCount;
+                currentCount = Math.max(0, currentCount - 1);
                 likesMap[`liked_${hookKey}`] = false;
                 btnEl.classList.remove('liked');
-                cntEl.innerText = `(${currentCount})`;
             }
 
+            likesMap[hookKey] = currentCount;
+            ledger[hookKey] = {
+                text: hookText,
+                topic: topic || lastActiveTopic,
+                angle: angleLabel || '',
+                likes: currentCount,
+                updatedAt: new Date().toISOString()
+            };
+
+            cntEl.innerText = `(${currentCount})`;
             localStorage.setItem('metwally_hook_likes', JSON.stringify(likesMap));
+            saveLikesLedger(ledger);
+            updateLeaderboardUI();
         };
 
         function renderProjects(t) {
@@ -3218,6 +3397,15 @@
                     renderGeneratedHooks(currentLang === 'ar' ? 'بيزنس عام' : 'general business');
                 }
             });
+
+            const btnReroll = document.getElementById('btnRerollHooks');
+            if (btnReroll) {
+                btnReroll.addEventListener('click', () => {
+                    const val = inputField.value.trim() || lastActiveTopic || (currentLang === 'ar' ? 'بيزنس عام' : 'general business');
+                    renderGeneratedHooks(val);
+                    showToast(currentLang === 'ar' ? 'تم توليد زوايا وأفكار جديدة! 🎲' : 'Generated fresh new angles! 🎲');
+                });
+            }
 
             inputField.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
