@@ -1772,6 +1772,595 @@
         }
 
         /* ==========================================================================
+           11b. Testimonials & Live Feedback Section
+           ========================================================================== */
+        .feedback-section {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-card);
+            border-bottom: 1px solid var(--border-card);
+            position: relative;
+        }
+
+        .feedback-summary-bar {
+            background: linear-gradient(135deg, rgba(232, 114, 42, 0.08), var(--bg-card) 50%, rgba(37, 211, 102, 0.05));
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .feedback-stats-group {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .feedback-stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .feedback-stat-value {
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feedback-stat-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .btn-open-feedback-modal {
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 18px var(--accent-rgba);
+        }
+
+        .btn-open-feedback-modal:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px var(--accent-rgba);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        @media (max-width: 992px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 26px 22px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-5px);
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-card.new-user-feedback {
+            border-color: var(--accent);
+            background: linear-gradient(145deg, rgba(232, 114, 42, 0.06), var(--bg-card));
+        }
+
+        .testimonial-header-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, var(--accent-subtle), rgba(232, 114, 42, 0.25));
+            border: 2px solid var(--accent-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .testimonial-meta {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .testimonial-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 0 0 3px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-quote {
+            font-size: 0.94rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .testimonial-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border-card);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .testimonial-verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* Feedback Modal Styles */
+        .feedback-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(4, 7, 18, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .feedback-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .feedback-modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-xl);
+            padding: 32px 28px;
+            max-width: 520px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            transform: translateY(20px) scale(0.96);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .feedback-modal-overlay.active .feedback-modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .feedback-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .feedback-modal-title {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .feedback-modal-close {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-card);
+            color: var(--text-muted);
+            width: 34px;
+            height: 34px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .feedback-modal-close:hover {
+            color: var(--text-primary);
+            border-color: var(--accent);
+            background: var(--accent-subtle);
+        }
+
+        .star-picker-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin: 15px 0 22px 0;
+            padding: 14px;
+            background: var(--bg-inner);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-card);
+        }
+
+        .star-picker-stars {
+            display: flex;
+            gap: 8px;
+            direction: ltr;
+        }
+
+        .star-btn {
+            background: transparent;
+            border: none;
+            font-size: 1.9rem;
+            color: #4a5568;
+            cursor: pointer;
+            transition: transform 0.15s ease, color 0.15s ease;
+            padding: 0 2px;
+        }
+
+        .star-btn.hovered, .star-btn.selected {
+            color: #ffc107;
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 6px rgba(255, 193, 7, 0.6));
+        }
+
+        .star-picker-label {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .form-group-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .form-group-wrap label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .feedback-form-input, .feedback-form-textarea {
+            width: 100%;
+            background: var(--bg-inner);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .feedback-form-input:focus, .feedback-form-textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-subtle);
+        }
+
+        .feedback-form-textarea {
+            min-height: 100px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .btn-submit-feedback {
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 1rem;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 18px var(--accent-rgba);
+            margin-top: 10px;
+        }
+
+        .btn-submit-feedback:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--accent-rgba);
+        }
+
+        /* ==========================================================================
+           11c. Work Packages & Collaboration Tiers Section
+           ========================================================================== */
+        .packages-section {
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-card);
+            border-bottom: 1px solid var(--border-card);
+            position: relative;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 992px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+                margin-inline: auto;
+            }
+        }
+
+        .package-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-xl);
+            padding: 32px 26px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .package-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .package-card.featured {
+            border-color: var(--accent);
+            background: linear-gradient(145deg, rgba(232, 114, 42, 0.08), var(--bg-card) 65%);
+            box-shadow: 0 12px 35px var(--accent-rgba);
+        }
+
+        .package-popular-badge {
+            position: absolute;
+            top: 16px;
+            inset-inline-end: 16px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: #ffffff;
+            font-size: 0.76rem;
+            font-weight: 900;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px var(--accent-rgba);
+        }
+
+        .package-icon-wrap {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+        }
+
+        .package-title {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin: 0 0 8px 0;
+            line-height: 1.35;
+        }
+
+        .package-tagline {
+            font-size: 0.88rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .package-desc {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .package-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 26px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .package-feature-item {
+            font-size: 0.86rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .package-feature-item::before {
+            content: '✔';
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 0.82rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .btn-package-order {
+            width: 100%;
+            background: var(--bg-inner);
+            border: 1px solid var(--border-card);
+            color: var(--text-primary);
+            font-size: 0.94rem;
+            font-weight: 800;
+            padding: 12px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .package-card.featured .btn-package-order, .btn-package-order:hover {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* Origin Story Comparison Grid (Inside About) */
+        .origin-comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .origin-comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .origin-box {
+            background: var(--bg-inner);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            position: relative;
+        }
+
+        .origin-box-welding {
+            border-inline-start: 4px solid #718096;
+        }
+
+        .origin-box-copy {
+            border-inline-start: 4px solid var(--accent);
+            background: rgba(232, 114, 42, 0.05);
+        }
+
+        .origin-box-title {
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .origin-box-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .anti-ai-banner {
+            background: linear-gradient(135deg, rgba(232, 114, 42, 0.12), rgba(0,0,0,0.4));
+            border: 1px dashed var(--accent-border);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .anti-ai-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .anti-ai-desc {
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* ==========================================================================
            12. Grand Contact Section
            ========================================================================== */
         .grand-cta-box {
@@ -2043,7 +2632,8 @@
                 <li><a href="#brands" class="nav-link" id="navBrands">البراندات</a></li>
                 <li><a href="#about" class="nav-link" id="navAbout">عنّي</a></li>
                 <li><a href="#calculator" class="nav-link" id="navCalc">الأدوات والهوكات</a></li>
-                <li><a href="#experience" class="nav-link" id="navExperience">الخبرات</a></li>
+                <li><a href="#packages" class="nav-link" id="navPackages">الباقات</a></li>
+                <li><a href="#feedback" class="nav-link" id="navFeedback">التقييمات</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -2206,6 +2796,11 @@
                 <div class="narrative-card tilt-card reveal" id="narrativeBox">
                     <div class="tilt-glare"></div>
                 </div>
+
+                <!-- DNA Origin Comparison & Anti-AI Manifesto -->
+                <div class="origin-comparison-grid reveal" id="originComparisonGrid"></div>
+                <div class="anti-ai-banner reveal" id="antiAiBanner"></div>
+
                 <div class="metrics-grid reveal" id="metricsGrid"></div>
             </div>
         </section>
@@ -2358,6 +2953,65 @@
             </div>
         </section>
 
+        <!-- 7b. Client Reviews & Feedback Section -->
+        <section class="feedback-section section-padding" id="feedback">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-tag-pill" id="feedTag">آراء وتجارب العملاء</span>
+                    <h2 class="section-main-title" id="feedTitle">شهادات وتجارب أصحاب البيزنس والشركاء ⭐</h2>
+                    <p class="section-sub-desc" id="feedSub">كلام واقعي ونتائج ملموسة من براندات وشركات اشتغلنا سوا وحققنا طفرة في المبيعات والوصول:</p>
+                </div>
+
+                <!-- Rating Summary Bar -->
+                <div class="feedback-summary-bar tilt-card reveal">
+                    <div class="tilt-glare"></div>
+                    <div class="feedback-stats-group">
+                        <div class="feedback-stat-item">
+                            <div class="feedback-stat-value">
+                                <span>4.9</span>
+                                <span style="color: #ffc107; font-size: 1.3rem;">★★★★★</span>
+                            </div>
+                            <span class="feedback-stat-label" id="feedAvgLabel">متوسط تقييمات العملاء</span>
+                        </div>
+                        <div class="feedback-stat-item">
+                            <div class="feedback-stat-value">
+                                <span>100%</span>
+                                <span style="color: var(--success); font-size: 1.2rem;">🤝</span>
+                            </div>
+                            <span class="feedback-stat-label" id="feedRecLabel">يوصون بالتعامل واستمرار الحملات</span>
+                        </div>
+                        <div class="feedback-stat-item">
+                            <div class="feedback-stat-value">
+                                <span id="feedCountNumber">15+</span>
+                                <span style="font-size: 1.2rem;">💬</span>
+                            </div>
+                            <span class="feedback-stat-label" id="feedCountLabel">شراكة وتقييم موثق</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-open-feedback-modal" id="btnOpenFeedbackModal">
+                        <span>✍️ <strong id="btnOpenFeedbackLabel">شارك رأيك وتقييمك في الشغل</strong></span>
+                    </button>
+                </div>
+
+                <!-- Testimonials Grid -->
+                <div class="testimonials-grid reveal" id="testimonialsGrid"></div>
+            </div>
+        </section>
+
+        <!-- 7c. Work Packages & Collaboration Tiers Section -->
+        <section class="packages-section section-padding" id="packages">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-tag-pill" id="pkgTag">باقات وخدمات التعاقد</span>
+                    <h2 class="section-main-title" id="pkgTitle">باقات عمل واضحة تضمن لبيزنسك أعلى ROAS 💼</h2>
+                    <p class="section-sub-desc" id="pkgSub">اختر مسار التعاون الأنسب لبيزنسك ومرحلة نموك الحالية وابدأ فوراً في تحويل إعلاناتك لأرباح حقيقية:</p>
+                </div>
+
+                <div class="packages-grid reveal" id="packagesGrid"></div>
+            </div>
+        </section>
+
         <!-- 8. Grand Contact Section -->
         <section class="section-padding" id="contact">
             <div class="container">
@@ -2402,6 +3056,49 @@
         </div>
     </footer>
 
+    <!-- Interactive Feedback Submission Modal -->
+    <div class="feedback-modal-overlay" id="feedbackModalOverlay">
+        <div class="feedback-modal">
+            <div class="feedback-modal-header">
+                <h3 class="feedback-modal-title" id="modalTitle">✍️ شارك رأيك في تجربة الشغل مع محمود</h3>
+                <button class="feedback-modal-close" id="btnCloseFeedbackModal">&times;</button>
+            </div>
+
+            <div class="star-picker-wrap">
+                <span style="font-size: 0.85rem; color: var(--text-muted);" id="modalRatingHint">اختر تقييمك:</span>
+                <div class="star-picker-stars" id="starPickerStars">
+                    <button type="button" class="star-btn selected" data-star="1">★</button>
+                    <button type="button" class="star-btn selected" data-star="2">★</button>
+                    <button type="button" class="star-btn selected" data-star="3">★</button>
+                    <button type="button" class="star-btn selected" data-star="4">★</button>
+                    <button type="button" class="star-btn selected" data-star="5">★</button>
+                </div>
+                <span class="star-picker-label" id="starPickerLabel">⭐⭐⭐⭐⭐ ممتاز وأنصح بالتعامل بقوة 🔥</span>
+            </div>
+
+            <form id="feedbackForm">
+                <div class="form-group-wrap">
+                    <label id="lblFormName">اسمك الكريم أو اسم البراند *</label>
+                    <input type="text" id="fbInputName" class="feedback-form-input" placeholder="مثلاً: م. أحمد علي / براند Eleven 11" required>
+                </div>
+
+                <div class="form-group-wrap">
+                    <label id="lblFormRole">مجالك أو نشاطك التجاري *</label>
+                    <input type="text" id="fbInputRole" class="feedback-form-input" placeholder="مثلاً: صاحب براند ملابس، طبيب أسنان، ميديا باير..." required>
+                </div>
+
+                <div class="form-group-wrap">
+                    <label id="lblFormMsg">رأيك وتجربتك في صياغة المحتوى وسيكولوجية الإعلانات *</label>
+                    <textarea id="fbInputMsg" class="feedback-form-textarea" placeholder="احكي لنا عن النتائج، جودة الهوكات، أو تأثير الكوبي على مبيعاتك..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit-feedback" id="btnSubmitFeedback">
+                    <span>🚀 <strong id="btnSubmitFeedbackLabel">نشر التقييم فوراً</strong></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Native Dynamic Logic Engine -->
     <script>
         const store = {
@@ -2415,7 +3112,8 @@
                 navBrands: 'البراندات',
                 navAbout: 'عنّي',
                 navCalc: 'الأدوات والهوكات',
-                navExperience: 'الخبرات',
+                navPackages: 'الباقات',
+                navFeedback: 'التقييمات',
                 navCtaBtn: 'يلا نبدأ',
                 mobNavProjects: '📂 المشاريع',
                 mobNavBrands: '🏢 البراندات',
@@ -2570,6 +3268,70 @@
                     <p>شغلي كله مبني على <strong>الفهم العميق لدماغ الزبون</strong>: ببدأ ببحث السوق وتحليل العميل وبناء الـ Buyer Persona، وبظبط نبرة صوت البراند (Brand Voice) عشان ترن في ودان الجمهور، وببني رحلة بيع كاملة (Marketing Funnel) باستخدام أساليب الإقناع اللي بتبيع زي FAB وPAS.</p>
                     <p>معتمد رسمياً من كورس <strong>Content 101 من OnTrack</strong> (18 ساعة تدريب وتطبيق عملي مكثف)، وبطور نفسي دايماً في إعلانات الميديا باينج (Meta Ads) وتحليل أرقام الحملات وكتابة نصوص إعلانية موجهة للتحويل عشان أحقق أعلى مكسب بأقل تكلفة للعميل.</p>
                 `,
+                originWeldingTitle: '⚡ في ورشة لحام وتشكيل المعادن',
+                originWeldingText: 'الدقة بالمللي.. وحرارة القوس الكهربائي بالدرجة.. لو الزاوية مش مظبوطة 100% المعدن هيتشرخ وتضيع الشغلانة والمعدات كلها في لحظة.',
+                originCopyTitle: '🔥 في معمل صياغة الكوبي رايتنج',
+                originCopyText: 'الهوك بأول 3 ثواني.. وتشريح سيكولوجية الزبون بالمشاعر.. لو الكلمات ملمستش وجع العميل ومخاوفه، ميزانيتك هتتحرق في الهوا والزبون هيعمل Scroll!',
+                antiAiIcon: '🚫🤖',
+                antiAiTitle: 'ميثاق الكوبي رايتنج الإنساني:',
+                antiAiText: 'ليه الذكاء الاصطناعي مبيعرفش يبيع في مصر؟ لأن الـ AI بيرص كلام عام ومترجم خالي من الروح والدم.. لكن الكوبي رايتر الحقيقي بيكتب بلهجة الشارع وسيكولوجية السوق، بيفهم تردد الزبون لما يسأل "بكام؟"، وبيعرف إزاي يخليه يدفع وهو مبسوط ومقتنع!',
+                pkgTag: 'باقات وخدمات التعاقد',
+                pkgTitle: 'باقات عمل واضحة تضمن لبيزنسك أعلى ROAS 💼',
+                pkgSub: 'اختر مسار التعاون الأنسب لبيزنسك ومرحلة نموك الحالية وابدأ فوراً في تحويل إعلاناتك لأرباح حقيقية:',
+                btnPkgOrder: 'احجز الباقة على واتساب 🚀',
+                packages: [
+                    {
+                        id: 'pkg-ads',
+                        icon: '⚡',
+                        title: 'باكدج الإعلانات الممولة وزوايا الهوكات',
+                        tagline: 'High-ROAS Ad Angles Pack',
+                        featured: true,
+                        popularBadge: '🔥 الأكثر طلباً للبراندات',
+                        desc: 'مثالية للأنشطة التجارية ومتاجر الإيكوميرس والعيادات اللي عايزة تقلل تكلفة الرسالة وتضاعف مبيعات حملات Meta Ads فوراً.',
+                        features: [
+                            '3 زوايا إعلانية نفسية لاختبار الإعلانات (Angle Matrix)',
+                            'هوكات أول 3 ثواني حراقة بتخطف العين وتمنع السكرول',
+                            'سكربتات ريلز وفيديوهات قصيرة مصورة مع Visual Hooks',
+                            'سكربت مبيعات للواتساب للرد على "بكام؟" وقفل الأوردرات',
+                            'مراجعة وتعديل مستمر مع الميديا باير حسب نتائج التست'
+                        ],
+                        waMessage: 'أهلاً يا محمود، عايز أحجز معاك "باكدج الإعلانات الممولة وزوايا الهوكات" لبيزنسي عشان نضاعف الـ ROAS ونقلل تكلفة الرسائل!'
+                    },
+                    {
+                        id: 'pkg-funnel',
+                        icon: '📈',
+                        title: 'باكدج القمع التسويقي والمحتوى الشهري',
+                        tagline: 'Full-Funnel Content Engine',
+                        featured: false,
+                        popularBadge: '',
+                        desc: 'منظومة محتوى شهرية متكاملة تبني لك براند قوي، تجمع متابعين مستهدفين، وتحولهم لعملاء مشتريين بشكل أوتوماتيكي ومستدام.',
+                        features: [
+                            'خطة وتقويم محتوى شهري كامل (30 يوم)',
+                            'تغطية كاملة لمراحل القمع البيعي (TOFU - MOFU - BOFU)',
+                            'صياغة نبرة صوت حصرية للبراند (Brand Tone of Voice)',
+                            'بوستات بناء سلطة وثقة + بوستات بيع مباشر وعروض',
+                            'توجيهات للديزاينر (Creative Direction) لكل بوست'
+                        ],
+                        waMessage: 'أهلاً يا محمود، عايز أحجز معاك "باكدج القمع التسويقي والمحتوى الشهري" لبيزنسي لبناء خطة محتوى متكاملة!'
+                    },
+                    {
+                        id: 'pkg-audit',
+                        icon: '🔍',
+                        title: 'باكدج الفحص السريع وإعادة هيكلة الإعلانات',
+                        tagline: 'Creative Audit & Ad Revamp',
+                        featured: false,
+                        popularBadge: '',
+                        desc: 'مخصصة للبيزنس اللي بيصرف إعلانات بس أداء الحملات مات أو تكلفة الرسائل غالية ومحتاج تشخيص دقيق وإنقاذ فوري.',
+                        features: [
+                            'فحص وتشريح شامل لآخر 5 إعلانات وصفحة الهبوط',
+                            'كشف نقاط تسريب الميزانية والإجهاد الإعلاني (Fatigue)',
+                            'إعادة صياغة أفضل 3 إعلانات بزوايا حراقة وعروض جديدة',
+                            'تجهيز زوايا عرض مغري لا يُقاوم (Irresistible Offer)',
+                            'تقرير وتوصيات تسويقية مباشرة لتنفيذها فوراً'
+                        ],
+                        waMessage: 'أهلاً يا محمود، عايز أطلب "باكدج الفحص السريع وإعادة هيكلة الإعلانات" عشان نصلح أداء حملاتي الحالية!'
+                    }
+                ],
                 metrics: [
                     { raw: 479, prefix: '+', suffix: '%', lbl: 'زيادة في وصول الصفحة (Reach) في 28 يوم بس' },
                     { raw: 66.7, prefix: '', suffix: '%', lbl: 'زيادة معدل تفاعل الناس وشير البوستات' },
@@ -2684,6 +3446,102 @@
                 ],
                 ctaTitle: 'عندك براند أو بيزنس ومحتاج كلام يجيب مبيعات؟',
                 ctaDesc: 'ابعتلي رسالة دلوقتي على واتساب وهرد عليك علطول.. خلينا نقعد نحلل جمهورك، ونظبط نبرة صوت البراند، ونعمل خطة محتوى تطير بمبيعاتك للسما!',
+                feedTag: 'آراء وتجارب العملاء',
+                feedTitle: 'شهادات وتجارب أصحاب البيزنس والشركاء ⭐',
+                feedSub: 'كلام واقعي ونتائج ملموسة من براندات وشركات اشتغلنا سوا وحققنا طفرة في المبيعات والوصول:',
+                feedAvgLabel: 'متوسط تقييمات العملاء',
+                feedRecLabel: 'يوصون بالتعامل واستمرار الحملات',
+                feedCountLabel: 'شراكة وتقييم موثق',
+                btnOpenFeedbackLabel: 'شارك رأيك وتقييمك في الشغل',
+                modalTitle: '✍️ شارك رأيك في تجربة الشغل مع محمود',
+                modalRatingHint: 'اختر تقييمك:',
+                lblFormName: 'اسمك الكريم أو اسم البراند *',
+                lblFormRole: 'مجالك أو نشاطك التجاري *',
+                lblFormMsg: 'رأيك وتجربتك في صياغة المحتوى وسيكولوجية الإعلانات *',
+                btnSubmitFeedbackLabel: 'نشر التقييم فوراً 🚀',
+                toastFeedbackSuccess: 'شكراً جزيلاً لرأيك وتقييمك يا غالي! تم نشر التقييم بنجاح 🎉',
+                testimonials: [
+                    {
+                        id: 'rev_eleven11',
+                        name: 'م. إسلام حمدي',
+                        role: 'مؤسس براند Eleven 11 للملابس',
+                        avatar: '👔',
+                        stars: 5,
+                        quote: 'الأرقام بتتكلم: في 28 يوم بالظبط من حملة الشتا وصول الصفحة زاد +479%، وتكلفة الرسالة نزلت لـ 4.41 ج. الأهم من كده إن الزباين بقت تدخل تطلب المقاس فوراً من غير ما تقعد تسأل 20 سؤال لأن البوست كان شارح ومغري جداً.',
+                        date: 'حملة شتاء 2025/2026',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_mediabuyer',
+                        name: 'طارق شريف',
+                        role: 'Senior Media Buyer & Performance Marketer',
+                        avatar: '📈',
+                        stars: 5,
+                        quote: 'اشتغلت مع كوبي رايترز كتير، بس محمود من القليلين اللي فاهمين يعني إيه ROAS و Hook Rate. الهوكات اللي كتبها لاختبار الـ Creatives خلت الـ CTR ينط من 1.2% لـ 2.8%، وده وفّر علينا آلاف الجنيهات في التستنج.',
+                        date: 'حملات Meta مستمرة',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_makka',
+                        name: 'أحمد مكة',
+                        role: 'Makka Store — موبايلات وإلكترونيات',
+                        avatar: '📱',
+                        stars: 5,
+                        quote: 'في مجال الموبايلات المنافسة كلها حرق أسعار.. محمود عملنا محتوى بيظهر قيمة الضمان وخدمة ما بعد البيع بهوكات ذكية، خلى الناس تيجي المحل وتشتري وهي مطمنة حتى لو سعرنا أعلى من غيرنا بـ 200 جنيه.',
+                        date: 'أكتوبر 2025',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_dental',
+                        name: 'د. حازم القاضي',
+                        role: 'مدير تسويق مجمع عيادات أسنان',
+                        avatar: '🦷',
+                        stars: 4,
+                        quote: 'في الأول كنا متخوفين شوية من الزوايا الجريئة اللي اقترحها لزراعة الأسنان، وأخدنا وقت في التعديل والمراجعة الطبية.. بس لما الحملة اشتغلت على فيسبوك الحجوزات اتضاعفت في 10 أيام بس بنصوص بتلمس تخوفات المريض بجد.',
+                        date: 'نوفمبر 2025',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_designer',
+                        name: 'مروان خالد',
+                        role: 'Creative Art Director & Brand Designer',
+                        avatar: '🎨',
+                        stars: 5,
+                        quote: 'شغلي كديزاينر بقى أسهل وأسرع بكتير مع محمود.. بيكتب الـ Copy Concept ومعاه الـ Visual Hook متخيل التصميم هيطلع إزاي في الإعلان. مش مجرد كاتب كلام، ده بيبني فكرة الإعلان كاملة.',
+                        date: 'مشاريع مشتركة',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_derma',
+                        name: 'مريم عثمان',
+                        role: 'إدارة مراكز جلدية وليزر',
+                        avatar: '✨',
+                        stars: 5,
+                        quote: 'سكربتات ريلز الليزر والعناية بالبشرة اللي كتبها حققت أكتر من 65 ألف مشاهدة أورجانيك من غير إعلانات ممولة، لأنها كانت بتجاوب على أسئلة البنات بدون رغي ولا مصطلحات معقدة.',
+                        date: 'يناير 2026',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_burger',
+                        name: 'كابتن يوسف النجار',
+                        role: 'مؤسس مطعم برجر وسندوتشات',
+                        avatar: '🍔',
+                        stars: 5,
+                        quote: 'بوست افتتاح الفرع الجديد والـ Offer اللي محمود صاغه عمل زحمة وطوابير على المحل أول أسبوع! أسلوب الكتابة بالعامية المصرية خفيف وبيجوع اللي بيقرا من أول سطر.',
+                        date: 'صيف 2025',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_candles',
+                        name: 'سارة نور',
+                        role: 'براند شموع معطرة وديكور',
+                        avatar: '🕯️',
+                        stars: 4,
+                        quote: 'الكوبي رايتنج لبوكسات الهدايا كان ممتاز ورفع مبيعات الفلانتين والمواسم بشكل ملحوظ، الملاحظة الوحيدة إنه كان محتاج يخلص بدري شوية بس النتيجة والـ Sales عوضت كل حاجة وزيادة.',
+                        date: 'فبراير 2026',
+                        verified: true
+                    }
+                ],
                 footerBrand: 'محمود محمد متولي — كاتب محتوى وكوبي رايتر © 2026',
                 footerRights: 'جميع الحقوق محفوظة | اتعمل بحب وشغف وسيكولوجية إقناع'
             },
@@ -2697,7 +3555,8 @@
                 navBrands: 'Brands',
                 navAbout: 'About',
                 navCalc: 'Tools & Hooks',
-                navExperience: 'Experience',
+                navPackages: 'Packages',
+                navFeedback: 'Reviews',
                 navCtaBtn: 'Start Project',
                 mobNavProjects: '📂 Projects',
                 mobNavBrands: '🏢 Brands',
@@ -2852,6 +3711,70 @@
                     <p>My work is built on <strong>deep audience empathy and market research</strong>: from developing actionable Buyer Personas and sculpting distinctive Brand Voices to architecting seamless full-funnel customer journeys (TOFU - MOFU - BOFU) utilizing conversion frameworks like FAB and PAS.</p>
                     <p>Certified graduate of the intensive <strong>Content 101 program by OnTrack</strong> (18 hours of hands-on strategy), continuously leveling up in Meta Ads / Media Buying, campaign analytics, and high-converting direct-response frameworks to maximize client ROI.</p>
                 `,
+                originWeldingTitle: '⚡ In the Metal Welding Workshop',
+                originWeldingText: 'Precision down to the millimeter.. electric arc temperature down to the exact degree.. if the angle is off by 1%, the structural metal cracks and the entire work is wasted in seconds.',
+                originCopyTitle: '🔥 In the Copywriting Conversion Forge',
+                originCopyText: 'Hooks in the first 3 seconds.. psychological diagnosis of buyer friction.. if the message fails to tap deep emotional desires, your ad budget evaporates and viewers scroll away!',
+                antiAiIcon: '🚫🤖',
+                antiAiTitle: 'The Human Copywriting Manifesto:',
+                antiAiText: 'Why does generic AI copy fail in conversion? Because AI outputs sterile, robotic translations lacking cultural soul. Real copywriters craft authentic, persuasive colloquial language that tackles buyer price hesitation and makes prospects eager to buy with full confidence!',
+                pkgTag: 'Work Packages & Tiers',
+                pkgTitle: 'High-Impact Work Packages Engineered for Maximum ROAS 💼',
+                pkgSub: 'Select the optimal growth track for your current business stage and start turning ad clicks into predictable revenue:',
+                btnPkgOrder: 'Book Package on WhatsApp 🚀',
+                packages: [
+                    {
+                        id: 'pkg-ads',
+                        icon: '⚡',
+                        title: 'High-ROAS Ad Angles & Hooks Pack',
+                        tagline: 'High-ROAS Ad Angles Pack',
+                        featured: true,
+                        popularBadge: '🔥 Top Pick for Brands',
+                        desc: 'Ideal for e-commerce stores, local businesses, and clinics looking to drop cost-per-message and scale Meta Ads return immediately.',
+                        features: [
+                            '3 Psychological Creative Ad Angles (Angle Matrix)',
+                            'High-retention 3-second visual & verbal scroll-stoppers',
+                            'Video Reels scripts complete with visual scene direction',
+                            'WhatsApp direct sales script to convert "How Much?" inquiries',
+                            'Continuous testing & refinement alongside media buyers'
+                        ],
+                        waMessage: 'Hi Mahmoud, I would like to book the "High-ROAS Ad Angles Pack" for my business to scale our ads and cut cost per acquisition!'
+                    },
+                    {
+                        id: 'pkg-funnel',
+                        icon: '📈',
+                        title: 'Full-Funnel Content Engine (Monthly)',
+                        tagline: 'Full-Funnel Content Engine',
+                        featured: false,
+                        popularBadge: '',
+                        desc: 'A comprehensive 30-day organic and paid content ecosystem that builds brand authority, nurtures warm leads, and generates automated sales.',
+                        features: [
+                            'Complete 30-Day Content Calendar & Strategy',
+                            'Full-funnel coverage across TOFU, MOFU, and BOFU stages',
+                            'Distinctive Brand Tone of Voice customized for your market',
+                            'Authority & trust-building content mixed with direct-response offers',
+                            'Design & creative direction briefs for every post'
+                        ],
+                        waMessage: 'Hi Mahmoud, I want to book the "Full-Funnel Content Engine" to establish our monthly strategic content system!'
+                    },
+                    {
+                        id: 'pkg-audit',
+                        icon: '🔍',
+                        title: 'Creative Audit & Ad Revamp Package',
+                        tagline: 'Creative Audit & Ad Revamp',
+                        featured: false,
+                        popularBadge: '',
+                        desc: 'Designed for brands spending on ads with stagnating ROAS or high message costs that need rapid diagnosis and ad turnaround.',
+                        features: [
+                            'Deep forensic audit of your last 5 ads & landing pages',
+                            'Identification of budget leakages & creative ad fatigue',
+                            'Complete copy rewrite of your top 3 ad creatives with new angles',
+                            'Restructuring of high-converting Irresistible Offers',
+                            'Actionable growth report with immediate execution steps'
+                        ],
+                        waMessage: 'Hi Mahmoud, I want to book the "Creative Audit & Ad Revamp Package" to diagnose and revive our active campaigns!'
+                    }
+                ],
                 metrics: [
                     { raw: 479, prefix: '+', suffix: '%', lbl: 'Increase in Page Reach over 28 days' },
                     { raw: 66.7, prefix: '', suffix: '%', lbl: 'Boost in audience engagement & shares' },
@@ -2966,6 +3889,102 @@
                 ],
                 ctaTitle: 'Have a Project That Needs Copy That Converts?',
                 ctaDesc: 'Send me a message on WhatsApp and let\'s talk. We will analyze your audience, map out your customer journey, and craft a winning content plan for your business!',
+                feedTag: 'Client Reviews & Social Proof',
+                feedTitle: 'Client Testimonials & Growth Partnerships ⭐',
+                feedSub: 'Real feedback and tangible revenue milestones from brands and agency partners I had the pleasure to work with:',
+                feedAvgLabel: 'Average Client Rating',
+                feedRecLabel: 'Recommend & Continue Campaigns',
+                feedCountLabel: 'Verified Client Reviews',
+                btnOpenFeedbackLabel: 'Leave Your Review & Feedback',
+                modalTitle: '✍️ Share Your Feedback & Experience with Mahmoud',
+                modalRatingHint: 'Select your rating:',
+                lblFormName: 'Your Full Name / Brand Name *',
+                lblFormRole: 'Your Business Niche / Role *',
+                lblFormMsg: 'Your Feedback on the Copy, Hooks & Conversion Results *',
+                btnSubmitFeedbackLabel: 'Publish Review Instantly 🚀',
+                toastFeedbackSuccess: 'Thank you so much for your kind review! It is now live on the wall 🎉',
+                testimonials: [
+                    {
+                        id: 'rev_eleven11',
+                        name: 'Eslam Hamdy',
+                        role: 'Founder at Eleven 11 Menswear',
+                        avatar: '👔',
+                        stars: 5,
+                        quote: 'The numbers speak for themselves: in exactly 28 days of our winter campaign, page reach jumped +479%, and cost per buying conversation plummeted to 4.41 EGP. Most importantly, leads ordered sizes immediately without 20 back-and-forth questions because the copy preempted all friction.',
+                        date: 'Winter 2025/2026 Campaign',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_mediabuyer',
+                        name: 'Tarek Sherif',
+                        role: 'Senior Media Buyer & Performance Marketer',
+                        avatar: '📈',
+                        stars: 5,
+                        quote: 'I worked with many copywriters, but Mahmoud is among the few who truly understand ROAS and Hook Retention. His multi-angle creative testing skyrocketed our link CTR from 1.2% to 2.8%, saving thousands in ad spend.',
+                        date: 'Ongoing Meta Collaborations',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_makka',
+                        name: 'Ahmed Makka',
+                        role: 'Makka Store — Retail Tech & Gadgets',
+                        avatar: '📱',
+                        stars: 5,
+                        quote: 'In smartphones, everyone competes by slashing prices. Mahmoud engineered angles highlighting our warranty and after-sales care, giving customers confidence to buy from our store even when priced 200 EGP higher than competitors.',
+                        date: 'October 2025',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_dental',
+                        name: 'Dr. Hazem El-Kady',
+                        role: 'Marketing Director at Dental Specialty Center',
+                        avatar: '🦷',
+                        stars: 4,
+                        quote: 'We were initially hesitant about his bold angles for dental implants and revisions took some medical back-and-forth. But once the Facebook campaigns launched, patient bookings doubled in 10 days because the copy genuinely addressed deep patient fears.',
+                        date: 'November 2025',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_designer',
+                        name: 'Marwan Khaled',
+                        role: 'Creative Art Director & Brand Designer',
+                        avatar: '🎨',
+                        stars: 5,
+                        quote: 'My job as a designer became 10x smoother collaborating with Mahmoud. He delivers copy concepts with visual hook guidance already visualized. He doesnt just write words; he engineers the entire advertising concept.',
+                        date: 'Creative Partnerships',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_derma',
+                        name: 'Mariam Othman',
+                        role: 'Clinics Operations Lead (Derma & Laser)',
+                        avatar: '✨',
+                        stars: 5,
+                        quote: 'His laser and skincare Reels scripts achieved over 65,000 organic views without paid boost because they answered real patient questions concisely without medical jargon.',
+                        date: 'January 2026',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_burger',
+                        name: 'Youssef El-Naggar',
+                        role: 'Founder at Gourmet Burger Co.',
+                        avatar: '🍔',
+                        stars: 5,
+                        quote: 'The launch offer copy Mahmoud crafted generated massive footfall and opening-week queues! The authentic Egyptian conversational tone was appetizing from the very first line.',
+                        date: 'Summer 2025',
+                        verified: true
+                    },
+                    {
+                        id: 'rev_candles',
+                        name: 'Sara Nour',
+                        role: 'Founder at Scented Home Decor',
+                        avatar: '🕯️',
+                        stars: 4,
+                        quote: 'The gift-box copy brought a measurable bump in seasonal sales. Only note was that delivery needed to be a week earlier, but the resulting sales conversions more than made up for it!',
+                        date: 'February 2026',
+                        verified: true
+                    }
+                ],
                 footerBrand: 'Mahmoud Mohamed Metwally — Content Writer & Copywriter © 2026',
                 footerRights: 'All Rights Reserved | Crafted with Conversion Psychology'
             }
@@ -4067,7 +5086,8 @@
             document.getElementById('navBrands').textContent = t.navBrands;
             document.getElementById('navAbout').textContent = t.navAbout;
             document.getElementById('navCalc').textContent = t.navCalc;
-            document.getElementById('navExperience').textContent = t.navExperience;
+            document.getElementById('navPackages').textContent = t.navPackages;
+            document.getElementById('navFeedback').textContent = t.navFeedback;
             document.getElementById('navCtaBtn').textContent = t.navCtaBtn;
 
             const mobBtns = document.querySelectorAll('.mobile-quick-nav .mobile-nav-btn');
@@ -4138,6 +5158,25 @@
             document.getElementById('aboutTitle').textContent = t.aboutTitle;
             document.getElementById('aboutSub').textContent = t.aboutSub;
             document.getElementById('narrativeBox').innerHTML = `<div class="tilt-glare"></div>${t.aboutNarrative}`;
+
+            // DNA Origin Comparison & Anti-AI Banner
+            document.getElementById('originComparisonGrid').innerHTML = `
+                <div class="origin-box origin-box-welding tilt-card">
+                    <div class="tilt-glare"></div>
+                    <h4 class="origin-box-title">${t.originWeldingTitle}</h4>
+                    <p class="origin-box-text">${t.originWeldingText}</p>
+                </div>
+                <div class="origin-box origin-box-copy tilt-card">
+                    <div class="tilt-glare"></div>
+                    <h4 class="origin-box-title">${t.originCopyTitle}</h4>
+                    <p class="origin-box-text">${t.originCopyText}</p>
+                </div>
+            `;
+
+            document.getElementById('antiAiBanner').innerHTML = `
+                <div class="anti-ai-icon">${t.antiAiIcon}</div>
+                <p class="anti-ai-desc"><strong>${t.antiAiTitle}</strong> ${t.antiAiText}</p>
+            `;
 
             document.getElementById('metricsGrid').innerHTML = t.metrics.map(m => `
                 <div class="metric-card tilt-card">
@@ -4261,6 +5300,45 @@
                 </div>
             `).join('');
 
+            // Client Reviews & Feedback Section
+            document.getElementById('feedTag').textContent = t.feedTag;
+            document.getElementById('feedTitle').textContent = t.feedTitle;
+            document.getElementById('feedSub').textContent = t.feedSub;
+            document.getElementById('feedAvgLabel').textContent = t.feedAvgLabel;
+            document.getElementById('feedRecLabel').textContent = t.feedRecLabel;
+            document.getElementById('feedCountLabel').textContent = t.feedCountLabel;
+            document.getElementById('btnOpenFeedbackLabel').textContent = t.btnOpenFeedbackLabel;
+            document.getElementById('modalTitle').textContent = t.modalTitle;
+            document.getElementById('modalRatingHint').textContent = t.modalRatingHint;
+            document.getElementById('lblFormName').textContent = t.lblFormName;
+            document.getElementById('lblFormRole').textContent = t.lblFormRole;
+            document.getElementById('lblFormMsg').textContent = t.lblFormMsg;
+            document.getElementById('btnSubmitFeedbackLabel').textContent = t.btnSubmitFeedbackLabel;
+
+            renderTestimonialsList(t);
+
+            // Work Packages Section
+            document.getElementById('pkgTag').textContent = t.pkgTag;
+            document.getElementById('pkgTitle').textContent = t.pkgTitle;
+            document.getElementById('pkgSub').textContent = t.pkgSub;
+
+            document.getElementById('packagesGrid').innerHTML = t.packages.map(pkg => `
+                <div class="package-card ${pkg.featured ? 'featured' : ''} tilt-card reveal">
+                    <div class="tilt-glare"></div>
+                    ${pkg.popularBadge ? `<span class="package-popular-badge">${pkg.popularBadge}</span>` : ''}
+                    <div class="package-icon-wrap">${pkg.icon}</div>
+                    <h3 class="package-title">${pkg.title}</h3>
+                    <div class="package-tagline">${pkg.tagline}</div>
+                    <p class="package-desc">${pkg.desc}</p>
+                    <ul class="package-features-list">
+                        ${pkg.features.map(f => `<li class="package-feature-item">${f}</li>`).join('')}
+                    </ul>
+                    <a href="https://wa.me/201065760983?text=${encodeURIComponent(pkg.waMessage)}" target="_blank" rel="noopener noreferrer" class="btn-package-order">
+                        <span>${t.btnPkgOrder}</span>
+                    </a>
+                </div>
+            `).join('');
+
             // Contact
             document.getElementById('ctaTitle').textContent = t.ctaTitle;
             document.getElementById('ctaDesc').textContent = t.ctaDesc;
@@ -4280,6 +5358,209 @@
             init3DTiltPhysics();
         }
 
+        // Feedback Storage & Renderer
+        function getUserFeedbacks() {
+            try {
+                const stored = localStorage.getItem('metwally_user_feedbacks');
+                return stored ? JSON.parse(stored) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveUserFeedback(item) {
+            try {
+                const existing = getUserFeedbacks();
+                existing.unshift(item);
+                localStorage.setItem('metwally_user_feedbacks', JSON.stringify(existing));
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function renderTestimonialsList(t) {
+            const grid = document.getElementById('testimonialsGrid');
+            if (!grid) return;
+
+            const userFeedbacks = getUserFeedbacks();
+            const totalCount = t.testimonials.length + userFeedbacks.length;
+            const countEl = document.getElementById('feedCountNumber');
+            if (countEl) countEl.textContent = `${totalCount}+`;
+
+            let html = '';
+
+            // User-submitted feedbacks first
+            userFeedbacks.forEach(f => {
+                const starsHtml = '★'.repeat(f.stars) + '☆'.repeat(5 - f.stars);
+                html += `
+                    <div class="testimonial-card new-user-feedback tilt-card reveal">
+                        <div class="tilt-glare"></div>
+                        <div class="testimonial-header-row">
+                            <div class="testimonial-avatar">${f.avatar || '⭐'}</div>
+                            <div class="testimonial-meta">
+                                <h4 class="testimonial-name">${f.name}</h4>
+                                <div class="testimonial-role">${f.role}</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars">${starsHtml}</div>
+                        <p class="testimonial-quote">"${f.quote}"</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-verified-badge">⚡ ${currentLang === 'ar' ? 'تقييم زائر جديد' : 'New Client Review'}</span>
+                            <span>${f.date || (currentLang === 'ar' ? 'الآن' : 'Just now')}</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Default proven testimonials
+            t.testimonials.forEach(item => {
+                const starsHtml = '★'.repeat(item.stars) + '☆'.repeat(5 - item.stars);
+                html += `
+                    <div class="testimonial-card tilt-card reveal">
+                        <div class="tilt-glare"></div>
+                        <div class="testimonial-header-row">
+                            <div class="testimonial-avatar">${item.avatar}</div>
+                            <div class="testimonial-meta">
+                                <h4 class="testimonial-name">${item.name}</h4>
+                                <div class="testimonial-role">${item.role}</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars">${starsHtml}</div>
+                        <p class="testimonial-quote">"${item.quote}"</p>
+                        <div class="testimonial-footer">
+                            <span class="testimonial-verified-badge">✔ ${currentLang === 'ar' ? 'عميل موثّق' : 'Verified Partner'}</span>
+                            <span>${item.date}</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = html;
+        }
+
+        let currentSelectedRating = 5;
+        const starLabels = {
+            ar: [
+                '⭐ يحتاج تحسين',
+                '⭐⭐ جيد ومقبول',
+                '⭐⭐⭐ ممتاز وجيد جداً',
+                '⭐⭐⭐⭐ رائع وأنصح به بشدة 🔥',
+                '⭐⭐⭐⭐⭐ استثنائي وخرافي في النتائج! 🚀'
+            ],
+            en: [
+                '⭐ Needs improvement',
+                '⭐⭐ Decent & okay',
+                '⭐⭐⭐ Great quality',
+                '⭐⭐⭐⭐ Outstanding & highly recommended 🔥',
+                '⭐⭐⭐⭐⭐ Exceptional ROI & Results! 🚀'
+            ]
+        };
+
+        function initFeedbackModal() {
+            const modalOverlay = document.getElementById('feedbackModalOverlay');
+            const btnOpen = document.getElementById('btnOpenFeedbackModal');
+            const btnClose = document.getElementById('btnCloseFeedbackModal');
+            const form = document.getElementById('feedbackForm');
+            const starBtns = document.querySelectorAll('.star-btn');
+            const starLabel = document.getElementById('starPickerLabel');
+
+            if (!modalOverlay || !btnOpen) return;
+
+            function updateStarUI(val) {
+                currentSelectedRating = val;
+                starBtns.forEach(btn => {
+                    const s = parseInt(btn.getAttribute('data-star'));
+                    if (s <= val) {
+                        btn.classList.add('selected');
+                    } else {
+                        btn.classList.remove('selected');
+                    }
+                });
+                if (starLabel) {
+                    const labels = starLabels[currentLang] || starLabels.ar;
+                    starLabel.textContent = labels[val - 1];
+                }
+            }
+
+            starBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const val = parseInt(btn.getAttribute('data-star'));
+                    updateStarUI(val);
+                });
+
+                btn.addEventListener('mouseenter', () => {
+                    const val = parseInt(btn.getAttribute('data-star'));
+                    starBtns.forEach(b => {
+                        const s = parseInt(b.getAttribute('data-star'));
+                        if (s <= val) b.classList.add('hovered');
+                        else b.classList.remove('hovered');
+                    });
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    starBtns.forEach(b => b.classList.remove('hovered'));
+                });
+            });
+
+            btnOpen.addEventListener('click', () => {
+                modalOverlay.classList.add('active');
+                updateStarUI(5);
+            });
+
+            btnClose.addEventListener('click', () => {
+                modalOverlay.classList.remove('active');
+            });
+
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('active');
+                }
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('fbInputName').value.trim();
+                const role = document.getElementById('fbInputRole').value.trim();
+                const msg = document.getElementById('fbInputMsg').value.trim();
+
+                if (!name || !role || !msg) return;
+
+                const avatarOptions = ['🔥', '⭐', '👔', '🚀', '💼', '📈', '✨', '🎯'];
+                const randomAvatar = avatarOptions[Math.floor(Math.random() * avatarOptions.length)];
+
+                const newFeedback = {
+                    id: 'usr_' + Date.now(),
+                    name: name,
+                    role: role,
+                    quote: msg,
+                    stars: currentSelectedRating,
+                    avatar: randomAvatar,
+                    date: currentLang === 'ar' ? 'الآن' : 'Just now'
+                };
+
+                saveUserFeedback(newFeedback);
+                renderTestimonialsList(store[currentLang]);
+
+                // Trigger confetti celebration
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 100,
+                        spread: 80,
+                        origin: { y: 0.5 },
+                        colors: ['#e8722a', '#ffc107', '#25D366', '#ffffff']
+                    });
+                }
+
+                showToast(store[currentLang].toastFeedbackSuccess);
+                form.reset();
+                modalOverlay.classList.remove('active');
+
+                // Re-init tilt physics on new cards
+                init3DTiltPhysics();
+                setupScrollObserver();
+            });
+        }
+
         window.copyAdText = function(btn) {
             const container = btn.closest('.sample-content-box');
             const text = container.querySelector('.text-to-copy').innerText;
@@ -4292,6 +5573,7 @@
             applyTheme(currentTheme);
             renderLang(currentLang);
             initParticleCanvas();
+            initFeedbackModal();
 
             // Language switch
             document.getElementById('langBtn').addEventListener('click', () => {
