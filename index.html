@@ -206,6 +206,20 @@
             .nav-menu { display: none; }
         }
 
+        @media (max-width: 768px) {
+            .header-wrap { top: 10px; padding: 0 10px; }
+            .navbar-capsule {
+                padding: 6px 12px;
+                gap: 8px;
+            }
+            .nav-brand { font-size: 0.9rem; gap: 7px; }
+            .brand-badge-icon { width: 30px; height: 30px; font-size: 0.85rem; }
+            .btn-nav-primary { padding: 7px 12px; font-size: 0.78rem; gap: 4px; }
+            .btn-nav-primary span:last-child { display: none; } /* hide text, keep emoji */
+            .icon-btn-toggle { padding: 6px 10px; font-size: 0.78rem; }
+            #langBtnText { display: none; }
+        }
+
         .nav-link-btn {
             color: var(--text-secondary);
             text-decoration: none;
@@ -381,9 +395,18 @@
         }
 
         @media (max-width: 768px) {
-            .hero-avatar-halo-wrap { width: 140px; height: 140px; }
-            .hero-float-chip { position: static; margin: 8px auto; display: inline-flex; }
-            .hero-stage { padding-top: 110px; }
+            .hero-avatar-halo-wrap { width: 130px; height: 130px; }
+            .hero-float-chip {
+                position: static;
+                margin: 5px auto;
+                display: inline-flex;
+                font-size: 0.75rem;
+                padding: 6px 12px;
+                animation: none;
+            }
+            .chip-left, .chip-right { top: auto; right: auto; bottom: auto; left: auto; }
+            .hero-stage { padding-top: 100px; padding-bottom: 60px; }
+            .hero-summary-copy { font-size: 1rem; padding: 0 8px; }
         }
 
         @keyframes floatPill {
@@ -2017,6 +2040,21 @@
             .wc-m-num { display: block; font-size: 1.1rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), #ff9f43); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: var(--font-en); }
             .wc-m-label { display: block; font-size: 0.65rem; color: var(--text-muted); margin-top: 2px; }
             @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+            @media (max-width: 768px) {
+                #workCardsGrid {
+                    grid-template-columns: 1fr !important;
+                    gap: 16px !important;
+                }
+                .work-card { padding: 20px; gap: 12px; }
+                .wc-hook { font-size: 0.8rem; padding: 10px 12px; }
+                .wc-body { font-size: 0.78rem; }
+                .wc-m-num { font-size: 0.95rem; }
+                .wc-m-label { font-size: 0.6rem; }
+                #work .section-main-heading { font-size: 1.8rem; }
+                #workFilterBar { gap: 7px; }
+                .work-filter-btn { padding: 6px 14px; font-size: 0.76rem; }
+            }
         </style>
         <script>
             function filterWork(cat, btn) {
