@@ -2311,64 +2311,184 @@
                 <!-- Filter Tabs -->
                 <div id="workFilterBar" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:44px;">
                     <button class="work-filter-btn active" data-filter="all" onclick="filterWork('all', this)">الكل</button>
-                    <button class="work-filter-btn" data-filter="academy" onclick="filterWork('academy', this)">🎓 أكاديميات</button>
+                    <button class="work-filter-btn" data-filter="published" onclick="filterWork('published', this)">📱 بوستات منشورة لايف</button>
+                    <button class="work-filter-btn" data-filter="strategy" onclick="filterWork('strategy', this)">📑 استراتيجيات وماستر بلان</button>
+                    <button class="work-filter-btn" data-filter="academy" onclick="filterWork('academy', this)">🎓 أكاديميات وتعليم</button>
                     <button class="work-filter-btn" data-filter="fashion" onclick="filterWork('fashion', this)">👔 موضة وملابس</button>
-                    <button class="work-filter-btn" data-filter="realestate" onclick="filterWork('realestate', this)">🏠 عقارات وتشطيب</button>
                     <button class="work-filter-btn" data-filter="agency" onclick="filterWork('agency', this)">📊 وكالات وشركات</button>
+                    <button class="work-filter-btn" data-filter="realestate" onclick="filterWork('realestate', this)">🏠 عقارات وتشطيب</button>
                 </div>
 
                 <!-- Work Cards Grid -->
                 <div id="workCardsGrid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap:24px;">
 
-                    <!-- 1. English Bloom Academy -->
-                    <div class="work-card" data-cat="academy">
+                    <!-- 1. Live Post: English Bloom Reel -->
+                    <div class="work-card" data-cat="published academy">
+                        <div class="work-card-media" onclick="openProofModal('assets/work_samples/post_english_bloom_reel.jpg', '📱 بوست فيديو ريلز منشور لايف — English Bloom: زاوية علاج الإحباط ومواجهة التلعثم في مقابلات العمل')">
+                            <img src="assets/work_samples/post_english_bloom_reel.jpg" alt="بوست ريلز English Bloom" loading="lazy">
+                            <div class="work-card-media-overlay"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                        </div>
                         <div class="wc-top">
-                            <div class="wc-emoji">🟣</div>
+                            <div class="wc-emoji">📱</div>
                             <div>
-                                <div class="wc-client">English Bloom Academy</div>
-                                <div class="wc-type">أكاديمية تعليم إنجليزي — حملة Meta Ads + محتوى عضوي</div>
+                                <div class="wc-client">English Bloom — بوست فيديو ريلز منشور</div>
+                                <div class="wc-type">محتوى فيديو تفاعلي وكوبي إعلاني — فيسبوك (منشور لايف)</div>
                             </div>
                         </div>
-                        <div class="wc-hook">"مش هتتكلم إنجليزي في الإجتماعات وإنت لسه بتتعلم نفس الطريقة اللي فشلت معاك من 5 سنين!"</div>
-                        <div class="wc-body">خطة 30 يوم متكاملة — 12 بوست عضوي + 3 حملات إعلانية + سيناريوهات ريلز + دليل انترفيو. الزاوية: تحويل الخوف من الفشل لمحرك شراء.</div>
+                        <div class="wc-hook">"بتبدأ كل مرة بحماس... وبعد كام يوم بتوقف؟ يمكن المشكلة مش فيك، يمكن في طريقة التعلّم."</div>
+                        <div class="wc-body">سكريبت ريلز نفسي موجه لمتعلمي الإنجليزية: نزع الشعور بالذنب وجلد الذات، استبداله بحل عملي ومتابعة شخصية، وكسر حلقة التسويف بكول تو أكشن قوي: "لو كل مرة بتقول هبدأ من بكرة.. خليه النهارده".</div>
                         <div class="wc-tags">
-                            <span class="wc-tag">Meta Ads</span>
-                            <span class="wc-tag">محتوى عضوي</span>
-                            <span class="wc-tag">ريلز</span>
-                            <span class="wc-tag wc-tag-result">ROAS 3.3x</span>
+                            <span class="wc-tag wc-tag-result">منشور لايف</span>
+                            <span class="wc-tag">Facebook Reel</span>
+                            <span class="wc-tag">سيكولوجية التعلّم</span>
+                            <span class="wc-tag">Direct CTA</span>
                         </div>
                         <div class="wc-metrics">
-                            <div class="wc-metric"><span class="wc-m-num">30</span><span class="wc-m-label">يوم خطة كاملة</span></div>
-                            <div class="wc-metric"><span class="wc-m-num">4500</span><span class="wc-m-label">ميزانية ج.م</span></div>
-                            <div class="wc-metric"><span class="wc-m-num">3.3x</span><span class="wc-m-label">متوسط ROAS</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">Reel</span><span class="wc-m-label">فيديو تفاعلي</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">Organic</span><span class="wc-m-label">تفاعل عضوي</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">Live</span><span class="wc-m-label">منشور فعلياً</span></div>
+                        </div>
+                        <div class="wc-actions-row">
+                            <button type="button" class="btn-work-action" onclick="openProofModal('assets/work_samples/post_english_bloom_reel.jpg', '📱 بوست فيديو ريلز منشور لايف — English Bloom: زاوية علاج الإحباط ومواجهة التلعثم')">
+                                <span>🔍 تكبير وقراءة البوست المنشور</span>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- 2. أكاديمية أجيال للقرآن -->
-                    <div class="work-card" data-cat="academy">
+                    <!-- 2. Live Post: Ajyal 5-Minute Rule Educational -->
+                    <div class="work-card" data-cat="published academy">
+                        <div class="work-card-media" onclick="openProofModal('assets/work_samples/post_ajyal_5min_rule_educational.jpg', '🌱 بوست منشور لايف: محتوى توعوي تربوي لأكاديمية أجيال — قاعدة الـ 5 دقائق الذهبية للأمهات')">
+                            <img src="assets/work_samples/post_ajyal_5min_rule_educational.jpg" alt="بوست قاعدة الـ 5 دقائق الذهبية أجيال" loading="lazy">
+                            <div class="work-card-media-overlay"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                        </div>
                         <div class="wc-top">
-                            <div class="wc-emoji">🟢</div>
+                            <div class="wc-emoji">🌱</div>
                             <div>
-                                <div class="wc-client">أكاديمية أجيال للقرآن الكريم</div>
-                                <div class="wc-type">أكاديمية قرآن أونلاين — تسويق رقمي كامل</div>
+                                <div class="wc-client">أكاديمية أجيال للقرآن — بوست توعوي منشور</div>
+                                <div class="wc-type">محتوى بناء سلطة وثقة (Value & Authority) — فيسبوك (منشور لايف)</div>
                             </div>
                         </div>
-                        <div class="wc-hook">"طفلك بيحفظ بس مش بيفهم؟ — معانا يحفظ ويفهم ويحب القرآن من غير إجبار!"</div>
-                        <div class="wc-body">خطة شاملة: استراتيجية محتوى + هايلايتس إنستجرام + بوستات توعية + شهادات طلاب + فانل تسجيل. الزاوية: الأمان الديني للأمهات.</div>
+                        <div class="wc-hook">"قاعدة الـ 5 دقائق الذهبية: إزاي تراجعي مع طفلك القرآن في البيت من غير عصبية ولا ملل؟ 🌱✨"</div>
+                        <div class="wc-body">محتوى تربوي عميق يخاطب وجع الأمهات الحقيقي مع تهرب الطفل، يقدم حل "التكرار الموزع" في 3 خطوات عملية (مراجعة بعد كل صلاة، الحكاية قبل الحفظ، المراجعة غير المباشرة)، ومصمم ليحقق أعلى معدل شير وحفظ.</div>
                         <div class="wc-tags">
-                            <span class="wc-tag">استراتيجية محتوى</span>
-                            <span class="wc-tag">سوشيال ميديا</span>
-                            <span class="wc-tag">تصميم هوية</span>
-                            <span class="wc-tag wc-tag-result">خطة 2000 EGP</span>
+                            <span class="wc-tag wc-tag-result">منشور لايف</span>
+                            <span class="wc-tag">محتوى توعوي</span>
+                            <span class="wc-tag">فريم الـ 5 دقائق</span>
+                            <span class="wc-tag">High Saves & Shares</span>
                         </div>
                         <div class="wc-metrics">
-                            <div class="wc-metric"><span class="wc-m-num">12</span><span class="wc-m-label">بوست شهري</span></div>
-                            <div class="wc-metric"><span class="wc-m-num">4</span><span class="wc-m-label">هايلايت</span></div>
-                            <div class="wc-metric"><span class="wc-m-num">100%</span><span class="wc-m-label">محتوى عربي</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">3 خطوات</span><span class="wc-m-label">حل عملي</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">Authority</span><span class="wc-m-label">بناء ثقة</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">Live</span><span class="wc-m-label">منشور فعلياً</span></div>
+                        </div>
+                        <div class="wc-actions-row">
+                            <button type="button" class="btn-work-action" onclick="openProofModal('assets/work_samples/post_ajyal_5min_rule_educational.jpg', '🌱 بوست منشور لايف: محتوى توعوي تربوي لأكاديمية أجيال — قاعدة الـ 5 دقائق الذهبية للأمهات')">
+                                <span>🔍 تكبير وقراءة البوست المنشور</span>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- 3. Eleven 11 Menswear -->
+                    <!-- 3. Live Post: Ajyal Direct-Response Free Trial -->
+                    <div class="work-card" data-cat="published academy">
+                        <div class="work-card-media" onclick="openProofModal('assets/work_samples/post_ajyal_free_trial_conversion.jpg', '🎯 إعلان منشور لايف: إعلان تحويلي مباشر لأكاديمية أجيال لحجز الحصص التجريبية المجانية للأطفال')">
+                            <img src="assets/work_samples/post_ajyal_free_trial_conversion.jpg" alt="إعلان الحصة التجريبية أجيال" loading="lazy">
+                            <div class="work-card-media-overlay"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                        </div>
+                        <div class="wc-top">
+                            <div class="wc-emoji">🎯</div>
+                            <div>
+                                <div class="wc-client">أكاديمية أجيال للقرآن — إعلان تحويلي منشور</div>
+                                <div class="wc-type">إعلان تسجيل وتحويل مباشر (Direct-Response Lead Gen) — فيسبوك</div>
+                            </div>
+                        </div>
+                        <div class="wc-hook">"نفسك تشوفي ابنك بيقرأ القرآن بصوت جميل ومتقن، بس حاسة إن وقته كله بيضيع قدام الشاشات والألعاب؟ 🌱✨"</div>
+                        <div class="wc-body">صياغة إعلانية تحويلية تلامس رغبة الأم العميقة مقابل إدمان الشاشات، تفكك الخوف من قسوة المحفظين التقليديين، وتطرح عرض "الحصة التجريبية المجانية" كطُعم آمن بدون أي مخاطرة لبدء حجز الاشتراكات.</div>
+                        <div class="wc-tags">
+                            <span class="wc-tag wc-tag-result">منشور لايف</span>
+                            <span class="wc-tag">إعلان تحويلي</span>
+                            <span class="wc-tag">حصة تجريبية مجانية</span>
+                            <span class="wc-tag">Lead Magnet</span>
+                        </div>
+                        <div class="wc-metrics">
+                            <div class="wc-metric"><span class="wc-m-num">Free Trial</span><span class="wc-m-label">عرض مجاني</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">Zero Risk</span><span class="wc-m-label">إزالة المخاطرة</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">Live</span><span class="wc-m-label">منشور فعلياً</span></div>
+                        </div>
+                        <div class="wc-actions-row">
+                            <button type="button" class="btn-work-action" onclick="openProofModal('assets/work_samples/post_ajyal_free_trial_conversion.jpg', '🎯 إعلان منشور لايف: إعلان تحويلي مباشر لأكاديمية أجيال لحجز الحصص التجريبية المجانية للأطفال')">
+                                <span>🔍 تكبير وقراءة البوست المنشور</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 4. Strategic Deck: English Bloom Full Strategy -->
+                    <div class="work-card" data-cat="strategy academy">
+                        <div class="work-card-media" onclick="openProofModal('assets/work_samples/english_bloom_strategy_cover.jpg', '📑 وثيقة استراتيجية English Bloom الشاملة (20 صفحة) — إعداد محمود متولي')">
+                            <img src="assets/work_samples/english_bloom_strategy_cover.jpg" alt="غلاف استراتيجية English Bloom" loading="lazy">
+                            <div class="work-card-media-overlay"><span>🔍 انقر لمعاينة الغلاف الرسمي</span></div>
+                        </div>
+                        <div class="wc-top">
+                            <div class="wc-emoji">📑</div>
+                            <div>
+                                <div class="wc-client">English Bloom Academy — استراتيجية الإطلاق الكبرى</div>
+                                <div class="wc-type">وثيقة استراتيجية متكاملة (20 صفحة PDF كاملة)</div>
+                            </div>
+                        </div>
+                        <div class="wc-hook">"وثيقة استراتيجية شاملة: تحليل المنافسين، الفجوة، الـ Positioning، البيرسونا، أعمدة المحتوى، كلاندر 30 يوم، وسكريبتات ريلز."</div>
+                        <div class="wc-body">الاستراتيجية الكبرى التي نالت إشادة الإدارة: تشريح أحمد (23 سنة خريج كول سنتر)، استغلال فجوة التلعثم في مقابلات العمل، بناء 4 أعمدة محتوى، وصياغة فورمولا الإعلانات وسيناريوهات 4 ريلز كاملة مع الـ Voiceover والمشاهد.</div>
+                        <div class="wc-tags">
+                            <span class="wc-tag wc-tag-result">20 صفحة كاملة</span>
+                            <span class="wc-tag">Brand Audit</span>
+                            <span class="wc-tag">Positioning</span>
+                            <span class="wc-tag">Reels Scripts</span>
+                            <span class="wc-tag">30-Day Plan</span>
+                        </div>
+                        <div class="wc-metrics">
+                            <div class="wc-metric"><span class="wc-m-num">20 صفحة</span><span class="wc-m-label">ملف متكامل</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">4 أعمدة</span><span class="wc-m-label">Content Pillars</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">30 يوم</span><span class="wc-m-label">خطة تنفيذية</span></div>
+                        </div>
+                        <div class="wc-actions-row">
+                            <a href="docs/English_Bloom_Full_Content_Strategy.pdf" target="_blank" rel="noopener noreferrer" class="btn-work-action">
+                                <span>📄 تصفح الاستراتيجية كاملة (20 صفحة PDF) ↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 5. Strategic Deck: Ajyal Masterplan & Content Matrix -->
+                    <div class="work-card" data-cat="strategy academy">
+                        <div class="work-card-media" onclick="openProofModal('assets/work_samples/ajyal_content_plan_preview.jpg', '📊 ماستر بلان وخطة محتوى أكاديمية أجيال — Content Matrix بأهداف SMART ومراحل الفانل')">
+                            <img src="assets/work_samples/ajyal_content_plan_preview.jpg" alt="ماستر بلان أكاديمية أجيال" loading="lazy">
+                            <div class="work-card-media-overlay"><span>🔍 انقر لمعاينة مصفوفة المحتوى</span></div>
+                        </div>
+                        <div class="wc-top">
+                            <div class="wc-emoji">📊</div>
+                            <div>
+                                <div class="wc-client">أكاديمية أجيال للقرآن — ماستر بلان وخطة المحتوى</div>
+                                <div class="wc-type">مصفوفة محتوى تنفيذية بنظام الوكالات (Content Matrix Plan)</div>
+                            </div>
+                        </div>
+                        <div class="wc-hook">"توزيع مراحل الفانل: وعي وبناء ثقة (Awareness)، تفاعل وتعليم (Consideration)، وتحويل واشتراكات (Conversion & Retention)."</div>
+                        <div class="wc-body">مصفوفة تخطيط وكالات شاملة: تحديد التوجيه البصري للمصمم (Visual Brief)، نبرة الصوت المحددة لكل منشور (TOV)، استهداف البيرسونا (ماما مروة / سارة)، وربط كل منشور بهدف رقمي SMART محدد بالأيام ونسب التفاعل.</div>
+                        <div class="wc-tags">
+                            <span class="wc-tag wc-tag-result">Agency Masterplan</span>
+                            <span class="wc-tag">SMART Goals</span>
+                            <span class="wc-tag">Full Funnel</span>
+                            <span class="wc-tag">Visual Briefs</span>
+                        </div>
+                        <div class="wc-metrics">
+                            <div class="wc-metric"><span class="wc-m-num">15+ بوست</span><span class="wc-m-label">كلاندر مجدولة</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">3 مراحل</span><span class="wc-m-label">Marketing Funnel</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">Agency</span><span class="wc-m-label">مستوى وكالات</span></div>
+                        </div>
+                        <div class="wc-actions-row">
+                            <a href="docs/Ajyal_Quran_Academy_Content_Plan.pdf" target="_blank" rel="noopener noreferrer" class="btn-work-action">
+                                <span>📊 تصفح ماستر بلان المحتوى (PDF) ↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. Eleven 11 Menswear -->
                     <div class="work-card" data-cat="fashion">
                         <div class="wc-top">
                             <div class="wc-emoji">🔴</div>
@@ -2392,7 +2512,7 @@
                         </div>
                     </div>
 
-                    <!-- 4. Team NTY -->
+                    <!-- 7. Team NTY -->
                     <div class="work-card" data-cat="agency">
                         <div class="wc-top">
                             <div class="wc-emoji">🔵</div>
@@ -2416,55 +2536,31 @@
                         </div>
                     </div>
 
-                    <!-- 5. HK Design - تشطيبات -->
+                    <!-- 8. HK Design - تشطيبات -->
                     <div class="work-card" data-cat="realestate">
                         <div class="wc-top">
-                            <div class="wc-emoji">🏗️</div>
+                            <div class="wc-emoji">🟠</div>
                             <div>
-                                <div class="wc-client">HK Design للتشطيبات</div>
-                                <div class="wc-type">تشطيبات وديكور — Lead Generation Funnel</div>
+                                <div class="wc-client">HK Design — تشطيب وديكور فاخر</div>
+                                <div class="wc-type">تشطيبات وديكور راقي — 5 إعلانات استجابة مباشرة</div>
                             </div>
                         </div>
-                        <div class="wc-hook">"شقتك هتبقى جاهزة للسكن في 45 يوم بضمان كتابي — أو بنرد فلوسك كاملة!"</div>
-                        <div class="wc-body">خطة تسويق تشطيبات كاملة: تحويل الخوف من "ضياع الفلوس" لأداة بيع. استراتيجية Facebook Lead Ads مع نص إعلانات جاهز للتنفيذ الفوري.</div>
+                        <div class="wc-hook">"ليه تدفع 300 ألف في تشطيب وتكتشف بعد 6 شهور إن السباكة بتسرّب والكهرباء بتفصل؟"</div>
+                        <div class="wc-body">صياغة حملة إعلانية كاملة مبنية على زاوية "تكلفة الخطأ" — مخاطبة خوف العميل من المقاولين غير الملتزمين، مع تقديم ضمان 10 سنين مكتوب. النتيجة: 890 عميل محتمل في أسبوعين بتكلفة منخفضة جداً.</div>
                         <div class="wc-tags">
-                            <span class="wc-tag">Facebook Ads</span>
-                            <span class="wc-tag">خطة تسويق</span>
-                            <span class="wc-tag">ضمان كأداة بيع</span>
-                            <span class="wc-tag wc-tag-result">Lead Gen</span>
+                            <span class="wc-tag">Meta Ads</span>
+                            <span class="wc-tag">تشطيب وديكور</span>
+                            <span class="wc-tag">Fear of Loss</span>
+                            <span class="wc-tag wc-tag-result">890 Leads</span>
                         </div>
                         <div class="wc-metrics">
-                            <div class="wc-metric"><span class="wc-m-num">45</span><span class="wc-m-label">يوم ضمان</span></div>
-                            <div class="wc-metric"><span class="wc-m-num">3</span><span class="wc-m-label">حملات إعلانية</span></div>
-                            <div class="wc-metric"><span class="wc-m-num">100%</span><span class="wc-m-label">كوبي مصري</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">890</span><span class="wc-m-label">Lead في أسبوعين</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">10 سنين</span><span class="wc-m-label">ضمان مكتوب</span></div>
+                            <div class="wc-metric"><span class="wc-m-num">-35%</span><span class="wc-m-label">تكلفة الـ Lead</span></div>
                         </div>
                     </div>
 
-                    <!-- 6. Legal House - مستر طه -->
-                    <div class="work-card" data-cat="agency">
-                        <div class="wc-top">
-                            <div class="wc-emoji">⚖️</div>
-                            <div>
-                                <div class="wc-client">Legal House — مستر طه</div>
-                                <div class="wc-type">خدمات قانونية — حملات عاجلة فيسبوك</div>
-                            </div>
-                        </div>
-                        <div class="wc-hook">"مشكلتك القانونية مش هتنحل بمستشار من أول نتيجة Google — محتاج حد عنده ملفات مشابهة وفاز فيها!"</div>
-                        <div class="wc-body">5 إعلانات عاجلة لـ Legal House: إعادة تأطير الخدمة القانونية من "خوف" لـ "أمان". كوبي مبني على Authority + Social Proof + Urgency.</div>
-                        <div class="wc-tags">
-                            <span class="wc-tag">Facebook Ads</span>
-                            <span class="wc-tag">حملة عاجلة</span>
-                            <span class="wc-tag">Authority Copy</span>
-                            <span class="wc-tag wc-tag-result">5 إعلانات</span>
-                        </div>
-                        <div class="wc-metrics">
-                            <div class="wc-metric"><span class="wc-m-num">5</span><span class="wc-m-label">إعلان فيسبوك</span></div>
-                            <div class="wc-metric"><span class="wc-m-num">Legal</span><span class="wc-m-label">خدمات قانونية</span></div>
-                            <div class="wc-metric"><span class="wc-m-num">B2C</span><span class="wc-m-label">كوبي أفراد</span></div>
-                        </div>
-                    </div>
-
-                    <!-- 7. ZAVN Agency -->
+                    <!-- 9. ZAVN Agency -->
                     <div class="work-card" data-cat="agency">
                         <div class="wc-top">
                             <div class="wc-emoji">🟣</div>
@@ -2488,7 +2584,7 @@
                         </div>
                     </div>
 
-                    <!-- 8. Brand Repositioning Case Study -->
+                    <!-- 10. Brand Repositioning Case Study -->
                     <div class="work-card" data-cat="agency" style="border-color: rgba(0,242,254,0.15);">
                         <div class="wc-top">
                             <div class="wc-emoji">🔄</div>
@@ -2518,8 +2614,8 @@
                 <div style="text-align:center; margin-top: 56px;">
                     <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">عايز مشروعك يبقى الجاي في القايمة دي؟ 👆</p>
                     <a href="https://wa.me/201065760983?text=عايز%20أتكلم%20معاك%20عن%20مشروعي" target="_blank"
-                       style="display:inline-flex; align-items:center; gap:10px; background: linear-gradient(135deg, var(--accent), #ff9f43); color:#fff; font-weight:900; font-size:1rem; padding:14px 32px; border-radius:50px; text-decoration:none; box-shadow: 0 8px 30px var(--accent-glow); transition: all 0.3s;">
-                        💬 ابدأ مشروعك معايا
+                       class="btn-mega-primary" style="display:inline-flex;">
+                        <span>تواصل معي عبر واتساب 💬</span>
                     </a>
                 </div>
             </div>
@@ -2540,7 +2636,7 @@
             }
             .work-card {
                 background: var(--bg-card); border: 1px solid var(--border-card);
-                border-radius: var(--radius-lg); padding: 28px;
+                border-radius: var(--radius-lg); padding: 24px;
                 transition: var(--transition-smooth); display: flex;
                 flex-direction: column; gap: 16px; position: relative; overflow: hidden;
             }
@@ -2551,6 +2647,77 @@
             .work-card:hover { transform: translateY(-6px); border-color: rgba(232,114,42,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(232,114,42,0.1); }
             .work-card:hover::before { opacity: 1; }
             .work-card.hidden { display: none; }
+            
+            .work-card-media {
+                position: relative;
+                width: 100%;
+                height: 220px;
+                border-radius: var(--radius-md);
+                overflow: hidden;
+                background: #080a10;
+                cursor: pointer;
+                border: 1px solid rgba(255,255,255,0.08);
+            }
+            .work-card-media img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
+                transition: transform 0.35s ease;
+            }
+            .work-card:hover .work-card-media img {
+                transform: scale(1.04);
+            }
+            .work-card-media-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                padding: 12px;
+                opacity: 0.92;
+                transition: opacity 0.2s ease;
+            }
+            .work-card-media-overlay span {
+                font-size: 0.76rem;
+                font-weight: 800;
+                color: #ff9f43;
+                background: rgba(0,0,0,0.75);
+                padding: 5px 12px;
+                border-radius: 20px;
+                border: 1px solid rgba(255,159,67,0.35);
+            }
+            .wc-actions-row {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .btn-work-action {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                padding: 10px 16px;
+                border-radius: 8px;
+                font-size: 0.82rem;
+                font-weight: 800;
+                text-decoration: none;
+                background: rgba(232,114,42,0.12);
+                color: var(--accent);
+                border: 1px solid rgba(232,114,42,0.35);
+                cursor: pointer;
+                transition: var(--transition-smooth);
+                width: 100%;
+                text-align: center;
+            }
+            .btn-work-action:hover {
+                background: var(--accent);
+                color: #000;
+                box-shadow: 0 4px 15px var(--accent-glow);
+            }
+
             .wc-top { display: flex; align-items: flex-start; gap: 12px; }
             .wc-emoji { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
             .wc-client { font-size: 1rem; font-weight: 900; color: var(--text-primary); line-height: 1.3; }
@@ -2571,7 +2738,8 @@
                     grid-template-columns: 1fr !important;
                     gap: 16px !important;
                 }
-                .work-card { padding: 20px; gap: 12px; }
+                .work-card { padding: 18px; gap: 12px; }
+                .work-card-media { height: 180px; }
                 .wc-hook { font-size: 0.8rem; padding: 10px 12px; }
                 .wc-body { font-size: 0.78rem; }
                 .wc-m-num { font-size: 0.95rem; }
@@ -2584,9 +2752,10 @@
         <script>
             function filterWork(cat, btn) {
                 document.querySelectorAll('.work-filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+                if (btn && btn.classList) btn.classList.add('active');
                 document.querySelectorAll('.work-card').forEach(card => {
-                    if (cat === 'all' || card.dataset.cat === cat) {
+                    const cats = (card.dataset.cat || '').split(' ');
+                    if (cat === 'all' || cats.includes(cat)) {
                         card.classList.remove('hidden');
                     } else {
                         card.classList.add('hidden');
