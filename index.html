@@ -544,6 +544,185 @@
             flex-wrap: wrap;
         }
 
+        /* ==========================================================================
+           Hero Capabilities Grid ("بشتغل على")
+           ========================================================================== */
+        .hero-capabilities-wrap {
+            margin-top: 45px;
+            background: rgba(13, 16, 25, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-xl);
+            padding: 32px 28px 28px;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            position: relative;
+            text-align: right;
+            max-width: 1040px;
+            margin-inline: auto;
+        }
+
+        .hero-capabilities-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 22px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .cap-main-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            letter-spacing: -0.3px;
+        }
+
+        .cap-title-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(232, 114, 42, 0.12);
+            border: 1px solid rgba(232, 114, 42, 0.35);
+            color: var(--accent);
+            padding: 5px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        .hero-capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 980px) {
+            .hero-capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-capabilities-wrap {
+                padding: 22px 16px 18px;
+                margin-top: 32px;
+                border-radius: var(--radius-lg);
+            }
+            .hero-capabilities-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                margin-bottom: 16px;
+                padding-bottom: 12px;
+            }
+            .cap-main-title {
+                font-size: 1.3rem;
+            }
+            .hero-capabilities-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+
+        .cap-item-card {
+            background: rgba(22, 28, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 16px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cap-item-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(232, 114, 42, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cap-item-card:hover {
+            transform: translateY(-4px);
+            background: rgba(26, 34, 52, 0.75);
+            border-color: rgba(232, 114, 42, 0.5);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(232, 114, 42, 0.15);
+        }
+
+        .cap-item-card:hover::before {
+            opacity: 1;
+        }
+
+        .cap-item-card.featured-cap {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.07), rgba(22, 28, 42, 0.65));
+            border: 1px solid rgba(0, 242, 254, 0.28);
+        }
+
+        .cap-item-card.featured-cap:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 242, 254, 0.25);
+        }
+
+        .cap-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-sm);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .cap-item-card.featured-cap .cap-icon {
+            background: rgba(0, 242, 254, 0.1);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        .cap-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            text-align: right;
+            flex: 1;
+        }
+
+        [dir="ltr"] .cap-info {
+            text-align: left;
+        }
+
+        .cap-title {
+            font-family: var(--font-en), var(--font-ar);
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.35;
+        }
+
+        .cap-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
         .btn-mega-primary {
             background: linear-gradient(135deg, var(--accent), #ff944d);
             color: #ffffff;
@@ -2133,6 +2312,63 @@
                         <span>🎬 شاهد الإعلانات والريلز الحية</span>
                     </a>
                 </div>
+
+                <!-- Hero Core Capabilities Block ("بشتغل على") -->
+                <div class="hero-capabilities-wrap" id="heroCapabilities">
+                    <div class="hero-capabilities-header">
+                        <h3 class="cap-main-title" id="capHeading">بشتغل على:</h3>
+                        <span class="cap-title-badge" id="capBadge">⚡ مجالات التخصص والخبرة</span>
+                    </div>
+                    <div class="hero-capabilities-grid" id="capabilitiesGrid">
+                        <div class="cap-item-card">
+                            <span class="cap-icon">✍🏻</span>
+                            <div class="cap-info">
+                                <span class="cap-title">Copywriting & Ad Copy</span>
+                                <span class="cap-desc">صياغة نصوص إعلانية بيعية مباشرة ترفع معدل التحويل والمبيعات</span>
+                            </div>
+                        </div>
+
+                        <div class="cap-item-card">
+                            <span class="cap-icon">🔥</span>
+                            <div class="cap-info">
+                                <span class="cap-title">Hooks & Reels Scripts</span>
+                                <span class="cap-desc">هوكات أول 3 ثواني وسيناريوهات ريلز تمنع السكرول وتضاعف المشاهدات</span>
+                            </div>
+                        </div>
+
+                        <div class="cap-item-card">
+                            <span class="cap-icon">🎯</span>
+                            <div class="cap-info">
+                                <span class="cap-title">Buyer Persona & Audience Research</span>
+                                <span class="cap-desc">تشريح سيكولوجية الزبون ودراسة الجمهور المستهدف والمنافسين</span>
+                            </div>
+                        </div>
+
+                        <div class="cap-item-card">
+                            <span class="cap-icon">🧠</span>
+                            <div class="cap-info">
+                                <span class="cap-title">Content Strategy</span>
+                                <span class="cap-desc">بناء استراتيجيات محتوى متكاملة تحقق أهداف نمو البيزنس والبراند</span>
+                            </div>
+                        </div>
+
+                        <div class="cap-item-card">
+                            <span class="cap-icon">📅</span>
+                            <div class="cap-info">
+                                <span class="cap-title">Content Planning</span>
+                                <span class="cap-desc">تخطيط وجدولة تقاويم المحتوى الشهري الشاملة لمراحل القمع البيعي</span>
+                            </div>
+                        </div>
+
+                        <div class="cap-item-card featured-cap">
+                            <span class="cap-icon">📊</span>
+                            <div class="cap-info">
+                                <span class="cap-title">وعندي خلفية في Media Buying وMeta Ads</span>
+                                <span class="cap-desc">فهم عميق لإطلاق واختبار الحملات وقراءة الأرقام والـ ROAS لتقليل تكلفة التحويل</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -3111,7 +3347,42 @@
                 heroPill: '⚡ من لحام المعدن لصياغة الكلمات اللي بتوصل وتبيع',
                 heroName: 'محمود محمد <span class="highlight">متولي</span>',
                 typePrefix: 'أنا',
-                typingWords: ['كوبي رايتر مبيعات وتحويل 🔥', 'كاتب محتوى إعلاني بيجيب نتايج ✍️', 'مهندس خطط قمع تسويقي كامل 📈', 'ميديا باير حملات Meta Ads 🚀'],
+                typingWords: ['Copywriting & Ad Copy ✍🏻', 'Hooks & Reels Scripts 🔥', 'Buyer Persona & Audience Research 🎯', 'Content Strategy & Planning 🧠', 'كوبي رايتر مبيعات وتحويل 🚀', 'خلفية قوية في Media Buying وMeta Ads 📊'],
+                capHeading: 'بشتغل على:',
+                capBadge: '⚡ مجالات التخصص والخبرة',
+                capabilitiesList: [
+                    {
+                        icon: '✍🏻',
+                        title: 'Copywriting & Ad Copy',
+                        desc: 'صياغة نصوص إعلانية بيعية مباشرة ترفع معدل التحويل والمبيعات'
+                    },
+                    {
+                        icon: '🔥',
+                        title: 'Hooks & Reels Scripts',
+                        desc: 'هوكات أول 3 ثواني وسيناريوهات ريلز تمنع السكرول وتضاعف المشاهدات'
+                    },
+                    {
+                        icon: '🎯',
+                        title: 'Buyer Persona & Audience Research',
+                        desc: 'تشريح سيكولوجية الزبون ودراسة الجمهور المستهدف والمنافسين'
+                    },
+                    {
+                        icon: '🧠',
+                        title: 'Content Strategy',
+                        desc: 'بناء استراتيجيات محتوى متكاملة تحقق أهداف نمو البيزنس والبراند'
+                    },
+                    {
+                        icon: '📅',
+                        title: 'Content Planning',
+                        desc: 'تخطيط وجدولة تقاويم المحتوى الشهري الشاملة لمراحل القمع البيعي'
+                    },
+                    {
+                        icon: '📊',
+                        title: 'وعندي خلفية في Media Buying وMeta Ads',
+                        desc: 'فهم عميق لإطلاق واختبار الحملات وقراءة الأرقام والـ ROAS لتقليل تكلفة التحويل',
+                        featured: true
+                    }
+                ],
                 heroBio: 'كاتب محتوى وكوبي رايتر بيكتب كلام يبيع — مش مجرد رص كلام على السوشيال ميديا، لكن إعلانات Meta Ads وخطط محتوى مبنية على سيكولوجية الزبون وقمع تسويقي بيجيب أرباح حقيقية.',
                 btnHeroPackages: '💼 استعرض باقات العمل',
                 btnHeroShowcase: '🎬 شاهد الإعلانات والريلز الحية',
@@ -3232,7 +3503,42 @@
                 heroPill: '⚡ From welding metal to crafting words that sell',
                 heroName: 'Mahmoud Mohamed <span class="highlight">Metwally</span>',
                 typePrefix: 'I am a',
-                typingWords: ['Conversion Copywriter 🔥', 'High-ROI Meta Ads Scaler ✍️', 'Full-Funnel Content Strategist 📈', 'Direct-Response Specialist 🚀'],
+                typingWords: ['Copywriting & Ad Copy ✍🏻', 'Hooks & Reels Scripts 🔥', 'Buyer Persona & Audience Research 🎯', 'Content Strategy & Planning 🧠', 'Conversion Copywriter 🚀', 'Media Buying & Meta Ads Expertise 📊'],
+                capHeading: 'What I Work On:',
+                capBadge: '⚡ Core Competencies & Expertise',
+                capabilitiesList: [
+                    {
+                        icon: '✍🏻',
+                        title: 'Copywriting & Ad Copy',
+                        desc: 'Direct-response sales copy that boosts conversions and scales revenue'
+                    },
+                    {
+                        icon: '🔥',
+                        title: 'Hooks & Reels Scripts',
+                        desc: 'High-retention 3-second scroll-stoppers and viral video scripts'
+                    },
+                    {
+                        icon: '🎯',
+                        title: 'Buyer Persona & Audience Research',
+                        desc: 'Deep consumer psychology analysis and comprehensive competitor research'
+                    },
+                    {
+                        icon: '🧠',
+                        title: 'Content Strategy',
+                        desc: 'Full-funnel content architectures designed for sustainable business growth'
+                    },
+                    {
+                        icon: '📅',
+                        title: 'Content Planning',
+                        desc: 'Strategic monthly content calendar scheduling across all marketing funnel stages'
+                    },
+                    {
+                        icon: '📊',
+                        title: 'Strong Background in Media Buying & Meta Ads',
+                        desc: 'Hands-on campaign testing, data analytics, and ROAS optimization to cut CAC',
+                        featured: true
+                    }
+                ],
                 heroBio: 'Content Writer & Conversion Copywriter crafting words that sell — high-converting Meta Ads, psychology-driven content funnels, and WhatsApp sales closing strategies.',
                 btnHeroPackages: '💼 View Work Packages',
                 btnHeroShowcase: '🎬 Watch Live Reels & Ads',
@@ -3520,6 +3826,24 @@
             document.getElementById('heroBio').textContent = t.heroBio;
             document.getElementById('btnHeroPackages').querySelector('span').textContent = t.btnHeroPackages;
             document.getElementById('btnHeroShowcase').querySelector('span').textContent = t.btnHeroShowcase;
+
+            // Capabilities ("بشتغل على")
+            const capHeading = document.getElementById('capHeading');
+            if (capHeading && t.capHeading) capHeading.textContent = t.capHeading;
+            const capBadge = document.getElementById('capBadge');
+            if (capBadge && t.capBadge) capBadge.textContent = t.capBadge;
+            const capGrid = document.getElementById('capabilitiesGrid');
+            if (capGrid && t.capabilitiesList) {
+                capGrid.innerHTML = t.capabilitiesList.map(c => `
+                    <div class="cap-item-card ${c.featured ? 'featured-cap' : ''}">
+                        <span class="cap-icon">${c.icon}</span>
+                        <div class="cap-info">
+                            <span class="cap-title">${c.title}</span>
+                            <span class="cap-desc">${c.desc}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
 
             // Marquee
             const marquee = document.getElementById('marqueeTrack');
