@@ -20,7 +20,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Canvas Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js">
+        // Verified Proof Gallery Logic
+        function filterProof(category, btn) {
+            const cards = document.querySelectorAll('.proof-card');
+            const buttons = document.querySelectorAll('.proof-filter-btn');
+            
+            buttons.forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openProofModal(src, caption) {
+            const modal = document.getElementById('proofLightboxModal');
+            const img = document.getElementById('proofModalImg');
+            const cap = document.getElementById('proofModalCaption');
+            if (!modal || !img) return;
+
+            img.src = src;
+            cap.textContent = caption || '';
+            modal.classList.add('active');
+        }
+
+        function closeProofModal() {
+            const modal = document.getElementById('proofLightboxModal');
+            if (modal) modal.classList.remove('active');
+        }
+
+        // Close lightbox on backdrop click
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('proofLightboxModal');
+            if (modal && modal.classList.contains('active') && e.target === modal) {
+                closeProofModal();
+            }
+        });
+
+    </script>
 
     <style>
         /* ==========================================================================
@@ -1771,7 +1813,141 @@
                 padding: 24px 18px !important;
             }
         }
-    </style>
+    
+        /* Verified Proof Gallery */
+        .verified-proof-container {
+            margin: 36px 0;
+            padding: 28px 22px;
+            background: rgba(15, 18, 28, 0.65);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(15px);
+        }
+        .proof-filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .proof-filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-card);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: inherit;
+        }
+        .proof-filter-btn:hover, .proof-filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #06070c;
+            box-shadow: 0 4px 15px rgba(232, 114, 42, 0.35);
+        }
+        .proof-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .proof-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .proof-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .proof-img-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 1px solid var(--border-card);
+            transition: transform 0.4s ease;
+        }
+        .proof-card:hover .proof-img-thumb {
+            transform: scale(1.03);
+        }
+        .proof-card-body {
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+        }
+        .proof-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+        .badge-award { background: rgba(255, 193, 7, 0.15); color: #ffc107; border: 1px solid rgba(255, 193, 7, 0.3); }
+        .badge-cert { background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
+        .badge-agency { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .badge-client { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+        .badge-mentor { background: rgba(232, 114, 42, 0.15); color: #ff6a00; border: 1px solid rgba(232, 114, 42, 0.3); }
+        .proof-title {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .proof-quote {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+            margin-bottom: 12px;
+        }
+        .proof-zoom-cta {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: auto;
+        }
+        #proofLightboxModal .modal-dialog-box {
+            max-width: 850px;
+            width: 95%;
+            padding: 16px;
+            background: #0b0e17;
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        #proofLightboxModal img {
+            max-width: 100%;
+            max-height: 72vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+        #proofModalCaption {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+
+</style>
 </head>
 <body>
 
@@ -2375,6 +2551,134 @@
                 </div>
 
                 <!-- Masonry Reviews Grid -->
+                
+                <!-- Verified Proof Gallery: Certifications, Awards, Agency Experience & Real WhatsApp Feedbacks -->
+                <div class="verified-proof-container">
+                    <div style="text-align: center; margin-bottom: 22px;">
+                        <span class="section-tag-badge" style="background: rgba(232, 114, 42, 0.15); color: #ff6a00; border-color: rgba(232, 114, 42, 0.3);">🏆 أدلة حية وموثقة</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 900; color: #fff; margin-top: 8px;">الشهادات الرسمية، اعتماد الوكالة، وتقييمات العملاء 📸</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 6px;">شاهد وثائق النجاح الحقيقية، سكرينات الواتساب، وتكريمات التميز دون تزييف:</p>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div class="proof-filter-tabs">
+                        <button type="button" class="proof-filter-btn active" data-filter="all" onclick="filterProof('all', this)">🌟 عرض الكل (8)</button>
+                        <button type="button" class="proof-filter-btn" data-filter="awards" onclick="filterProof('awards', this)">🥇 المركز الأول والشهادات</button>
+                        <button type="button" class="proof-filter-btn" data-filter="agency" onclick="filterProof('agency', this)">🏢 فريق ZAVN Agency</button>
+                        <button type="button" class="proof-filter-btn" data-filter="clients" onclick="filterProof('clients', this)">💬 فيدباك العملاء</button>
+                        <button type="button" class="proof-filter-btn" data-filter="mentors" onclick="filterProof('mentors', this)">👨‍🏫 تقييمات المنتورز</button>
+                    </div>
+
+                    <!-- Cards Grid -->
+                    <div class="proof-cards-grid" id="proofCardsGrid">
+                        
+                        <!-- 1. OnTrack 1st Place -->
+                        <div class="proof-card" data-cat="awards" onclick="openProofModal('assets/social_proof/ontrack_first_place_winner.jpg', '🥇 تكريم رسمي: المركز الأول على مستوى صناع المحتوى في مسابقة OnTrack')">
+                            <div style="overflow: hidden;">
+                                <img src="assets/social_proof/ontrack_first_place_winner.jpg" alt="المركز الأول OnTrack" class="proof-img-thumb" loading="lazy">
+                            </div>
+                            <div class="proof-card-body">
+                                <span class="proof-badge badge-award">🥇 تكريم المركز الأول</span>
+                                <div class="proof-title">المركز الأول في مسابقة OnTrack الرسمية</div>
+                                <div class="proof-quote">إعلان رسمي من إدارة OnTrack باختيار محمود متولي في الترتيب الأول بين جميع صناع المحتوى المشاركين</div>
+                                <div class="proof-zoom-cta"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 2. OnTrack Certificate -->
+                        <div class="proof-card" data-cat="awards" onclick="openProofModal('assets/social_proof/ontrack_certificate_mahmoud_metwally.jpg', '🎓 شهادة إتمام برنامج Content 101 المعتمد من OnTrack — توقيع أ/ مروة نصر')">
+                            <div style="overflow: hidden;">
+                                <img src="assets/social_proof/ontrack_certificate_mahmoud_metwally.jpg" alt="شهادة OnTrack Content 101" class="proof-img-thumb" loading="lazy">
+                            </div>
+                            <div class="proof-card-body">
+                                <span class="proof-badge badge-cert">🎓 شهادة معتمدة 18 ساعة</span>
+                                <div class="proof-title">شهادة Content 101 المعتمدة</div>
+                                <div class="proof-quote">شهادة إنجاز واجتياز شامل لأساسيات كتابة المحتوى، تشريح البيرسونا، استراتيجيات المنصات، وبناء الفانل</div>
+                                <div class="proof-zoom-cta"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 3. ZAVN Agency Official Team -->
+                        <div class="proof-card" data-cat="agency" onclick="openProofModal('assets/social_proof/zavn_agency_official_team.jpg', '🏢 فريق عمل وكالة ZAVN Agency الرسمي — محمود متولي كاتب المحتوى المعتمد')">
+                            <div style="overflow: hidden;">
+                                <img src="assets/social_proof/zavn_agency_official_team.jpg" alt="فريق وكالة ZAVN Agency" class="proof-img-thumb" loading="lazy">
+                            </div>
+                            <div class="proof-card-body">
+                                <span class="proof-badge badge-agency">🏢 فريق وكالة ZAVN</span>
+                                <div class="proof-title">اعتماد كاتب محتوى وكالة ZAVN Agency</div>
+                                <div class="proof-quote">الهيكل التنفيذي الرسمي للوكالة: محمود متولي مسؤول كتابة المحتوى إلى جانب الميديا باير ومصمم الجرافيك والمونتير</div>
+                                <div class="proof-zoom-cta"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 4. English Bloom Client Feedback -->
+                        <div class="proof-card" data-cat="clients" onclick="openProofModal('assets/social_proof/client_feedback_english_bloom.jpg', '💬 إشادة إدارة English Bloom Academy باستراتيجية الـ 20 صفحة وعمق فهم المنتج')">
+                            <div style="overflow: hidden;">
+                                <img src="assets/social_proof/client_feedback_english_bloom.jpg" alt="فيدباك عميل English Bloom" class="proof-img-thumb" loading="lazy">
+                            </div>
+                            <div class="proof-card-body">
+                                <span class="proof-badge badge-client">💬 فيدباك عميل: English Bloom</span>
+                                <div class="proof-title">&ldquo;إنك بقيت فاهم المنتج صح وديه أهم حاجة.. Great job والله&rdquo;</div>
+                                <div class="proof-quote">محادثة واتساب موثقة بعد تسليم استراتيجية المحتوى المفصلة والإشادة بدقة جمع البريف وفهم المنتج</div>
+                                <div class="proof-zoom-cta"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Ajyal Academy Client Feedback -->
+                        <div class="proof-card" data-cat="clients" onclick="openProofModal('assets/social_proof/client_feedback_ajyal_academy.jpg', '💬 إشادة أكاديمية أجيال (Ajyal Masterplan) بالدقة والاحترافية العالية')">
+                            <div style="overflow: hidden;">
+                                <img src="assets/social_proof/client_feedback_ajyal_academy.jpg" alt="فيدباك عميل أجيال" class="proof-img-thumb" loading="lazy">
+                            </div>
+                            <div class="proof-card-body">
+                                <span class="proof-badge badge-client">💬 فيدباك عميل: أكاديمية أجيال</span>
+                                <div class="proof-title">&ldquo;تسلم إيدك على الشغل العالي والدقيق ده وإن شاء الله فاتحة خير&rdquo;</div>
+                                <div class="proof-quote">تقييم العميل بعد تسليم خطة الـ Masterplan الشاملة ومسار إطلاق الحملة التسويقية بدقة متناهية</div>
+                                <div class="proof-zoom-cta"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Mr Hazo Perfect Score -->
+                        <div class="proof-card" data-cat="mentors" onclick="openProofModal('assets/social_proof/mentor_feedback_mr_hazo_perfect_score.jpg', '👨‍🏫 تقييم مستر حازو: برافو إجابات التاسك ولا غلطة بجد ماشاء الله ممتاز جدا')">
+                            <div style="overflow: hidden;">
+                                <img src="assets/social_proof/mentor_feedback_mr_hazo_perfect_score.jpg" alt="تقييم مستر حازو" class="proof-img-thumb" loading="lazy">
+                            </div>
+                            <div class="proof-card-body">
+                                <span class="proof-badge badge-mentor">👨‍🏫 تقييم منتور: Mr. Hazo</span>
+                                <div class="proof-title">&ldquo;برافو إجابات التاسك ولا غلطة بجد ماشاء الله ممتاز جدا&rdquo;</div>
+                                <div class="proof-quote">تقييم فوري لتاسك تحليل السوق ونموذج قطر التسويقي والفرق بين البيع والتسويق بدرجة امتياز</div>
+                                <div class="proof-zoom-cta"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Marwa Nasr Grades -->
+                        <div class="proof-card" data-cat="mentors" onclick="openProofModal('assets/social_proof/mentor_feedback_marwa_nasr_grades.jpg', '👩‍🏫 تقييم أ/ مروة نصر لدرجات التاسك: درجة 9.5 من 10 وإشادة بالتطور المستمر')">
+                            <div style="overflow: hidden;">
+                                <img src="assets/social_proof/mentor_feedback_marwa_nasr_grades.jpg" alt="تقييم درجات أ/ مروة نصر" class="proof-img-thumb" loading="lazy">
+                            </div>
+                            <div class="proof-card-body">
+                                <span class="proof-badge badge-mentor">👩‍🏫 تقييم مدربة: أ/ مروة نصر</span>
+                                <div class="proof-title">درجات الامتياز 9.5 من 10 في التاسكات</div>
+                                <div class="proof-quote">تقييمات صوتية ورسائل متابعة دقيقة على تاسكات كتابة المحتوى والإشادة بسرعة الاستيعاب والتطبيق</div>
+                                <div class="proof-zoom-cta"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 8. Marwa Nasr Task 3 Details -->
+                        <div class="proof-card" data-cat="mentors" onclick="openProofModal('assets/social_proof/mentor_feedback_marwa_nasr_task3.jpg', '👩‍🏫 تقييم تفصيلي لتاسك البيرسونا والكوبي من أ/ مروة نصر بدرجة 9 من 10')">
+                            <div style="overflow: hidden;">
+                                <img src="assets/social_proof/mentor_feedback_marwa_nasr_task3.jpg" alt="ملاحظات تفصيلية أ/ مروة نصر" class="proof-img-thumb" loading="lazy">
+                            </div>
+                            <div class="proof-card-body">
+                                <span class="proof-badge badge-mentor">👩‍🏫 مراجعة تفصيلية: أ/ مروة نصر</span>
+                                <div class="proof-title">&ldquo;التاسك كويس جداً.. ضيفت البيرسونا مظبوط والميزات تفصيلية.. الدرجة 9/10&rdquo;</div>
+                                <div class="proof-quote">تفكيك عميق لعناصر صياغة الكوبي رايتنج، تصحيح الـ CTA، ومطابقة المحتوى مع مشاعر الشراء</div>
+                                <div class="proof-zoom-cta"><span>🔍 انقر للمشاهدة والتكبير الكامل</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <div class="testimonials-masonry-grid" id="testimonialsMasonry"></div>
             </div>
         </section>
@@ -2466,6 +2770,16 @@
     </div>
 
     <!-- Toast Alert Notification -->
+    
+    <!-- Verified Proof Image Lightbox Modal -->
+    <div class="modal-blur-overlay" id="proofLightboxModal">
+        <div class="modal-dialog-box" style="position: relative;">
+            <button type="button" class="btn-modal-close" onclick="closeProofModal()">&times;</button>
+            <img id="proofModalImg" src="" alt="Proof Preview" style="display: block; margin: 0 auto;">
+            <div id="proofModalCaption"></div>
+        </div>
+    </div>
+
     <div id="toastMessageAlert"></div>
 
     <!-- Dynamic JavaScript Engine -->
