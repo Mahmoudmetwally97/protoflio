@@ -20,49 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Canvas Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js">
-        // Verified Proof Gallery Logic
-        function filterProof(category, btn) {
-            const cards = document.querySelectorAll('.proof-card');
-            const buttons = document.querySelectorAll('.proof-filter-btn');
-            
-            buttons.forEach(b => b.classList.remove('active'));
-            if (btn) btn.classList.add('active');
-
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-cat') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        function openProofModal(src, caption) {
-            const modal = document.getElementById('proofLightboxModal');
-            const img = document.getElementById('proofModalImg');
-            const cap = document.getElementById('proofModalCaption');
-            if (!modal || !img) return;
-
-            img.src = src;
-            cap.textContent = caption || '';
-            modal.classList.add('active');
-        }
-
-        function closeProofModal() {
-            const modal = document.getElementById('proofLightboxModal');
-            if (modal) modal.classList.remove('active');
-        }
-
-        // Close lightbox on backdrop click
-        document.addEventListener('click', function(e) {
-            const modal = document.getElementById('proofLightboxModal');
-            if (modal && modal.classList.contains('active') && e.target === modal) {
-                closeProofModal();
-            }
-        });
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
     <style>
         /* ==========================================================================
@@ -1923,28 +1881,161 @@
             gap: 6px;
             margin-top: auto;
         }
-        #proofLightboxModal .modal-dialog-box {
-            max-width: 850px;
-            width: 95%;
-            padding: 16px;
-            background: #0b0e17;
-            border: 1px solid var(--border-card);
-            border-radius: var(--radius-lg);
-            text-align: center;
+        /* High-End Proof Lightbox Modal */
+        .proof-lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 5, 10, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            padding: 12px;
         }
-        #proofLightboxModal img {
+        .proof-lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .proof-lightbox-container {
+            position: relative;
+            max-width: 960px;
+            width: 100%;
+            max-height: 94vh;
+            display: flex;
+            flex-direction: column;
+            background: #0b0e17;
+            border: 1px solid rgba(255, 106, 0, 0.35);
+            border-radius: 16px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95), 0 0 40px rgba(255, 106, 0, 0.2);
+            overflow: hidden;
+            transform: scale(0.95);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .proof-lightbox-overlay.active .proof-lightbox-container {
+            transform: scale(1);
+        }
+        .btn-proof-lightbox-close {
+            position: absolute;
+            top: 14px;
+            inset-inline-start: 14px;
+            z-index: 10;
+            background: rgba(10, 12, 18, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 1.6rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            line-height: 1;
+        }
+        .btn-proof-lightbox-close:hover {
+            background: #ff6a00;
+            color: #000;
+            border-color: #ff6a00;
+        }
+        .proof-lightbox-scrollable {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #06080e;
+            min-height: 220px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .proof-lightbox-scrollable img {
             max-width: 100%;
-            max-height: 72vh;
+            height: auto;
+            max-height: 74vh;
             object-fit: contain;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+            display: block;
+            margin: auto;
         }
-        #proofModalCaption {
+        .proof-lightbox-footer {
+            padding: 14px 20px;
+            background: #0f1422;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .proof-lightbox-caption {
             color: #ffffff;
-            font-size: 1rem;
-            font-weight: 800;
-            margin-top: 12px;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            font-weight: 700;
+            line-height: 1.4;
+            flex: 1;
+            min-width: 200px;
+        }
+        .proof-lightbox-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-proof-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: rgba(255, 106, 0, 0.15);
+            color: #ff8c33;
+            border: 1px solid rgba(255, 106, 0, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-proof-action:hover {
+            background: #ff6a00;
+            color: #000;
+        }
+        .btn-proof-close-action {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        .btn-proof-close-action:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .proof-lightbox-container {
+                max-height: 96vh;
+                border-radius: 12px;
+            }
+            .proof-lightbox-scrollable {
+                padding: 12px 8px;
+            }
+            .proof-lightbox-scrollable img {
+                max-height: 64vh;
+            }
+            .proof-lightbox-footer {
+                padding: 12px;
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .proof-lightbox-actions {
+                justify-content: center;
+            }
         }
 
 </style>
@@ -2786,11 +2877,23 @@
     <!-- Toast Alert Notification -->
     
     <!-- Verified Proof Image Lightbox Modal -->
-    <div class="modal-blur-overlay" id="proofLightboxModal">
-        <div class="modal-dialog-box" style="position: relative;">
-            <button type="button" class="btn-modal-close" onclick="closeProofModal()">&times;</button>
-            <img id="proofModalImg" src="" alt="Proof Preview" style="display: block; margin: 0 auto;">
-            <div id="proofModalCaption"></div>
+    <div class="proof-lightbox-overlay" id="proofLightboxModal" onclick="if(event.target===this)closeProofModal()">
+        <div class="proof-lightbox-container">
+            <button type="button" class="btn-proof-lightbox-close" onclick="closeProofModal()" aria-label="Close">&times;</button>
+            <div class="proof-lightbox-scrollable">
+                <img id="proofModalImg" src="" alt="Proof Preview" onclick="event.stopPropagation()">
+            </div>
+            <div class="proof-lightbox-footer">
+                <div id="proofModalCaption" class="proof-lightbox-caption"></div>
+                <div class="proof-lightbox-actions">
+                    <a id="proofModalOpenTab" href="#" target="_blank" rel="noopener noreferrer" class="btn-proof-action">
+                        <span>🔍 فتح الصورة بالحجم الكامل</span>
+                    </a>
+                    <button type="button" class="btn-proof-action btn-proof-close-action" onclick="closeProofModal()">
+                        <span>✕ إغلاق</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -3060,9 +3163,16 @@
             ]
         };
 
-        function switchChatScenario(key) {
+        function switchChatScenario(key, btn) {
             document.querySelectorAll('.btn-scenario-item').forEach(b => b.classList.remove('active'));
-            if (window.event && window.event.target) window.event.target.classList.add('active');
+            if (btn && btn.classList) {
+                btn.classList.add('active');
+            } else if (window.event && window.event.target && window.event.target.classList) {
+                window.event.target.classList.add('active');
+            } else {
+                const targetBtn = document.querySelector(`.btn-scenario-item[onclick*="${key}"]`);
+                if (targetBtn && targetBtn.classList) targetBtn.classList.add('active');
+            }
 
             const container = document.getElementById('simChatStream');
             const data = chatScenarios[key];
@@ -3416,12 +3526,66 @@
             });
         });
 
-        function selectHookPreset(query) {
+        function selectHookPreset(query, btn) {
             document.querySelectorAll('.btn-preset-pill').forEach(b => b.classList.remove('active'));
-            if (window.event && window.event.target) window.event.target.classList.add('active');
-            document.getElementById('customHookInputField').value = query;
+            if (btn && btn.classList) {
+                btn.classList.add('active');
+            } else if (window.event && window.event.target && window.event.target.classList) {
+                window.event.target.classList.add('active');
+            }
+            const input = document.getElementById('customHookInputField');
+            if (input) input.value = query;
             renderHooks(query);
         }
+
+        // ==========================================
+        // Verified Social Proof Lightbox Logic
+        // ==========================================
+        function filterProof(category, btn) {
+            const cards = document.querySelectorAll('.proof-card');
+            const buttons = document.querySelectorAll('.proof-filter-btn');
+            
+            buttons.forEach(b => b.classList.remove('active'));
+            if (btn && btn.classList) btn.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-cat') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openProofModal(src, caption) {
+            const modal = document.getElementById('proofLightboxModal');
+            const img = document.getElementById('proofModalImg');
+            const cap = document.getElementById('proofModalCaption');
+            const openTab = document.getElementById('proofModalOpenTab');
+            if (!modal || !img) return;
+
+            img.src = src;
+            if (cap) cap.textContent = caption || '';
+            if (openTab) openTab.href = src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProofModal() {
+            const modal = document.getElementById('proofLightboxModal');
+            if (modal) modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeProofModal();
+        });
+
+        // Global attachments
+        window.filterProof = filterProof;
+        window.openProofModal = openProofModal;
+        window.closeProofModal = closeProofModal;
     </script>
 </body>
 </html>
