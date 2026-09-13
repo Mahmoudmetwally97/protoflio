@@ -207,17 +207,21 @@
         }
 
         @media (max-width: 768px) {
-            .header-wrap { top: 10px; padding: 0 10px; }
+            .header-wrap { top: 8px; padding: 0 8px; }
             .navbar-capsule {
                 padding: 6px 12px;
-                gap: 8px;
+                gap: 6px;
             }
-            .nav-brand { font-size: 0.9rem; gap: 7px; }
-            .brand-badge-icon { width: 30px; height: 30px; font-size: 0.85rem; }
-            .btn-nav-primary { padding: 7px 12px; font-size: 0.78rem; gap: 4px; }
-            .btn-nav-primary span:last-child { display: none; } /* hide text, keep emoji */
-            .icon-btn-toggle { padding: 6px 10px; font-size: 0.78rem; }
-            #langBtnText { display: none; }
+            .nav-brand { font-size: 0.88rem; gap: 6px; }
+            .brand-badge-icon { width: 28px; height: 28px; font-size: 0.8rem; }
+            .nav-controls { gap: 6px; }
+            .btn-nav-primary { padding: 6px 12px; font-size: 0.78rem; gap: 4px; }
+            .icon-btn-toggle { padding: 6px 10px; font-size: 0.78rem; min-width: 32px; justify-content: center; }
+            #langBtnText {
+                display: inline-block !important;
+                font-size: 0.74rem;
+                font-weight: 800;
+            }
         }
 
         .nav-link-btn {
@@ -364,6 +368,13 @@
         }
 
         /* Floating 3D Micro-Badges */
+        .hero-chips-container {
+            position: relative;
+            max-width: 175px;
+            margin: -60px auto 30px;
+            pointer-events: none;
+        }
+
         .hero-float-chip {
             position: absolute;
             background: rgba(15, 18, 26, 0.9);
@@ -381,32 +392,84 @@
             z-index: 3;
             animation: floatPill 4s ease-in-out infinite alternate;
             white-space: nowrap;
+            pointer-events: auto;
         }
 
         .chip-left {
-            top: 20px;
+            top: -100px;
             right: -130px;
         }
 
         .chip-right {
-            bottom: 10px;
+            top: -40px;
             left: -130px;
             animation-delay: 2s;
         }
 
         @media (max-width: 768px) {
-            .hero-avatar-halo-wrap { width: 130px; height: 130px; }
-            .hero-float-chip {
-                position: static;
-                margin: 5px auto;
-                display: inline-flex;
-                font-size: 0.75rem;
-                padding: 6px 12px;
-                animation: none;
+            .hero-avatar-halo-wrap { 
+                width: 140px; 
+                height: 140px; 
+                margin: 0 auto 16px;
             }
-            .chip-left, .chip-right { top: auto; right: auto; bottom: auto; left: auto; }
-            .hero-stage { padding-top: 100px; padding-bottom: 60px; }
-            .hero-summary-copy { font-size: 1rem; padding: 0 8px; }
+            .hero-chips-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                margin: 14px auto 20px;
+                max-width: 90%;
+            }
+            .hero-float-chip {
+                position: static !important;
+                margin: 0 auto !important;
+                display: inline-flex !important;
+                font-size: 0.8rem !important;
+                padding: 7px 16px !important;
+                animation: none !important;
+                transform: none !important;
+                width: fit-content;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            }
+            .chip-left, .chip-right { 
+                top: auto !important; 
+                right: auto !important; 
+                bottom: auto !important; 
+                left: auto !important; 
+            }
+            .hero-super-pill {
+                font-size: 0.82rem !important;
+                padding: 6px 14px !important;
+                line-height: 1.4;
+                margin-bottom: 18px;
+            }
+            .hero-headline {
+                font-size: 2.1rem !important;
+                line-height: 1.25;
+            }
+            .hero-typewriter-box {
+                font-size: 1.25rem !important;
+                min-height: 34px;
+                margin-bottom: 16px;
+            }
+            .hero-stage { padding-top: 85px; padding-bottom: 50px; }
+            .hero-summary-copy { 
+                font-size: 0.95rem !important; 
+                padding: 0 10px; 
+                line-height: 1.7;
+                margin-bottom: 24px;
+            }
+            .hero-cta-group {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+            }
+            .btn-mega-primary, .btn-mega-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
         }
 
         @keyframes floatPill {
@@ -1515,6 +1578,199 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* ==========================================================================
+           10. Comprehensive Mobile Responsive Overhauls
+           ========================================================================== */
+        @media (max-width: 768px) {
+            /* General Container & Typography */
+            body {
+                overflow-x: hidden;
+            }
+            .container {
+                padding: 0 16px !important;
+            }
+            .section-wrap {
+                padding: 50px 0 !important;
+            }
+            .section-header-block {
+                margin-bottom: 32px !important;
+            }
+            .section-main-heading {
+                font-size: 1.7rem !important;
+                line-height: 1.3 !important;
+            }
+            .section-sub-copy {
+                font-size: 0.9rem !important;
+            }
+
+            /* Bottom Mobile Quick Dock */
+            .mobile-bottom-dock {
+                bottom: 12px !important;
+                padding: 4px 8px !important;
+                gap: 4px !important;
+                max-width: 96vw;
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+            .mobile-bottom-dock::-webkit-scrollbar { display: none; }
+            .mob-dock-btn {
+                padding: 6px 9px !important;
+                font-size: 0.72rem !important;
+            }
+
+            /* Bento Cards Grid */
+            .bento-showcase-grid {
+                gap: 16px !important;
+            }
+            .bento-card-unit {
+                padding: 22px 18px !important;
+                border-radius: var(--radius-lg) !important;
+            }
+            .card-inner-title {
+                font-size: 1.15rem !important;
+            }
+            .card-inner-desc {
+                font-size: 0.85rem !important;
+                margin-bottom: 16px !important;
+            }
+
+            /* WhatsApp iPhone Simulator */
+            .iphone-mockup-body {
+                padding: 12px 10px !important;
+                border-radius: 28px !important;
+                border-width: 3px !important;
+            }
+            .scenario-pill-strip {
+                gap: 6px !important;
+                margin-bottom: 12px !important;
+            }
+            .btn-scenario-item {
+                padding: 6px 10px !important;
+                font-size: 0.74rem !important;
+            }
+            .chat-bubble-item {
+                font-size: 0.8rem !important;
+                padding: 8px 12px !important;
+                max-width: 92% !important;
+            }
+
+            /* Before/After Drag Slider */
+            .slider-comparison-box {
+                height: 260px !important;
+            }
+            .side-split {
+                padding: 16px !important;
+            }
+            .side-inner-fixed {
+                min-width: 280px !important;
+                padding: 16px !important;
+            }
+            .slider-comparison-box .split-pill {
+                font-size: 0.68rem !important;
+                padding: 3px 8px !important;
+                margin-bottom: 8px !important;
+            }
+            .slider-comparison-box div[style*="font-size: 1.1rem"] {
+                font-size: 0.92rem !important;
+                line-height: 1.4 !important;
+            }
+
+            /* Instagram Ad Card */
+            .ig-hook-box-text {
+                font-size: 0.98rem !important;
+                padding: 10px 14px !important;
+            }
+            .ig-caption-text {
+                font-size: 0.8rem !important;
+                padding: 10px 12px !important;
+            }
+
+            /* Hook Studio */
+            .hook-input-wrapper {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .hook-search-field {
+                padding: 12px 16px !important;
+                font-size: 0.88rem !important;
+                width: 100%;
+            }
+            .btn-gen-hook {
+                width: 100%;
+                padding: 12px 20px !important;
+                font-size: 0.9rem !important;
+            }
+            .hook-quote-text {
+                font-size: 0.92rem !important;
+            }
+
+            /* Packages Grid */
+            .packages-matrix-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+            .package-tier-card {
+                padding: 24px 20px !important;
+            }
+
+            /* Testimonials Summary Capsule & Masonry */
+            .feedback-summary-capsule {
+                padding: 18px 16px !important;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px !important;
+            }
+            .feedback-summary-capsule > div:first-child {
+                justify-content: space-between;
+                gap: 12px !important;
+            }
+            #btnOpenFeedbackDialog {
+                width: 100%;
+                justify-content: center;
+            }
+            .testimonials-masonry-grid {
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
+            }
+
+            /* Origin Story Section (Dual Column) */
+            #origin .bento-card-unit {
+                padding: 24px 18px !important;
+            }
+            #origin div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
+            }
+
+            /* Grand Finale Contact Section */
+            .grand-finale-card {
+                padding: 36px 18px !important;
+            }
+            #ctaHeading {
+                font-size: 1.6rem !important;
+                line-height: 1.3 !important;
+            }
+            #ctaSub {
+                font-size: 0.92rem !important;
+                line-height: 1.6 !important;
+            }
+            .grand-btn-flex {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+            .grand-btn-flex a {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 18px !important;
+                font-size: 0.92rem !important;
+            }
+
+            /* Modal Dialog */
+            .modal-dialog-box {
+                padding: 24px 18px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1571,7 +1827,9 @@
                 <div class="hero-avatar-halo-wrap">
                     <div class="hero-glowing-ring"></div>
                     <img src="mahmoud.png" alt="محمود محمد متولي" class="hero-avatar-img" onerror="this.src='profile.jpg'">
-                    
+                </div>
+
+                <div class="hero-chips-container">
                     <div class="hero-float-chip chip-left">
                         <span>📈</span>
                         <span>+479% وصول الصفحة</span>
