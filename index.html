@@ -1680,7 +1680,7 @@
                     <span id="heroLiveStatusText">متاح حالياً لاستلام مشاريع وحملات إعلانية جديدة</span>
                 </div>
 
-                <h1 class="hero-headline">
+                <h1 class="hero-headline" id="heroHeadlineText">
                     محمود محمد <span class="highlight">متولي</span>
                 </h1>
 
@@ -1974,6 +1974,7 @@
     <script>
         const store = {
             ar: {
+                docTitle: 'محمود محمد متولي | كاتب محتوى إعلاني وكوبي رايتر مبيعات',
                 brands: [
                     'English Bloom Academy', 'Eleven 11 Fashion', 'أكاديمية أجيال للقرآن', 'Team NTY', 'HK Design Interior', 'ZAVN Growth Agency', 'منصة ينفع', 'OnTrack Egypt'
                 ],
@@ -2303,6 +2304,337 @@
                     }
                 ]
             }
+        ,
+            en: {
+                langBtnText: 'العربية',
+                docTitle: 'Mahmoud Metwally | Direct-Response Copywriter & Growth Strategist',
+                navBrandText: 'Mahmoud <span class="highlight">Metwally</span>',
+                linkWork: 'Work Samples',
+                linkProof: 'Results & Proof',
+                linkShowcase: 'Interactive Lab',
+                linkHooks: 'Hook Generator',
+                linkPackages: 'Packages',
+                linkOrigin: 'My Craft',
+                navCtaText: 'WhatsApp Chat',
+                mobDockWork: 'Work',
+                mobDockProof: 'Proof',
+                mobDockShowcase: 'Lab',
+                mobDockPackages: 'Packages',
+                mobDockWa: 'WhatsApp',
+
+                // Hero
+                heroStatusText: 'Available for Selected Direct-Response & Content Projects',
+                heroHeadline: 'Not Just Filler Words or Page-Filling Posts<br><span class="highlight">I Craft Sales Words That Strike the Customer & Convert</span>',
+                typewriterWords: [
+                    'I write high-converting direct response ads',
+                    'I design full-funnel content architectures',
+                    'I turn customer hesitation into immediate WhatsApp orders',
+                    'I engineer high-retention Reels & TikTok scripts'
+                ],
+                heroBio: 'I dissect your product and target customer psychology down to the millimeter — transforming hesitation into immediate buying action with measurable ROAS',
+                btnHeroWa: 'Instant WhatsApp Chat',
+                btnHeroWork: 'Explore Live Case Studies',
+                metric1Num: '+479%',
+                metric1Label: 'Organic Reach Spike (Eleven 11)',
+                metric2Num: '4.41 EGP',
+                metric2Label: 'Cost Per Message in Fashion Ads',
+                metric3Num: '93 / 105',
+                metric3Label: 'Senior Copywriter Rank (Hozaifa Elkholy)',
+                metric4Num: '18+ Hrs',
+                metric4Label: 'Accredited Programs from OnTrack & Yanfaa',
+
+                // Capabilities
+                capPillTag: 'Core Specializations',
+                capTitle: 'Direct-Response Sales Copywriting Craft',
+                capDesc: 'A complete content and conversion architecture covering every step of the customer journey from the first 3 seconds to closed revenue:',
+                capabilities: [
+                    {
+                        icon: '✍🏻',
+                        title: 'Direct-Response Copywriting',
+                        desc: 'Facebook & Instagram ad copy that hooks attention in the first 2 seconds and drives immediate buying action'
+                    },
+                    {
+                        icon: '🧠',
+                        title: 'Full-Funnel Content Strategy',
+                        desc: 'Comprehensive customer journey architectures from awareness and trust to closed orders and retention'
+                    },
+                    {
+                        icon: '🔥',
+                        title: 'High-Retention Video Scripts',
+                        desc: 'Reels and TikTok scripts engineered with pattern-interrupt hooks that stop scrolling and boost watch time'
+                    },
+                    {
+                        icon: '💬',
+                        title: 'WhatsApp Closing & Objections',
+                        desc: 'Mastering price resistance and hesitation in chat to guide inquiries toward confirmed sales without price cuts'
+                    }
+                ],
+
+                // Brands
+                brands: [
+                    'English Bloom Academy', 'Eleven 11 Fashion', 'Ajyal Quran Academy', 'Team NTY', 'HK Design Interior', 'ZAVN Growth Agency', 'Yanfaa Platform', 'OnTrack Egypt'
+                ],
+
+                // Work
+                workPillTag: 'Live Work Samples',
+                workTitle: 'Real Campaigns Driving Reach, Engagement & Sales',
+                workDesc: 'Live published client campaigns, full launch decks, and proven editorial calendars across education, fashion, and services:',
+                workFilters: [
+                    { id: 'all', text: 'All Projects' },
+                    { id: 'published', text: 'Live Published Posts' },
+                    { id: 'strategy', text: 'Strategies & Masterplans' },
+                    { id: 'academy', text: 'Education & Academies' },
+                    { id: 'fashion', text: 'Fashion & Apparel' },
+                    { id: 'agency', text: 'Agencies & Growth' },
+                    { id: 'realestate', text: 'Interior & Decor' }
+                ],
+                workCards: [
+                    {
+                        id: 'wc-bloom-reel',
+                        cats: 'published academy',
+                        badge: 'Live Published Reel',
+                        badgeClass: 'badge-live',
+                        img: 'assets/work_samples/post_english_bloom_reel.jpg',
+                        alt: 'English Bloom Live Published Reel',
+                        type: 'Language Academy — Video Reel & Feed Ad',
+                        title: 'Do you start each time with full enthusiasm... and quit days later?',
+                        desc: 'A relatable hook addressing learning hesitation with humorous storytelling, published live on Facebook Reels with high retention and organic engagement',
+                        meta: 'Objective: High Video Retention • Platform: Facebook Reels',
+                        btnText: 'View Full Post Sample',
+                        modalImg: 'assets/work_samples/post_english_bloom_reel.jpg',
+                        modalCaption: 'Live Published Video Reel — English Bloom Academy'
+                    },
+                    {
+                        id: 'wc-ajyal-5min',
+                        cats: 'published academy',
+                        badge: 'Live Value Post',
+                        badgeClass: 'badge-live',
+                        img: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
+                        alt: 'Ajyal Academy 5-Minute Rule Post',
+                        type: 'Quran Academy — Educational Parenting Post',
+                        title: 'The Golden 5-Minute Rule: How to connect your child to learning without conflict',
+                        desc: 'A high-trust educational post addressing child attention spans and parents doubts with calm, authoritative parenting psychology',
+                        meta: 'Objective: Authority & Trust Building • Platform: Facebook Page Post',
+                        btnText: 'View Full Post Sample',
+                        modalImg: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
+                        modalCaption: 'Live Published Educational Post — Ajyal Quran Academy'
+                    },
+                    {
+                        id: 'wc-ajyal-trial',
+                        cats: 'published academy',
+                        badge: 'Conversion & Sales Ad',
+                        badgeClass: 'badge-live',
+                        img: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
+                        alt: 'Ajyal Free Trial Direct Response Ad',
+                        type: 'Direct Response — Trial Booking & Conversion',
+                        title: 'Wish to hear your child recite beautifully? Book a 100% Free Trial Session',
+                        desc: 'Direct-response sales copy addressing maternal doubts, offering a risk-free trial session to convert passive readers into active enrollments',
+                        meta: 'Objective: Free Trial Bookings • Platform: Meta Conversion Ads',
+                        btnText: 'View Full Ad Sample',
+                        modalImg: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
+                        modalCaption: 'Live Direct-Response Conversion Ad — Ajyal Quran Academy'
+                    },
+                    {
+                        id: 'wc-bloom-strategy',
+                        cats: 'strategy academy',
+                        badge: 'Full Launch Strategy Deck',
+                        badgeClass: 'badge-doc',
+                        img: 'assets/work_samples/english_bloom_strategy_cover.jpg',
+                        alt: 'English Bloom Full Strategy Deck',
+                        type: 'Comprehensive Marketing Strategy — English Bloom',
+                        title: 'English Bloom Academy Full Content & Launch Strategy Deck',
+                        desc: 'Complete launch architecture covering competitor teardown, student buyer personas, full-funnel content distribution, and creative visual guidelines',
+                        meta: 'Content: Full Funnel Research & Strategy Deck',
+                        btnText: 'Preview Strategy Model',
+                        modalImg: 'assets/work_samples/english_bloom_strategy_cover.jpg',
+                        modalCaption: 'English Bloom Academy Full Launch Strategy Deck'
+                    },
+                    {
+                        id: 'wc-ajyal-plan',
+                        cats: 'strategy academy',
+                        badge: 'Masterplan Matrix',
+                        badgeClass: 'badge-doc',
+                        img: 'assets/work_samples/ajyal_content_plan_preview.jpg',
+                        alt: 'Ajyal Content Plan Preview',
+                        type: 'Monthly Content Schedule — Ajyal Academy',
+                        title: 'Ajyal Quran Academy Strategic Masterplan & Content Calendar Matrix',
+                        desc: 'Full planning spreadsheet mapping 30 days of content across TOFU, MOFU, and BOFU stages with defined hook angles and visual prompts',
+                        meta: 'Content: 30-Day Matrix & Visual Prompts',
+                        btnText: 'Preview Masterplan Model',
+                        modalImg: 'assets/work_samples/ajyal_content_plan_preview.jpg',
+                        modalCaption: 'Ajyal Quran Academy Strategic Masterplan Matrix'
+                    },
+                    {
+                        id: 'wc-eleven11',
+                        cats: 'fashion published',
+                        badge: 'Campaign +479% Reach',
+                        badgeClass: 'badge-live',
+                        img: 'assets/work_samples/eleven11_winter_campaign.jpg',
+                        alt: 'Eleven 11 Menswear Campaign',
+                        type: 'Menswear Fashion — Winter Meta Ads',
+                        title: 'Eleven 11 Winter Campaign: +479% Reach Spike & 4.41 EGP Cost Per Lead',
+                        desc: 'Engineered conversion ad copy highlighting sizing precision and fabric durability, eliminating customer friction and multiplying orders',
+                        meta: 'Results: +479% Page Reach • 4.41 EGP Cost Per Lead',
+                        btnText: 'View Campaign Details',
+                        modalImg: 'assets/work_samples/eleven11_winter_campaign.jpg',
+                        modalCaption: 'Eleven 11 Winter Campaign — High-ROAS Ad Copy'
+                    },
+                    {
+                        id: 'wc-nty',
+                        cats: 'agency strategy',
+                        badge: 'Agency Pitch Proposal',
+                        badgeClass: 'badge-doc',
+                        img: 'assets/work_samples/nty_proposal_cover.jpg',
+                        alt: 'Team NTY Proposal',
+                        type: 'Digital Marketing — Agency Proposal',
+                        title: 'Social Media Strategy & Pitch Proposal — Team NTY',
+                        desc: 'Full-funnel agency pitch proposal designed for creators and brands, featuring account auditing, weekly content rhythms, and video scripts',
+                        meta: 'Format: Strategic Growth Pitch • Scope: Creator Growth',
+                        btnText: 'Preview Proposal Model',
+                        modalImg: 'assets/work_samples/nty_proposal_cover.jpg',
+                        modalCaption: 'Social Media Strategy & Pitch Proposal — Team NTY'
+                    },
+                    {
+                        id: 'wc-hk',
+                        cats: 'realestate',
+                        badge: 'Luxury Turnkey Copy',
+                        badgeClass: 'badge-pro',
+                        img: 'assets/work_samples/hk_design_interior.jpg',
+                        alt: 'HK Design Luxury Finishing',
+                        type: 'Interior & Finishing — A-Class Sales Copy',
+                        title: 'Luxury Interior & Turnkey Finishing Campaigns — HK Design',
+                        desc: 'Prestigious sales copy addressing new villa and apartment owners, focusing on architectural punctuality, material warranties, and peace of mind',
+                        meta: 'Audience: Villa & Luxury Unit Owners • Result: Doubled Consultation Bookings',
+                        btnText: 'View Campaign Angles',
+                        modalImg: 'assets/work_samples/hk_design_interior.jpg',
+                        modalCaption: 'Luxury Turnkey Finishing Campaigns — HK Design'
+                    },
+                    {
+                        id: 'wc-zavn',
+                        cats: 'agency strategy',
+                        badge: 'Research Playbook',
+                        badgeClass: 'badge-doc',
+                        img: 'assets/work_samples/zavn_playbook_cover.jpg',
+                        alt: 'ZAVN Playbook',
+                        type: 'Agency Research & Video Scripts',
+                        title: 'Content Research Playbook & Video Scripts — ZAVN Agency',
+                        desc: 'Comprehensive research and scriptwriting repository produced for ZAVN Agency, covering cross-market competitor breakdowns and sales scripts',
+                        meta: 'Format: Agency Research & Script Repository',
+                        btnText: 'Preview Playbook Model',
+                        modalImg: 'assets/work_samples/zavn_playbook_cover.jpg',
+                        modalCaption: 'Content Research Playbook & Video Scripts — ZAVN Agency'
+                    }
+                ],
+
+                // Proof
+                proofPillTag: 'Verified Proof & Testimonials',
+                proofTitle: 'Live Numbers from Meta Ads Manager & Verified Feedback',
+                proofDesc: 'Official certificates, senior assessments, and client feedback confirming execution quality and precision:',
+                proofCards: [
+                    {
+                        badge: 'Hozaifa Elkholy Exam',
+                        title: 'Scored 93/105 in Senior Copywriter Assessment',
+                        quote: 'Passed the comprehensive marketing exam earning Senior rank: strategic decision making and high conversion focus',
+                        img: 'assets/social_proof/hozaifa_elkholy_senior_assessment.jpg',
+                        alt: 'Hozaifa Elkholy Senior Assessment'
+                    },
+                    {
+                        badge: 'OnTrack Egypt',
+                        title: 'Official Content 101 Certificate',
+                        quote: 'Accredited program covering direct response copywriting, audience dissection, and sales funnels under Marwa Nasr',
+                        img: 'assets/social_proof/ontrack_certificate_mahmoud_metwally.jpg',
+                        alt: 'OnTrack Certificate'
+                    },
+                    {
+                        badge: 'Yanfaa Platform',
+                        title: 'Social Media Content Writing Essentials',
+                        quote: 'Accredited professional certificate confirming mastery of interactive social media copy and campaign engineering',
+                        img: 'assets/social_proof/yanfaa_content_writing_certificate.jpg',
+                        alt: 'Yanfaa Certificate'
+                    },
+                    {
+                        badge: 'ZAVN Agency',
+                        title: 'Official In-House Copywriter Accreditation',
+                        quote: 'Official executive agency roster: heading commercial copywriting, audience research, and video script development',
+                        img: 'assets/social_proof/zavn_agency_official_team.jpg',
+                        alt: 'ZAVN Agency Team'
+                    },
+                    {
+                        badge: 'Client Feedback',
+                        title: 'English Bloom Academy Leadership',
+                        quote: 'You genuinely understood our product, and that is what matters most.. Great job on the 20-page strategy deck!',
+                        img: 'assets/social_proof/client_feedback_english_bloom.jpg',
+                        alt: 'English Bloom Feedback'
+                    },
+                    {
+                        badge: 'Client Feedback',
+                        title: 'Ajyal Quran Academy Leadership',
+                        quote: 'Bless your hands for this top-notch, highly meticulous work! The masterplan brought total clarity to our launch',
+                        img: 'assets/social_proof/client_feedback_ajyal_academy.jpg',
+                        alt: 'Ajyal Academy Feedback'
+                    },
+                    {
+                        badge: 'Mentor Review',
+                        title: 'Senior Mentor Mr. Hazo',
+                        quote: 'Bravo! Task answers without a single flaw, truly excellent work on customer psychology and objection handling',
+                        img: 'assets/social_proof/mentor_feedback_mr_hazo_perfect_score.jpg',
+                        alt: 'Mr Hazo Review'
+                    },
+                    {
+                        badge: 'Mentor Review',
+                        title: 'Lead Mentor Marwa Nasr',
+                        quote: 'Distinction grade awarded for practical copywriting tasks, rapid skill acquisition, and acute audience empathy',
+                        img: 'assets/social_proof/mentor_feedback_marwa_nasr_grades.jpg',
+                        alt: 'Marwa Nasr Review'
+                    }
+                ],
+
+                // Packages
+                packagesTitle: 'Straightforward Packages Focused on Maximum ROAS',
+                packagesDesc: 'Pick the right path for your current business stage and let us start scaling your revenue:',
+                packages: [
+                    {
+                        name: 'Campaign Launch Pack',
+                        subtitle: 'Designed to launch high-converting direct response ad campaigns',
+                        featured: false,
+                        features: [
+                            '3 Psychological Creative Ad Angles for A/B Testing',
+                            '5 High-retention 3-second scroll-stoppers per ad',
+                            'WhatsApp direct sales script to convert incoming inquiries',
+                            'Clear visual and storyboard direction for designers/editors'
+                        ],
+                        btnText: 'Book Campaign Launch Pack',
+                        waText: 'Hi Mahmoud, I would like to inquire about the Campaign Launch Pack!'
+                    },
+                    {
+                        name: 'Growth Masterplan Engine',
+                        subtitle: 'The full solution for brands aiming for sustained presence and sales',
+                        featured: true,
+                        features: [
+                            'Deep competitor analysis & customer psychology teardown',
+                            'Full 30-Day Content Calendar & Strategy (TOFU, MOFU, BOFU)',
+                            '16 High-converting educational and direct-sales posts',
+                            '4 High-retention Reels & TikTok video scripts',
+                            'Strategic review session to optimize ROAS & conversion rates'
+                        ],
+                        btnText: 'Book Monthly Growth Engine',
+                        waText: 'Hi Mahmoud, I would like to partner on the Monthly Growth Engine package!'
+                    },
+                    {
+                        name: 'Funnel & Creative Audit',
+                        subtitle: 'Full forensic audit of your current marketing funnel to boost conversion',
+                        featured: false,
+                        features: [
+                            'Comprehensive audit of your last 5 ads and landing pages',
+                            'Pinpointing budget leakages and creative ad fatigue',
+                            'Restructuring of high-converting irresistible offers',
+                            'Actionable growth report with immediate execution steps'
+                        ],
+                        btnText: 'Request Funnel & Creative Audit',
+                        waText: 'Hi Mahmoud, I need a comprehensive audit for my sales funnel and ads!'
+                    }
+                ]
+            }
         };
 
         // WhatsApp Simulator Data
@@ -2339,12 +2671,6 @@
 
         // Hook Generator Database
         const hookLibrary = {
-            food: [
-                { angle: 'زاوية الوجع والشهية', text: 'لما تطلب برجر وتلاقيه وصلك بارد والعيش مبلول.. ده مش أكل، دي خيانة للمعدة! عشان كده بنشوي في لحظتها' },
-                { angle: 'زاوية التوفير الذكي', text: 'بدل ما تصرف 500 جنيه على أكل ميكفيش اتنين.. جهزنالك عرض اللمة بـ 280 جنيه بس يشبع 4 أفراد' },
-                { angle: 'زاوية التحدي', text: 'لو لقيت لحمة برجر واحدة في سندوتشك مش بلدي صافي 100%.. وجبتك الجاية علينا ومجاناً مدى الحياة!' },
-                { angle: 'زاوية الفضول', text: 'إيه السر اللي بيخلي صوص الجبنة السايحة عندنا مبيجمدش حتى لو الأوردر فضل نص ساعة على السفرة؟' }
-            ],
             fashion: [
                 { angle: 'زاوية الإحباط الشائع', text: 'أول تيشرت أوفر سايز مش بيكش بعد أول غسلة ولا تلاقيه صغر وبقى مقاس أخوك الصغير' },
                 { angle: 'زاوية الهيبة والمظهر', text: 'اللبس مش مجرد قماش بتلبسه.. دي أول رسالة بتوصل للناس قبل ما تنطق بكلمة واحدة في أي اجتماع' },
@@ -2387,7 +2713,7 @@
         function initMarquee() {
             const track = document.getElementById('marqueeTrack');
             if (!track) return;
-            const brands = store.ar.brands;
+            const brands = getStore().brands;
             const triple = [...brands, ...brands, ...brands];
             track.innerHTML = triple.map(b => `<div class="marquee-item"><span>⚡</span><span>${b}</span></div>`).join('');
         }
@@ -2396,7 +2722,7 @@
         function initCapabilities() {
             const grid = document.getElementById('capabilitiesGrid');
             if (!grid) return;
-            grid.innerHTML = store.ar.capabilities.map(c => `
+            grid.innerHTML = getStore().capabilities.map(c => `
                 <div class="double-bezel-card">
                     <div class="double-bezel-inner">
                         <div class="cap-icon-box">${c.icon}</div>
@@ -2413,7 +2739,7 @@
             const grid = document.getElementById('workCardsGrid');
             if (!filterBar || !grid) return;
 
-            filterBar.innerHTML = store.ar.workFilters.map(f => `
+            filterBar.innerHTML = getStore().workFilters.map(f => `
                 <button class="filter-btn ${currentWorkCat === f.id ? 'active' : ''}" onclick="filterWork('${f.id}', this)">${f.text}</button>
             `).join('');
 
@@ -2430,7 +2756,7 @@
         function renderWorkCards() {
             const grid = document.getElementById('workCardsGrid');
             if (!grid) return;
-            grid.innerHTML = store.ar.workCards.map(c => {
+            grid.innerHTML = getStore().workCards.map(c => {
                 const cats = c.cats.split(' ');
                 const isHidden = currentWorkCat !== 'all' && !cats.includes(currentWorkCat);
                 return `
@@ -2600,7 +2926,7 @@
         function renderProofCards() {
             const grid = document.getElementById('proofCardsGrid');
             if (!grid) return;
-            grid.innerHTML = store.ar.proofCards.map(p => {
+            grid.innerHTML = getStore().proofCards.map(p => {
                 const isHidden = currentProofCat !== 'all' && p.cat !== currentProofCat;
                 return `
                     <div class="proof-card ${isHidden ? 'hidden' : ''}" onclick="openLightbox('${p.img}', '${p.caption}')">
@@ -2622,7 +2948,7 @@
         function initPackages() {
             const container = document.getElementById('packagesContainer');
             if (!container) return;
-            container.innerHTML = store.ar.packages.map(p => `
+            container.innerHTML = getStore().packages.map(p => `
                 <div class="package-card ${p.featured ? 'featured' : ''}">
                     ${p.popular ? `<span class="pkg-badge-popular">${p.popular}</span>` : ''}
                     <div class="pkg-icon">${p.icon}</div>
@@ -2715,6 +3041,76 @@
             }
         });
 
+        // Language Switch & Master Renderer
+
+        let currentLang = localStorage.getItem('metwally_lang') || 'ar';
+
+        function renderLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('metwally_lang', lang);
+            const t = store[lang] || store.ar;
+
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            if (t.docTitle) document.title = t.docTitle;
+
+            const langBtnText = document.getElementById('langBtnText');
+            if (langBtnText) langBtnText.textContent = lang === 'ar' ? 'English' : 'العربية';
+
+            // Navbar links
+            const navLinks = document.querySelectorAll('.nav-menu .nav-link-btn');
+            if (navLinks.length >= 6) {
+                if (lang === 'en') {
+                    navLinks[0].textContent = t.linkWork;
+                    navLinks[1].textContent = t.linkProof;
+                    navLinks[2].textContent = t.linkShowcase;
+                    navLinks[3].textContent = t.linkHooks;
+                    navLinks[4].textContent = t.linkPackages;
+                    navLinks[5].textContent = t.linkOrigin;
+                } else {
+                    navLinks[0].textContent = 'سابقة الأعمال';
+                    navLinks[1].textContent = 'النتائج والتقييمات';
+                    navLinks[2].textContent = 'المختبر التفاعلي';
+                    navLinks[3].textContent = 'معمل الهوكات';
+                    navLinks[4].textContent = 'باقات التعاقد';
+                    navLinks[5].textContent = 'سر الصنعة';
+                }
+            }
+
+            const btnNavCta = document.querySelector('.btn-nav-cta span');
+            if (btnNavCta) btnNavCta.textContent = lang === 'en' ? t.navCtaText : 'تواصل واتساب';
+
+            // Hero texts
+            const statusEl = document.getElementById('heroLiveStatusText');
+            if (statusEl && t.heroStatusText) statusEl.textContent = t.heroStatusText;
+
+            const headEl = document.getElementById('heroHeadlineText');
+            if (headEl) {
+                headEl.innerHTML = lang === 'en' ? t.heroHeadline : 'محمود محمد <span class="highlight">متولي</span>';
+            }
+
+            const bioEl = document.getElementById('heroBioText');
+            if (bioEl && t.heroBio) bioEl.textContent = t.heroBio;
+
+            // Re-render components with current lang data
+            initMarquee();
+            initCapabilities();
+            initWork();
+            initProof();
+            initPackages();
+            initTypewriter();
+        }
+
+        // Language Switcher Click Event
+        const langBtn = document.getElementById('langSwitchBtn');
+        if (langBtn) {
+            langBtn.addEventListener('click', () => {
+                const nextLang = currentLang === 'ar' ? 'en' : 'ar';
+                renderLang(nextLang);
+            });
+        }
+
+
         // Theme Toggle
         const themeBtn = document.getElementById('themeSwitchBtn');
         if (themeBtn) {
@@ -2722,22 +3118,28 @@
                 const curr = document.documentElement.getAttribute('data-theme') || 'dark';
                 const next = curr === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('metwally_theme', next);
                 const icon = document.getElementById('themeBtnIcon');
                 if (icon) icon.textContent = next === 'dark' ? '☀️' : '🌙';
             });
         }
 
+        // Modify init functions to respect currentLang
+        function getStore() {
+            return store[currentLang] || store.ar;
+        }
+
         // On Load Init
         document.addEventListener('DOMContentLoaded', () => {
-            initMarquee();
-            initCapabilities();
-            initWork();
+            const savedTheme = localStorage.getItem('metwally_theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            const icon = document.getElementById('themeBtnIcon');
+            if (icon) icon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            renderLang(currentLang);
             renderChatStream();
             initSlider();
             initHooks();
-            initProof();
-            initPackages();
-            initTypewriter();
         });
     </script>
 </body>
