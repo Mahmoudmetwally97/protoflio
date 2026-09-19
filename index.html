@@ -1491,6 +1491,133 @@
             .grand-links-flex { flex-direction: column; width: 100%; }
             .grand-links-flex a { width: 100%; justify-content: center; }
         }
+    
+        /* Luxury Translucent Status Badges (Zero Neon Carnival) */
+        .work-media-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.74rem;
+            font-weight: 600;
+            backdrop-filter: blur(12px);
+            background: rgba(8, 12, 20, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 2;
+        }
+        .badge-live {
+            border-color: rgba(16, 185, 129, 0.35);
+            color: #34d399;
+            box-shadow: none;
+            background: rgba(8, 12, 20, 0.85);
+        }
+        .badge-live::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+        }
+        .badge-doc {
+            border-color: rgba(255, 106, 0, 0.35);
+            color: #ff9d4d !important;
+            background: rgba(8, 12, 20, 0.85) !important;
+        }
+        .badge-doc::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ff6a00;
+            box-shadow: 0 0 8px #ff6a00;
+        }
+        .badge-pro {
+            border-color: rgba(168, 85, 247, 0.35);
+            color: #c084fc;
+            background: rgba(8, 12, 20, 0.85);
+        }
+        .badge-pro::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #a855f7;
+            box-shadow: 0 0 8px #a855f7;
+        }
+
+        /* Work Media & Card Refinement */
+        .work-card {
+            background: rgba(11, 15, 24, 0.7) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            border-radius: 20px !important;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 12px 32px -12px rgba(0, 0, 0, 0.7) !important;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .work-card:hover {
+            transform: translateY(-4px) !important;
+            border-color: rgba(255, 106, 0, 0.35) !important;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 18px 40px -10px rgba(0, 0, 0, 0.8) !important;
+        }
+        .work-media {
+            height: 210px !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .work-heading {
+            font-size: 1.12rem !important;
+            font-weight: 700 !important;
+            line-height: 1.4 !important;
+            color: #ffffff !important;
+        }
+        .work-type-tag {
+            font-family: var(--font-mono, 'Plus Jakarta Sans', sans-serif);
+            font-size: 0.74rem !important;
+            font-weight: 700 !important;
+            color: var(--accent) !important;
+            letter-spacing: 0.02em;
+        }
+        .work-body {
+            padding: 22px !important;
+        }
+
+        /* Kill spinning dashed avatar ring */
+        .hero-avatar-ring {
+            border: 2px solid rgba(255, 255, 255, 0.12) !important;
+            animation: none !important;
+            border-style: solid !important;
+            box-shadow: 0 0 25px rgba(255, 106, 0, 0.18) !important;
+        }
+        .hero-avatar-glow {
+            animation: none !important;
+            opacity: 0.35 !important;
+            filter: blur(16px) !important;
+        }
+
+        /* Navbar sleekness */
+        .navbar-capsule {
+            padding: 6px 14px 6px 18px !important;
+            background: rgba(8, 12, 20, 0.78) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        }
+        .nav-link-btn {
+            font-size: 0.84rem !important;
+            font-weight: 600 !important;
+            padding: 6px 12px !important;
+        }
+        .btn-nav-cta {
+            font-size: 0.82rem !important;
+            font-weight: 700 !important;
+            padding: 7px 16px !important;
+        }
+
     </style>
 </head>
 <body>
@@ -1507,12 +1634,12 @@
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#work" class="nav-link-btn">💼 نماذج أعمالي</a></li>
-                <li><a href="#testimonials" class="nav-link-btn">⭐ النتائج والتقييمات</a></li>
-                <li><a href="#showcase" class="nav-link-btn">⚡ المحاكيات الحية</a></li>
-                <li><a href="#hooks" class="nav-link-btn">🎯 معمل الهوكات</a></li>
-                <li><a href="#packages" class="nav-link-btn">🚀 باقات الشغل</a></li>
-                <li><a href="#origin" class="nav-link-btn">🧬 سر الصنعة</a></li>
+                <li><a href="#work" class="nav-link-btn">سابقة الأعمال</a></li>
+                <li><a href="#testimonials" class="nav-link-btn">النتائج والتقييمات</a></li>
+                <li><a href="#showcase" class="nav-link-btn">المختبر التفاعلي</a></li>
+                <li><a href="#hooks" class="nav-link-btn">معمل الهوكات</a></li>
+                <li><a href="#packages" class="nav-link-btn">باقات التعاقد</a></li>
+                <li><a href="#origin" class="nav-link-btn">سر الصنعة</a></li>
             </ul>
 
             <div class="nav-controls">
@@ -1523,7 +1650,7 @@
                     <span id="themeBtnIcon">☀️</span>
                 </button>
                 <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-nav-cta">
-                    <span>يلا نبدأ 🚀</span>
+                    <span>تواصل واتساب</span>
                 </a>
             </div>
         </nav>
@@ -1531,11 +1658,11 @@
 
     <!-- Mobile Bottom Quick Dock -->
     <div class="mobile-bottom-dock">
-        <a href="#work" class="dock-btn active">💼 أعمالي</a>
-        <a href="#testimonials" class="dock-btn">⭐ النتائج</a>
-        <a href="#showcase" class="dock-btn">⚡ محاكي</a>
-        <a href="#packages" class="dock-btn">🚀 الباقات</a>
-        <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="dock-btn" style="color: #25D366;">💬 واتساب</a>
+        <a href="#work" class="dock-btn active">الأعمال</a>
+        <a href="#testimonials" class="dock-btn">النتائج</a>
+        <a href="#showcase" class="dock-btn">المختبر</a>
+        <a href="#packages" class="dock-btn">الباقات</a>
+        <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="dock-btn" style="color: #25D366;">واتساب</a>
     </div>
 
     <main>
@@ -1559,7 +1686,7 @@
 
                 <div class="hero-typewriter-container">
                     <span>أنا</span>
-                    <span class="typewriter-text" id="typewriterTarget">كوبي رايتر مبيعات وتحويل واستجابة مباشرة 🔥</span>
+                    <span class="typewriter-text" id="typewriterTarget">كوبي رايتر مبيعات واستجابة مباشرة</span>
                 </div>
 
                 <p class="hero-bio-copy" id="heroBioText">
@@ -1610,8 +1737,8 @@
         <section class="section-wrap" id="capabilities">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="section-pill-tag">⚡ مجالات التخصص والخبرة</span>
-                    <h2 class="section-title">بشتغل على إيه وبحققلك إيه لبيزنسك؟ 🎯</h2>
+                    <span class="section-pill-tag">القدرات والتخصصات</span>
+                    <h2 class="section-title">القدرات والحلول البيعية المباشرة</h2>
                     <p class="section-desc">منظومة كتابة محتوى بيعي وتسويقي متكاملة تغطي كل خطوة في رحلة العميل من أول ثانية لحد قفل الدفع:</p>
                 </div>
 
@@ -1656,10 +1783,10 @@
                         <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 14px;">اختر السيناريو وشوف إزاي بنرد على تردد الزبون بالسيكولوجية البيعية ونقفل الأوردر فوراً:</p>
 
                         <div class="scenario-pill-row">
-                            <button class="btn-scenario active" data-scen="fashion" onclick="switchChatScenario('fashion', this)">👔 ملابس رجالي (Eleven 11)</button>
-                            <button class="btn-scenario" data-scen="food" onclick="switchChatScenario('food', this)">🍔 مطاعم (بوفالو ستيك هاوس)</button>
-                            <button class="btn-scenario" data-scen="dental" onclick="switchChatScenario('dental', this)">🦷 عيادة أسنان (حجز فوري)</button>
-                            <button class="btn-scenario" data-scen="phones" onclick="switchChatScenario('phones', this)">📱 موبايلات (Makka Store)</button>
+                            <button class="btn-scenario active" data-scen="fashion" onclick="switchChatScenario('fashion', this)">أزياء رجالي (Eleven 11)</button>
+                            <button class="btn-scenario" data-scen="bloom" onclick="switchChatScenario('bloom', this)">تعليم لغات (English Bloom)</button>
+                            <button class="btn-scenario" data-scen="ajyal" onclick="switchChatScenario('ajyal', this)">تحفيظ قرآن (أكاديمية أجيال)</button>
+                            <button class="btn-scenario" data-scen="hk" onclick="switchChatScenario('hk', this)">تشطيب وديكور (HK Design)</button>
                         </div>
 
                         <div class="iphone-frame">
@@ -1720,7 +1847,7 @@
             <div class="container">
                 <div class="section-header-centered">
                     <span class="section-pill-tag">🔥 معمل الهوكات البيعية</span>
-                    <h2 class="section-title">مولد الهوكات البيعية الفوري ⚡</h2>
+                    <h2 class="section-title">معمل الهوكات الإعلانية الفورية</h2>
                     <p class="section-desc">اكتب مجالك أو اضغط على التصنيفات وشوف 4 زوايا وهوكات سيكولوجية تخطف الزبون في أول ثانيتين:</p>
                 </div>
 
@@ -1745,7 +1872,7 @@
             <div class="container">
                 <div class="section-header-centered">
                     <span class="section-pill-tag">⭐ نتائج حقيقية وتقييمات موثقة</span>
-                    <h2 class="section-title">أرقام حية من داخل مدير الإعلانات ورسائل العملاء 📈</h2>
+                    <h2 class="section-title">جدار الإثباتات والشهادات المعتمدة</h2>
                     <p class="section-desc">الأرقام مبتكدبش — دي نتائج حقيقية لتكلفة الرسائل ومحادثات واتساب وتقييمات من مدربين وعملاء اشتغلت معاهم:</p>
                 </div>
 
@@ -1848,7 +1975,7 @@
         const store = {
             ar: {
                 brands: [
-                    'English Bloom Academy', 'أكاديمية أجيال للقرآن', 'بوفالو ستيك هاوس', 'Eleven 11 (ملابس رجالي)', 'ZAVN Growth Agency', 'استراتيجية بنيان', 'Makka Store (موبايلات)', 'HK Design (تشطيبات)', 'قطمة فينو'
+                    'English Bloom Academy', 'Eleven 11 Fashion', 'أكاديمية أجيال للقرآن', 'Team NTY', 'HK Design Interior', 'ZAVN Growth Agency', 'منصة ينفع', 'OnTrack Egypt'
                 ],
                 capabilities: [
                     {
@@ -1883,195 +2010,149 @@
                     }
                 ],
                 workFilters: [
-                    { id: 'all', text: 'الكل' },
-                    { id: 'published', text: '📱 بوستات وإعلانات منشورة' },
-                    { id: 'strategy', text: '📑 استراتيجيات وماستر بلان' },
-                    { id: 'food', text: '🍔 مطاعم وأغذية' },
-                    { id: 'academy', text: '🎓 أكاديميات وتعليم' },
-                    { id: 'fashion', text: '👔 موضة وملابس' },
-                    { id: 'agency', text: '📊 وكالات وتسويق' },
-                    { id: 'realestate', text: '🏠 عقارات وتشطيب' }
+                    { id: 'all', text: 'جميع المشاريع' },
+                    { id: 'published', text: 'بوستات منشورة لايف' },
+                    { id: 'strategy', text: 'استراتيجيات وماستر بلان' },
+                    { id: 'academy', text: 'أكاديميات وتعليم' },
+                    { id: 'fashion', text: 'أزياء وملابس' },
+                    { id: 'agency', text: 'وكالات وتسويق' },
+                    { id: 'realestate', text: 'ديكور وتشطيب' }
                 ],
                 workCards: [
                     {
-                        id: 'wc-buffalo',
-                        cats: 'published food',
-                        badge: '🥩 حملة مطاعم ومبيعات لايف',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/buffalo_steakhouse_cover.jpg',
-                        alt: 'حملة بوفالو ستيك هاوس وجزارة',
-                        type: 'مطاعم وأغذية فاخرة — إعلانات استجابة مباشرة وعروض',
-                        title: 'حملة بوفالو ستيك هاوس — صياغة إعلانات بيعية بأسلوب إنساني يلمس شهية الزبون',
-                        desc: 'إعادة صياغة نصوص عروض الدليفري وتريبل برجر بأسلوب حسي بيعي يحرك الرغبة المباشرة، ضاعفت رسائل الأوردرات وحققت أعلى معدل طلبات أسبوعي',
-                        meta: '🔥 النمط: Direct Response Copy • 🥩 المجال: Food & Beverage',
-                        btnText: '🔍 اقرأ نماذج الحملة وشوف الإعلان',
-                        modalImg: 'assets/work_samples/buffalo_steakhouse_cover.jpg',
-                        modalCaption: '🥩 حملة بوفالو ستيك هاوس وجزارة — نصوص إعلانية وسيكولوجية تحريك شهية الشراء'
-                    },
-                    {
-                        id: 'wc-bunyan',
-                        cats: 'strategy agency',
-                        badge: '📑 استراتيجية وفانل محتوى متكامل',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/bunyan_strategy_cover.png',
-                        alt: 'استراتيجية محتوى بنيان',
-                        type: 'استراتيجية محتوى كاملة — Bunyan Funnel & Calendar',
-                        title: 'استراتيجية وفانل محتوى بنيان — تشريح نقاط الألم ومصفوفة الهوكات والفكاهة',
-                        desc: 'بناء استراتيجية تسويقية متكاملة تربط مراحل القمع البيعي بالفكاهة والمواقف الواقعية، مع تقويم شهري وجدول نشر مفصل وتوجيهات بصرية للديزاينر',
-                        meta: '📊 المخرجات: Funnel Masterplan & 30-Day Calendar • 🎯 التطبيق: خطة وكالة شاملة',
-                        btnText: '🔍 معاينة نموذج الاستراتيجية',
-                        modalImg: 'assets/work_samples/bunyan_strategy_cover.png',
-                        modalCaption: '📑 استراتيجية وفانل محتوى بنيان — تشريح نقاط الألم وجدول المحتوى الشهري'
-                    },
-                    {
-                        id: 'wc-1',
+                        id: 'wc-bloom-reel',
                         cats: 'published academy',
-                        badge: '🔥 فيديو ريلز منشور لايف',
+                        badge: 'ريل منشور لايف',
                         badgeClass: 'badge-live',
                         img: 'assets/work_samples/post_english_bloom_reel.jpg',
                         alt: 'ريل منشور لايف إنجلش بلوم',
                         type: 'تعليم لغات — فيديو ريلز وفيسبوك فيد',
                         title: 'بتبدأ كل مرة بحماس — وبعد كام يوم بتوقف؟',
                         desc: 'سيناريو وهوك ريلز بيخاطب إحباط متعلمي اللغة الإنجليزية بأسلوب ساخر وواقعي، كسر حاجز التردد وحقق انتشار وتفاعل قوي على الصفحة',
-                        meta: '🎯 الهدف: تفاعل ومشاهدات ريلز عالية • 📱 المنصة: Facebook Reels',
-                        btnText: '🔍 اقرأ البوست وشوف السكرين كاملة',
+                        meta: 'الهدف: تفاعل ومشاهدات ريلز عالية • المنصة: Facebook Reels',
+                        btnText: 'معاينة البوست كامل',
                         modalImg: 'assets/work_samples/post_english_bloom_reel.jpg',
-                        modalCaption: '📱 بوست وسيناريو ريلز منشور لايف — أكاديمية English Bloom'
+                        modalCaption: 'بوست وسيناريو ريلز منشور لايف — أكاديمية English Bloom'
                     },
                     {
-                        id: 'wc-2',
+                        id: 'wc-ajyal-5min',
                         cats: 'published academy',
-                        badge: '⭐ بوست قيمة وتعليم منشور',
+                        badge: 'بوست قيمة وتربية',
                         badgeClass: 'badge-live',
                         img: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
                         alt: 'بوست قاعدة الخمس دقائق أكاديمية أجيال',
                         type: 'تحفيظ قرآن — بوست تثقيفي تربوي',
                         title: 'قاعدة الـ 5 دقائق الذهبية — إزاي تربط طفلك بالقرآن بدون خناق',
                         desc: 'بوست قيمة وتربية ذكية موجه للأمهات بيشرح حل علمي لتشتت انتباه الأطفال وعلاج التردد في الحفظ بطريقة هادية ومقنعة',
-                        meta: '🎯 الهدف: بناء ثقة وسلطة تربوية • 📱 المنصة: Facebook Page Post',
-                        btnText: '🔍 اقرأ البوست وشوف السكرين كاملة',
+                        meta: 'الهدف: بناء ثقة وسلطة تربوية • المنصة: Facebook Page Post',
+                        btnText: 'معاينة البوست كامل',
                         modalImg: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        modalCaption: '📱 بوست القيمة والتربية الذكية منشور لايف — أكاديمية أجيال للقرآن الكريم'
+                        modalCaption: 'بوست القيمة والتربية الذكية منشور لايف — أكاديمية أجيال للقرآن الكريم'
                     },
                     {
-                        id: 'wc-3',
+                        id: 'wc-ajyal-trial',
                         cats: 'published academy',
-                        badge: '🎯 إعلان تحويل ومبيعات منشور',
+                        badge: 'إعلان تحويل وحجز',
                         badgeClass: 'badge-live',
                         img: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
-                        alt: 'إعلان حصة تجريبية مجانية أكاديمية أجيال',
-                        type: 'استجابة مباشرة — إعلان تحويل وحجز',
+                        alt: 'إعلان الحصة التجريبية أجيال',
+                        type: 'تحفيظ قرآن — إعلان استجابة مباشرة وعروض',
                         title: 'نفسك تشوفي ابنك بيقرأ القرآن بصوت جميل؟ احجزي حصة تجريبية مجانية',
-                        desc: 'إعلان بيع مباشر بيكسر كل مخاوف أولياء الأمور ويعرض فرصة تجربة آمنة تماماً، موجه لتحويل تفاعل الأمهات لحجوزات واشتراكات مدفوعة',
-                        meta: '🎯 الهدف: حجز حصص تجريبية ومبيعات • 📱 المنصة: Meta Conversion Ads',
-                        btnText: '🔍 اقرأ الإعلان وشوف السكرين كاملة',
+                        desc: 'إعلان بيعي موجه للأهالي يركز على تجربة حصة تقييم مجانية تزيل كل مخاوف عدم التزام الطفل، حقق قفزة في رسائل الحجز وتأكيد الاشتراكات',
+                        meta: 'الهدف: جذب أولياء أمور وقفل حجوزات • النمط: Direct Response',
+                        btnText: 'معاينة الإعلان كامل',
                         modalImg: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
-                        modalCaption: '🎯 إعلان الاستجابة المباشرة للحصة التجريبية منشور لايف — أكاديمية أجيال'
+                        modalCaption: 'إعلان الحصة التجريبية المجانية — أكاديمية أجيال'
                     },
                     {
-                        id: 'wc-4',
+                        id: 'wc-bloom-strategy',
                         cats: 'strategy academy',
-                        badge: '📑 استراتيجية وخطة إطلاق محتوى',
+                        badge: 'استراتيجية إطلاق متكاملة',
                         badgeClass: 'badge-doc',
                         img: 'assets/work_samples/english_bloom_strategy_cover.jpg',
-                        alt: 'غلاف استراتيجية إنجلش بلوم',
-                        type: 'استراتيجية تسويق كاملة — English Bloom Academy',
+                        alt: 'استراتيجية إنجلش بلوم',
+                        type: 'خطة إطلاق وإدارة محتوى كاملة — Strategy & Funnel',
                         title: 'استراتيجية وخطة محتوى إطلاق أكاديمية English Bloom الكاملة',
-                        desc: 'ملف استراتيجي تنفيذي شامل يضم تحليل المنافسين، تحديد شخصيات العملاء، خطة إطلاق المحتوى، مصفوفة الفانل، وتوجيهات الهوية البصرية',
-                        meta: '📊 المخرجات: أبحاث وتحليل منافسين • 🎯 التطبيق: خطة إطلاق شاملة',
-                        btnText: '🔍 معاينة نموذج الاستراتيجية',
+                        desc: 'بناء خطة تسويق المحتوى من الصفر: تشريح شخصية المشتري، صياغة محاور المحتوى، وجدول 30 يوم يمزج بين التعليم الترفيهي وإعلانات التحويل',
+                        meta: 'المخرجات: Funnel Strategy & 30-Day Content Matrix',
+                        btnText: 'معاينة الاستراتيجية',
                         modalImg: 'assets/work_samples/english_bloom_strategy_cover.jpg',
-                        modalCaption: '📑 استراتيجية وخطة إطلاق أكاديمية English Bloom'
+                        modalCaption: 'استراتيجية محتوى أكاديمية English Bloom'
                     },
                     {
-                        id: 'wc-5',
+                        id: 'wc-ajyal-plan',
                         cats: 'strategy academy',
-                        badge: '📊 ماستر بلان وجدول محتوى شهري',
+                        badge: 'ماستر بلان شهري',
                         badgeClass: 'badge-doc',
                         img: 'assets/work_samples/ajyal_content_plan_preview.jpg',
-                        alt: 'معاينة خطة محتوى أكاديمية أجيال',
-                        type: 'خطة وجدول محتوى شهري — أكاديمية أجيال',
+                        alt: 'جدول محتوى أجيال',
+                        type: 'ماستر بلان وتقويم محتوى — Monthly Editorial Plan',
                         title: 'ماستر بلان وجدول محتوى أكاديمية أجيال للقرآن الكريم',
-                        desc: 'مصفوفة التخطيط الاستراتيجي الكاملة لتوزيع المحتوى عبر مراحل الوعي مع تحديد زوايا الهوكات وأهداف كل بوست شهرياً',
-                        meta: '📊 المحتوى: مصفوفة أهداف وجدولة شهرية • 🎯 التخطيط: مراحل الوعي TOFU - MOFU - BOFU',
-                        btnText: '🔍 معاينة نموذج الخطة',
+                        desc: 'تقويم محتوى متكامل يغطي مراحل القمع الثلاث، ويحدد التوجيهات البصرية لكل منشور وهوكات الريلز الداعمة لتقليل تكلفة الإعلانات',
+                        meta: 'المخرجات: Full Editorial Calendar & Visual Prompts',
+                        btnText: 'معاينة الماستر بلان',
                         modalImg: 'assets/work_samples/ajyal_content_plan_preview.jpg',
-                        modalCaption: '📊 ماستر بلان وجدول محتوى أكاديمية أجيال للقرآن الكريم'
+                        modalCaption: 'ماستر بلان وتقويم محتوى أكاديمية أجيال للقرآن'
                     },
                     {
-                        id: 'wc-6',
+                        id: 'wc-eleven11',
                         cats: 'fashion published',
-                        badge: '👔 أزياء رجالي — حملة Meta Ads',
-                        badgeClass: 'badge-pro',
+                        badge: 'حملة وصول +479%',
+                        badgeClass: 'badge-live',
                         img: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        alt: 'حملة إيلفين 11 ملابس رجالي',
-                        type: 'أزياء رجالي — حملة شتاء كاملة',
+                        alt: 'حملة إيلفن 11',
+                        type: 'ملابس وأزياء رجالي — حملة أورجانيك وإعلانات ممولة',
                         title: 'حملة شتاء براند Eleven 11 — وصول +479% وتكلفة رسالة 4.41 ج',
-                        desc: 'إعادة صياغة نصوص إعلانات الشتاء بالكامل، مع كتابة أوصاف بيعية مركزة على المقاسات وجودة القماش، حسمت قرار الشراء وقللت أسئلة الزبائن بنسبة 70%',
-                        meta: '📈 النتائج: +479% وصول الصفحة • 💰 تكلفة الرسالة: 4.41 ج',
-                        btnText: '🔍 تفاصيل الحملة الإعلانية',
+                        desc: 'صياغة نصوص تفاعلية وإعلانات استجابة مباشرة لكولكشن الشتاء ركزت على خامة الجواكت وعروض الباقات المجمعة، محققة أعلى عائد مبيعات في الموسم',
+                        meta: 'النتائج: وصول طبيعي +479% • تكلفة الرسالة: 4.41 جنيهاً',
+                        btnText: 'معاينة تفاصيل الحملة',
                         modalImg: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        modalCaption: '👔 حملة براند Eleven 11 الشتوية — زيادة وصول +479% وتكلفة رسالة 4.41 ج'
+                        modalCaption: 'نتائج وتفاصيل حملة شتاء Eleven 11'
                     },
                     {
-                        id: 'wc-7',
+                        id: 'wc-nty',
                         cats: 'agency strategy',
-                        badge: '📑 بروبوزال سوشيال ميديا معتمد',
+                        badge: 'بروبوزال وخطة نمو',
                         badgeClass: 'badge-doc',
                         img: 'assets/work_samples/nty_proposal_cover.jpg',
                         alt: 'بروبوزال تيم NTY',
                         type: 'تسويق رقمي — عرض استراتيجي متكامل',
                         title: 'بروبوزال وخطة محتوى سوشيال ميديا — Team NTY',
                         desc: 'خطة عمل متكاملة مقترحة لصناع المحتوى والبراندات تشمل تحليل الأداء، هيكلة المحتوى الأسبوعي، وأفكار ريلز بيعية',
-                        meta: '📑 الصيغة: عرض استراتيجي شامل • 🎯 التركيز: هيكل نمو لصناع المحتوى',
-                        btnText: '🔍 معاينة نموذج البروبوزال',
+                        meta: 'الصيغة: عرض استراتيجي شامل • التركيز: هيكل نمو لصناع المحتوى',
+                        btnText: 'معاينة نموذج البروبوزال',
                         modalImg: 'assets/work_samples/nty_proposal_cover.jpg',
-                        modalCaption: '📑 بروبوزال وخطة محتوى سوشيال ميديا — Team NTY'
+                        modalCaption: 'بروبوزال وخطة محتوى سوشيال ميديا — Team NTY'
                     },
                     {
-                        id: 'wc-8',
+                        id: 'wc-hk',
                         cats: 'realestate',
-                        badge: '🏠 عقارات وتشطيبات فاخرة',
+                        badge: 'نصوص تشطيب فاخر',
                         badgeClass: 'badge-pro',
                         img: 'assets/work_samples/hk_design_interior.jpg',
                         alt: 'تشطيبات وديكور HK Design',
                         type: 'تشطيب وديكور — نصوص بيعية A-Class',
                         title: 'نصوص إعلانية وحملات تشطيب وديكور فاخر — HK Design',
                         desc: 'صياغة كوبي إعلاني راقي يخاطب ملاك الشقق والفلل الجديدة، يركز على راحة البال والالتزام بجدول التسليم وجودة الخامات الهندسية',
-                        meta: '🎯 الجمهور: عملاء A-Class وملاك الفلل • ⚡ النتيجة: مضاعفة استفسارات المعاينة',
-                        btnText: '🔍 استعراض الزوايا الإعلانية',
+                        meta: 'الجمهور: عملاء A-Class وملاك الفلل • النتيجة: مضاعفة استفسارات المعاينة',
+                        btnText: 'معاينة الزوايا الإعلانية',
                         modalImg: 'assets/work_samples/hk_design_interior.jpg',
-                        modalCaption: '🏠 نصوص وحملات تشطيب فاخر — HK Design'
+                        modalCaption: 'نصوص وحملات تشطيب فاخر — HK Design'
                     },
                     {
-                        id: 'wc-9',
+                        id: 'wc-zavn',
                         cats: 'agency strategy',
-                        badge: '🏢 دليل أبحاث وسيناريوهات فيديو',
+                        badge: 'دليل أبحاث وسيناريوهات',
                         badgeClass: 'badge-doc',
                         img: 'assets/work_samples/zavn_playbook_cover.jpg',
                         alt: 'دليل وكالة زافن',
                         type: 'أبحاث وسيناريوهات وكالة تسويق',
                         title: 'دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency',
                         desc: 'ملف الأبحاث والسيناريوهات المعتمد لوكالة ZAVN، يشمل تحليل السوق، دراسة المنافسين، وسيناريوهات بيع مباشرة للسوق الخليجي والمصري',
-                        meta: '📑 الصيغة: بلاي بوك أبحاث وسيناريوهات • 🎯 التطبيق: حملات تسويقية حية',
-                        btnText: '🔍 معاينة نموذج البلاي بوك',
+                        meta: 'الصيغة: بلاي بوك أبحاث وسيناريوهات • التطبيق: حملات تسويقية حية',
+                        btnText: 'معاينة نموذج البلاي بوك',
                         modalImg: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        modalCaption: '🏢 دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency'
-                    },
-                    {
-                        id: 'wc-10',
-                        cats: 'strategy agency',
-                        badge: '🍔 دراسة حالة وهوية براند',
-                        badgeClass: 'badge-pro',
-                        img: 'assets/work_samples/qatma_fino_strategy_cover.jpg',
-                        alt: 'دراسة حالة قطمة فينو',
-                        type: 'إعادة تموضع وهوية طعام — Food & Beverage',
-                        title: 'دراسة حالة وإعادة تموضع براند طعام — قطمة فينو (Qatma Fino)',
-                        desc: 'بناء قصة براند متكاملة لسلسلة مطاعم، وتحويل الكوبي من مجرد وصف مكونات لتجربة حنين وشغف بالطعم الأصيل تخلق ولاء فوري عند الزبون',
-                        meta: '🎯 المخرج: استراتيجية هوية وسيناريوهات فيديو • 🍔 المجال: أغذية ومطاعم',
-                        btnText: '🔍 معاينة دراسة الحالة',
-                        modalImg: 'assets/work_samples/qatma_fino_strategy_cover.jpg',
-                        modalCaption: '🍔 دراسة حالة وإعادة تموضع براند طعام — قطمة فينو (Qatma Fino)'
+                        modalCaption: 'دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency'
                     }
                 ],
                 proofFilters: [
@@ -2228,28 +2309,31 @@
         const chatScenarios = {
             fashion: [
                 { type: 'in', text: 'السلام عليكم، بكام التيشرت ده؟', time: '10:14 PM' },
-                { type: 'out', text: 'وعليكم السلام يا بطل! التيشرت ده قطن 100% معالج ضد الانكماش وسعره 380 ج ومعاه ضمان استبدال لو معجبكش — طولك ووزنك كام عشان أرشحلك المقاس المظبوط بالمللي؟ 🔥', time: '10:15 PM' },
+                { type: 'out', text: 'وعليكم السلام يا بطل! التيشرت قطن 100% معالج ضد الانكماش وسعره 380 ج ومعاه ضمان استبدال ومعاينة قبل الدفع — طولك ووزنك كام عشان أرشحلك المقاس المظبوط بالمللي؟', time: '10:15 PM' },
                 { type: 'in', text: 'طولي 178 ووزني 82 كجم', time: '10:15 PM' },
-                { type: 'out', text: 'مقاس L هينزل عليك تفصيل ومريح جداً — متبقي منه قطعتين بس في اللون الأسود، تحب أثبتلك أوردر حجز وتستلمه بعد بكره؟', time: '10:16 PM' },
-                { type: 'in', text: 'تمام ابعتلي الأوردر وسجل العنوان', time: '10:17 PM' }
+                { type: 'out', text: 'مقاس L هينزل عليك مظبوط ومريح جداً — متبقي منه قطعتين بس في اللون الأسود، تحب أثبتلك أوردر حجز وتستلمه بعد بكره؟', time: '10:16 PM' },
+                { type: 'in', text: 'تمام ابعتلي الأوردر وسجل العنوان بالتجمع..', time: '10:17 PM' }
             ],
-            food: [
-                { type: 'in', text: 'مساء الخير، هو عرض التوفير يكفي كام فرد والتوصيل بياخد أد إيه؟', time: '08:30 PM' },
-                { type: 'out', text: 'يا هلا بيك يا غالي! العرض ده معمول للمة الصحاب أو العيلة — 4 ساندوتشات برجر تريبل لحم بلدي صافي ومعاهم بطاطس دبل ولتر كولا بـ 280 ج بدل 390 ج! الشيف بيجهزلك الطلب طازة مخصوص ومندوبنا بيوصلك سخن ومقرمش خلال 35 دقيقة.. ابعتلي اللوكيشن ورقمك نأكد الأوردر فوراً 🚀', time: '08:31 PM' },
-                { type: 'in', text: 'حلو أوي، اللوكيشن أهو ومعاك كاش عند الاستلام', time: '08:32 PM' },
-                { type: 'out', text: 'تم تسجيل الأوردر يا باشا، الشيف على النار ومندوبنا طاير لك بألف هنا وشفا! 🔥', time: '08:33 PM' }
+            bloom: [
+                { type: 'in', text: 'مساء الخير، هو الكورس أونلاين ولا في السنتر وبكام؟', time: '02:15 PM' },
+                { type: 'out', text: 'مساء النور يا فندم! الكورس لايف تفاعلي أونلاين بمجموعات مصغرة 5 أفراد بحد أقصى للتركيز على المحادثة والطلاقة — هدف حضرتك الأساسي من تعلم اللغة إيه: شغل ومقابلات عمل، ولا سفر ودراسة؟', time: '02:16 PM' },
+                { type: 'in', text: 'محتاجه عشان مقابلات الشغل، دايماً بتوتر ومبعرفش أجمع الجمل في وقتها', time: '02:17 PM' },
+                { type: 'out', text: 'ده طبيعي جداً لأن معظمنا بيتعلم القواعد حفظ مش ممارسة! في الورشة بنركز 80% من الوقت على محاكاة مقابلات الشغل الواقعية.. ومتاح جلسة تحديد مستوى مجانية بكره، تحب نسجل لحضرتك ميعاد 6 ولا 8 مساءً؟', time: '02:18 PM' },
+                { type: 'in', text: 'سجلني 8 مساءً ياريت ومشكور جداً لذوقك', time: '02:19 PM' }
             ],
-            dental: [
-                { type: 'in', text: 'بكام زراعة الضرس عندكم؟', time: '11:02 AM' },
-                { type: 'out', text: 'أهلاً بحضرتك يا فندم ألف سلامة عليك! الزراعة عندنا بتتم بزرعات ألمانية معتمدة وبدون أي ألم وبجلسة واحدة، التكلفة بتبدأ من 6500 ج مع إمكانية التقسيط بدون فوائد — هل الضرس مخلوع بقاله فترة ولا محتاج خلع الأول عشان نحدد أنسب خطة علاج؟', time: '11:03 AM' },
-                { type: 'in', text: 'مخلوع من سنة تقريباً ومش عايز أحس بألم', time: '11:04 AM' },
-                { type: 'out', text: 'متقلقش خالص بنستخدم بنج موضعي متطور ومش هتحس بحاجة — في كشف وأشعة مجانية يوم الثلاثاء، تحب أحجزلك ميعاد مع الاستشاري؟', time: '11:05 AM' }
+            ajyal: [
+                { type: 'in', text: 'السلام عليكم، ابني عنده 7 سنين وتعبني ومش راضي يقعد يحفظ خالص!', time: '05:30 PM' },
+                { type: 'out', text: 'وعليكم السلام ورحمة الله وبركاته يا فندم! دي شكوى متكررة جداً لأن الطفل في السن ده مش بيتحمل الجلسات الطويلة المعتادة.. في أجيال بنطبق قاعدة الـ 5 دقائق الذهبية: بنحبب الطفل في القرآن بالقصص والتكرار الذكي بدون أي ضغط', time: '05:31 PM' },
+                { type: 'in', text: 'طب الحصة مدتها قد إيه والمدرسين مؤهلين للأطفال؟', time: '05:32 PM' },
+                { type: 'out', text: 'معلمينا كلهم أزهريين معتمدين ومتدربين على تحبيب الأطفال.. وتقدري تحضري معاه حصة تجريبية مجانية كاملة وتتابعي أسلوب المعلم بنفسك قبل أي اشتراك! نحدد لحضرتك موعد الحصة المجانية بكره؟', time: '05:33 PM' },
+                { type: 'in', text: 'ياريت والله توفروا لي موعد العصر وأكون شاكرة جداً', time: '05:34 PM' }
             ],
-            phones: [
-                { type: 'in', text: 'الموبايل ده بكام وفي منه مستعمل؟', time: '04:20 PM' },
-                { type: 'out', text: 'يا هلا بيك! الجهاز متوفر كسر زيرو كالجديد تماماً مع بطارية 94%، بضمان معتمد 6 شهور وفاتورة ضريبية، وسعره 14,200 ج بدل 17,000 ج للجديد — تحب تشرفنا في الفرع تعاينه بنفسك ولا نبعتهولك شحن لحد باب البيت وتعاين قبل ما تدفع؟', time: '04:21 PM' },
-                { type: 'in', text: 'لو شحن هقدر افتح الكرتونة واجربه؟', time: '04:22 PM' },
-                { type: 'out', text: 'حقك 100% يا غالي المندوب بينتظر معاك 10 دقائق تفحص الجهاز وتتأكد من كل قطعة قبل ما تدفع ولا مليم!', time: '04:23 PM' }
+            hk: [
+                { type: 'in', text: 'مساء الخير، بتكلفوا تشطيب المتر كام في الشقق والفلل؟', time: '07:10 PM' },
+                { type: 'out', text: 'مساء الخير يا فندم! التكلفة بتعتمد على مساحة الوحدة ومستوى الباقة اللي تفضلها، مع مقايسة هندسية تفصيلية ومواعيد تسليم ملزمة بشرط جزائي بيحميك تماماً من تسويف المقاولين.. موقع الوحدة فين ومساحتها الإجمالية كام تقريباً؟', time: '07:11 PM' },
+                { type: 'in', text: 'فيلا 320 متر في زايد', time: '07:12 PM' },
+                { type: 'out', text: 'ألف مبروك يا فندم! يشرفنا ترتيب زيارة معاينة موقع مجانية مع مهندس استشاري متخصص لمعاينة الوحدة ومناقشة التوزيع المعماري بدون أي التزام مالي.. يناسب حضرتك السبت ولا الأحد القادم؟', time: '07:13 PM' },
+                { type: 'in', text: 'الأحد ممتاز جداً، رقمي للتنسيق هو..', time: '07:14 PM' }
             ]
         };
 
@@ -2377,10 +2461,10 @@
             if (btn) btn.classList.add('active');
             
             const nameMap = {
-                fashion: 'Eleven 11 Menswear (أزياء)',
-                food: 'بوفالو ستيك هاوس (برجر & جزارة)',
-                dental: 'عيادات الأسنان التخصصية (حجز)',
-                phones: 'Makka Phone Store (موبايلات)'
+                fashion: 'Eleven 11 Menswear',
+                bloom: 'English Bloom Academy',
+                ajyal: 'أكاديمية أجيال للقرآن',
+                hk: 'HK Design (تشطيب فاخر)'
             };
             const nameEl = document.getElementById('simChatName');
             if (nameEl && nameMap[scen]) nameEl.textContent = nameMap[scen];
