@@ -395,14 +395,32 @@
             min-height: 48px;
         }
 
-        .typewriter-text {
+        .typewriter-phrase {
+            display: inline-flex;
+            align-items: center;
             color: var(--accent);
-            border-inline-end: 2px solid var(--accent);
-            padding-inline-end: 4px;
-            animation: blinkCaret 0.8s infinite;
         }
 
-        @keyframes blinkCaret { 50% { border-color: transparent; } }
+        .typewriter-text {
+            color: var(--accent);
+            white-space: pre;
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.15em;
+            background-color: var(--accent);
+            margin-inline-start: 4px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--accent);
+            animation: blinkCaret 0.85s infinite;
+        }
+
+        @keyframes blinkCaret {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
 
         .hero-bio-copy {
             max-width: 820px;
@@ -1685,8 +1703,10 @@
                 </h1>
 
                 <div class="hero-typewriter-container">
-                    <span>أنا</span>
-                    <span class="typewriter-text" id="typewriterTarget">كوبي رايتر مبيعات واستجابة مباشرة</span>
+                    <span id="typewriterPrefix">أنا</span>
+                    <span class="typewriter-phrase">
+                        <span class="typewriter-text" id="typewriterTarget">كوبي رايتر مبيعات واستجابة مباشرة</span><span class="typewriter-cursor"></span>
+                    </span>
                 </div>
 
                 <p class="hero-bio-copy" id="heroBioText">
@@ -2965,21 +2985,35 @@
         }
 
         // Typewriter Animation
+        let typewriterTimer = null;
         function initTypewriter() {
+            if (typewriterTimer) clearTimeout(typewriterTimer);
             const el = document.getElementById('typewriterTarget');
             if (!el) return;
-            const words = [
-                'كوبي رايتر مبيعات وتحويل واستجابة مباشرة 🔥',
-                'صانع هوكات إعلانية وسيناريوهات ريلز تمنع السكرول 🎬',
-                'مخطط استراتيجيات محتوى وقمع تسويقي للنمو 📈',
-                'متخصص في إعلانات Meta Ads وقراءة الأرقام والـ ROAS 📊'
+
+            const prefixEl = document.getElementById('typewriterPrefix');
+            if (prefixEl) {
+                prefixEl.textContent = currentLang === 'en' ? 'I am a' : 'أنا';
+            }
+
+            const words = currentLang === 'en' ? [
+                'Direct-Response Sales Copywriter',
+                'High-Retention Reels & Video Scriptwriter',
+                'Full-Funnel Content Strategist',
+                'Paid Ads & Conversion Rate Optimizer'
+            ] : [
+                'كوبي رايتر مبيعات واستجابة مباشرة',
+                'صانع هوكات إعلانية وسيناريوهات ريلز بيعية',
+                'مهندس استراتيجيات محتوى وقمع مبيعات',
+                'متخصص إعلانات ممولة ومضاعفة عائد الحملات'
             ];
+
             let wordIdx = 0;
             let charIdx = 0;
             let isDeleting = false;
 
             function typeLoop() {
-                const current = words[wordIdx];
+                const current = words[wordIdx % words.length];
                 if (isDeleting) {
                     el.textContent = current.substring(0, charIdx - 1);
                     charIdx--;
@@ -2988,7 +3022,7 @@
                     charIdx++;
                 }
 
-                let speed = isDeleting ? 30 : 60;
+                let speed = isDeleting ? 25 : 55;
                 if (!isDeleting && charIdx === current.length) {
                     speed = 2200;
                     isDeleting = true;
@@ -2997,7 +3031,7 @@
                     wordIdx = (wordIdx + 1) % words.length;
                     speed = 400;
                 }
-                setTimeout(typeLoop, speed);
+                typewriterTimer = setTimeout(typeLoop, speed);
             }
             typeLoop();
         }
