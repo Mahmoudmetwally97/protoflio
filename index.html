@@ -498,6 +498,137 @@
             transform: scale(1.2) rotate(8deg);
         }
 
+        /* Brand Equation & Craftsmanship Capsule */
+        .brand-equation-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: rgba(255, 106, 0, 0.05);
+            border: 1px solid rgba(255, 106, 0, 0.28);
+            border-radius: var(--radius-full);
+            padding: 8px 22px;
+            margin: 0 auto 28px;
+            max-width: 92%;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            backdrop-filter: blur(12px);
+            transition: all var(--transition-smooth);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .brand-equation-pill:hover {
+            border-color: var(--accent);
+            background: rgba(255, 106, 0, 0.09);
+            box-shadow: 0 0 25px rgba(255, 106, 0, 0.18);
+            transform: translateY(-1px);
+        }
+
+        .equation-tag {
+            background: linear-gradient(135deg, var(--accent), #ff8533);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.72rem;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+
+        .equation-formula {
+            line-height: 1.5;
+            color: #e2e8f0;
+        }
+
+        .equation-formula strong {
+            color: #fff;
+            text-shadow: 0 0 12px rgba(255, 106, 0, 0.35);
+        }
+
+        /* CTA Micro-Guarantee & Low Friction Trigger */
+        .cta-micro-guarantee {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.82rem;
+            color: #94a3b8;
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+
+        /* 4 Craft Pillars Grid (Origin Section) */
+        .craft-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .pillar-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            transition: all var(--transition-smooth);
+            text-align: start;
+        }
+
+        .pillar-box:hover {
+            border-color: rgba(255, 106, 0, 0.35);
+            background: rgba(255, 106, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .pillar-icon {
+            font-size: 1.45rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .pillar-title {
+            color: #fff;
+            font-size: 0.98rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .pillar-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Grand Audit Callout Ribbon */
+        .grand-audit-callout {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(37, 211, 102, 0.08);
+            border: 1px solid rgba(37, 211, 102, 0.28);
+            border-radius: var(--radius-lg);
+            padding: 16px 24px;
+            max-width: 740px;
+            margin: 28px auto 0;
+            text-align: start;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .grand-audit-callout .audit-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .grand-audit-callout .audit-text {
+            font-size: 0.92rem;
+            color: #e2e8f0;
+            line-height: 1.65;
+        }
+
+        .grand-audit-callout .audit-text strong {
+            color: #25D366;
+        }
+
         /* Metrics HUD Bar (Double-Bezel) */
         .metrics-hud-card {
             background: rgba(12, 16, 26, 0.7);
@@ -1508,6 +1639,9 @@
             .side-inner-fixed { min-width: 280px; padding: 14px; }
             .grand-links-flex { flex-direction: column; width: 100%; }
             .grand-links-flex a { width: 100%; justify-content: center; }
+            .brand-equation-pill { flex-direction: column; text-align: center; border-radius: var(--radius-lg); padding: 12px 16px; gap: 8px; }
+            .grand-audit-callout { flex-direction: column; text-align: center; }
+            .craft-pillars-grid { grid-template-columns: 1fr; }
         }
     
         /* Luxury Translucent Status Badges (Zero Neon Carnival) */
@@ -1709,18 +1843,26 @@
                     </span>
                 </div>
 
+                <div class="brand-equation-pill" id="brandEquationContainer">
+                    <span class="equation-tag" id="brandEquationTag">معادلة الصنعة ⚡</span>
+                    <span class="equation-formula" id="brandEquationFormula">[سيكولوجية حطحوت + بيعية طوسون + بساطة معاذ صلاح + رشاقة عاطف] × صرامة ورشة الحديد = <strong>مهندس الإقناع الواقعي</strong></span>
+                </div>
+
                 <p class="hero-bio-copy" id="heroBioText">
                     مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — أنا باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار
                 </p>
 
                 <div class="hero-cta-flex">
-                    <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary">
-                        <span class="btn-inner-icon-circle">💬</span>
-                        <span>اتكلم معايا واتساب فوراً</span>
-                    </a>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary">
+                            <span class="btn-inner-icon-circle">💬</span>
+                            <span id="heroPrimaryCtaText">اتكلم معايا واتساب فوراً</span>
+                        </a>
+                        <span class="cta-micro-guarantee" id="heroCtaGuarantee">⚡ فحص إعلاني وتشخيص مجاني لنصوصك الحالية في 10 دقائق على واتساب • بدون أي التزام</span>
+                    </div>
                     <a href="#work" class="btn-luxury-secondary">
                         <span class="btn-inner-icon-circle">💼</span>
-                        <span>استعرض نماذج شغلي لايف</span>
+                        <span id="heroSecondaryCtaText">استعرض نماذج شغلي لايف</span>
                     </a>
                 </div>
 
@@ -1921,6 +2063,30 @@
                             </div>
                         </div>
 
+                        <!-- The 4 Pillars of Mahmoud's Persuasion Craft -->
+                        <div class="craft-pillars-grid">
+                            <div class="pillar-box">
+                                <span class="pillar-icon">🧠</span>
+                                <h5 class="pillar-title">سيكولوجية حطحوت</h5>
+                                <p class="pillar-desc">تشريح الدوافع الدفينة ومخاوف الزبون قبل كتابة حرف واحد، لفهم المحرك النفسي الحقيقي لقرار الشراء.</p>
+                            </div>
+                            <div class="pillar-box">
+                                <span class="pillar-icon">🎯</span>
+                                <h5 class="pillar-title">بيعية طوسون</h5>
+                                <p class="pillar-desc">هجوم مباشر وذكي على الاعتراضات، وصياغة عروض لا تُقاوم تحول المتردد إلى مشتري مؤكد فوراً.</p>
+                            </div>
+                            <div class="pillar-box">
+                                <span class="pillar-icon">🗣️</span>
+                                <h5 class="pillar-title">بساطة معاذ صلاح</h5>
+                                <p class="pillar-desc">لغة مصرية فصيحة بيضاء، خالية من التعالي المصطنع وكأنك بتدردش مع صاحبك على قهوة الصبح.</p>
+                            </div>
+                            <div class="pillar-box">
+                                <span class="pillar-icon">🌊</span>
+                                <h5 class="pillar-title">رشاقة عاطف</h5>
+                                <p class="pillar-desc">سرد قصصي انسيابي كأنه زحليقة ملساء تجر رجل القارئ بسلاسة من أول هوك لحد زرار الدفع.</p>
+                            </div>
+                        </div>
+
                         <div style="background: linear-gradient(135deg, rgba(255, 106, 0, 0.12), rgba(0,0,0,0.5)); border: 1px dashed var(--accent); border-radius: var(--radius-md); padding: 22px 26px;">
                             <strong style="color: var(--accent); font-size: 1rem;">🚫 ميثاق الكوبي رايتنج الإنساني:</strong>
                             <span style="color: var(--text-primary); font-size: 0.94rem; font-weight: 700; margin-inline-start: 6px; display: inline-block; line-height: 1.75;">ليه برامج الذكاء الاصطناعي مبيعرفش يبيع في سوقنا؟ لأن أدوات الـ AI بترص كلام عام ومترجم خالي من الروح والمشاعر — مبيفهمش الشارع ولا تردد الزبون لما يسأل "بكام؟".. الكوبي رايتر الشاطر هو اللي بيكتب بلهجة وسيكولوجية الناس، ويوصل للزبون الإحساس اللي يخليه يشتري وهو مبسوط ومتطمن!</span>
@@ -1966,6 +2132,13 @@
                             <span>💼 لينكدإن</span>
                         </a>
                     </div>
+
+                    <div class="grand-audit-callout">
+                        <div class="audit-icon">🎯</div>
+                        <div class="audit-text">
+                            <strong>عرض الفحص السريع (Zero Friction):</strong> ابعتلي لينك صفحتك أو آخر إعلانين عملتهم على واتساب، وهقولك في 10 دقائق فلوسك بتتسرب فين بالظبط وسر انخفاض المبيعات — مجاناً وبدون أي التزام!
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1995,6 +2168,14 @@
         const store = {
             ar: {
                 docTitle: 'محمود محمد متولي | كاتب محتوى إعلاني وكوبي رايتر مبيعات',
+                heroStatusText: 'متاح حالياً لاستلام مشاريع وحملات إعلانية جديدة',
+                heroHeadline: 'محمود محمد <span class="highlight">متولي</span>',
+                heroBio: 'مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — أنا باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار',
+                equationTag: 'معادلة الصنعة ⚡',
+                equationFormula: '[سيكولوجية حطحوت + بيعية طوسون + بساطة معاذ صلاح + رشاقة عاطف] × صرامة ورشة الحديد = <strong>مهندس الإقناع الواقعي</strong>',
+                ctaMicroGuarantee: '⚡ فحص إعلاني وتشخيص مجاني لنصوصك الحالية في 10 دقائق على واتساب • بدون أي التزام',
+                btnHeroWa: 'اتكلم معايا واتساب فوراً',
+                btnHeroWork: 'استعرض نماذج شغلي لايف',
                 brands: [
                     'English Bloom Academy', 'Eleven 11 Fashion', 'أكاديمية أجيال للقرآن', 'Team NTY', 'HK Design Interior', 'ZAVN Growth Agency', 'منصة ينفع', 'OnTrack Egypt'
                 ],
@@ -2352,6 +2533,9 @@
                     'I engineer high-retention Reels & TikTok scripts'
                 ],
                 heroBio: 'I dissect your product and target customer psychology down to the millimeter — transforming hesitation into immediate buying action with measurable ROAS',
+                equationTag: 'The Persuasion Formula ⚡',
+                equationFormula: '[Psychological Depth + High-Stakes Selling + Radical Simplicity] × Industrial Metalworking Precision = <strong>The Real-World Conversion Engineer</strong>',
+                ctaMicroGuarantee: '⚡ Free 10-Minute Ad Copy Teardown on WhatsApp • Zero Obligation',
                 btnHeroWa: 'Instant WhatsApp Chat',
                 btnHeroWork: 'Explore Live Case Studies',
                 metric1Num: '+479%',
@@ -2370,23 +2554,33 @@
                 capabilities: [
                     {
                         icon: '✍🏻',
-                        title: 'Direct-Response Copywriting',
-                        desc: 'Facebook & Instagram ad copy that hooks attention in the first 2 seconds and drives immediate buying action'
+                        title: 'Direct-Response Copywriting & Ad Copy',
+                        desc: 'Facebook & Instagram ad copy that hooks attention in the first 2 seconds and drives immediate buying action with high ROAS'
+                    },
+                    {
+                        icon: '🔥',
+                        title: 'Hooks & Reels Scripts',
+                        desc: 'Pattern-interrupt hooks and video scripts that stop the scroll and multiply organic views and audience retention'
+                    },
+                    {
+                        icon: '🎯',
+                        title: 'Buyer Persona & Customer Psychology',
+                        desc: 'Forensic teardown of customer fears, deep pain points, and market alternatives before writing a single word'
                     },
                     {
                         icon: '🧠',
                         title: 'Full-Funnel Content Strategy',
-                        desc: 'Comprehensive customer journey architectures from awareness and trust to closed orders and retention'
+                        desc: 'Comprehensive marketing architectures converting cold scrollers into loyal recurring buyers across the full funnel'
                     },
                     {
-                        icon: '🔥',
-                        title: 'High-Retention Video Scripts',
-                        desc: 'Reels and TikTok scripts engineered with pattern-interrupt hooks that stop scrolling and boost watch time'
+                        icon: '📅',
+                        title: 'Content Planning & Masterplans',
+                        desc: 'Structured 30-day editorial matrices mapping TOFU, MOFU, and BOFU stages with exact visual briefs for designers'
                     },
                     {
-                        icon: '💬',
-                        title: 'WhatsApp Closing & Objections',
-                        desc: 'Mastering price resistance and hesitation in chat to guide inquiries toward confirmed sales without price cuts'
+                        icon: '📊',
+                        title: 'Media Buying & Meta Ads',
+                        desc: 'Deep understanding of campaign testing frameworks and metrics interpretation to drive down CPR and CPA'
                     }
                 ],
 
@@ -2550,62 +2744,101 @@
                 proofPillTag: 'Verified Proof & Testimonials',
                 proofTitle: 'Live Numbers from Meta Ads Manager & Verified Feedback',
                 proofDesc: 'Official certificates, senior assessments, and client feedback confirming execution quality and precision:',
+                proofFilters: [
+                    { id: 'all', text: 'All Verified Proof' },
+                    { id: 'agency', text: '🏢 Agencies & Rankings' },
+                    { id: 'clients', text: '💬 Client Feedback' },
+                    { id: 'mentors', text: '👨‍🏫 Mentor Reviews' },
+                    { id: 'awards', text: '🎓 Certified Credentials' }
+                ],
                 proofCards: [
                     {
-                        badge: 'Hozaifa Elkholy Exam',
-                        title: 'Scored 93/105 in Senior Copywriter Assessment',
-                        quote: 'Passed the comprehensive marketing exam earning Senior rank: strategic decision making and high conversion focus',
+                        id: 'p-1',
+                        cat: 'agency',
+                        badge: '⚡ Verified: Senior Rank',
+                        badgeClass: 'badge-live',
                         img: 'assets/social_proof/hozaifa_elkholy_senior_assessment.jpg',
-                        alt: 'Hozaifa Elkholy Senior Assessment'
+                        alt: 'Hozaifa Elkholy Senior Assessment',
+                        title: 'Scored 93/105 in Senior Copywriter Assessment',
+                        quote: 'Passed the comprehensive marketing exam earning Senior rank: Your value is no longer just words, but in the strategic decisions preceding them.',
+                        caption: '🏆 Hozaifa Elkholy Academy — Senior Rank with 93/105 score'
                     },
                     {
-                        badge: 'OnTrack Egypt',
-                        title: 'Official Content 101 Certificate',
-                        quote: 'Accredited program covering direct response copywriting, audience dissection, and sales funnels under Marwa Nasr',
+                        id: 'p-2',
+                        cat: 'awards',
+                        badge: '🎓 Accredited: 18+ Hours',
+                        badgeClass: 'badge-doc',
                         img: 'assets/social_proof/ontrack_certificate_mahmoud_metwally.jpg',
-                        alt: 'OnTrack Certificate'
+                        alt: 'OnTrack Certificate',
+                        title: 'Official Content 101 Certificate — OnTrack Egypt',
+                        quote: 'Accredited program covering direct response copywriting, audience dissection, and sales funnels under Marwa Nasr.',
+                        caption: '🎓 Content 101 Certificate of Completion — OnTrack Egypt, certified by Marwa Nasr'
                     },
                     {
-                        badge: 'Yanfaa Platform',
-                        title: 'Social Media Content Writing Essentials',
-                        quote: 'Accredited professional certificate confirming mastery of interactive social media copy and campaign engineering',
+                        id: 'p-3',
+                        cat: 'awards',
+                        badge: '🎓 Accredited: Yanfaa',
+                        badgeClass: 'badge-doc',
                         img: 'assets/social_proof/yanfaa_content_writing_certificate.jpg',
-                        alt: 'Yanfaa Certificate'
+                        alt: 'Yanfaa Certificate',
+                        title: 'Social Media Content Writing Essentials — Yanfaa Platform',
+                        quote: 'Accredited professional certificate confirming mastery of interactive social media copy and campaign engineering.',
+                        caption: '🎓 Accredited Certificate from Yanfaa Platform: Social Media Content Writing Essentials'
                     },
                     {
-                        badge: 'ZAVN Agency',
-                        title: 'Official In-House Copywriter Accreditation',
-                        quote: 'Official executive agency roster: heading commercial copywriting, audience research, and video script development',
+                        id: 'p-4',
+                        cat: 'agency',
+                        badge: '🏢 ZAVN Agency Team',
+                        badgeClass: 'badge-pro',
                         img: 'assets/social_proof/zavn_agency_official_team.jpg',
-                        alt: 'ZAVN Agency Team'
+                        alt: 'ZAVN Agency Team',
+                        title: 'Official In-House Copywriter Accreditation — ZAVN Agency',
+                        quote: 'Official executive agency roster: heading commercial copywriting, audience research, and video script development.',
+                        caption: '🏢 ZAVN Growth Agency Official Team Roster — Mahmoud Metwally Accredited Copywriter'
                     },
                     {
-                        badge: 'Client Feedback',
-                        title: 'English Bloom Academy Leadership',
-                        quote: 'You genuinely understood our product, and that is what matters most.. Great job on the 20-page strategy deck!',
+                        id: 'p-5',
+                        cat: 'clients',
+                        badge: '💬 Client Feedback: English Bloom',
+                        badgeClass: 'badge-live',
                         img: 'assets/social_proof/client_feedback_english_bloom.jpg',
-                        alt: 'English Bloom Feedback'
+                        alt: 'English Bloom Feedback',
+                        title: 'You genuinely understood our product, and that is what matters most.. Great job!',
+                        quote: 'Documented WhatsApp conversation following the delivery of the detailed 20-page strategy deck, praising deep product comprehension.',
+                        caption: '💬 English Bloom Academy Leadership praising the 20-page strategy deck & deep product understanding'
                     },
                     {
-                        badge: 'Client Feedback',
-                        title: 'Ajyal Quran Academy Leadership',
-                        quote: 'Bless your hands for this top-notch, highly meticulous work! The masterplan brought total clarity to our launch',
+                        id: 'p-6',
+                        cat: 'clients',
+                        badge: '💬 Client Feedback: Ajyal Academy',
+                        badgeClass: 'badge-live',
                         img: 'assets/social_proof/client_feedback_ajyal_academy.jpg',
-                        alt: 'Ajyal Academy Feedback'
+                        alt: 'Ajyal Academy Feedback',
+                        title: 'Bless your hands for this top-notch, highly meticulous work!',
+                        quote: 'Client review after delivering the comprehensive monthly Masterplan and campaign roadmap with meticulous precision and punctuality.',
+                        caption: '💬 Ajyal Quran Academy Leadership praising precision, punctuality, and strategic excellence'
                     },
                     {
-                        badge: 'Mentor Review',
-                        title: 'Senior Mentor Mr. Hazo',
-                        quote: 'Bravo! Task answers without a single flaw, truly excellent work on customer psychology and objection handling',
+                        id: 'p-7',
+                        cat: 'mentors',
+                        badge: '👨‍🏫 Mentor Review: Mr Hazo',
+                        badgeClass: 'badge-pro',
                         img: 'assets/social_proof/mentor_feedback_mr_hazo_perfect_score.jpg',
-                        alt: 'Mr Hazo Review'
+                        alt: 'Mr Hazo Review',
+                        title: 'Senior Mentor Mr. Hazo: Perfect Score & Flawless Execution',
+                        quote: 'Bravo! Task answers without a single flaw, truly excellent work on customer psychology and objection handling.',
+                        caption: '👨‍🏫 Senior Mentor Mr. Hazo: Bravo! Task answers without a single flaw, truly excellent work'
                     },
                     {
-                        badge: 'Mentor Review',
-                        title: 'Lead Mentor Marwa Nasr',
-                        quote: 'Distinction grade awarded for practical copywriting tasks, rapid skill acquisition, and acute audience empathy',
+                        id: 'p-8',
+                        cat: 'mentors',
+                        badge: '👩‍🏫 Mentor Review: Marwa Nasr',
+                        badgeClass: 'badge-pro',
                         img: 'assets/social_proof/mentor_feedback_marwa_nasr_grades.jpg',
-                        alt: 'Marwa Nasr Review'
+                        alt: 'Marwa Nasr Review',
+                        title: 'Lead Mentor Marwa Nasr: Distinction Grade Awarded',
+                        quote: 'Distinction grade awarded for practical copywriting tasks, rapid skill acquisition, and acute audience empathy.',
+                        caption: '👩‍🏫 Lead Mentor Marwa Nasr: Distinction grade awarded for excellence and precision'
                     }
                 ],
 
@@ -2614,44 +2847,52 @@
                 packagesDesc: 'Pick the right path for your current business stage and let us start scaling your revenue:',
                 packages: [
                     {
-                        name: 'Campaign Launch Pack',
-                        subtitle: 'Designed to launch high-converting direct response ad campaigns',
+                        id: 'pkg-ads',
+                        icon: '🔥',
+                        title: 'High-ROAS Ad Angles Pack',
+                        sub: 'High-ROAS Ad Angles & Creative Pack',
                         featured: false,
-                        features: [
+                        popular: '',
+                        bullets: [
                             '3 Psychological Creative Ad Angles for A/B Testing',
-                            '5 High-retention 3-second scroll-stoppers per ad',
-                            'WhatsApp direct sales script to convert incoming inquiries',
-                            'Clear visual and storyboard direction for designers/editors'
+                            'High-retention 3-second scroll-stoppers per angle',
+                            'Complete Reels & TikTok scripts with visual cues',
+                            'WhatsApp sales script to close "How much?" inquiries',
+                            'Collaborative campaign testing & copy optimization'
                         ],
-                        btnText: 'Book Campaign Launch Pack',
-                        waText: 'Hi Mahmoud, I would like to inquire about the Campaign Launch Pack!'
+                        wa: 'Hi Mahmoud, I want to book the High-ROAS Ad Angles Pack for my business!'
                     },
                     {
-                        name: 'Growth Masterplan Engine',
-                        subtitle: 'The full solution for brands aiming for sustained presence and sales',
+                        id: 'pkg-funnel',
+                        icon: '🚀',
+                        title: 'Full-Funnel Content Engine',
+                        sub: 'Full-Funnel Content Engine (Monthly Partnership)',
                         featured: true,
-                        features: [
-                            'Deep competitor analysis & customer psychology teardown',
-                            'Full 30-Day Content Calendar & Strategy (TOFU, MOFU, BOFU)',
-                            '16 High-converting educational and direct-sales posts',
-                            '4 High-retention Reels & TikTok video scripts',
-                            'Strategic review session to optimize ROAS & conversion rates'
+                        popular: '⭐ Most Requested for Partnerships',
+                        bullets: [
+                            'Complete 30-day content calendar & marketing masterplan',
+                            'End-to-end funnel coverage (TOFU Awareness, MOFU Consideration, BOFU Sales)',
+                            'Tailored brand voice dialed into target audience psychology',
+                            'Authority & trust posts + direct-response conversion ads',
+                            'Visual & storyboard directions for graphic designers and video editors'
                         ],
-                        btnText: 'Book Monthly Growth Engine',
-                        waText: 'Hi Mahmoud, I would like to partner on the Monthly Growth Engine package!'
+                        wa: 'Hi Mahmoud, I would like to partner on the Full-Funnel Monthly Content Engine!'
                     },
                     {
-                        name: 'Funnel & Creative Audit',
-                        subtitle: 'Full forensic audit of your current marketing funnel to boost conversion',
+                        id: 'pkg-audit',
+                        icon: '🔍',
+                        title: 'Funnel & Creative Ad Audit',
+                        sub: 'Creative Audit & Ad Revamp Package',
                         featured: false,
-                        features: [
-                            'Comprehensive audit of your last 5 ads and landing pages',
+                        popular: '',
+                        bullets: [
+                            'Forensic teardown of your last 5 ads & landing pages',
                             'Pinpointing budget leakages and creative ad fatigue',
-                            'Restructuring of high-converting irresistible offers',
+                            'Rewriting top 3 ad creatives with high-converting angles',
+                            'Structuring irresistible, risk-reversal offers',
                             'Actionable growth report with immediate execution steps'
                         ],
-                        btnText: 'Request Funnel & Creative Audit',
-                        waText: 'Hi Mahmoud, I need a comprehensive audit for my sales funnel and ads!'
+                        wa: 'Hi Mahmoud, I want to request the Funnel & Creative Ad Audit!'
                     }
                 ]
             }
@@ -2691,6 +2932,12 @@
 
         // Hook Generator Database
         const hookLibrary = {
+            food: [
+                { angle: 'زاوية الجوع والشهوة البصرية', text: 'صوت قرمشة البرجر مع الجبنة السايحة وهي بتنزل على الصوص.. الساندوتش ده مش هيسيبك تنام جعان الليلة!' },
+                { angle: 'زاوية السرعة والدليفري الحار', text: 'الأوردر يوصلك سخن مولع في أقل من 30 دقيقة، ولو اتأخر دقيقة واحدة الحساب بالكامل على المطعم' },
+                { angle: 'زاوية اللمة والتوفير', text: 'عرض الصحاب اللي هيكفي 4 أفراد ومفيش حد هيقوم مش شبعان.. وبسعر ساندوتشين في أي مكان تاني' },
+                { angle: 'زاوية الجودة ونظافة المطبخ', text: 'لحوم بلدي فريش 100% بدون أي إضافات صويا أو لحوم مجمدة.. ادخل المطبخ بنفسك وشوف النظافة قبل ما تطلب' }
+            ],
             fashion: [
                 { angle: 'زاوية الإحباط الشائع', text: 'أول تيشرت أوفر سايز مش بيكش بعد أول غسلة ولا تلاقيه صغر وبقى مقاس أخوك الصغير' },
                 { angle: 'زاوية الهيبة والمظهر', text: 'اللبس مش مجرد قماش بتلبسه.. دي أول رسالة بتوصل للناس قبل ما تنطق بكلمة واحدة في أي اجتماع' },
@@ -2930,7 +3177,8 @@
         function initProof() {
             const filterBar = document.getElementById('proofFilterBar');
             if (!filterBar) return;
-            filterBar.innerHTML = store.ar.proofFilters.map(f => `
+            const filters = (getStore().proofFilters && getStore().proofFilters.length) ? getStore().proofFilters : store.ar.proofFilters;
+            filterBar.innerHTML = filters.map(f => `
                 <button class="filter-btn ${currentProofCat === f.id ? 'active' : ''}" onclick="filterProof('${f.id}', this)">${f.text}</button>
             `).join('');
             renderProofCards();
@@ -2946,18 +3194,20 @@
         function renderProofCards() {
             const grid = document.getElementById('proofCardsGrid');
             if (!grid) return;
+            const zoomLabel = currentLang === 'en' ? '🔍 Click to view full high-res document' : '🔍 انقر للمشاهدة والتكبير الكامل';
             grid.innerHTML = getStore().proofCards.map(p => {
                 const isHidden = currentProofCat !== 'all' && p.cat !== currentProofCat;
+                const safeCaption = (p.caption || p.title || '').replace(/'/g, "\\'");
                 return `
-                    <div class="proof-card ${isHidden ? 'hidden' : ''}" onclick="openLightbox('${p.img}', '${p.caption}')">
+                    <div class="proof-card ${isHidden ? 'hidden' : ''}" onclick="openLightbox('${p.img}', '${safeCaption}')">
                         <div class="proof-thumb-wrap">
                             <img src="${p.img}" alt="${p.alt}" loading="lazy" onerror="this.src='mahmoud.png'">
                         </div>
                         <div class="proof-card-content">
-                            <span class="proof-card-badge ${p.badgeClass}">${p.badge}</span>
+                            <span class="proof-card-badge ${p.badgeClass || 'badge-live'}">${p.badge}</span>
                             <h4 class="proof-title">${p.title}</h4>
                             <p class="proof-quote">${p.quote}</p>
-                            <span class="proof-zoom-label">🔍 انقر للمشاهدة والتكبير الكامل</span>
+                            <span class="proof-zoom-label">${zoomLabel}</span>
                         </div>
                     </div>
                 `;
@@ -2968,6 +3218,7 @@
         function initPackages() {
             const container = document.getElementById('packagesContainer');
             if (!container) return;
+            const btnText = currentLang === 'en' ? 'Book Package on WhatsApp 🚀' : 'احجز الباقة على واتساب 🚀';
             container.innerHTML = getStore().packages.map(p => `
                 <div class="package-card ${p.featured ? 'featured' : ''}">
                     ${p.popular ? `<span class="pkg-badge-popular">${p.popular}</span>` : ''}
@@ -2975,10 +3226,10 @@
                     <h3 class="pkg-name">${p.title}</h3>
                     <div class="pkg-sub">${p.sub}</div>
                     <ul class="pkg-bullets">
-                        ${p.bullets.map(b => `<li class="pkg-bullet-item">${b}</li>`).join('')}
+                        ${(p.bullets || []).map(b => `<li class="pkg-bullet-item">${b}</li>`).join('')}
                     </ul>
                     <a href="https://wa.me/201065760983?text=${encodeURIComponent(p.wa)}" target="_blank" rel="noopener noreferrer" class="btn-book-pkg">
-                        <span>احجز الباقة على واتساب 🚀</span>
+                        <span>${btnText}</span>
                     </a>
                 </div>
             `).join('');
@@ -3125,6 +3376,21 @@
 
             const bioEl = document.getElementById('heroBioText');
             if (bioEl && t.heroBio) bioEl.textContent = t.heroBio;
+
+            const eqTagEl = document.getElementById('brandEquationTag');
+            if (eqTagEl && t.equationTag) eqTagEl.textContent = t.equationTag;
+
+            const eqFormulaEl = document.getElementById('brandEquationFormula');
+            if (eqFormulaEl && t.equationFormula) eqFormulaEl.innerHTML = t.equationFormula;
+
+            const ctaGuarEl = document.getElementById('heroCtaGuarantee');
+            if (ctaGuarEl && t.ctaMicroGuarantee) ctaGuarEl.textContent = t.ctaMicroGuarantee;
+
+            const btnHeroWa = document.getElementById('heroPrimaryCtaText');
+            if (btnHeroWa && t.btnHeroWa) btnHeroWa.textContent = t.btnHeroWa;
+
+            const btnHeroWork = document.getElementById('heroSecondaryCtaText');
+            if (btnHeroWork && t.btnHeroWork) btnHeroWork.textContent = t.btnHeroWork;
 
             // Re-render components with current lang data
             initMarquee();
