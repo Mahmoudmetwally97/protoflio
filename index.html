@@ -42,52 +42,65 @@
         }
 
         :root {
-            --bg-base: #06070a;
-            --bg-surface: #0b0f17;
-            --bg-card: rgba(14, 19, 30, 0.72);
-            --bg-inner: rgba(20, 27, 43, 0.65);
+            /* Industrial Editorial Master Palette */
+            --bg-base: #08090c;
+            --bg-surface: #0e1118;
+            --bg-card: rgba(14, 17, 25, 0.88);
+            --bg-inner: rgba(19, 24, 35, 0.82);
+            --bg-metal: #151924;
             
-            --border-subtle: rgba(255, 255, 255, 0.07);
+            --border-hairline: 1px solid rgba(255, 255, 255, 0.08);
+            --border-subtle: rgba(255, 255, 255, 0.08);
             --border-card: rgba(255, 255, 255, 0.12);
-            --border-glow: rgba(255, 106, 0, 0.35);
+            --border-glow: rgba(255, 85, 0, 0.35);
             
-            --accent: #FF6A00;
-            --accent-hover: #ff8533;
-            --accent-glow: rgba(255, 106, 0, 0.28);
-            --accent-cyan: #00f2fe;
-            --accent-green: #25D366;
-            --accent-purple: #a855f7;
+            /* Single Accent: Electric Safety Orange */
+            --accent: #FF5500;
+            --accent-hover: #ff6e26;
+            --accent-glow: rgba(255, 85, 0, 0.24);
+            --accent-muted: rgba(255, 85, 0, 0.12);
+            --accent-cyan: #00e5ff;
+            --accent-green: #10b981;
             
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
             
-            --radius-sm: 10px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --radius-xl: 32px;
+            /* Machined Precision Radii */
+            --radius-xs: 2px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
             --radius-full: 9999px;
             
-            --font-display: 'Alexandria', 'AA-Majara', 'Cairo', sans-serif;
+            --font-display: 'Alexandria', 'Cairo', sans-serif;
             --font-body: 'Cairo', 'Tajawal', sans-serif;
             --font-en: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
             
             --container-max: 1240px;
-            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-bounce: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         [data-theme="light"] {
-            --bg-base: #f8fafc;
-            --bg-surface: #f1f5f9;
-            --bg-card: rgba(255, 255, 255, 0.88);
-            --bg-inner: rgba(241, 245, 249, 0.92);
-            --border-subtle: rgba(0, 0, 0, 0.06);
-            --border-card: rgba(0, 0, 0, 0.1);
-            --border-glow: rgba(255, 106, 0, 0.35);
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #94a3b8;
+            --bg-base: #f7f6f2;
+            --bg-surface: #eeece6;
+            --bg-card: rgba(255, 255, 255, 0.94);
+            --bg-inner: rgba(244, 242, 238, 0.96);
+            --bg-metal: #e8e5dc;
+            --border-hairline: 1px solid rgba(0, 0, 0, 0.08);
+            --border-subtle: rgba(0, 0, 0, 0.07);
+            --border-card: rgba(0, 0, 0, 0.12);
+            --border-glow: rgba(255, 85, 0, 0.25);
+            --accent: #E64A00;
+            --accent-hover: #ff5500;
+            --accent-glow: rgba(230, 74, 0, 0.18);
+            --accent-muted: rgba(230, 74, 0, 0.1);
+            --text-primary: #121316;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
         }
 
         * {
@@ -106,19 +119,20 @@
             min-height: 100vh;
             position: relative;
             background-image: 
-                radial-gradient(circle at 15% 10%, rgba(255, 106, 0, 0.09) 0%, transparent 45%),
-                radial-gradient(circle at 85% 45%, rgba(0, 242, 254, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 55%);
+                radial-gradient(circle at 15% 10%, rgba(255, 85, 0, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 45%, rgba(0, 229, 255, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(255, 85, 0, 0.04) 0%, transparent 55%);
         }
 
-        /* Subtle SVG Matrix Grid Background Overlay */
+        /* Subtle Technical Precision Grid Background Overlay */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+            background-size: 44px 44px;
             pointer-events: none;
             z-index: 0;
         }
@@ -129,7 +143,7 @@
             width: 420px;
             height: 420px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 106, 0, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 85, 0, 0.12) 0%, transparent 70%);
             pointer-events: none;
             z-index: 1;
             transform: translate(-50%, -50%);
@@ -150,8 +164,9 @@
             font-family: var(--font-display);
         }
         .font-en { font-family: var(--font-en); }
+        .font-mono { font-family: var(--font-mono); }
         .highlight {
-            background: linear-gradient(135deg, var(--accent) 0%, #ff8533 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #ff7a33 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -159,6 +174,39 @@
             background: linear-gradient(135deg, var(--accent-cyan) 0%, #38ef7d 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* Signature Interaction: The Precision Angle Indicator */
+        .angle-marker {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--accent);
+            background: var(--accent-muted);
+            border: 1px solid rgba(255, 85, 0, 0.25);
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: var(--transition-smooth);
+            user-select: none;
+        }
+        .angle-marker:hover, .the-angle-trigger:hover .angle-marker {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+        .angle-marker .angle-deg {
+            font-weight: 900;
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .angle-marker:hover .angle-deg, .the-angle-trigger:hover .angle-deg {
+            transform: rotate(45deg);
         }
 
         /* ==========================================================================
@@ -201,26 +249,51 @@
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
             color: #fff;
-            font-weight: 900;
-            font-size: 1.15rem;
-            letter-spacing: -0.5px;
         }
 
-        .brand-badge-icon {
+        .brand-badge-icon.craftsman-mark {
             width: 36px;
             height: 36px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent) 0%, #e05300 100%);
+            border-radius: var(--radius-sm);
+            background: #141824;
+            border: 1px solid rgba(255, 85, 0, 0.45);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
-            font-size: 1rem;
-            color: #fff;
+            color: var(--accent);
             box-shadow: 0 4px 15px var(--accent-glow);
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+        .nav-brand:hover .brand-badge-icon.craftsman-mark {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: #fff;
+            transform: rotate(-6deg);
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+            text-align: start;
+        }
+        .nav-brand-name {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 1.05rem;
+            letter-spacing: -0.02em;
+            color: #fff;
+        }
+        .nav-brand-spec {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .nav-menu {
@@ -309,41 +382,72 @@
         .hero-avatar-wrap {
             position: relative;
             width: 140px;
-            height: 140px;
-            margin: 0 auto 24px;
+            height: 148px;
+            margin: 0 auto 28px;
         }
 
-        .hero-avatar-ring {
-            position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            border: 2px dashed rgba(255, 106, 0, 0.5);
-            animation: spinSlow 20s linear infinite;
-        }
-
-        .hero-avatar-glow {
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-cyan));
-            opacity: 0.4;
-            filter: blur(14px);
-            animation: pulseGlow 3s ease-in-out infinite;
-        }
-
-        .hero-avatar-img {
+        .hero-avatar-frame {
             position: relative;
             width: 100%;
             height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: #10141e;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
             z-index: 2;
+            transition: var(--transition-smooth);
+        }
+        .hero-avatar-wrap:hover .hero-avatar-frame {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75), 0 0 25px var(--accent-glow);
         }
 
-        @keyframes spinSlow { 100% { transform: rotate(360deg); } }
-        @keyframes pulseGlow { 0%, 100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.08); } }
+        .hero-avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            filter: contrast(1.05) saturate(1.02);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: block;
+        }
+        .hero-avatar-wrap:hover .hero-avatar-img {
+            transform: scale(1.05);
+        }
+
+        /* Viewfinder Precision Crosshairs */
+        .viewfinder-corner {
+            position: absolute;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--accent);
+            line-height: 1;
+            pointer-events: none;
+            z-index: 4;
+            opacity: 0.9;
+        }
+        .viewfinder-tl { top: -6px; left: -6px; }
+        .viewfinder-tr { top: -6px; right: -6px; }
+        .viewfinder-bl { bottom: -6px; left: -6px; }
+        .viewfinder-br { bottom: -6px; right: -6px; }
+        .viewfinder-spec {
+            position: absolute;
+            bottom: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            background: rgba(10, 14, 22, 0.85);
+            padding: 1px 7px;
+            border-radius: var(--radius-xs);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 4;
+        }
 
         .live-status-capsule {
             display: inline-flex;
@@ -853,17 +957,18 @@
 
         .work-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
             overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: var(--transition-smooth);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
         }
 
         .work-card:hover {
-            transform: translateY(-7px);
+            transform: translateY(-5px);
             border-color: var(--accent);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 25px var(--accent-glow);
         }
@@ -1925,10 +2030,34 @@
             font-weight: 700;
         }
 
+        /* Industrial Editorial Card Header Bar */
+        .work-card-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            background: #0f131c;
+            border-bottom: 1px solid var(--border-subtle);
+            font-family: var(--font-mono);
+        }
+        .work-index-num {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+        .work-spec-tag {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
         /* Visible Live Copy Box on Card */
         .work-copy-preview-box {
-            background: rgba(255, 106, 0, 0.04);
-            border: 1px solid rgba(255, 106, 0, 0.22);
+            background: rgba(255, 85, 0, 0.04);
+            border: 1px solid rgba(255, 85, 0, 0.22);
             border-inline-start: 3px solid var(--accent);
             border-radius: var(--radius-sm);
             padding: 12px 15px;
@@ -1950,6 +2079,51 @@
         .work-copy-text {
             color: #fed7aa;
             font-style: italic;
+        }
+
+        /* Editorial Typographical Manifesto Strip (Copy as Visual Element) */
+        .editorial-manifesto-strip {
+            background: #0b0e14;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 16px 0;
+            position: relative;
+            z-index: 2;
+        }
+        .manifesto-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .manifesto-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .manifesto-k {
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            background: var(--accent-muted);
+            padding: 2px 7px;
+            border-radius: var(--radius-xs);
+            border: 1px solid rgba(255, 85, 0, 0.2);
+        }
+        .manifesto-v {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 0.94rem;
+            color: #fff;
+            letter-spacing: 0.02em;
+        }
+        .manifesto-sep {
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
         }
 
         /* Welding & AI Signature Styles */
@@ -2268,18 +2442,19 @@
         }
 
         /* Work Media & Card Refinement */
+        /* Work Media & Card Refinement */
         .work-card {
-            background: rgba(11, 15, 24, 0.7) !important;
+            background: rgba(11, 15, 24, 0.88) !important;
             border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            border-radius: 20px !important;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 12px 32px -12px rgba(0, 0, 0, 0.7) !important;
+            border-radius: var(--radius-md) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
             overflow: hidden;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
         .work-card:hover {
             transform: translateY(-4px) !important;
-            border-color: rgba(255, 106, 0, 0.35) !important;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 18px 40px -10px rgba(0, 0, 0, 0.8) !important;
+            border-color: var(--accent) !important;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75), 0 0 25px var(--accent-glow) !important;
         }
         .work-media {
             height: 210px !important;
@@ -2287,19 +2462,19 @@
         }
         .work-heading {
             font-size: 1.12rem !important;
-            font-weight: 700 !important;
+            font-weight: 800 !important;
             line-height: 1.4 !important;
             color: #ffffff !important;
         }
         .work-type-tag {
             font-family: var(--font-mono, 'Plus Jakarta Sans', sans-serif);
-            font-size: 0.74rem !important;
+            font-size: 0.72rem !important;
             font-weight: 700 !important;
             color: var(--accent) !important;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.04em;
         }
         .work-body {
-            padding: 22px !important;
+            padding: 20px !important;
         }
 
         /* Kill spinning dashed avatar ring */
@@ -2307,7 +2482,7 @@
             border: 2px solid rgba(255, 255, 255, 0.12) !important;
             animation: none !important;
             border-style: solid !important;
-            box-shadow: 0 0 25px rgba(255, 106, 0, 0.18) !important;
+            box-shadow: 0 0 25px rgba(255, 85, 0, 0.18) !important;
         }
         .hero-avatar-glow {
             animation: none !important;
@@ -2318,7 +2493,7 @@
         /* Navbar sleekness */
         .navbar-capsule {
             padding: 6px 14px 6px 18px !important;
-            background: rgba(8, 12, 20, 0.78) !important;
+            background: rgba(8, 12, 20, 0.85) !important;
             border: 1px solid rgba(255, 255, 255, 0.08) !important;
             backdrop-filter: blur(20px) saturate(180%) !important;
             -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
@@ -2342,12 +2517,19 @@
     <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- Floating Glass Island Navbar -->
-    <!-- Floating Glass Island Navbar -->
     <div class="header-wrap">
         <nav class="navbar-capsule">
-            <a href="#hero" class="nav-brand">
-                <span class="brand-badge-icon">M</span>
-                <span>محمود <span class="highlight">متولي</span></span>
+            <a href="#hero" class="nav-brand" title="Mahmoud Metwally | Copywriter & Strategist">
+                <span class="brand-badge-icon craftsman-mark">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 20V4l8 10 8-10v16"/>
+                        <path d="M14 20l6-6" stroke="var(--accent)" stroke-width="2.2"/>
+                    </svg>
+                </span>
+                <div class="nav-brand-text">
+                    <span class="nav-brand-name">MAHMOUD <span class="highlight">METWALLY</span></span>
+                    <span class="nav-brand-spec">[ COPYWRITER // STRATEGIST ]</span>
+                </div>
             </a>
 
             <ul class="nav-menu">
@@ -2387,9 +2569,14 @@
         <section class="hero-stage" id="hero">
             <div class="container">
                 <div class="hero-avatar-wrap">
-                    <div class="hero-avatar-glow"></div>
-                    <div class="hero-avatar-ring"></div>
-                    <img src="mahmoud.png" alt="محمود محمد متولي" class="hero-avatar-img" onerror="this.src='profile.jpg'">
+                    <span class="viewfinder-corner viewfinder-tl">+</span>
+                    <span class="viewfinder-corner viewfinder-tr">+</span>
+                    <span class="viewfinder-corner viewfinder-bl">+</span>
+                    <span class="viewfinder-corner viewfinder-br">+</span>
+                    <div class="hero-avatar-frame">
+                        <img src="mahmoud.png" alt="محمود محمد متولي" class="hero-avatar-img" onerror="this.src='profile.jpg'">
+                    </div>
+                    <span class="viewfinder-spec">[ CRAFT // ANGLE: 45° ]</span>
                 </div>
 
                 <div class="live-status-capsule">
@@ -2406,7 +2593,7 @@
                 </h1>
 
                 <div class="hero-tagline-quote" id="heroTaglineQuote">
-                    «بفهم العميل الأول… وبكتب الكلام اللي يخليه يتحرك.»
+                    «مش برص كلام وخلاص. بدور على الزاوية اللي تبيع.»
                 </div>
 
                 <div class="hero-typewriter-container">
@@ -2468,6 +2655,28 @@
             <div class="marquee-track" id="marqueeTrack"></div>
         </section>
 
+        <!-- Editorial Typographical Manifesto Strip (Copy As Visual Element) -->
+        <div class="editorial-manifesto-strip">
+            <div class="container">
+                <div class="manifesto-grid">
+                    <div class="manifesto-item">
+                        <span class="manifesto-k">[ HOOK ]</span>
+                        <span class="manifesto-v" id="manifestoHook">STOP THE SCROLL.</span>
+                    </div>
+                    <div class="manifesto-sep">//</div>
+                    <div class="manifesto-item">
+                        <span class="manifesto-k">[ ANGLE ]</span>
+                        <span class="manifesto-v highlight" id="manifestoAngle">FIND WHAT THEY MISSED.</span>
+                    </div>
+                    <div class="manifesto-sep">//</div>
+                    <div class="manifesto-item">
+                        <span class="manifesto-k">[ COPY ]</span>
+                        <span class="manifesto-v" id="manifestoCopy">MAKE THEM CARE & BUY.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 3. Selected Work & Deep Case Studies (#work) -->
         <section class="section-wrap" id="work" style="background: rgba(8, 11, 18, 0.5); border-top: 1px solid var(--border-subtle);">
             <div class="container">
@@ -2496,23 +2705,29 @@
                         <!-- Welding Quote Highlight Card -->
                         <div class="welding-quote-card">
                             <div class="welding-quote-text" id="weldingQuoteText">
-                                «في اللحام، لو الزاوية غلط، مهما ظبطت الحرارة… الوصلة هتبوظ. والـCopy نفس الحكاية: قبل ما أكتب كلمة، بدور على الزاوية اللي بتلمس الزبون وتخليه يشتري.»
+                                «في اللحام: لو الزاوية غلط مهما زودت النار، الوصلة هتتكسر. وفي الكوبي: لو الزاوية غلط مهما صرفت على الإعلان، ميزانيتك هتتحرق ومفيش أوردر هيتقفل. عشان كده قبل ما أكتب كلمة، بظبط الزاوية الأول على مخرطة الإقناع.»
                             </div>
                             <div class="welding-quote-author" id="weldingQuoteAuthor">
                                 — محمود محمد متولي | مهندس الإقناع الواقعي
                             </div>
                         </div>
 
-                        <!-- 2 Comparison boxes: Welding vs Copywriting -->
+                        <!-- 2 Comparison boxes: Welding vs Copywriting with Technical Annotations -->
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 28px;">
-                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 24px;">
-                                <h4 style="color: #94a3b8; font-size: 1.1rem; font-weight: 800; margin-bottom: 10px;" id="originBox1Title">⚡ في ورشة لحام وتشكيل الحديد</h4>
-                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75;" id="originBox1Desc">الدقة هناك بالملي وحرارة اللحام بالدرجة — لو الزاوية مش مظبوطة 100% الحديد هيتشرخ وتضيع الشغلانة والمعدات. الصنعة دي علمتني الصبر والدقة المتناهية وعدم التنازل عن معايير الإتقان.</p>
+                            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 24px; position: relative;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <h4 style="color: #94a3b8; font-size: 1.05rem; font-weight: 800; margin: 0;" id="originBox1Title">⚡ في ورشة لحام وتشكيل الحديد</h4>
+                                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.08em;">[ TOLERANCE: 0.5MM ]</span>
+                                </div>
+                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75; margin: 0;" id="originBox1Desc">الدقة هناك بالملي وحرارة اللحام بالدرجة — لو الزاوية مش مظبوطة 100% الحديد هيتشرخ وتضيع الشغلانة والمعدات. الصنعة دي علمتني الصبر والدقة المتناهية وعدم التنازل عن معايير الإتقان.</p>
                             </div>
 
-                            <div style="background: rgba(255, 106, 0, 0.06); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 24px;">
-                                <h4 style="color: var(--accent); font-size: 1.1rem; font-weight: 800; margin-bottom: 10px;" id="originBox2Title">🔥 في صياغة الكوبي رايتنج المباشر</h4>
-                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75;" id="originBox2Desc">الهوك في أول 3 ثواني، والتشريح النفسي للزبون بالعمق — لو الكلمات ملمستش وجع العميل ومخاوفه الحقيقية، ميزانيتك الإعلانية هتتحرق في الهوا والزبون هيعمل سكرول في ثانية!</p>
+                            <div style="background: rgba(255, 85, 0, 0.05); border: 1px solid rgba(255, 85, 0, 0.3); border-radius: var(--radius-md); padding: 24px; position: relative;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <h4 style="color: var(--accent); font-size: 1.05rem; font-weight: 800; margin: 0;" id="originBox2Title">🔥 في صياغة الكوبي رايتنج المباشر</h4>
+                                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.08em;">[ ANGLE: CALIBRATED ]</span>
+                                </div>
+                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75; margin: 0;" id="originBox2Desc">الهوك في أول 3 ثواني، والتشريح النفسي للزبون بالعمق — لو الكلمات ملمستش وجع العميل ومخاوفه الحقيقية، ميزانيتك الإعلانية هتتحرق في الهوا والزبون هيعمل سكرول في ثانية!</p>
                             </div>
                         </div>
 
@@ -2616,14 +2831,14 @@
 
                         <div class="comparison-slider-container" id="sliderContainer">
                             <div class="side-split side-split-ai">
-                                <span style="background: rgba(239, 68, 68, 0.2); color: #ef4444; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 900; width: fit-content; margin-bottom: 12px;">❌ إعلان تقليدي / كلام ذكاء اصطناعي ناشف</span>
+                                <span class="angle-marker" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border-color: rgba(239, 68, 68, 0.3); margin-bottom: 12px;" id="sliderWeakBadge">[ WEAK ANGLE // زاوية سطحية وكلام عام ]</span>
                                 <div style="font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 8px;">"تيشرتات قطن 100% بأفضل خامة وأرخص سعر في مصر!"</div>
                                 <div style="font-size: 0.85rem; color: #fca5a5;">📉 رسالة: 45 جم • صفر مبيعات حقيقية</div>
                             </div>
 
                             <div class="side-split-human" id="sideSplitHuman">
                                 <div class="side-inner-fixed">
-                                    <span style="background: rgba(37, 211, 102, 0.2); color: #25D366; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 900; width: fit-content; margin-bottom: 12px;">🔥 كوبي رايتنج محمود متولي المباشر</span>
+                                    <span class="angle-marker" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3); margin-bottom: 12px;" id="sliderStrongBadge">[ STRONG ANGLE // زاوية مسبوكة في ورشة الإقناع ]</span>
                                     <div style="font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 8px;">"التيشرت اللي هيعيش معاك 3 صيفات من غير ما يوسع أو يبهت!"</div>
                                     <div style="font-size: 0.85rem; color: #86efac;">🚀 رسالة: 4.41 جم • +479% زيادة في الوصول</div>
                                 </div>
@@ -2694,7 +2909,7 @@
         <section class="section-wrap" id="contact" style="border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="grand-finale-box">
-                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px;" id="contactSectionTitle">عندك Brand محتاج كلام يشتغل؟ خلينا نتكلم.</h2>
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px;" id="contactSectionTitle">عندك منتج يستاهل يتباع؟ خلينا نحدد الزاوية.</h2>
                     <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto; line-height: 1.8;" id="contactSectionDesc">
                         ابعتلي واتساب أو إيميل دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!
                     </p>
@@ -2771,7 +2986,7 @@
                 heroStatusText: 'متاح حالياً لاستلام مشاريع وحملات إعلانية جديدة',
                 heroHeadline: 'محمود محمد <span class="highlight">متولي</span>',
                 heroRoleBadge: 'Copywriter & Content Marketer | مهندس الإقناع الواقعي',
-                heroTaglineQuote: '«بفهم العميل الأول… وبكتب الكلام اللي يخليه يتحرك.»',
+                heroTaglineQuote: '«مش برص كلام وخلاص. بدور على الزاوية اللي تبيع.»',
                 heroBio: 'مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار',
                 equationTag: 'معادلة الصنعة ⚡',
                 equationFormula: '[سيكولوجية حطحوت + بيعية طوسون + بساطة معاذ صلاح + رشاقة عاطف] × صرامة ورشة الحديد = <strong>مهندس الإقناع الواقعي</strong>',
@@ -3197,7 +3412,7 @@
                 heroStatusText: 'Available for Selected Direct-Response & Content Projects',
                 heroRoleBadge: 'Copywriter & Content Marketer | The Real-World Conversion Engineer',
                 heroHeadline: 'Mahmoud <span class="highlight">Metwally</span>',
-                heroTaglineQuote: '«Understanding the customer first… then writing words that spark action.»',
+                heroTaglineQuote: '“I don\'t chase fluffy ideas. I find the angle that sells.”',
                 typewriterWords: [
                     'I write high-converting direct-response ads',
                     'I design full-funnel content architectures',
@@ -3752,13 +3967,14 @@
             if (!grid) return;
             const isAr = currentLang === 'ar';
 
-            grid.innerHTML = getStore().workCards.map(c => {
+            grid.innerHTML = getStore().workCards.map((c, idx) => {
                 const cats = c.cats.split(' ');
                 const isHidden = currentWorkCat !== 'all' && !cats.includes(currentWorkCat);
                 const cs = c.caseStudy;
                 const hasCaseStudy = !!cs;
                 const safeTitle = (c.modalCaption || c.title || '').replace(/'/g, "\\'");
                 const safeImg = c.modalImg || c.img;
+                const projectNum = String(idx + 1).padStart(2, '0');
 
                 // Structured spec grid if case study exists
                 let specsHtml = '';
@@ -3839,6 +4055,15 @@
 
                 return `
                     <div class="work-card ${isHidden ? 'hidden' : ''}">
+                        <div class="work-card-header-bar">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span class="work-index-num">${projectNum}</span>
+                                <span class="work-spec-tag">[ SPEC // ${projectNum} ]</span>
+                            </div>
+                            <span class="angle-marker the-angle-trigger" title="Calculated Conversion Angle">
+                                <span class="angle-deg">∠</span> 45° ANGLE
+                            </span>
+                        </div>
                         <div class="work-media" onclick="openLightbox('${safeImg}', '${safeTitle}')">
                             <span class="work-media-badge ${c.badgeClass}">${c.badge}</span>
                             <img src="${c.img}" alt="${c.alt}" loading="lazy" onerror="this.src='mahmoud.png'">
@@ -4326,8 +4551,8 @@
             if (originTitle) originTitle.textContent = isAr ? 'من ورش اللحام وتشكيل الحديد — لمعمل صياغة الكلمات اللي بتبيع 🔥' : 'From Industrial Metalworking to High-Converting Sales Copywriting 🔥';
             if (weldingQuote) {
                 weldingQuote.textContent = isAr ?
-                    '«في اللحام، لو الزاوية غلط، مهما ظبطت الحرارة… الوصلة هتبوظ. والـCopy نفس الحكاية: قبل ما أكتب كلمة، بدور على الزاوية اللي بتلمس الزبون وتخليه يشتري.»' :
-                    '«In metal welding, if your angle is off, no amount of heat can save the joint. Sales copy is identical: before writing a single word, I find the angle that strikes the buyer and triggers action.»';
+                    '«في اللحام: لو الزاوية غلط مهما زودت النار، الوصلة هتتكسر. وفي الكوبي: لو الزاوية غلط مهما صرفت على الإعلان، ميزانيتك هتتحرق ومفيش أوردر هيتقفل. عشان كده قبل ما أكتب كلمة، بظبط الزاوية الأول على مخرطة الإقناع.»' :
+                    '“In welding: if your angle is off, no amount of heat saves the joint—it snaps. In copy: if your angle is off, no ad spend saves the campaign—it burns. That\'s why before writing a single word, I calibrate the angle.”';
             }
             if (weldingAuthor) weldingAuthor.textContent = isAr ? '— محمود محمد متولي | مهندس الإقناع الواقعي' : '— Mahmoud Metwally | The Real-World Conversion Engineer';
             if (originBox1T) originBox1T.textContent = isAr ? '⚡ في ورشة لحام وتشكيل الحديد' : '⚡ In Industrial Welding & Metalwork';
@@ -4338,6 +4563,20 @@
             if (aiText) aiText.textContent = isAr ?
                 '«بستخدم AI كأداة للمساعدة والسرعة والبحث، مش كبديل للتفكير البشري. الـInsight السيكولوجية والـAngle الذكية واستيعاب تردد الزبون في الشارع هما اللي بيخلوا الإعلان يبيع ويقفل الأوردر.»' :
                 '«I leverage AI strictly for speed, research, and ideation — never as a substitute for human thought. The psychological insight, the contrarian angle, and genuine empathy for real customer hesitation are what make copy sell and close orders.»';
+
+            // Manifesto Strip
+            const mHook = document.getElementById('manifestoHook');
+            const mAngle = document.getElementById('manifestoAngle');
+            const mCopy = document.getElementById('manifestoCopy');
+            if (mHook) mHook.textContent = isAr ? 'اوقف التمرير.' : 'STOP THE SCROLL.';
+            if (mAngle) mAngle.textContent = isAr ? 'اكتشف الزاوية اللي الكل غفل عنها.' : 'FIND WHAT THEY MISSED.';
+            if (mCopy) mCopy.textContent = isAr ? 'اخليهم يهتموا ويشتروا.' : 'MAKE THEM CARE & BUY.';
+
+            // Slider Badges
+            const sWeak = document.getElementById('sliderWeakBadge');
+            const sStrong = document.getElementById('sliderStrongBadge');
+            if (sWeak) sWeak.textContent = isAr ? '[ WEAK ANGLE // زاوية سطحية وكلام عام ]' : '[ WEAK ANGLE // Generic Surface Copy ]';
+            if (sStrong) sStrong.textContent = isAr ? '[ STRONG ANGLE // زاوية مسبوكة في ورشة الإقناع ]' : '[ STRONG ANGLE // Calibrated Craftsman Copy ]';
 
             const proofPill = document.getElementById('proofPillTag');
             const proofTitle = document.getElementById('proofSectionTitle');
@@ -4365,7 +4604,7 @@
             const contactEmail = document.getElementById('contactBtnEmail');
             const contactCv = document.getElementById('contactBtnCv');
             const contactAudit = document.getElementById('contactAuditCallout');
-            if (contactTitle) contactTitle.textContent = isAr ? 'عندك Brand محتاج كلام يشتغل؟ خلينا نتكلم.' : 'Have a brand that needs words that actually convert? Let\'s talk.';
+            if (contactTitle) contactTitle.textContent = isAr ? 'عندك منتج يستاهل يتباع؟ خلينا نحدد الزاوية.' : 'Got a brand worth fighting for? Let\'s find the angle.';
             if (contactDesc) contactDesc.textContent = isAr ? 'ابعتلي واتساب أو إيميل دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!' : 'Send me a message on WhatsApp or email right now to audit your current campaigns and discover how to convert cold traffic into high-ROAS revenue.';
             if (contactWa) contactWa.textContent = isAr ? '🚀 ابدأ مشروعك (واتساب)' : '🚀 Start a Project (WhatsApp)';
             if (contactEmail) contactEmail.textContent = isAr ? '✉️ راسلني عبر الإيميل' : '✉️ Email Me';
