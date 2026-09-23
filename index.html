@@ -1566,6 +1566,506 @@
             border-top: 1px solid var(--border-subtle);
         }
 
+        /* ==========================================================================
+           Deep Case Study Modal & Framework
+           ========================================================================== */
+        .case-study-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 6, 12, 0.94);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .case-study-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .case-study-modal-container {
+            position: relative;
+            max-width: 880px;
+            width: 100%;
+            max-height: 90vh;
+            background: #090d16;
+            border: 1px solid rgba(255, 106, 0, 0.32);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.95), 0 0 40px rgba(255, 106, 0, 0.12);
+            animation: csModalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes csModalIn {
+            from { transform: scale(0.96) translateY(15px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .case-study-modal-header {
+            padding: 24px 28px;
+            background: rgba(14, 20, 32, 0.98);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .case-study-pill-tag {
+            display: inline-block;
+            background: rgba(255, 106, 0, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            border-radius: var(--radius-full);
+            padding: 4px 14px;
+            font-size: 0.76rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        .case-study-modal-title {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .case-study-modal-meta {
+            font-size: 0.86rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .btn-close-cs-modal {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-subtle);
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+
+        .btn-close-cs-modal:hover {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border-color: #ef4444;
+            transform: rotate(90deg);
+        }
+
+        .case-study-modal-body {
+            padding: 28px;
+            overflow-y: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: #090d16;
+        }
+
+        .cs-step-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            transition: all var(--transition-smooth);
+        }
+
+        .cs-step-card:hover {
+            border-color: rgba(255, 106, 0, 0.3);
+            background: rgba(255, 106, 0, 0.02);
+        }
+
+        .cs-step-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .cs-step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3px 12px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 106, 0, 0.15);
+            border: 1px solid rgba(255, 106, 0, 0.35);
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 0.76rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.04em;
+        }
+
+        .cs-step-title {
+            font-size: 0.96rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0;
+        }
+
+        .cs-step-content {
+            font-size: 0.92rem;
+            color: #cbd5e1;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .cs-copy-box {
+            background: rgba(255, 106, 0, 0.06);
+            border: 1px solid rgba(255, 106, 0, 0.35);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            margin-top: 8px;
+            color: #fff;
+            font-size: 0.95rem;
+            line-height: 1.85;
+            white-space: pre-line;
+            box-shadow: inset 0 0 20px rgba(255, 106, 0, 0.05);
+        }
+
+        .cs-result-highlight {
+            background: rgba(37, 211, 102, 0.08);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            color: #86efac;
+            font-weight: 700;
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        .case-study-modal-footer {
+            padding: 18px 28px;
+            background: rgba(14, 20, 32, 0.98);
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-cs-preview-asset {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-card);
+            color: #fff;
+            padding: 11px 22px;
+            border-radius: var(--radius-full);
+            font-weight: 800;
+            font-size: 0.88rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-cs-preview-asset:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent);
+        }
+
+        .btn-cs-discuss {
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8533 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 11px 24px;
+            border-radius: var(--radius-full);
+            font-weight: 800;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 18px var(--accent-glow);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-cs-discuss:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 106, 0, 0.45);
+        }
+
+        /* Work Card Actions Row */
+        .work-actions-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .btn-view-case-study {
+            flex: 2;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8533 100%);
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            font-size: 0.84rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-shadow: 0 4px 15px var(--accent-glow);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-view-case-study:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 106, 0, 0.45);
+        }
+
+        .btn-inspect-asset {
+            flex: 1;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-card);
+            color: #fff;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 0.82rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-inspect-asset:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent);
+        }
+
+        /* Challenge / Result mini-box in work card */
+        .work-challenge-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            font-size: 0.84rem;
+            line-height: 1.6;
+        }
+
+        .work-challenge-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+        .work-challenge-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .work-challenge-label {
+            color: var(--accent);
+            font-weight: 800;
+            white-space: nowrap;
+            font-size: 0.8rem;
+        }
+
+        .work-challenge-val {
+            color: #cbd5e1;
+        }
+
+        /* Welding & AI Signature Styles */
+        .welding-quote-card {
+            background: rgba(255, 106, 0, 0.05);
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .welding-quote-icon {
+            font-size: 2.2rem;
+            flex-shrink: 0;
+        }
+
+        .welding-quote-text {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            line-height: 1.85;
+            margin: 0;
+        }
+
+        .ai-mindset-banner {
+            background: linear-gradient(135deg, rgba(255, 106, 0, 0.08), rgba(0, 0, 0, 0.4));
+            border: 1px dashed rgba(255, 106, 0, 0.4);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ai-badge {
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 0.95rem;
+        }
+
+        .ai-text {
+            color: #cbd5e1;
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+
+        /* Services Streamlined Grid */
+        .services-scope-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .service-scope-card {
+            background: rgba(12, 16, 26, 0.7);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            transition: all var(--transition-smooth);
+        }
+
+        .service-scope-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 106, 0, 0.15);
+        }
+
+        .service-scope-icon {
+            font-size: 2rem;
+            margin-bottom: 14px;
+        }
+
+        .service-scope-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .service-scope-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-scope-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .service-scope-item {
+            font-size: 0.86rem;
+            color: #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .service-scope-item::before {
+            content: '⚡';
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+
+        .scope-collaboration-bar {
+            background: rgba(255, 106, 0, 0.05);
+            border: 1px solid rgba(255, 106, 0, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 24px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .scope-bar-text {
+            font-size: 0.98rem;
+            color: #fff;
+            line-height: 1.7;
+            max-width: 680px;
+        }
+
+        .btn-scope-discuss {
+            background: linear-gradient(135deg, var(--accent) 0%, #ff8533 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 13px 26px;
+            border-radius: var(--radius-full);
+            font-weight: 800;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            box-shadow: 0 4px 18px var(--accent-glow);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-scope-discuss:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 106, 0, 0.45);
+        }
+
+        /* Hero refinements */
+        .hero-role-badge {
+            display: inline-block;
+            font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background: rgba(255, 106, 0, 0.08);
+            border: 1px solid rgba(255, 106, 0, 0.25);
+            padding: 4px 18px;
+            border-radius: var(--radius-full);
+        }
+
+        .hero-tagline-quote {
+            font-size: clamp(1.2rem, 2.6vw, 1.8rem);
+            font-weight: 900;
+            color: #fff;
+            max-width: 820px;
+            margin: 0 auto 16px;
+            line-height: 1.5;
+        }
+
         /* Toast Alert */
         #toastMessageAlert {
             position: fixed;
@@ -1778,6 +2278,7 @@
     <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- Floating Glass Island Navbar -->
+    <!-- Floating Glass Island Navbar -->
     <div class="header-wrap">
         <nav class="navbar-capsule">
             <a href="#hero" class="nav-brand">
@@ -1786,12 +2287,12 @@
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#work" class="nav-link-btn">سابقة الأعمال</a></li>
-                <li><a href="#testimonials" class="nav-link-btn">النتائج والتقييمات</a></li>
-                <li><a href="#showcase" class="nav-link-btn">المختبر التفاعلي</a></li>
-                <li><a href="#hooks" class="nav-link-btn">معمل الهوكات</a></li>
-                <li><a href="#packages" class="nav-link-btn">باقات التعاقد</a></li>
-                <li><a href="#origin" class="nav-link-btn">سر الصنعة</a></li>
+                <li><a href="#work" class="nav-link-btn" id="navLinkWork">سابقة الأعمال ودراسات الحالة</a></li>
+                <li><a href="#origin" class="nav-link-btn" id="navLinkOrigin">سر الصنعة وفلسفة AI</a></li>
+                <li><a href="#testimonials" class="nav-link-btn" id="navLinkTestimonials">النتائج والتقييمات</a></li>
+                <li><a href="#showcase" class="nav-link-btn" id="navLinkShowcase">المختبر التفاعلي</a></li>
+                <li><a href="#services" class="nav-link-btn" id="navLinkServices">نطاق الخدمات</a></li>
+                <li><a href="#contact" class="nav-link-btn" id="navLinkContact">تواصل مباشر</a></li>
             </ul>
 
             <div class="nav-controls">
@@ -1810,10 +2311,10 @@
 
     <!-- Mobile Bottom Quick Dock -->
     <div class="mobile-bottom-dock">
-        <a href="#work" class="dock-btn active">الأعمال</a>
-        <a href="#testimonials" class="dock-btn">النتائج</a>
-        <a href="#showcase" class="dock-btn">المختبر</a>
-        <a href="#packages" class="dock-btn">الباقات</a>
+        <a href="#work" class="dock-btn active" id="mobDockWork">الأعمال</a>
+        <a href="#origin" class="dock-btn" id="mobDockOrigin">الصنعة</a>
+        <a href="#testimonials" class="dock-btn" id="mobDockProof">النتائج</a>
+        <a href="#services" class="dock-btn" id="mobDockServices">الخدمات</a>
         <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="dock-btn" style="color: #25D366;">واتساب</a>
     </div>
 
@@ -1832,9 +2333,17 @@
                     <span id="heroLiveStatusText">متاح حالياً لاستلام مشاريع وحملات إعلانية جديدة</span>
                 </div>
 
+                <div class="hero-role-badge" id="heroRoleBadge">
+                    Copywriter & Content Marketer | مهندس الإقناع الواقعي
+                </div>
+
                 <h1 class="hero-headline" id="heroHeadlineText">
                     محمود محمد <span class="highlight">متولي</span>
                 </h1>
+
+                <div class="hero-tagline-quote" id="heroTaglineQuote">
+                    «بفهم العميل الأول… وبكتب الكلام اللي يخليه يتحرك.»
+                </div>
 
                 <div class="hero-typewriter-container">
                     <span id="typewriterPrefix">أنا</span>
@@ -1849,41 +2358,41 @@
                 </div>
 
                 <p class="hero-bio-copy" id="heroBioText">
-                    مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — أنا باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار
+                    مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار
                 </p>
 
                 <div class="hero-cta-flex">
+                    <a href="#work" class="btn-luxury-primary">
+                        <span class="btn-inner-icon-circle">💼</span>
+                        <span id="heroPrimaryCtaText">استعرض دراسات الحالة وشغلي لايف</span>
+                    </a>
                     <div style="display: flex; flex-direction: column; align-items: center;">
-                        <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary">
+                        <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-luxury-secondary">
                             <span class="btn-inner-icon-circle">💬</span>
-                            <span id="heroPrimaryCtaText">اتكلم معايا واتساب فوراً</span>
+                            <span id="heroSecondaryCtaText">اتكلم معايا واتساب فوراً</span>
                         </a>
                         <span class="cta-micro-guarantee" id="heroCtaGuarantee">⚡ فحص إعلاني وتشخيص مجاني لنصوصك الحالية في 10 دقائق على واتساب • بدون أي التزام</span>
                     </div>
-                    <a href="#work" class="btn-luxury-secondary">
-                        <span class="btn-inner-icon-circle">💼</span>
-                        <span id="heroSecondaryCtaText">استعرض نماذج شغلي لايف</span>
-                    </a>
                 </div>
 
-                <!-- HUD Metrics Bar -->
+                <!-- HUD Metrics Bar With Contextual Anchors -->
                 <div class="metrics-hud-card">
                     <div class="metrics-hud-inner">
                         <div class="metric-unit">
                             <div class="metric-num highlight">+479%</div>
-                            <div class="metric-label">وصول طبيعي لصفحة Eleven 11</div>
+                            <div class="metric-label" id="metricLabel1">قفزة وصول طبيعي (حملة شتاء Eleven 11)</div>
                         </div>
                         <div class="metric-unit">
                             <div class="metric-num highlight-cyan">4.41 ج</div>
-                            <div class="metric-label">تكلفة الرسالة في إعلانات الملابس</div>
+                            <div class="metric-label" id="metricLabel2">تكلفة رسالة الشراء (إعلانات Meta للملابس)</div>
                         </div>
                         <div class="metric-unit">
-                            <div class="metric-num highlight">93 / 105</div>
-                            <div class="metric-label">تقييم رتبة Senior (أكاديمية حذيفة الخولي)</div>
+                            <div class="metric-num highlight">890+</div>
+                            <div class="metric-label" id="metricLabel3">طلب حجز واستفسار مؤكد (English Bloom وأجيال)</div>
                         </div>
                         <div class="metric-unit">
-                            <div class="metric-num highlight-cyan">18+ ساعة</div>
-                            <div class="metric-label">اعتماد رسمي من OnTrack & ينفع</div>
+                            <div class="metric-num highlight-cyan">93 / 105</div>
+                            <div class="metric-label" id="metricLabel4">رتبة Senior Copywriter (أكاديمية حذيفة الخولي)</div>
                         </div>
                     </div>
                 </div>
@@ -1895,26 +2404,13 @@
             <div class="marquee-track" id="marqueeTrack"></div>
         </section>
 
-        <!-- 3. Capabilities ("بشتغل على") -->
-        <section class="section-wrap" id="capabilities">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="section-pill-tag">القدرات والتخصصات</span>
-                    <h2 class="section-title">القدرات والحلول البيعية المباشرة</h2>
-                    <p class="section-desc">منظومة كتابة محتوى بيعي وتسويقي متكاملة تغطي كل خطوة في رحلة العميل من أول ثانية لحد قفل الدفع:</p>
-                </div>
-
-                <div class="capabilities-grid" id="capabilitiesGrid"></div>
-            </div>
-        </section>
-
-        <!-- 4. Work Portfolio Showcase (#work) -->
+        <!-- 3. Selected Work & Deep Case Studies (#work) -->
         <section class="section-wrap" id="work" style="background: rgba(8, 11, 18, 0.5); border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="section-pill-tag">💼 نماذج أعمال حقيقية ودراسات حالة</span>
-                    <h2 class="section-title">شغلي لايف: بوستات منشورة، استراتيجيات، وخطط مبيعات 🚀</h2>
-                    <p class="section-desc">مش كلام نظري — دي حملات حقيقية لعملاء، استراتيجيات كاملة، وبوستات منشورة على السوشيال ميديا حققت أرقام وتفاعل:</p>
+                    <span class="section-pill-tag" id="workPillTag">💼 نماذج أعمال حقيقية ودراسات حالة تفصيلية</span>
+                    <h2 class="section-title" id="workSectionTitle">شغلي لايف: دراسات حالة، إعلانات ممولة، واستراتيجيات مبيعات 🚀</h2>
+                    <p class="section-desc" id="workSectionDesc">مش مجرد كلام نظري أو صور — دي حملات حقيقية وأرقام موثقة تقدر تفحص تفاصيل كل خطوة فيها من المشكلة للنتيجة:</p>
                 </div>
 
                 <!-- Filter Tabs -->
@@ -1925,8 +2421,89 @@
             </div>
         </section>
 
-        <!-- 5. Interactive Sales Laboratory (#showcase) -->
-        <section class="section-wrap" id="showcase" style="border-top: 1px solid var(--border-subtle);">
+        <!-- 4. How I Think & The Craft (#origin) -->
+        <section class="section-wrap" id="origin" style="background: rgba(8, 11, 18, 0.6); border-top: 1px solid var(--border-subtle);">
+            <div class="container">
+                <div class="double-bezel-card">
+                    <div class="double-bezel-inner">
+                        <span class="section-pill-tag" id="originPillTag">🧬 سر الصنعة وفلسفة الإقناع</span>
+                        <h2 class="section-title" id="originSectionTitle" style="margin-bottom: 24px;">من ورش اللحام وتشكيل الحديد — لمعمل صياغة الكلمات اللي بتبيع 🔥</h2>
+                        
+                        <!-- Welding Quote Highlight Card -->
+                        <div class="welding-quote-card">
+                            <div class="welding-quote-text" id="weldingQuoteText">
+                                «في اللحام، لو الزاوية غلط، مهما ظبطت الحرارة… الوصلة هتبوظ. والـCopy نفس الحكاية: قبل ما أكتب كلمة، بدور على الزاوية اللي بتلمس الزبون وتخليه يشتري.»
+                            </div>
+                            <div class="welding-quote-author" id="weldingQuoteAuthor">
+                                — محمود محمد متولي | مهندس الإقناع الواقعي
+                            </div>
+                        </div>
+
+                        <!-- 2 Comparison boxes: Welding vs Copywriting -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 28px;">
+                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 24px;">
+                                <h4 style="color: #94a3b8; font-size: 1.1rem; font-weight: 800; margin-bottom: 10px;" id="originBox1Title">⚡ في ورشة لحام وتشكيل الحديد</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75;" id="originBox1Desc">الدقة هناك بالملي وحرارة اللحام بالدرجة — لو الزاوية مش مظبوطة 100% الحديد هيتشرخ وتضيع الشغلانة والمعدات. الصنعة دي علمتني الصبر والدقة المتناهية وعدم التنازل عن معايير الإتقان.</p>
+                            </div>
+
+                            <div style="background: rgba(255, 106, 0, 0.06); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 24px;">
+                                <h4 style="color: var(--accent); font-size: 1.1rem; font-weight: 800; margin-bottom: 10px;" id="originBox2Title">🔥 في صياغة الكوبي رايتنج المباشر</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75;" id="originBox2Desc">الهوك في أول 3 ثواني، والتشريح النفسي للزبون بالعمق — لو الكلمات ملمستش وجع العميل ومخاوفه الحقيقية، ميزانيتك الإعلانية هتتحرق في الهوا والزبون هيعمل سكرول في ثانية!</p>
+                            </div>
+                        </div>
+
+                        <!-- The 4 Pillars of Mahmoud's Persuasion Craft -->
+                        <div class="craft-pillars-grid">
+                            <div class="pillar-box">
+                                <span class="pillar-icon">🧠</span>
+                                <h5 class="pillar-title">سيكولوجية حطحوت</h5>
+                                <p class="pillar-desc">تشريح الدوافع الدفينة ومخاوف الزبون قبل كتابة حرف واحد، لفهم المحرك النفسي الحقيقي لقرار الشراء.</p>
+                            </div>
+                            <div class="pillar-box">
+                                <span class="pillar-icon">🎯</span>
+                                <h5 class="pillar-title">بيعية طوسون</h5>
+                                <p class="pillar-desc">هجوم مباشر وذكي على الاعتراضات، وصياغة عروض لا تُقاوم تحول المتردد إلى مشتري مؤكد فوراً.</p>
+                            </div>
+                            <div class="pillar-box">
+                                <span class="pillar-icon">🗣️</span>
+                                <h5 class="pillar-title">بساطة معاذ صلاح</h5>
+                                <p class="pillar-desc">لغة مصرية فصيحة بيضاء، خالية من التعالي المصطنع وكأنك بتدردش مع صاحبك على قهوة الصبح.</p>
+                            </div>
+                            <div class="pillar-box">
+                                <span class="pillar-icon">🌊</span>
+                                <h5 class="pillar-title">رشاقة عاطف</h5>
+                                <p class="pillar-desc">سرد قصصي انسيابي كأنه زحليقة ملساء تجر رجل القارئ بسلاسة من أول هوك لحد زرار الدفع.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Mindset Banner -->
+                        <div class="ai-mindset-banner">
+                            <div class="ai-mindset-title" id="aiMindsetTitle">🤖 فلسفتي في التعامل مع الذكاء الاصطناعي (AI):</div>
+                            <div class="ai-mindset-text" id="aiMindsetText">
+                                «بستخدم AI كأداة للمساعدة والسرعة والبحث، مش كبديل للتفكير البشري. الـInsight السيكولوجية والـAngle الذكية واستيعاب تردد الزبون في الشارع هما اللي بيخلوا الإعلان يبيع ويقفل الأوردر.»
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Wall of Proof & Authority (#testimonials) -->
+        <section class="section-wrap" id="testimonials" style="border-top: 1px solid var(--border-subtle);">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-pill-tag" id="proofPillTag">⭐ نتائج حقيقية وتقييمات موثقة</span>
+                    <h2 class="section-title" id="proofSectionTitle">جدار الإثباتات والشهادات المعتمدة</h2>
+                    <p class="section-desc" id="proofSectionDesc">الأرقام مبتكدبش — دي نتائج حقيقية لتكلفة الرسائل ومحادثات واتساب وتقييمات من مدربين وعملاء اشتغلت معاهم:</p>
+                </div>
+
+                <div class="filter-bar-flex" id="proofFilterBar"></div>
+                <div class="proof-grid" id="proofCardsGrid"></div>
+            </div>
+        </section>
+
+        <!-- 6. Interactive Sales Laboratory (#showcase) -->
+        <section class="section-wrap" id="showcase" style="border-top: 1px solid var(--border-subtle); background: rgba(8, 11, 18, 0.4);">
             <div class="container">
                 <div class="section-header-centered">
                     <span class="section-pill-tag">⚡ استوديو المحاكيات الحية</span>
@@ -2004,7 +2581,7 @@
             </div>
         </section>
 
-        <!-- 6. Instant Sales Hook Generator (#hooks) -->
+        <!-- 7. Instant Sales Hook Generator (#hooks) -->
         <section class="section-wrap" id="hooks" style="background: rgba(8, 11, 18, 0.6); border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="section-header-centered">
@@ -2029,101 +2606,41 @@
             </div>
         </section>
 
-        <!-- 7. Wall of Proof & Authority (#testimonials) -->
-        <section class="section-wrap" id="testimonials" style="border-top: 1px solid var(--border-subtle);">
+        <!-- 8. Services Scope (#services / #packages) -->
+        <section class="section-wrap" id="services" style="border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="section-header-centered">
-                    <span class="section-pill-tag">⭐ نتائج حقيقية وتقييمات موثقة</span>
-                    <h2 class="section-title">جدار الإثباتات والشهادات المعتمدة</h2>
-                    <p class="section-desc">الأرقام مبتكدبش — دي نتائج حقيقية لتكلفة الرسائل ومحادثات واتساب وتقييمات من مدربين وعملاء اشتغلت معاهم:</p>
+                    <span class="section-pill-tag" id="servicesPillTag">💼 نطاق الخدمات والتعاون</span>
+                    <h2 class="section-title" id="servicesSectionTitle">نطاق عمل مرن ومحدد يضمن لبيزنسك أعلى عائد 🚀</h2>
+                    <p class="section-desc" id="servicesSectionDesc">مفيش حلول معلبة — كل تعاون بيتبني حسب مرحلة البيزنس ونوع المنتج والهدف البيعي المباشر:</p>
                 </div>
 
-                <div class="filter-bar-flex" id="proofFilterBar"></div>
-                <div class="proof-grid" id="proofCardsGrid"></div>
-            </div>
-        </section>
+                <div class="packages-grid" id="packagesContainer"></div>
 
-        <!-- 8. The Origin Story (#origin) -->
-        <section class="section-wrap" id="origin" style="background: rgba(8, 11, 18, 0.5); border-top: 1px solid var(--border-subtle);">
-            <div class="container">
-                <div class="double-bezel-card">
-                    <div class="double-bezel-inner">
-                        <span class="section-pill-tag">🧬 حكايتي وسر الصنعة</span>
-                        <h2 class="section-title" style="margin-bottom: 24px;">من ورش لحام وتشكيل الحديد — لمعمل صياغة الكلمات اللي بتبيع 🔥</h2>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
-                            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 24px;">
-                                <h4 style="color: #94a3b8; font-size: 1.1rem; font-weight: 800; margin-bottom: 10px;">⚡ في ورشة لحام وتشكيل الحديد</h4>
-                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75;">الدقة هناك بالملي وحرارة اللحام بالدرجة — لو الزاوية مش مظبوطة 100% الحديد هيتشرخ وتضيع الشغلانة والمعدات — الصنعة دي علمتني الصبر والدقة المتناهية</p>
-                            </div>
-
-                            <div style="background: rgba(255, 106, 0, 0.06); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 24px;">
-                                <h4 style="color: var(--accent); font-size: 1.1rem; font-weight: 800; margin-bottom: 10px;">🔥 في كتابة المحتوى والكوبي رايتنج</h4>
-                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75;">الهوك بأول 3 ثواني، وتشريح سيكولوجية الزبون بالمشاعر — لو الكلمات ملمستش وجع العميل ومخاوفه الحقيقية، ميزانيتك هتتحرق في الهوا والزبون هيعمل سكرول في ثانية!</p>
-                            </div>
-                        </div>
-
-                        <!-- The 4 Pillars of Mahmoud's Persuasion Craft -->
-                        <div class="craft-pillars-grid">
-                            <div class="pillar-box">
-                                <span class="pillar-icon">🧠</span>
-                                <h5 class="pillar-title">سيكولوجية حطحوت</h5>
-                                <p class="pillar-desc">تشريح الدوافع الدفينة ومخاوف الزبون قبل كتابة حرف واحد، لفهم المحرك النفسي الحقيقي لقرار الشراء.</p>
-                            </div>
-                            <div class="pillar-box">
-                                <span class="pillar-icon">🎯</span>
-                                <h5 class="pillar-title">بيعية طوسون</h5>
-                                <p class="pillar-desc">هجوم مباشر وذكي على الاعتراضات، وصياغة عروض لا تُقاوم تحول المتردد إلى مشتري مؤكد فوراً.</p>
-                            </div>
-                            <div class="pillar-box">
-                                <span class="pillar-icon">🗣️</span>
-                                <h5 class="pillar-title">بساطة معاذ صلاح</h5>
-                                <p class="pillar-desc">لغة مصرية فصيحة بيضاء، خالية من التعالي المصطنع وكأنك بتدردش مع صاحبك على قهوة الصبح.</p>
-                            </div>
-                            <div class="pillar-box">
-                                <span class="pillar-icon">🌊</span>
-                                <h5 class="pillar-title">رشاقة عاطف</h5>
-                                <p class="pillar-desc">سرد قصصي انسيابي كأنه زحليقة ملساء تجر رجل القارئ بسلاسة من أول هوك لحد زرار الدفع.</p>
-                            </div>
-                        </div>
-
-                        <div style="background: linear-gradient(135deg, rgba(255, 106, 0, 0.12), rgba(0,0,0,0.5)); border: 1px dashed var(--accent); border-radius: var(--radius-md); padding: 22px 26px;">
-                            <strong style="color: var(--accent); font-size: 1rem;">🚫 ميثاق الكوبي رايتنج الإنساني:</strong>
-                            <span style="color: var(--text-primary); font-size: 0.94rem; font-weight: 700; margin-inline-start: 6px; display: inline-block; line-height: 1.75;">ليه برامج الذكاء الاصطناعي مبيعرفش يبيع في سوقنا؟ لأن أدوات الـ AI بترص كلام عام ومترجم خالي من الروح والمشاعر — مبيفهمش الشارع ولا تردد الزبون لما يسأل "بكام؟".. الكوبي رايتر الشاطر هو اللي بيكتب بلهجة وسيكولوجية الناس، ويوصل للزبون الإحساس اللي يخليه يشتري وهو مبسوط ومتطمن!</span>
-                        </div>
+                <!-- Scope-based collaboration bar -->
+                <div class="scope-collaboration-bar">
+                    <div class="scope-collaboration-text" id="scopeCollabText">
+                        🤝 <strong>التعاون المرن حسب النطاق (Scope-Based):</strong> مفيش أسعار معلبة أو مقاس واحد يناسب الكل. التعاون بيكون حسب احتياج الحملة ومرحلة نمو البيزنس — بنقعد 10 دقائق على واتساب أو مكالمة سريعة ونحدد المطلوب بالظبط بدون أي التزام!
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 9. Contract Packages Matrix (#packages) -->
-        <section class="section-wrap" id="packages" style="border-top: 1px solid var(--border-subtle);">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="section-pill-tag">💼 باقات التعاقد والشراكة</span>
-                    <h2 class="section-title">باقات شغل واضحة وسالكة تضمن لبيزنسك أعلى عائد 🚀</h2>
-                    <p class="section-desc">اختار الطريقة الأنسب لمرحلة بيزنسك وخلينا نبدأ نحول إعلاناتك لمبيعات من أول يوم:</p>
-                </div>
-
-                <div class="packages-grid" id="packagesContainer"></div>
-            </div>
-        </section>
-
-        <!-- 10. Grand Finale Contact Card (#contact) -->
-        <section class="section-wrap" id="contact">
+        <!-- 9. Grand Finale Contact Card (#contact) -->
+        <section class="section-wrap" id="contact" style="border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="grand-finale-box">
-                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px;">عندك بيزنس أو براند وعايز كلام يجيبلك مبيعات بجد؟</h2>
-                    <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto; line-height: 1.8;">
-                        ابعتلي واتساب دلوقتي حالا وخلينا نقعد نحلل جمهورك، نظبط نبرة صوت البراند، ونعمل حملة بيع محترمة تحققلك أعلى مبيعات!
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px;" id="contactSectionTitle">عندك Brand محتاج كلام يشتغل ويجيب نتيجة؟ خلّينا نتكلم.</h2>
+                    <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto; line-height: 1.8;" id="contactSectionDesc">
+                        ابعتلي واتساب دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!
                     </p>
 
                     <div class="grand-links-flex">
                         <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="background: linear-gradient(135deg, #25D366, #128C7E); box-shadow: 0 10px 35px rgba(37, 211, 102, 0.45);">
-                            <span>💬 شات واتساب فوري</span>
+                            <span id="contactBtnWa">💬 شات واتساب فوري</span>
                         </a>
                         <a href="Mahmoud-Metwally-CV.pdf" target="_blank" download="Mahmoud-Metwally-CV.pdf" class="btn-luxury-secondary">
-                            <span>📄 تحميل الـ CV الرسمي</span>
+                            <span id="contactBtnCv">📄 تحميل الـ CV الرسمي</span>
                         </a>
                         <a href="https://www.facebook.com/MahmoudMetwally97" target="_blank" rel="noopener noreferrer" class="btn-luxury-secondary">
                             <span>🔵 فيسبوك</span>
@@ -2135,7 +2652,7 @@
 
                     <div class="grand-audit-callout">
                         <div class="audit-icon">🎯</div>
-                        <div class="audit-text">
+                        <div class="audit-text" id="contactAuditCallout">
                             <strong>عرض الفحص السريع (Zero Friction):</strong> ابعتلي لينك صفحتك أو آخر إعلانين عملتهم على واتساب، وهقولك في 10 دقائق فلوسك بتتسرب فين بالظبط وسر انخفاض المبيعات — مجاناً وبدون أي التزام!
                         </div>
                     </div>
@@ -2143,6 +2660,22 @@
             </div>
         </section>
     </main>
+
+    <!-- Case Study Deep Dive Modal -->
+    <div class="case-study-modal-overlay" id="caseStudyModal" onclick="if(event.target===this)closeCaseStudyModal()">
+        <div class="case-study-modal-container">
+            <div class="case-study-modal-header">
+                <div>
+                    <span class="case-study-pill-tag" id="csModalCategory">CASE STUDY</span>
+                    <h3 class="case-study-modal-title" id="csModalTitle">عنوان دراسة الحالة</h3>
+                </div>
+                <button type="button" class="case-study-modal-close" onclick="closeCaseStudyModal()" aria-label="Close modal">✕</button>
+            </div>
+            <div class="case-study-modal-body" id="caseStudyModalBody">
+                <!-- Dynamically populated by openCaseStudy() -->
+            </div>
+        </div>
+    </div>
 
     <!-- Lightbox Modal -->
     <div class="lightbox-overlay" id="proofLightboxModal" onclick="if(event.target===this)closeLightbox()">
@@ -2170,12 +2703,18 @@
                 docTitle: 'محمود محمد متولي | كاتب محتوى إعلاني وكوبي رايتر مبيعات',
                 heroStatusText: 'متاح حالياً لاستلام مشاريع وحملات إعلانية جديدة',
                 heroHeadline: 'محمود محمد <span class="highlight">متولي</span>',
-                heroBio: 'مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — أنا باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار',
+                heroRoleBadge: 'Copywriter & Content Marketer | مهندس الإقناع الواقعي',
+                heroTaglineQuote: '«بفهم العميل الأول… وبكتب الكلام اللي يخليه يتحرك.»',
+                heroBio: 'مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار',
                 equationTag: 'معادلة الصنعة ⚡',
                 equationFormula: '[سيكولوجية حطحوت + بيعية طوسون + بساطة معاذ صلاح + رشاقة عاطف] × صرامة ورشة الحديد = <strong>مهندس الإقناع الواقعي</strong>',
                 ctaMicroGuarantee: '⚡ فحص إعلاني وتشخيص مجاني لنصوصك الحالية في 10 دقائق على واتساب • بدون أي التزام',
                 btnHeroWa: 'اتكلم معايا واتساب فوراً',
-                btnHeroWork: 'استعرض نماذج شغلي لايف',
+                btnHeroWork: 'استعرض دراسات الحالة وشغلي لايف',
+                metric1Label: 'قفزة وصول طبيعي (حملة شتاء Eleven 11)',
+                metric2Label: 'تكلفة رسالة الشراء (إعلانات Meta للملابس)',
+                metric3Label: 'طلب حجز واستفسار مؤكد (English Bloom وأجيال)',
+                metric4Label: 'رتبة Senior Copywriter (أكاديمية حذيفة الخولي)',
                 brands: [
                     'English Bloom Academy', 'Eleven 11 Fashion', 'أكاديمية أجيال للقرآن', 'Team NTY', 'HK Design Interior', 'ZAVN Growth Agency', 'منصة ينفع', 'OnTrack Egypt'
                 ],
@@ -2211,6 +2750,9 @@
                         desc: 'فهم عميق لإطلاق واختبار الحملات الإعلانية وقراءة الأرقام لتقليل تكلفة الرسالة والتحويل'
                     }
                 ],
+                workPillTag: '💼 نماذج أعمال حقيقية ودراسات حالة تفصيلية',
+                workTitle: 'شغلي لايف: دراسات حالة، إعلانات ممولة، واستراتيجيات مبيعات 🚀',
+                workDesc: 'مش كلام نظري ولا تصميمات معزولة — حملات حقيقية بأرقام موثقة تقدر تفحصها خطوة بخطوة من المشكلة للنتيجة:',
                 workFilters: [
                     { id: 'all', text: 'جميع المشاريع' },
                     { id: 'published', text: 'بوستات منشورة لايف' },
@@ -2221,6 +2763,32 @@
                     { id: 'realestate', text: 'ديكور وتشطيب' }
                 ],
                 workCards: [
+                    {
+                        id: 'wc-eleven11',
+                        cats: 'fashion published',
+                        badge: 'حملة وصول +479%',
+                        badgeClass: 'badge-live',
+                        img: 'assets/work_samples/eleven11_winter_campaign.jpg',
+                        alt: 'حملة إيلفن 11',
+                        type: 'ملابس وأزياء رجالي — حملة أورجانيك وإعلانات ممولة',
+                        title: 'حملة شتاء Eleven 11 — قفزة وصول +479% وتكلفة رسالة 4.41 ج',
+                        desc: 'صياغة نصوص تفاعلية وإعلانات استجابة مباشرة لكولكشن الشتاء ركزت على خامة الجواكت وعروض الباقات المجمعة، محققة أعلى عائد مبيعات في الموسم',
+                        meta: 'النتائج: وصول طبيعي +479% • تكلفة الرسالة: 4.41 جنيهاً',
+                        btnText: 'معاينة تفاصيل الحملة',
+                        modalImg: 'assets/work_samples/eleven11_winter_campaign.jpg',
+                        modalCaption: 'نتائج وتفاصيل حملة شتاء Eleven 11',
+                        caseStudy: {
+                            client: 'Eleven 11 Menswear',
+                            role: 'Direct-Response Ad Copy & Creative Direction',
+                            problem: 'إعلانات تقليدية ترص مواصفات "قطن 100%" وتكلفة رسالة مرتفعة مع معدل ارتداد عالي لطلبات الشراء',
+                            audience: 'شباب الجامعات والموظفين من سن 19 إلى 32 سنة يبحثون عن مظهر أنيق وخامة مريحة تتحمل الاستخدام اليومي',
+                            insight: 'الزبون مش بيشتري "قطن"؛ هو بيخاف التيشيرت يكش أو لونه يبهت بعد أول غسلتين في حر الصيف',
+                            angle: 'زاوية راحة البال والضمان العملي: التيشيرت اللي هيعيش معاك 3 صيفات كاملة بدون بهتان أو انكماش',
+                            copy: '«التيشيرت اللي هيعيش معاك 3 صيفات من غير ما يوسع أو يبهت! قطن معالج ومريح في حر الصيف.. معاينة مجانية قبل الاستلام وضمان استبدال فوري.»',
+                            creativeDirection: 'فيديو ريلز سريع ومقارنة حية لنسيج القطن قبل وبعد الغسيل، مع فويس أوفر عامي هادئ ومقنع يزيل كل الشكوك',
+                            result: 'ارتفاع الوصول الطبيعي بنسبة +479%، وانخفاض تكلفة رسالة الشراء المؤكدة إلى 4.41 جنيهاً، مع مضاعفة مبيعات الكولكشن'
+                        }
+                    },
                     {
                         id: 'wc-bloom-reel',
                         cats: 'published academy',
@@ -2234,22 +2802,18 @@
                         meta: 'الهدف: تفاعل ومشاهدات ريلز عالية • المنصة: Facebook Reels',
                         btnText: 'معاينة البوست كامل',
                         modalImg: 'assets/work_samples/post_english_bloom_reel.jpg',
-                        modalCaption: 'بوست وسيناريو ريلز منشور لايف — أكاديمية English Bloom'
-                    },
-                    {
-                        id: 'wc-ajyal-5min',
-                        cats: 'published academy',
-                        badge: 'بوست قيمة وتربية',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        alt: 'بوست قاعدة الخمس دقائق أكاديمية أجيال',
-                        type: 'تحفيظ قرآن — بوست تثقيفي تربوي',
-                        title: 'قاعدة الـ 5 دقائق الذهبية — إزاي تربط طفلك بالقرآن بدون خناق',
-                        desc: 'بوست قيمة وتربية ذكية موجه للأمهات بيشرح حل علمي لتشتت انتباه الأطفال وعلاج التردد في الحفظ بطريقة هادية ومقنعة',
-                        meta: 'الهدف: بناء ثقة وسلطة تربوية • المنصة: Facebook Page Post',
-                        btnText: 'معاينة البوست كامل',
-                        modalImg: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        modalCaption: 'بوست القيمة والتربية الذكية منشور لايف — أكاديمية أجيال للقرآن الكريم'
+                        modalCaption: 'بوست وسيناريو ريلز منشور لايف — أكاديمية English Bloom',
+                        caseStudy: {
+                            client: 'English Bloom Academy',
+                            role: 'Reels Scriptwriting & Behavioral Hooks',
+                            problem: 'إحباط متكرر لدى المتعلمين وتوقفهم بعد أيام قليلة، وشعورهم بالذنب من تكرار المحاولات الفاشلة مع مراكز التدريب التقليدية',
+                            audience: 'طلبة وخريجون يواجهون صعوبة في مقابلات العمل بسبب التردد وضعف طلاقة التحدث باللغة الإنجليزية',
+                            insight: 'المتعلم لا يحتاج مزيداً من الجرامر النظري؛ هو يحتاج كسر عقدة الخوف من الخطأ والبدء بممارسة واقعية مرحة وخفيفة',
+                            angle: 'كسر النمط (Pattern Interrupt) بروح الفكاهة الساخرة المألوفة مع تقديم حل تطبيقي مطمئن يخاطب واقعهم',
+                            copy: '«بتبدأ كل مرة بحماس خارق.. وبعد كام يوم بتوقف؟ العيب مش فيك! العيب في طريقة الحفظ التقليدية. في ورشة المحادثة بنخليك تتكلم 80% من الوقت بدون أي خوف.»',
+                            creativeDirection: 'تصوير ريلز بمشهد تمثيلي يجسد الحماس المفرط في اليوم الأول مقابل الإحباط في اليوم العاشر، مع دعوة واضحة لحضور الجلسة التفاعلية',
+                            result: 'تفاعل استثنائي، مئات المشاركات، وتدفق مستمر لاستفسارات حجز ورشة المحادثة التفاعلية المباشرة'
+                        }
                     },
                     {
                         id: 'wc-ajyal-trial',
@@ -2264,7 +2828,70 @@
                         meta: 'الهدف: جذب أولياء أمور وقفل حجوزات • النمط: Direct Response',
                         btnText: 'معاينة الإعلان كامل',
                         modalImg: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
-                        modalCaption: 'إعلان الحصة التجريبية المجانية — أكاديمية أجيال'
+                        modalCaption: 'إعلان الحصة التجريبية المجانية — أكاديمية أجيال',
+                        caseStudy: {
+                            client: 'أكاديمية أجيال للقرآن الكريم',
+                            role: 'Direct-Response Ad Copy & Risk-Reversal Offer',
+                            problem: 'تردد أولياء الأمور وتخوفهم من عدم التزام أطفالهم (سن 6-10 سنوات) في جلسات التحفيظ الأونلاين وصعوبة متابعتهم',
+                            audience: 'أمهات حريصات على ربط أطفالهن بالقرآن لكنهن يعانين من تشتت انتباه الأطفال وخناقات الحفظ اليومية',
+                            insight: 'الأم تحتاج صوتاً تربوياً هادئاً يطمئنها، وإزالة تامة للمخاطرة المالية قبل أي التزام باشتراك مدفوع',
+                            angle: 'زاوية التجربة الآمنة الخالية من المخاطر (Zero Risk): حصة تقييم وتجربة مجانية 100% مع معلم أزهري متخصص بالأطفال',
+                            copy: '«نفسك تشوفي ابنك بيقرأ القرآن بصوت جميل بدون خناق ولا ضغط؟ احجزي حصة تجريبية مجانية وشوفي بنفسك إزاي بنحببه في الحفظ بقاعدة الـ 5 دقائق الذهبية.»',
+                            creativeDirection: 'صورة طفل مبتسم يرتدي سماعات ومصحف مفتوح بإضاءة دافئة، مع نص إعلاني يركز على الراحة النفسية للأم',
+                            result: 'قفزة في رسائل وتأكيدات الحجز المجاني، مع معدل تحويل عالي جداً لاشتراكات شهرية مدفوعة'
+                        }
+                    },
+                    {
+                        id: 'wc-hk',
+                        cats: 'realestate',
+                        badge: 'نصوص تشطيب فاخر',
+                        badgeClass: 'badge-pro',
+                        img: 'assets/work_samples/hk_design_interior.jpg',
+                        alt: 'تشطيبات وديكور HK Design',
+                        type: 'تشطيب وديكور — نصوص بيعية A-Class',
+                        title: 'نصوص إعلانية وحملات تشطيب وديكور فاخر — HK Design',
+                        desc: 'صياغة كوبي إعلاني راقي يخاطب ملاك الشقق والفلل الجديدة، يركز على راحة البال والالتزام بجدول التسليم وجودة الخامات الهندسية',
+                        meta: 'الجمهور: عملاء A-Class وملاك الفلل • النتيجة: مضاعفة استفسارات المعاينة',
+                        btnText: 'معاينة الزوايا الإعلانية',
+                        modalImg: 'assets/work_samples/hk_design_interior.jpg',
+                        modalCaption: 'نصوص وحملات تشطيب فاخر — HK Design',
+                        caseStudy: {
+                            client: 'HK Design Interior',
+                            role: 'Luxury Real Estate Copywriting & Positioning',
+                            problem: 'فقدان الثقة الشائع في قطاع المقاولات والتشطيبات وتخوف ملاك الوحدات الجديدة من تسويف المواعيد وتجاوز الميزانيات',
+                            audience: 'ملاك الفلل والوحدات السكنية الفاخرة في المدن الجديدة (زايد، التجمع، الشروق) شريحة A-Class',
+                            insight: 'العميل الراقي يدفع مقابل راحة البال والالتزام الدقيق؛ لا يهمه التوفير بقدر ما يهمه احترام المواعيد والشرط الجزائي',
+                            angle: 'زاوية الالتزام الهندسي الصارم: عقد تشطيب متكامل بشرط جزائي عن كل يوم تأخير ومعاينة موقعية مجانية مع مهندس استشاري',
+                            copy: '«أكبر كابوس لملاك الوحدات الجديدة هو الصنايعية اللي بياخدوا العربون ويختفوا! في HK Design بنسلمك على المفتاح بمقايسة هندسية ملزمة وشرط جزائي يحميك تماماً.»',
+                            creativeDirection: 'صور وفيديوهات واقعية عالية الجودة لمشاريع سابقة تم تسليمها بالفعل، مع إبراز التفاصيل المعمارية الدقيقة وخامات التشطيب',
+                            result: 'مضاعفة استفسارات طلب المعاينة الموقعية من ملاك الفلل والوحدات الراقية بدون أي فصال في السعر'
+                        }
+                    },
+                    {
+                        id: 'wc-zavn',
+                        cats: 'agency strategy',
+                        badge: 'دليل أبحاث وسيناريوهات',
+                        badgeClass: 'badge-doc',
+                        img: 'assets/work_samples/zavn_playbook_cover.jpg',
+                        alt: 'دليل وكالة زافن',
+                        type: 'أبحاث وسيناريوهات وكالة تسويق',
+                        title: 'دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency',
+                        desc: 'ملف الأبحاث والسيناريوهات المعتمد لوكالة ZAVN، يشمل تحليل السوق، دراسة المنافسين، وسيناريوهات بيع مباشرة للسوق الخليجي والمصري',
+                        meta: 'الصيغة: بلاي بوك أبحاث وسيناريوهات • التطبيق: حملات تسويقية حية',
+                        btnText: 'معاينة نموذج البلاي بوك',
+                        modalImg: 'assets/work_samples/zavn_playbook_cover.jpg',
+                        modalCaption: 'دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency',
+                        caseStudy: {
+                            client: 'ZAVN Growth Agency',
+                            role: 'Strategic Content Research & Script Repository',
+                            problem: 'تفاوت جودة الأبحاث والسيناريوهات بين عملاء الوكالة في مصر والخليج وبطء وتيرة الإنتاج الإعلاني',
+                            audience: 'أصحاب البيزنس والبراندات في قطاعات التجارة الإلكترونية والخدمات الطبية والتعليمية',
+                            insight: 'التشريح العميق لشكاوى الزبائن ومراجعات المنافسين السلبية هو المنجم الحقيقي لأقوى هوكات البيع المباشر',
+                            angle: 'بلاي بوك أبحاث وسيناريوهات مقسم سيكولوجياً حسب مراحل القمع البيعي لاختبار زوايا متعددة بسرعة قياسية',
+                            copy: '«منظومة أبحاث تسويقية متكاملة تشمل دراسة 20+ زاوية بيعية، هوكات أول ثانيتين، وسيناريوهات تصوير تحول المشاهدات لمبيعات بأعلى عائد إعلاني.»',
+                            creativeDirection: 'توثيق منظم للمخرجات وتوجيهات واضحة للمونتير والميديا باير لربط نبرة الكوبي بالأداء الإعلاني وأرقام الـ ROAS',
+                            result: 'اعتماد رسمي في فريق عمل الوكالة الرئيسي، وتسريع وتيرة إطلاق الحملات بنتائج ROAS متميزة'
+                        }
                     },
                     {
                         id: 'wc-bloom-strategy',
@@ -2297,19 +2924,19 @@
                         modalCaption: 'ماستر بلان وتقويم محتوى أكاديمية أجيال للقرآن'
                     },
                     {
-                        id: 'wc-eleven11',
-                        cats: 'fashion published',
-                        badge: 'حملة وصول +479%',
+                        id: 'wc-ajyal-5min',
+                        cats: 'published academy',
+                        badge: 'بوست قيمة وتربية',
                         badgeClass: 'badge-live',
-                        img: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        alt: 'حملة إيلفن 11',
-                        type: 'ملابس وأزياء رجالي — حملة أورجانيك وإعلانات ممولة',
-                        title: 'حملة شتاء براند Eleven 11 — وصول +479% وتكلفة رسالة 4.41 ج',
-                        desc: 'صياغة نصوص تفاعلية وإعلانات استجابة مباشرة لكولكشن الشتاء ركزت على خامة الجواكت وعروض الباقات المجمعة، محققة أعلى عائد مبيعات في الموسم',
-                        meta: 'النتائج: وصول طبيعي +479% • تكلفة الرسالة: 4.41 جنيهاً',
-                        btnText: 'معاينة تفاصيل الحملة',
-                        modalImg: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        modalCaption: 'نتائج وتفاصيل حملة شتاء Eleven 11'
+                        img: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
+                        alt: 'بوست قاعدة الخمس دقائق أكاديمية أجيال',
+                        type: 'تحفيظ قرآن — بوست تثقيفي تربوي',
+                        title: 'قاعدة الـ 5 دقائق الذهبية — إزاي تربط طفلك بالقرآن بدون خناق',
+                        desc: 'بوست قيمة وتربية ذكية موجه للأمهات بيشرح حل علمي لتشتت انتباه الأطفال وعلاج التردد في الحفظ بطريقة هادية ومقنعة',
+                        meta: 'الهدف: بناء ثقة وسلطة تربوية • المنصة: Facebook Page Post',
+                        btnText: 'معاينة البوست كامل',
+                        modalImg: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
+                        modalCaption: 'بوست القيمة والتربية الذكية منشور لايف — أكاديمية أجيال للقرآن الكريم'
                     },
                     {
                         id: 'wc-nty',
@@ -2325,38 +2952,11 @@
                         btnText: 'معاينة نموذج البروبوزال',
                         modalImg: 'assets/work_samples/nty_proposal_cover.jpg',
                         modalCaption: 'بروبوزال وخطة محتوى سوشيال ميديا — Team NTY'
-                    },
-                    {
-                        id: 'wc-hk',
-                        cats: 'realestate',
-                        badge: 'نصوص تشطيب فاخر',
-                        badgeClass: 'badge-pro',
-                        img: 'assets/work_samples/hk_design_interior.jpg',
-                        alt: 'تشطيبات وديكور HK Design',
-                        type: 'تشطيب وديكور — نصوص بيعية A-Class',
-                        title: 'نصوص إعلانية وحملات تشطيب وديكور فاخر — HK Design',
-                        desc: 'صياغة كوبي إعلاني راقي يخاطب ملاك الشقق والفلل الجديدة، يركز على راحة البال والالتزام بجدول التسليم وجودة الخامات الهندسية',
-                        meta: 'الجمهور: عملاء A-Class وملاك الفلل • النتيجة: مضاعفة استفسارات المعاينة',
-                        btnText: 'معاينة الزوايا الإعلانية',
-                        modalImg: 'assets/work_samples/hk_design_interior.jpg',
-                        modalCaption: 'نصوص وحملات تشطيب فاخر — HK Design'
-                    },
-                    {
-                        id: 'wc-zavn',
-                        cats: 'agency strategy',
-                        badge: 'دليل أبحاث وسيناريوهات',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        alt: 'دليل وكالة زافن',
-                        type: 'أبحاث وسيناريوهات وكالة تسويق',
-                        title: 'دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency',
-                        desc: 'ملف الأبحاث والسيناريوهات المعتمد لوكالة ZAVN، يشمل تحليل السوق، دراسة المنافسين، وسيناريوهات بيع مباشرة للسوق الخليجي والمصري',
-                        meta: 'الصيغة: بلاي بوك أبحاث وسيناريوهات • التطبيق: حملات تسويقية حية',
-                        btnText: 'معاينة نموذج البلاي بوك',
-                        modalImg: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        modalCaption: 'دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency'
                     }
                 ],
+                proofPillTag: '📊 أرقام حقيقية وشهادات موثقة',
+                proofTitle: 'أرقام من داخل مديري الإعلانات وشهادات تثبت قوة النتائج',
+                proofDesc: 'شهادات معتمدة، تقييمات سينيورز، ورسائل عملاء حقيقية تثبت جودة التنفيذ:',
                 proofFilters: [
                     { id: 'all', text: 'كل الإثباتات' },
                     { id: 'agency', text: '🏢 وكالات وتصنيفات' },
@@ -2454,98 +3054,103 @@
                         caption: '👩‍🏫 تقييم أستاذة مروة نصر: تسلم إيدك الشغل ممتاز ودقيق جداً'
                     }
                 ],
+                packagesPillTag: '💼 نطاق الخدمات والتعاون',
+                packagesTitle: 'تعاون مرن مبني على النطاق (Scope-Based) بأعلى عائد استثمار',
+                packagesDesc: 'مفيش أسعار معلبة — بنحدد الركيزة التسويقية المناسبة لحجم شغلك وأهدافك الحالية:',
                 packages: [
                     {
                         id: 'pkg-ads',
                         icon: '🔥',
-                        title: 'باقة زوايا الإعلانات الحراقة',
-                        sub: 'High-ROAS Ad Angles Pack',
+                        title: 'إعلانات الاستجابة المباشرة وزوايا البيع',
+                        sub: 'Direct-Response Ad Angles & Creative Direction',
                         featured: false,
                         popular: '',
                         bullets: [
-                            '3 زوايا إعلانية نفسية مختلفة للمنتج أو الخدمة',
-                            'هوكات بصرية ونصوص أول 3 ثواني تخطف الانتباه',
-                            'سكربتات ريلز كاملة مع توجيهات المشاهد والمونتاج',
-                            'سكربت واتساب بيعي لقفل أوردرات استفسار "بكام؟"',
-                            'متابعة واختبار الأداء مع الميديا باير وتعديل الكوبي'
+                            '3 زوايا إعلانية نفسية لاختبار الحملات على Meta (A/B Testing)',
+                            'هوكات أول ثانيتين لمنع السكرول ومضاعفة المشاهدات',
+                            'سكربتات ريلز بيعية كاملة مع توجيهات المونتاج والتصوير',
+                            'سكربت واتساب بيعي لقفل استفسارات "بكام؟" وتحويلها لأوردرات',
+                            'متابعة واختبار النتائج مع الميديا باير وتعديل الكوبي باستمرار'
                         ],
-                        wa: 'أهلاً يا محمود، عايز أحجز معاك باقة زوايا الإعلانات الحراقة لبيزنسي!'
+                        wa: 'أهلاً يا محمود، عايز أحجز معاك باقة إعلانات الاستجابة المباشرة وزوايا البيع لبيزنسي!'
                     },
                     {
                         id: 'pkg-funnel',
                         icon: '🚀',
-                        title: 'باقة قمع المحتوى الشهري المتكامل',
-                        sub: 'Full-Funnel Content Engine (Monthly)',
+                        title: 'قمع المحتوى الشهري المتكامل (شراكة إعلانية)',
+                        sub: 'Full-Funnel Content Engine (Monthly Partnership)',
                         featured: true,
-                        popular: '⭐ الأكثر طلباً للشراكات',
+                        popular: '⭐ الأكثر طلباً للشراكات المستمرة',
                         bullets: [
                             'استراتيجية وتقويم محتوى شهري شامل لـ 30 يوماً',
                             'تغطية كاملة لمراحل القمع (وعي TOFU - اهتمام MOFU - بيع BOFU)',
                             'نبرة صوت خاصة ومميزة للبراند تناسب الجمهور المستهدف',
-                            'بوستات بناء سلطة وثقة + بوستات بيع مباشر وعروض',
-                            'توجيهات بصرية للديزاينر لكل بوست وسيناريوهات ريلز'
+                            'مزج ذكي بين بوستات بناء السلطة والثقة وبوستات العروض والتحويل',
+                            'توجيهات بصرية دقيقة للديزاينر وسيناريوهات تصوير للفيديو'
                         ],
-                        wa: 'أهلاً يا محمود، عايز أحجز معاك باقة قمع المحتوى الشهري والشراكة الكاملة!'
+                        wa: 'أهلاً يا محمود، عايز أحجز معاك باقة قمع المحتوى الشهري المتكامل والشراكة الكاملة!'
                     },
                     {
                         id: 'pkg-audit',
                         icon: '🔍',
-                        title: 'باقة الفحص وإعادة هيكلة الإعلانات',
+                        title: 'فحص الحملات وإعادة هيكلة الإعلانات',
                         sub: 'Creative Audit & Ad Revamp',
                         featured: false,
                         popular: '',
                         bullets: [
-                            'فحص وتشريح شامل لآخر 5 إعلانات وصفحة الهبوط',
-                            'كشف نقاط تسريب الميزانية والإجهاد الإعلاني',
-                            'إعادة صياغة أفضل 3 إعلانات بزوايا حراقة وعروض جديدة',
-                            'تجهيز زوايا عرض مغري لا يُقاوم',
-                            'تقرير وتوصيات تسويقية مباشرة للتنفيذ الفوري'
+                            'تشخيص وفحص شامل لآخر 5 إعلانات وصفحة الهبوط',
+                            'كشف مواطن تسريب الميزانية الإعلانية والإجهاد الإبداعي (Ad Fatigue)',
+                            'إعادة صياغة أفضل 3 إعلانات بزوايا بيع جديدة ومقنعة',
+                            'بناء عروض لا تُقاوم تقلل تردد الزبون وتزيد معدل التحويل',
+                            'تقرير تشخيصي وتوصيات تسويقية مباشرة للتنفيذ الفوري'
                         ],
-                        wa: 'أهلاً يا محمود، عايز أطلب باقة الفحص السريع وإعادة هيكلة الإعلانات!'
+                        wa: 'أهلاً يا محمود، عايز أطلب باقة فحص الحملات وإعادة هيكلة الإعلانات!'
                     }
                 ]
             }
         ,
             en: {
                 langBtnText: 'العربية',
-                docTitle: 'Mahmoud Metwally | Direct-Response Copywriter & Growth Strategist',
+                docTitle: 'Mahmoud Metwally | Direct-Response Copywriter & Content Marketer',
                 navBrandText: 'Mahmoud <span class="highlight">Metwally</span>',
-                linkWork: 'Work Samples',
-                linkProof: 'Results & Proof',
-                linkShowcase: 'Interactive Lab',
-                linkHooks: 'Hook Generator',
-                linkPackages: 'Packages',
-                linkOrigin: 'My Craft',
+                navLinkWork: 'Selected Work & Case Studies',
+                navLinkOrigin: 'Craft & AI Philosophy',
+                navLinkProof: 'Verified Proof & Results',
+                navLinkShowcase: 'Interactive Sales Lab',
+                navLinkServices: 'Services Scope',
+                navLinkContact: 'Direct Contact',
                 navCtaText: 'WhatsApp Chat',
                 mobDockWork: 'Work',
+                mobDockOrigin: 'Craft',
                 mobDockProof: 'Proof',
-                mobDockShowcase: 'Lab',
-                mobDockPackages: 'Packages',
+                mobDockServices: 'Services',
                 mobDockWa: 'WhatsApp',
 
                 // Hero
                 heroStatusText: 'Available for Selected Direct-Response & Content Projects',
-                heroHeadline: 'Not Just Filler Words or Page-Filling Posts<br><span class="highlight">I Craft Sales Words That Strike the Customer & Convert</span>',
+                heroRoleBadge: 'Copywriter & Content Marketer | The Real-World Conversion Engineer',
+                heroHeadline: 'Mahmoud <span class="highlight">Metwally</span>',
+                heroTaglineQuote: '«Understanding the customer first… then writing words that spark action.»',
                 typewriterWords: [
-                    'I write high-converting direct response ads',
+                    'I write high-converting direct-response ads',
                     'I design full-funnel content architectures',
                     'I turn customer hesitation into immediate WhatsApp orders',
                     'I engineer high-retention Reels & TikTok scripts'
                 ],
-                heroBio: 'I dissect your product and target customer psychology down to the millimeter — transforming hesitation into immediate buying action with measurable ROAS',
+                heroBio: 'I don\'t write filler words or page-packing posts — I dissect your product and customer psychology, crafting direct-response ad copy, high-retention Reels, and content architectures that close orders with measurable ROAS.',
                 equationTag: 'The Persuasion Formula ⚡',
                 equationFormula: '[Psychological Depth + High-Stakes Selling + Radical Simplicity] × Industrial Metalworking Precision = <strong>The Real-World Conversion Engineer</strong>',
                 ctaMicroGuarantee: '⚡ Free 10-Minute Ad Copy Teardown on WhatsApp • Zero Obligation',
                 btnHeroWa: 'Instant WhatsApp Chat',
-                btnHeroWork: 'Explore Live Case Studies',
+                btnHeroWork: 'Explore Case Studies & Live Work',
                 metric1Num: '+479%',
-                metric1Label: 'Organic Reach Spike (Eleven 11)',
+                metric1Label: 'Organic Reach Surge (Eleven 11 Winter Campaign)',
                 metric2Num: '4.41 EGP',
-                metric2Label: 'Cost Per Message in Fashion Ads',
-                metric3Num: '93 / 105',
-                metric3Label: 'Senior Copywriter Rank (Hozaifa Elkholy)',
-                metric4Num: '18+ Hrs',
-                metric4Label: 'Accredited Programs from OnTrack & Yanfaa',
+                metric2Label: 'Cost Per Purchasing Lead (Meta Fashion Ads)',
+                metric3Num: '890+',
+                metric3Label: 'Qualified Bookings & Leads (Bloom & Ajyal Academies)',
+                metric4Num: '93 / 105',
+                metric4Label: 'Senior Copywriter Rank (Hozaifa Elkholy Academy)',
 
                 // Capabilities
                 capPillTag: 'Core Specializations',
@@ -2590,9 +3195,9 @@
                 ],
 
                 // Work
-                workPillTag: 'Live Work Samples',
-                workTitle: 'Real Campaigns Driving Reach, Engagement & Sales',
-                workDesc: 'Live published client campaigns, full launch decks, and proven editorial calendars across education, fashion, and services:',
+                workPillTag: '💼 Real Client Work & In-Depth Case Studies',
+                workTitle: 'Live Campaigns Driving Reach, Engagement & Closed Sales 🚀',
+                workDesc: 'Not theoretical advice or isolated graphics — real campaigns with verified metrics you can inspect step-by-step from problem to result:',
                 workFilters: [
                     { id: 'all', text: 'All Projects' },
                     { id: 'published', text: 'Live Published Posts' },
@@ -2603,6 +3208,32 @@
                     { id: 'realestate', text: 'Interior & Decor' }
                 ],
                 workCards: [
+                    {
+                        id: 'wc-eleven11',
+                        cats: 'fashion published',
+                        badge: 'Campaign +479% Reach',
+                        badgeClass: 'badge-live',
+                        img: 'assets/work_samples/eleven11_winter_campaign.jpg',
+                        alt: 'Eleven 11 Menswear Campaign',
+                        type: 'Menswear Fashion — Organic Campaign & Meta Ads',
+                        title: 'Eleven 11 Winter Campaign: +479% Reach Spike & 4.41 EGP Cost Per Lead',
+                        desc: 'Engineered conversion ad copy highlighting sizing precision and fabric durability, eliminating customer friction and multiplying winter collection sales',
+                        meta: 'Results: +479% Page Reach • 4.41 EGP Cost Per Lead',
+                        btnText: 'View Campaign Details',
+                        modalImg: 'assets/work_samples/eleven11_winter_campaign.jpg',
+                        modalCaption: 'Eleven 11 Winter Campaign — High-ROAS Ad Copy',
+                        caseStudy: {
+                            client: 'Eleven 11 Menswear',
+                            role: 'Direct-Response Ad Copy & Creative Direction',
+                            problem: 'Generic product ads listing "100% cotton" specs, leading to high cost per message and high cart abandonment',
+                            audience: 'College students and young professionals (aged 19–32) seeking modern style and fabrics that endure intense daily wear',
+                            insight: 'Men don\'t buy "cotton percentages"; they fear shirts shrinking or fading after two washes in summer heat',
+                            angle: 'Peace-of-Mind & Durability: The t-shirt engineered to survive 3 full summers without shrinking or color fade',
+                            copy: '«The t-shirt that will stay brand-new with you for 3 summers without stretching or fading! Pre-shrunk premium cotton, free inspection before delivery, and instant replacement guarantee.»',
+                            creativeDirection: 'Fast-paced Reel comparing fabric weave before and after washing, paired with a confident, street-smart voiceover eliminating doubts',
+                            result: '+479% surge in organic page reach, cost-per-inquiry reduced to 4.41 EGP, and record seasonal sales volume'
+                        }
+                    },
                     {
                         id: 'wc-bloom-reel',
                         cats: 'published academy',
@@ -2616,22 +3247,18 @@
                         meta: 'Objective: High Video Retention • Platform: Facebook Reels',
                         btnText: 'View Full Post Sample',
                         modalImg: 'assets/work_samples/post_english_bloom_reel.jpg',
-                        modalCaption: 'Live Published Video Reel — English Bloom Academy'
-                    },
-                    {
-                        id: 'wc-ajyal-5min',
-                        cats: 'published academy',
-                        badge: 'Live Value Post',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        alt: 'Ajyal Academy 5-Minute Rule Post',
-                        type: 'Quran Academy — Educational Parenting Post',
-                        title: 'The Golden 5-Minute Rule: How to connect your child to learning without conflict',
-                        desc: 'A high-trust educational post addressing child attention spans and parents doubts with calm, authoritative parenting psychology',
-                        meta: 'Objective: Authority & Trust Building • Platform: Facebook Page Post',
-                        btnText: 'View Full Post Sample',
-                        modalImg: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        modalCaption: 'Live Published Educational Post — Ajyal Quran Academy'
+                        modalCaption: 'Live Published Video Reel — English Bloom Academy',
+                        caseStudy: {
+                            client: 'English Bloom Academy',
+                            role: 'Reels Scriptwriting & Behavioral Hooks',
+                            problem: 'Frequent student burnout and dropouts within 2 weeks, accompanied by guilt and frustration from rigid academic training methods',
+                            audience: 'Undergraduates and job seekers failing career interviews due to speaking hesitation and fear of making grammar mistakes',
+                            insight: 'Language learners don\'t need more abstract grammar rules; they need psychological safety and 80% conversational airtime',
+                            angle: 'Pattern-Interrupt Humor: Lampooning the unrealistic Day 1 enthusiasm vs Day 10 burnout, followed by a grounded practical solution',
+                            copy: '«You start every course with superhuman excitement.. and quit 5 days later? The problem isn\'t you! It\'s the archaic memorization method. In our workshop, you talk 80% of the session with zero fear.»',
+                            creativeDirection: 'Split-screen sketch acting out day-1 hyper-enthusiasm vs day-10 slump, transitioning into a warm invite for the free live workshop',
+                            result: 'Exceptional retention, hundreds of viral organic shares, and an influx of qualified workshop trial sign-ups'
+                        }
                     },
                     {
                         id: 'wc-ajyal-trial',
@@ -2646,7 +3273,70 @@
                         meta: 'Objective: Free Trial Bookings • Platform: Meta Conversion Ads',
                         btnText: 'View Full Ad Sample',
                         modalImg: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
-                        modalCaption: 'Live Direct-Response Conversion Ad — Ajyal Quran Academy'
+                        modalCaption: 'Live Direct-Response Conversion Ad — Ajyal Quran Academy',
+                        caseStudy: {
+                            client: 'Ajyal Quran Academy',
+                            role: 'Direct-Response Ad Copy & Risk-Reversal Offer',
+                            problem: 'Parental reluctance and skepticism regarding young children (ages 6–10) staying engaged during online sessions',
+                            audience: 'Mothers seeking authentic Quran education for their children while struggling with short attention spans and homework battles',
+                            insight: 'Mothers require reassuring pedagogical authority combined with total removal of financial risk before making a commitment',
+                            angle: 'Zero-Risk Reversal: 100% Free diagnostic trial session with an Azhar-certified mentor specialized in child motivation',
+                            copy: '«Wish to hear your child recite the Quran with love and ease without daily arguments? Reserve a free trial session today and witness how we apply the Golden 5-Minute Rule.»',
+                            creativeDirection: 'Warm visual of an attentive smiling child with headphones and open Quran, paired with reassuring direct-response copy',
+                            result: 'Surge in trial lesson bookings, and sustained 65%+ conversion into ongoing monthly paid enrollments'
+                        }
+                    },
+                    {
+                        id: 'wc-hk',
+                        cats: 'realestate',
+                        badge: 'Luxury Turnkey Copy',
+                        badgeClass: 'badge-pro',
+                        img: 'assets/work_samples/hk_design_interior.jpg',
+                        alt: 'HK Design Luxury Finishing',
+                        type: 'Interior & Finishing — A-Class Sales Copy',
+                        title: 'Luxury Interior & Turnkey Finishing Campaigns — HK Design',
+                        desc: 'Prestigious sales copy addressing new villa and apartment owners, focusing on architectural punctuality, material warranties, and peace of mind',
+                        meta: 'Audience: Villa & Luxury Unit Owners • Result: Doubled Consultation Bookings',
+                        btnText: 'View Campaign Angles',
+                        modalImg: 'assets/work_samples/hk_design_interior.jpg',
+                        modalCaption: 'Luxury Turnkey Finishing Campaigns — HK Design',
+                        caseStudy: {
+                            client: 'HK Design Interior',
+                            role: 'Luxury Real Estate Copywriting & Positioning',
+                            problem: 'Widespread homeowner distrust toward finishing contractors regarding budget overruns and notorious delivery delays',
+                            audience: 'Owners of new villas and upscale apartments in emerging districts (Zayed, New Cairo, Shorouk) A-Class segment',
+                            insight: 'High-net-worth clients pay for accountability and punctuality; savings mean nothing if moving-in dates are repeatedly missed',
+                            angle: 'Strict Architectural Accountability: Turnkey contract with enforceable daily financial penalties for delays + free on-site survey',
+                            copy: '«The biggest nightmare for new villa owners is disappearing contractors! At HK Design, we deliver turnkey luxury backed by strict contractual penalty clauses for any day of delay.»',
+                            creativeDirection: 'Authentic high-resolution photography and video walk-throughs of completed residential estates highlighting finishing precision',
+                            result: 'Doubled on-site architectural consultation appointments among premium homeowners with zero haggling on design fees'
+                        }
+                    },
+                    {
+                        id: 'wc-zavn',
+                        cats: 'agency strategy',
+                        badge: 'Research Playbook',
+                        badgeClass: 'badge-doc',
+                        img: 'assets/work_samples/zavn_playbook_cover.jpg',
+                        alt: 'ZAVN Playbook',
+                        type: 'Agency Research & Video Scripts',
+                        title: 'Content Research Playbook & Video Scripts — ZAVN Agency',
+                        desc: 'Comprehensive research and scriptwriting repository produced for ZAVN Agency, covering cross-market competitor breakdowns and sales scripts',
+                        meta: 'Format: Agency Research & Script Repository',
+                        btnText: 'Preview Playbook Model',
+                        modalImg: 'assets/work_samples/zavn_playbook_cover.jpg',
+                        modalCaption: 'Content Research Playbook & Video Scripts — ZAVN Agency',
+                        caseStudy: {
+                            client: 'ZAVN Growth Agency',
+                            role: 'Strategic Content Research & Script Repository',
+                            problem: 'Inconsistent research depth and prolonged creative turnaround across diverse client campaigns in Egypt and the Gulf',
+                            audience: 'Brand owners in E-commerce, healthcare clinics, and educational services seeking scalable direct-response campaigns',
+                            insight: 'Dissecting recurring buyer complaints in negative competitor reviews is the single fastest way to extract high-converting sales angles',
+                            angle: 'Modular Research & Hook Repository structured across funnel stages, enabling media buyers to rapid-test angles at scale',
+                            copy: '«A complete strategic research playbook featuring 20+ psychological sales angles, scroll-stopping hooks, and video scripts that convert views into high-ROAS orders.»',
+                            creativeDirection: 'Structured Notion and Sheets templates with explicit visual cues for video editors and testing guidelines for media buyers',
+                            result: 'Permanent accreditation within the agency executive roster, accelerating client campaign rollouts with top ROAS'
+                        }
                     },
                     {
                         id: 'wc-bloom-strategy',
@@ -2679,19 +3369,19 @@
                         modalCaption: 'Ajyal Quran Academy Strategic Masterplan Matrix'
                     },
                     {
-                        id: 'wc-eleven11',
-                        cats: 'fashion published',
-                        badge: 'Campaign +479% Reach',
+                        id: 'wc-ajyal-5min',
+                        cats: 'published academy',
+                        badge: 'Live Value Post',
                         badgeClass: 'badge-live',
-                        img: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        alt: 'Eleven 11 Menswear Campaign',
-                        type: 'Menswear Fashion — Winter Meta Ads',
-                        title: 'Eleven 11 Winter Campaign: +479% Reach Spike & 4.41 EGP Cost Per Lead',
-                        desc: 'Engineered conversion ad copy highlighting sizing precision and fabric durability, eliminating customer friction and multiplying orders',
-                        meta: 'Results: +479% Page Reach • 4.41 EGP Cost Per Lead',
-                        btnText: 'View Campaign Details',
-                        modalImg: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        modalCaption: 'Eleven 11 Winter Campaign — High-ROAS Ad Copy'
+                        img: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
+                        alt: 'Ajyal Academy 5-Minute Rule Post',
+                        type: 'Quran Academy — Educational Parenting Post',
+                        title: 'The Golden 5-Minute Rule: How to connect your child to learning without conflict',
+                        desc: 'A high-trust educational post addressing child attention spans and parents doubts with calm, authoritative parenting psychology',
+                        meta: 'Objective: Authority & Trust Building • Platform: Facebook Page Post',
+                        btnText: 'View Full Post Sample',
+                        modalImg: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
+                        modalCaption: 'Live Published Educational Post — Ajyal Quran Academy'
                     },
                     {
                         id: 'wc-nty',
@@ -2707,36 +3397,6 @@
                         btnText: 'Preview Proposal Model',
                         modalImg: 'assets/work_samples/nty_proposal_cover.jpg',
                         modalCaption: 'Social Media Strategy & Pitch Proposal — Team NTY'
-                    },
-                    {
-                        id: 'wc-hk',
-                        cats: 'realestate',
-                        badge: 'Luxury Turnkey Copy',
-                        badgeClass: 'badge-pro',
-                        img: 'assets/work_samples/hk_design_interior.jpg',
-                        alt: 'HK Design Luxury Finishing',
-                        type: 'Interior & Finishing — A-Class Sales Copy',
-                        title: 'Luxury Interior & Turnkey Finishing Campaigns — HK Design',
-                        desc: 'Prestigious sales copy addressing new villa and apartment owners, focusing on architectural punctuality, material warranties, and peace of mind',
-                        meta: 'Audience: Villa & Luxury Unit Owners • Result: Doubled Consultation Bookings',
-                        btnText: 'View Campaign Angles',
-                        modalImg: 'assets/work_samples/hk_design_interior.jpg',
-                        modalCaption: 'Luxury Turnkey Finishing Campaigns — HK Design'
-                    },
-                    {
-                        id: 'wc-zavn',
-                        cats: 'agency strategy',
-                        badge: 'Research Playbook',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        alt: 'ZAVN Playbook',
-                        type: 'Agency Research & Video Scripts',
-                        title: 'Content Research Playbook & Video Scripts — ZAVN Agency',
-                        desc: 'Comprehensive research and scriptwriting repository produced for ZAVN Agency, covering cross-market competitor breakdowns and sales scripts',
-                        meta: 'Format: Agency Research & Script Repository',
-                        btnText: 'Preview Playbook Model',
-                        modalImg: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        modalCaption: 'Content Research Playbook & Video Scripts — ZAVN Agency'
                     }
                 ],
 
@@ -2842,57 +3502,57 @@
                     }
                 ],
 
-                // Packages
-                packagesTitle: 'Straightforward Packages Focused on Maximum ROAS',
-                packagesDesc: 'Pick the right path for your current business stage and let us start scaling your revenue:',
+                // Packages / Services
+                packagesTitle: 'Flexible Scope-Based Collaboration Focused on Maximum ROAS',
+                packagesDesc: 'No cookie-cutter pricing — choose the strategic pillar fitting your exact business stage:',
                 packages: [
                     {
                         id: 'pkg-ads',
                         icon: '🔥',
-                        title: 'High-ROAS Ad Angles Pack',
-                        sub: 'High-ROAS Ad Angles & Creative Pack',
+                        title: 'Direct-Response Ads & Conversion Hooks',
+                        sub: 'High-ROAS Ad Angles & Creative Direction',
                         featured: false,
                         popular: '',
                         bullets: [
-                            '3 Psychological Creative Ad Angles for A/B Testing',
-                            'High-retention 3-second scroll-stoppers per angle',
-                            'Complete Reels & TikTok scripts with visual cues',
-                            'WhatsApp sales script to close "How much?" inquiries',
-                            'Collaborative campaign testing & copy optimization'
+                            '3 Psychological Creative Ad Angles for Meta A/B Testing',
+                            'High-retention 2-second scroll-stoppers per angle',
+                            'Complete Reels & TikTok scripts with visual storytelling cues',
+                            'WhatsApp sales scripts to close "How much?" inquiries into paid orders',
+                            'Collaborative campaign testing & ongoing copy optimization with your media buyer'
                         ],
-                        wa: 'Hi Mahmoud, I want to book the High-ROAS Ad Angles Pack for my business!'
+                        wa: 'Hi Mahmoud, I want to book the Direct-Response Ad Angles & Creative Direction for my business!'
                     },
                     {
                         id: 'pkg-funnel',
                         icon: '🚀',
-                        title: 'Full-Funnel Content Engine',
-                        sub: 'Full-Funnel Content Engine (Monthly Partnership)',
+                        title: 'Full-Funnel Content Engine (Monthly Partnership)',
+                        sub: 'Comprehensive Content Marketing & Conversion Architecture',
                         featured: true,
                         popular: '⭐ Most Requested for Partnerships',
                         bullets: [
                             'Complete 30-day content calendar & marketing masterplan',
                             'End-to-end funnel coverage (TOFU Awareness, MOFU Consideration, BOFU Sales)',
-                            'Tailored brand voice dialed into target audience psychology',
-                            'Authority & trust posts + direct-response conversion ads',
-                            'Visual & storyboard directions for graphic designers and video editors'
+                            'Dialed-in brand voice resonant with real Egyptian & regional market psychology',
+                            'Strategic mix of authority-building posts and direct-response conversion ads',
+                            'Visual direction for graphic designers and detailed storyboards for video editors'
                         ],
                         wa: 'Hi Mahmoud, I would like to partner on the Full-Funnel Monthly Content Engine!'
                     },
                     {
                         id: 'pkg-audit',
                         icon: '🔍',
-                        title: 'Funnel & Creative Ad Audit',
-                        sub: 'Creative Audit & Ad Revamp Package',
+                        title: 'Creative Ad Audit & Funnel Revamp',
+                        sub: 'Diagnostic Teardown & Conversion Optimization',
                         featured: false,
                         popular: '',
                         bullets: [
-                            'Forensic teardown of your last 5 ads & landing pages',
-                            'Pinpointing budget leakages and creative ad fatigue',
-                            'Rewriting top 3 ad creatives with high-converting angles',
-                            'Structuring irresistible, risk-reversal offers',
+                            'Forensic diagnostic teardown of your last 5 ads & landing pages',
+                            'Pinpointing hidden budget leakages and creative ad fatigue',
+                            'Rewriting top 3 ad creatives with high-converting, tested angles',
+                            'Structuring irresistible, risk-reversal offers to slash buyer hesitation',
                             'Actionable growth report with immediate execution steps'
                         ],
-                        wa: 'Hi Mahmoud, I want to request the Funnel & Creative Ad Audit!'
+                        wa: 'Hi Mahmoud, I want to request the Creative Ad Audit & Funnel Revamp!'
                     }
                 ]
             }
@@ -3023,28 +3683,150 @@
         function renderWorkCards() {
             const grid = document.getElementById('workCardsGrid');
             if (!grid) return;
+            const isAr = currentLang === 'ar';
+
             grid.innerHTML = getStore().workCards.map(c => {
                 const cats = c.cats.split(' ');
                 const isHidden = currentWorkCat !== 'all' && !cats.includes(currentWorkCat);
+                const hasCaseStudy = !!c.caseStudy;
+                const safeTitle = (c.modalCaption || c.title || '').replace(/'/g, "\\'");
+                const safeImg = c.modalImg || c.img;
+
+                // Challenge summary box if case study exists
+                let challengeHtml = '';
+                if (hasCaseStudy && c.caseStudy.problem && c.caseStudy.result) {
+                    challengeHtml = `
+                        <div class="work-challenge-box">
+                            <div class="work-challenge-item">
+                                <span class="work-challenge-label">${isAr ? 'التحدي:' : 'Challenge:'}</span>
+                                <span>${c.caseStudy.problem}</span>
+                            </div>
+                            <div class="work-challenge-item">
+                                <span class="work-challenge-label" style="color: #34d399;">${isAr ? 'النتيجة:' : 'Result:'}</span>
+                                <span style="color: #86efac; font-weight: 700;">${c.caseStudy.result}</span>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Action buttons: View Case Study + Inspect Original Asset
+                let actionsHtml = '';
+                if (hasCaseStudy) {
+                    actionsHtml = `
+                        <div class="work-actions-row">
+                            <button class="btn-view-case-study" onclick="openCaseStudy('${c.id}')">
+                                <span>${isAr ? '🔍 دراسة الحالة بالتفصيل' : '🔍 View Full Teardown'}</span>
+                            </button>
+                            <button class="btn-inspect-asset" onclick="openLightbox('${safeImg}', '${safeTitle}')" title="${isAr ? 'معاينة النموذج الأصلي' : 'Inspect Original Asset'}">
+                                <span>🖼️ ${isAr ? 'النموذج' : 'Asset'}</span>
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    actionsHtml = `
+                        <div class="work-actions-row">
+                            <button class="btn-view-case-study" onclick="openLightbox('${safeImg}', '${safeTitle}')">
+                                <span>${c.btnText || (isAr ? 'معاينة النموذج كاملاً' : 'Preview Full Asset')}</span>
+                            </button>
+                        </div>
+                    `;
+                }
+
                 return `
                     <div class="work-card ${isHidden ? 'hidden' : ''}">
-                        <div class="work-media" onclick="openLightbox('${c.modalImg || c.img}', '${c.modalCaption || c.title}')">
+                        <div class="work-media" onclick="openLightbox('${safeImg}', '${safeTitle}')">
                             <span class="work-media-badge ${c.badgeClass}">${c.badge}</span>
                             <img src="${c.img}" alt="${c.alt}" loading="lazy" onerror="this.src='mahmoud.png'">
-                            <div class="work-zoom-hover"><span>🔍 انقر للمعاينة والتكبير الكامل</span></div>
+                            <div class="work-zoom-hover"><span>🔍 ${isAr ? 'انقر للمعاينة والتكبير الكامل' : 'Click to inspect original'}</span></div>
                         </div>
                         <div class="work-body">
                             <span class="work-type-tag">${c.type}</span>
                             <h3 class="work-heading">${c.title}</h3>
                             <p class="work-paragraph">${c.desc}</p>
+                            ${challengeHtml}
                             <div class="work-meta-row">${c.meta}</div>
-                            <button class="btn-inspect-work" onclick="openLightbox('${c.modalImg || c.img}', '${c.modalCaption || c.title}')">
-                                <span>${c.btnText}</span>
-                            </button>
+                            ${actionsHtml}
                         </div>
                     </div>
                 `;
             }).join('');
+        }
+
+        // Case Study Modal Logic
+        function openCaseStudy(cardId) {
+            const card = getStore().workCards.find(c => c.id === cardId);
+            if (!card || !card.caseStudy) return;
+            const cs = card.caseStudy;
+            const isAr = currentLang === 'ar';
+            const modal = document.getElementById('caseStudyModal');
+            const catEl = document.getElementById('csModalCategory');
+            const titleEl = document.getElementById('csModalTitle');
+            const bodyEl = document.getElementById('caseStudyModalBody');
+            if (!modal || !bodyEl) return;
+
+            if (catEl) catEl.textContent = cs.role || (isAr ? 'دراسة حالة تفصيلية' : 'IN-DEPTH CASE STUDY');
+            if (titleEl) titleEl.textContent = `${cs.client} — ${card.title}`;
+
+            bodyEl.innerHTML = `
+                <div class="cs-step-card">
+                    <div class="cs-step-num">${isAr ? 'الخطوة 01' : 'STEP 01'}</div>
+                    <div class="cs-step-title">⚠️ ${isAr ? 'المشكلة والتحدي (The Problem)' : 'The Problem & Bottleneck'}</div>
+                    <div class="cs-step-content">${cs.problem}</div>
+                </div>
+
+                <div class="cs-step-card">
+                    <div class="cs-step-num">${isAr ? 'الخطوة 02' : 'STEP 02'}</div>
+                    <div class="cs-step-title">🎯 ${isAr ? 'الجمهور المستهدف (The Audience)' : 'The Target Audience'}</div>
+                    <div class="cs-step-content">${cs.audience}</div>
+                </div>
+
+                <div class="cs-step-card">
+                    <div class="cs-step-num">${isAr ? 'الخطوة 03' : 'STEP 03'}</div>
+                    <div class="cs-step-title">🧠 ${isAr ? 'الرؤية السيكولوجية (Psychological Insight)' : 'The Core Psychological Insight'}</div>
+                    <div class="cs-step-content">${cs.insight}</div>
+                </div>
+
+                <div class="cs-step-card">
+                    <div class="cs-step-num">${isAr ? 'الخطوة 04' : 'STEP 04'}</div>
+                    <div class="cs-step-title">⚡ ${isAr ? 'الزاوية الإعلانية (The Angle)' : 'The Hook & Strategic Angle'}</div>
+                    <div class="cs-step-content">${cs.angle}</div>
+                </div>
+
+                <div class="cs-step-card">
+                    <div class="cs-step-num">${isAr ? 'الخطوة 05' : 'STEP 05'}</div>
+                    <div class="cs-step-title">✍️ ${isAr ? 'النص الإعلاني الفعلي (The Actual Copy)' : 'The Actual Converting Copy'}</div>
+                    <div class="cs-copy-box">${cs.copy}</div>
+                </div>
+
+                <div class="cs-step-card">
+                    <div class="cs-step-num">${isAr ? 'الخطوة 06' : 'STEP 06'}</div>
+                    <div class="cs-step-title">🎬 ${isAr ? 'التوجيه الإبداعي (Creative Direction)' : 'Creative & Visual Direction'}</div>
+                    <div class="cs-step-content">${cs.creativeDirection}</div>
+                </div>
+
+                <div class="cs-result-highlight">
+                    <div class="cs-result-title">🚀 ${isAr ? 'النتيجة والأثر بالأرقام (Measurable Result)' : 'The Proven Business Result'}</div>
+                    <div class="cs-result-text">${cs.result}</div>
+                </div>
+
+                <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 18px; flex-wrap: wrap;">
+                    <button class="btn-inspect-work" onclick="closeCaseStudyModal(); openLightbox('${card.modalImg || card.img}', '${(card.modalCaption || card.title || '').replace(/'/g, "\\'")}')" style="width: auto; padding: 10px 20px;">
+                        <span>🖼️ ${isAr ? 'معاينة النموذج الأصلي المنشور' : 'Inspect Original Media'}</span>
+                    </button>
+                    <a href="https://wa.me/201065760983?text=${encodeURIComponent(isAr ? 'أهلاً يا محمود، شفت دراسة حالة ' + cs.client + ' وعايز شغل بنفس الجودة لبيزنسي' : 'Hi Mahmoud, I saw the case study for ' + cs.client + ' and want similar high-converting results!')}" target="_blank" rel="noopener noreferrer" class="btn-view-case-study" style="text-decoration: none; width: auto; padding: 10px 20px;">
+                        <span>💬 ${isAr ? 'اطلب حملة لبيزنسك' : 'Discuss a Similar Campaign'}</span>
+                    </a>
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCaseStudyModal() {
+            const modal = document.getElementById('caseStudyModal');
+            if (modal) modal.classList.remove('active');
+            document.body.style.overflow = '';
         }
 
         // WhatsApp Simulator
@@ -3214,11 +3996,12 @@
             }).join('');
         }
 
-        // Packages Section
+        // Packages / Services Section
         function initPackages() {
             const container = document.getElementById('packagesContainer');
             if (!container) return;
-            const btnText = currentLang === 'en' ? 'Book Package on WhatsApp 🚀' : 'احجز الباقة على واتساب 🚀';
+            const isAr = currentLang === 'ar';
+            const btnText = isAr ? 'احجز استشارة سريعة على واتساب 🚀' : 'Discuss Scope on WhatsApp 🚀';
             container.innerHTML = getStore().packages.map(p => `
                 <div class="package-card ${p.featured ? 'featured' : ''}">
                     ${p.popular ? `<span class="pkg-badge-popular">${p.popular}</span>` : ''}
@@ -3244,14 +4027,14 @@
 
             const prefixEl = document.getElementById('typewriterPrefix');
             if (prefixEl) {
-                prefixEl.textContent = currentLang === 'en' ? 'I am a' : 'أنا';
+                prefixEl.textContent = currentLang === 'en' ? 'I specialize in' : 'أنا';
             }
 
             const words = currentLang === 'en' ? [
-                'Direct-Response Sales Copywriter',
-                'High-Retention Reels & Video Scriptwriter',
-                'Full-Funnel Content Strategist',
-                'Paid Ads & Conversion Rate Optimizer'
+                'Direct-Response Sales Copywriting',
+                'High-Retention Reels & Video Scriptwriting',
+                'Full-Funnel Content Architecture',
+                'Paid Campaign Testing & Conversion Optimization'
             ] : [
                 'كوبي رايتر مبيعات واستجابة مباشرة',
                 'صانع هوكات إعلانية وسيناريوهات ريلز بيعية',
@@ -3306,7 +4089,10 @@
         }
 
         window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeCaseStudyModal();
+            }
         });
 
         // Toast Feedback
@@ -3327,52 +4113,61 @@
         });
 
         // Language Switch & Master Renderer
-
         let currentLang = localStorage.getItem('metwally_lang') || 'ar';
 
         function renderLang(lang) {
             currentLang = lang;
             localStorage.setItem('metwally_lang', lang);
+            const isAr = lang === 'ar';
             const t = store[lang] || store.ar;
 
             document.documentElement.setAttribute('lang', lang);
-            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
             if (t.docTitle) document.title = t.docTitle;
 
             const langBtnText = document.getElementById('langBtnText');
-            if (langBtnText) langBtnText.textContent = lang === 'ar' ? 'English' : 'العربية';
+            if (langBtnText) langBtnText.textContent = isAr ? 'English' : 'العربية';
 
             // Navbar links
-            const navLinks = document.querySelectorAll('.nav-menu .nav-link-btn');
-            if (navLinks.length >= 6) {
-                if (lang === 'en') {
-                    navLinks[0].textContent = t.linkWork;
-                    navLinks[1].textContent = t.linkProof;
-                    navLinks[2].textContent = t.linkShowcase;
-                    navLinks[3].textContent = t.linkHooks;
-                    navLinks[4].textContent = t.linkPackages;
-                    navLinks[5].textContent = t.linkOrigin;
-                } else {
-                    navLinks[0].textContent = 'سابقة الأعمال';
-                    navLinks[1].textContent = 'النتائج والتقييمات';
-                    navLinks[2].textContent = 'المختبر التفاعلي';
-                    navLinks[3].textContent = 'معمل الهوكات';
-                    navLinks[4].textContent = 'باقات التعاقد';
-                    navLinks[5].textContent = 'سر الصنعة';
-                }
-            }
+            const navWork = document.getElementById('navLinkWork');
+            const navOrigin = document.getElementById('navLinkOrigin');
+            const navTestimonials = document.getElementById('navLinkTestimonials');
+            const navShowcase = document.getElementById('navLinkShowcase');
+            const navServices = document.getElementById('navLinkServices');
+            const navContact = document.getElementById('navLinkContact');
+
+            if (navWork) navWork.textContent = isAr ? 'سابقة الأعمال ودراسات الحالة' : t.navLinkWork;
+            if (navOrigin) navOrigin.textContent = isAr ? 'سر الصنعة وفلسفة AI' : t.navLinkOrigin;
+            if (navTestimonials) navTestimonials.textContent = isAr ? 'النتائج والتقييمات' : t.navLinkProof;
+            if (navShowcase) navShowcase.textContent = isAr ? 'المختبر التفاعلي' : t.navLinkShowcase;
+            if (navServices) navServices.textContent = isAr ? 'نطاق الخدمات' : t.navLinkServices;
+            if (navContact) navContact.textContent = isAr ? 'تواصل مباشر' : t.navLinkContact;
+
+            // Mobile Dock
+            const mobWork = document.getElementById('mobDockWork');
+            const mobOrigin = document.getElementById('mobDockOrigin');
+            const mobProof = document.getElementById('mobDockProof');
+            const mobServices = document.getElementById('mobDockServices');
+            if (mobWork) mobWork.textContent = isAr ? 'الأعمال' : 'Work';
+            if (mobOrigin) mobOrigin.textContent = isAr ? 'الصنعة' : 'Craft';
+            if (mobProof) mobProof.textContent = isAr ? 'النتائج' : 'Proof';
+            if (mobServices) mobServices.textContent = isAr ? 'الخدمات' : 'Services';
 
             const btnNavCta = document.querySelector('.btn-nav-cta span');
-            if (btnNavCta) btnNavCta.textContent = lang === 'en' ? t.navCtaText : 'تواصل واتساب';
+            if (btnNavCta) btnNavCta.textContent = isAr ? 'تواصل واتساب' : t.navCtaText;
 
             // Hero texts
             const statusEl = document.getElementById('heroLiveStatusText');
             if (statusEl && t.heroStatusText) statusEl.textContent = t.heroStatusText;
 
+            const roleEl = document.getElementById('heroRoleBadge');
+            if (roleEl && t.heroRoleBadge) roleEl.textContent = t.heroRoleBadge;
+
             const headEl = document.getElementById('heroHeadlineText');
-            if (headEl) {
-                headEl.innerHTML = lang === 'en' ? t.heroHeadline : 'محمود محمد <span class="highlight">متولي</span>';
-            }
+            if (headEl) headEl.innerHTML = isAr ? 'محمود محمد <span class="highlight">متولي</span>' : t.heroHeadline;
+
+            const taglineEl = document.getElementById('heroTaglineQuote');
+            if (taglineEl && t.heroTaglineQuote) taglineEl.textContent = t.heroTaglineQuote;
 
             const bioEl = document.getElementById('heroBioText');
             if (bioEl && t.heroBio) bioEl.textContent = t.heroBio;
@@ -3386,11 +4181,92 @@
             const ctaGuarEl = document.getElementById('heroCtaGuarantee');
             if (ctaGuarEl && t.ctaMicroGuarantee) ctaGuarEl.textContent = t.ctaMicroGuarantee;
 
-            const btnHeroWa = document.getElementById('heroPrimaryCtaText');
+            const btnHeroWa = document.getElementById('heroSecondaryCtaText');
             if (btnHeroWa && t.btnHeroWa) btnHeroWa.textContent = t.btnHeroWa;
 
-            const btnHeroWork = document.getElementById('heroSecondaryCtaText');
+            const btnHeroWork = document.getElementById('heroPrimaryCtaText');
             if (btnHeroWork && t.btnHeroWork) btnHeroWork.textContent = t.btnHeroWork;
+
+            // Contextual Metrics HUD Labels
+            const m1 = document.getElementById('metricLabel1');
+            const m2 = document.getElementById('metricLabel2');
+            const m3 = document.getElementById('metricLabel3');
+            const m4 = document.getElementById('metricLabel4');
+            if (m1 && t.metric1Label) m1.textContent = t.metric1Label;
+            if (m2 && t.metric2Label) m2.textContent = t.metric2Label;
+            if (m3 && t.metric3Label) m3.textContent = t.metric3Label;
+            if (m4 && t.metric4Label) m4.textContent = t.metric4Label;
+
+            // Section headers
+            const workPill = document.getElementById('workPillTag');
+            const workTitle = document.getElementById('workSectionTitle');
+            const workDesc = document.getElementById('workSectionDesc');
+            if (workPill && t.workPillTag) workPill.textContent = t.workPillTag;
+            if (workTitle && t.workTitle) workTitle.textContent = t.workTitle;
+            if (workDesc && t.workDesc) workDesc.textContent = t.workDesc;
+
+            const originPill = document.getElementById('originPillTag');
+            const originTitle = document.getElementById('originSectionTitle');
+            const weldingQuote = document.getElementById('weldingQuoteText');
+            const weldingAuthor = document.getElementById('weldingQuoteAuthor');
+            const originBox1T = document.getElementById('originBox1Title');
+            const originBox1D = document.getElementById('originBox1Desc');
+            const originBox2T = document.getElementById('originBox2Title');
+            const originBox2D = document.getElementById('originBox2Desc');
+            const aiTitle = document.getElementById('aiMindsetTitle');
+            const aiText = document.getElementById('aiMindsetText');
+
+            if (originPill) originPill.textContent = isAr ? '🧬 سر الصنعة وفلسفة الإقناع' : '🧬 The Craft & Persuasion Philosophy';
+            if (originTitle) originTitle.textContent = isAr ? 'من ورش اللحام وتشكيل الحديد — لمعمل صياغة الكلمات اللي بتبيع 🔥' : 'From Industrial Metalworking to High-Converting Sales Copywriting 🔥';
+            if (weldingQuote) {
+                weldingQuote.textContent = isAr ?
+                    '«في اللحام، لو الزاوية غلط، مهما ظبطت الحرارة… الوصلة هتبوظ. والـCopy نفس الحكاية: قبل ما أكتب كلمة، بدور على الزاوية اللي بتلمس الزبون وتخليه يشتري.»' :
+                    '«In metal welding, if your angle is off, no amount of heat can save the joint. Sales copy is identical: before writing a single word, I find the angle that strikes the buyer and triggers action.»';
+            }
+            if (weldingAuthor) weldingAuthor.textContent = isAr ? '— محمود محمد متولي | مهندس الإقناع الواقعي' : '— Mahmoud Metwally | The Real-World Conversion Engineer';
+            if (originBox1T) originBox1T.textContent = isAr ? '⚡ في ورشة لحام وتشكيل الحديد' : '⚡ In Industrial Welding & Metalwork';
+            if (originBox1D) originBox1D.textContent = isAr ? 'الدقة هناك بالملي وحرارة اللحام بالدرجة — لو الزاوية مش مظبوطة 100% الحديد هيتشرخ وتضيع الشغلانة والمعدات. الصنعة دي علمتني الصبر والدقة المتناهية وعدم التنازل عن معايير الإتقان.' : 'Precision is measured in millimeters and heat in exact degrees. If the angle is imperfect, metal fractures and equipment is lost. This craft instilled relentless discipline, patience, and uncompromised standards.';
+            if (originBox2T) originBox2T.textContent = isAr ? '🔥 في صياغة الكوبي رايتنج المباشر' : '🔥 In Direct-Response Copywriting';
+            if (originBox2D) originBox2D.textContent = isAr ? 'الهوك في أول 3 ثواني، والتشريح النفسي للزبون بالعمق — لو الكلمات ملمستش وجع العميل ومخاوفه الحقيقية، ميزانيتك الإعلانية هتتحرق في الهوا والزبون هيعمل سكرول في ثانية!' : 'The hook strikes in 2 seconds, backed by surgical psychological empathy. If copy fails to address visceral customer pains and doubts, your ad budget evaporates into thin air.';
+            if (aiTitle) aiTitle.textContent = isAr ? '🤖 فلسفتي في التعامل مع الذكاء الاصطناعي (AI):' : '🤖 My AI Philosophy & Engineering Mindset:';
+            if (aiText) aiText.textContent = isAr ?
+                '«بستخدم AI كأداة للمساعدة والسرعة والبحث، مش كبديل للتفكير البشري. الـInsight السيكولوجية والـAngle الذكية واستيعاب تردد الزبون في الشارع هما اللي بيخلوا الإعلان يبيع ويقفل الأوردر.»' :
+                '«I leverage AI strictly for speed, research, and ideation — never as a substitute for human thought. The psychological insight, the contrarian angle, and genuine empathy for real customer hesitation are what make copy sell and close orders.»';
+
+            const proofPill = document.getElementById('proofPillTag');
+            const proofTitle = document.getElementById('proofSectionTitle');
+            const proofDesc = document.getElementById('proofSectionDesc');
+            if (proofPill && t.proofPillTag) proofPill.textContent = t.proofPillTag;
+            if (proofTitle && t.proofTitle) proofTitle.textContent = t.proofTitle;
+            if (proofDesc && t.proofDesc) proofDesc.textContent = t.proofDesc;
+
+            const servPill = document.getElementById('servicesPillTag');
+            const servTitle = document.getElementById('servicesSectionTitle');
+            const servDesc = document.getElementById('servicesSectionDesc');
+            const scopeCollab = document.getElementById('scopeCollabText');
+            if (servPill) servPill.textContent = isAr ? '💼 نطاق الخدمات والتعاون' : '💼 Services Scope & Strategic Collaboration';
+            if (servTitle && t.packagesTitle) servTitle.textContent = t.packagesTitle;
+            if (servDesc && t.packagesDesc) servDesc.textContent = t.packagesDesc;
+            if (scopeCollab) {
+                scopeCollab.innerHTML = isAr ?
+                    '🤝 <strong>التعاون المرن حسب النطاق (Scope-Based):</strong> مفيش أسعار معلبة أو مقاس واحد يناسب الكل. التعاون بيكون حسب احتياج الحملة ومرحلة نمو البيزنس — بنقعد 10 دقائق على واتساب أو مكالمة سريعة ونحدد المطلوب بالظبط بدون أي التزام!' :
+                    '🤝 <strong>Flexible Scope-Based Collaboration:</strong> No generic pricing or one-size-fits-all retainers. Partnerships are tailored to your campaign requirements and business growth stage — let\'s connect for 10 minutes on WhatsApp to assess exactly what moves the needle.';
+            }
+
+            const contactTitle = document.getElementById('contactSectionTitle');
+            const contactDesc = document.getElementById('contactSectionDesc');
+            const contactWa = document.getElementById('contactBtnWa');
+            const contactCv = document.getElementById('contactBtnCv');
+            const contactAudit = document.getElementById('contactAuditCallout');
+            if (contactTitle) contactTitle.textContent = isAr ? 'عندك Brand محتاج كلام يشتغل ويجيب نتيجة؟ خلّينا نتكلم.' : 'Ready to turn your advertising copy into a predictable sales engine? Let\'s talk.';
+            if (contactDesc) contactDesc.textContent = isAr ? 'ابعتلي واتساب دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!' : 'Message me on WhatsApp right now to audit your current campaigns and discover how to convert cold traffic into high-ROAS revenue.';
+            if (contactWa) contactWa.textContent = isAr ? '💬 شات واتساب فوري' : '💬 Instant WhatsApp Chat';
+            if (contactCv) contactCv.textContent = isAr ? '📄 تحميل الـ CV الرسمي' : '📄 Download Official CV';
+            if (contactAudit) {
+                contactAudit.innerHTML = isAr ?
+                    '<strong>عرض الفحص السريع (Zero Friction):</strong> ابعتلي لينك صفحتك أو آخر إعلانين عملتهم على واتساب، وهقولك في 10 دقائق فلوسك بتتسرب فين بالظبط وسر انخفاض المبيعات — مجاناً وبدون أي التزام!' :
+                    '<strong>Zero-Friction 10-Minute Ad Teardown:</strong> Send your landing page or last 2 ad creatives on WhatsApp, and I will identify exactly where your ad spend is leaking and how to fix it — completely free with zero obligation.';
+            }
 
             // Re-render components with current lang data
             initMarquee();
@@ -3410,7 +4286,6 @@
             });
         }
 
-
         // Theme Toggle
         const themeBtn = document.getElementById('themeSwitchBtn');
         if (themeBtn) {
@@ -3424,7 +4299,7 @@
             });
         }
 
-        // Modify init functions to respect currentLang
+        // Helper to get active store
         function getStore() {
             return store[currentLang] || store.ar;
         }
