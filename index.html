@@ -2280,8 +2280,99 @@
             font-weight: 900;
             color: #fff;
             max-width: 820px;
-            margin: 0 auto 16px;
+            margin: 0 auto 14px;
             line-height: 1.5;
+        }
+
+        .hero-supporting-line {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 700;
+            color: var(--text-secondary);
+            max-width: 780px;
+            margin: 0 auto 24px;
+            line-height: 1.7;
+        }
+
+        /* How I Think Section Styles */
+        .thinking-manifesto-box {
+            background: linear-gradient(135deg, rgba(17, 23, 37, 0.9), rgba(11, 15, 25, 0.95));
+            border: 1px solid rgba(255, 85, 0, 0.28);
+            border-inline-start: 4px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: 26px 30px;
+            margin: 28px 0;
+            text-align: start;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+        .thinking-manifesto-quote {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+        .thinking-manifesto-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+        }
+        .thinking-manifesto-list li {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .thinking-manifesto-list li .bullet-bullet {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        /* 7-Step Persuasion Architecture Pipeline */
+        .pipeline-flow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin: 28px 0;
+        }
+        .pipeline-step-box {
+            background: #0f131d;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 16px 12px;
+            text-align: center;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        .pipeline-step-box:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            background: rgba(255, 85, 0, 0.06);
+        }
+        .pipeline-step-num {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 6px;
+            letter-spacing: 0.05em;
+        }
+        .pipeline-step-name {
+            color: #fff;
+            font-size: 0.92rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .pipeline-step-desc {
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            line-height: 1.5;
+            margin: 0;
         }
 
         /* Toast Alert */
@@ -2513,11 +2604,11 @@
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#work" class="nav-link-btn" id="navLinkWork">سابقة الأعمال ودراسات الحالة</a></li>
-                <li><a href="#origin" class="nav-link-btn" id="navLinkOrigin">سر الصنعة وفلسفة AI</a></li>
-                <li><a href="#testimonials" class="nav-link-btn" id="navLinkTestimonials">النتائج والتقييمات</a></li>
-                <li><a href="#showcase" class="nav-link-btn" id="navLinkShowcase">المختبر التفاعلي</a></li>
+                <li><a href="#work" class="nav-link-btn" id="navLinkWork">سابقة الأعمال</a></li>
+                <li><a href="#how-i-think" class="nav-link-btn" id="navLinkThink">طريقة التفكير</a></li>
+                <li><a href="#testimonials" class="nav-link-btn" id="navLinkProof">النتائج والإثباتات</a></li>
                 <li><a href="#services" class="nav-link-btn" id="navLinkServices">نطاق الخدمات</a></li>
+                <li><a href="#origin" class="nav-link-btn" id="navLinkOrigin">عن محمود والصنعة</a></li>
                 <li><a href="#contact" class="nav-link-btn" id="navLinkContact">تواصل مباشر</a></li>
             </ul>
 
@@ -2538,7 +2629,7 @@
     <!-- Mobile Bottom Quick Dock -->
     <div class="mobile-bottom-dock">
         <a href="#work" class="dock-btn active" id="mobDockWork">الأعمال</a>
-        <a href="#origin" class="dock-btn" id="mobDockOrigin">الصنعة</a>
+        <a href="#how-i-think" class="dock-btn" id="mobDockThink">التفكير</a>
         <a href="#testimonials" class="dock-btn" id="mobDockProof">النتائج</a>
         <a href="#services" class="dock-btn" id="mobDockServices">الخدمات</a>
         <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="dock-btn" style="color: #25D366;">واتساب</a>
@@ -2560,7 +2651,7 @@
                 </div>
 
                 <div class="hero-role-badge" id="heroRoleBadge">
-                    Copywriter & Content Marketer | مهندس الإقناع الواقعي
+                    Copywriter & Content Marketer
                 </div>
 
                 <h1 class="hero-headline" id="heroHeadlineText">
@@ -2568,8 +2659,12 @@
                 </h1>
 
                 <div class="hero-tagline-quote" id="heroTaglineQuote">
-                    «مش برص كلام وخلاص. بدور على الزاوية اللي تبيع.»
+                    «بفهم العميل الأول.. وبعدين بدور على الزاوية اللي تخليه يتحرك.»
                 </div>
+
+                <p class="hero-supporting-line" id="heroSupportingLine">
+                    Copywriting + Content Marketing مبنيين على فهم الـ Business والـ Audience قبل ما نكتب أول كلمة.
+                </p>
 
                 <div class="hero-typewriter-container">
                     <span id="typewriterPrefix">أنا</span>
@@ -2578,24 +2673,15 @@
                     </span>
                 </div>
 
-                <div class="brand-equation-pill" id="brandEquationContainer">
-                    <span class="equation-tag" id="brandEquationTag">معادلة الصنعة ⚡</span>
-                    <span class="equation-formula" id="brandEquationFormula">[سيكولوجية حطحوت + بيعية طوسون + بساطة معاذ صلاح + رشاقة عاطف] × صرامة ورشة الحديد = <strong>مهندس الإقناع الواقعي</strong></span>
-                </div>
-
-                <p class="hero-bio-copy" id="heroBioText">
-                    مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار
-                </p>
-
                 <div class="hero-cta-flex">
                     <a href="#work" class="btn-luxury-primary">
                         <span class="btn-inner-icon-circle">💼</span>
-                        <span id="heroPrimaryCtaText">استعرض شغلي</span>
+                        <span id="heroPrimaryCtaText">شوف شغلي</span>
                     </a>
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-luxury-secondary">
                             <span class="btn-inner-icon-circle">💬</span>
-                            <span id="heroSecondaryCtaText">خلّينا نشتغل سوا</span>
+                            <span id="heroSecondaryCtaText">خلينا نتكلم</span>
                         </a>
                         <span class="cta-micro-guarantee" id="heroCtaGuarantee">⚡ فحص إعلاني وتشخيص مجاني لنصوصك الحالية في 10 دقائق على واتساب • بدون أي التزام</span>
                     </div>
@@ -2652,13 +2738,27 @@
             </div>
         </div>
 
-        <!-- 3. Selected Work & Deep Case Studies (#work) -->
+        <!-- 2. Wall of Proof & Authority (#testimonials) - EARLY PROOF -->
+        <section class="section-wrap" id="testimonials" style="border-top: 1px solid var(--border-subtle); background: rgba(8, 11, 18, 0.45);">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-pill-tag" id="proofPillTag">📊 أدلة حقيقية وقرارات تسويقية صائبة</span>
+                    <h2 class="section-title" id="proofSectionTitle">أدلة حقيقية ونتائج موثقة: هكذا تصنع الزاوية الصائبة فارقاً في البيزنس</h2>
+                    <p class="section-desc" id="proofSectionDesc">الأرقام لا تكذب ولا تجامل — دي نتائج حقيقية موثقة من مديري الإعلانات، شهادات معتمدة، ورسائل عملاء حقيقيين تثبت جودة التنفيذ وقوة القرارات الاستراتيجية:</p>
+                </div>
+
+                <div class="filter-bar-flex" id="proofFilterBar"></div>
+                <div class="proof-grid" id="proofCardsGrid"></div>
+            </div>
+        </section>
+
+        <!-- 3. Selected Work & Live Copy (#work) -->
         <section class="section-wrap" id="work" style="background: rgba(8, 11, 18, 0.5); border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="section-header-centered">
                     <span class="section-pill-tag" id="workPillTag">💼 نماذج أعمال حقيقية ودراسات حالة تفصيلية</span>
-                    <h2 class="section-title" id="workSectionTitle">شغلي لايف: دراسات حالة، إعلانات ممولة، واستراتيجيات مبيعات 🚀</h2>
-                    <p class="section-desc" id="workSectionDesc">مش مجرد كلام نظري أو صور — دي حملات حقيقية وأرقام موثقة تقدر تفحص تفاصيل كل خطوة فيها من المشكلة للنتيجة:</p>
+                    <h2 class="section-title" id="workSectionTitle">شغلي لايف: نصوص إعلانية وحملات منشورة في السوق 🚀</h2>
+                    <p class="section-desc" id="workSectionDesc">مش مجرد كلام نظري — دي إعلانات ممولة حقيقية، هوكات، وسكربتات ريلز نزلت السوق وقدمت أداء موثق تقدر تفحص تفاصيلها خطوة بخطوة:</p>
                 </div>
 
                 <!-- Filter Tabs -->
@@ -2669,21 +2769,136 @@
             </div>
         </section>
 
-        <!-- 4. How I Think & The Craft (#origin) -->
+        <!-- 4. How I Think: Strategic Funnel & Persuasion System (#how-i-think) -->
+        <section class="section-wrap" id="how-i-think" style="background: rgba(8, 11, 18, 0.6); border-top: 1px solid var(--border-subtle);">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-pill-tag" id="howIThinkPillTag">🧠 فلسفة التفكير والمنظومة الاستراتيجية</span>
+                    <h2 class="section-title" id="howIThinkSectionTitle">مش ببدأ بسؤال: "هننزل بوست إيه؟" — ببدأ بأسئلة البيزنس وسيكولوجية الزبون</h2>
+                    <p class="section-desc" id="howIThinkSectionDesc">الـ Copywriting مش مجرد صياغة عبارات رنانة؛ هو فهم معمق لتردد العميل واعتراضاته الخفية واختيار الزاوية التي تحرك قرار الشراء:</p>
+                </div>
+
+                <!-- Strategic Manifesto Quote Box -->
+                <div class="thinking-manifesto-box">
+                    <div class="thinking-manifesto-quote" id="howIThinkQuote">
+                        «مش ببدأ بسؤال: "هننزل بوست إيه النهاردة؟"<br>
+                        ببدأ بالأسئلة الحقيقية اللي بتبني البيزنس وتجيب مبيعات:»
+                    </div>
+                    <ul class="thinking-manifesto-list">
+                        <li><span class="bullet-bullet">🎯</span> <span id="thinkQ1">بنكلم مين بالظبط (Audience Psychology)؟</span></li>
+                        <li><span class="bullet-bullet">💭</span> <span id="thinkQ2">عايزين إيه وبيخافوا من إيه (Fears & Desires)؟</span></li>
+                        <li><span class="bullet-bullet">🛑</span> <span id="thinkQ3">إيه نقطة الاحتكاك اللي معطلاهم عن الشراء (Friction & Objections)؟</span></li>
+                        <li><span class="bullet-bullet">💼</span> <span id="thinkQ4">البيزنس محتاج إيه في المرحلة دي بالظبط (Business Need)؟</span></li>
+                        <li><span class="bullet-bullet">⚡</span> <span id="thinkQ5">إيه أقوى زاوية تلمسهم وتخليهم يهتموا (The Winning Angle)؟</span></li>
+                        <li><span class="bullet-bullet">🚀</span> <span id="thinkQ6">وإيه الإجراء الواضح المطلوب منهم دلوقتي (Clear Actionable CTA)؟</span></li>
+                    </ul>
+                </div>
+
+                <!-- 7-Step Persuasion Architecture Pipeline -->
+                <div class="pipeline-flow-grid">
+                    <div class="pipeline-step-box">
+                        <div class="pipeline-step-num">STEP 01</div>
+                        <div class="pipeline-step-name" id="pipeStep1Title">Research</div>
+                        <p class="pipeline-step-desc" id="pipeStep1Desc">تشريح السوق، دراسة المنافسين، وسماع شكاوى الزبائن الحقيقية.</p>
+                    </div>
+                    <div class="pipeline-step-box">
+                        <div class="pipeline-step-num">STEP 02</div>
+                        <div class="pipeline-step-name" id="pipeStep2Title">Insight</div>
+                        <p class="pipeline-step-desc" id="pipeStep2Desc">اكتشاف الدافع الخفي ونقطة الألم الحقيقية وراء قرار الشراء.</p>
+                    </div>
+                    <div class="pipeline-step-box" style="border-color: var(--accent); background: rgba(255, 85, 0, 0.08);">
+                        <div class="pipeline-step-num" style="color: #fff;">STEP 03 ★</div>
+                        <div class="pipeline-step-name" style="color: var(--accent);" id="pipeStep3Title">The Angle</div>
+                        <p class="pipeline-step-desc" id="pipeStep3Desc">اختيار زاوية التناول الذكية والمدخل النفسي الذي يميزك.</p>
+                    </div>
+                    <div class="pipeline-step-box">
+                        <div class="pipeline-step-num">STEP 04</div>
+                        <div class="pipeline-step-name" id="pipeStep4Title">Message</div>
+                        <p class="pipeline-step-desc" id="pipeStep4Desc">صياغة الرسالة البيعية بلغة واضحة خالية من أي فذلكة أو تعالي.</p>
+                    </div>
+                    <div class="pipeline-step-box">
+                        <div class="pipeline-step-num">STEP 05</div>
+                        <div class="pipeline-step-name" id="pipeStep5Title">Content & Copy</div>
+                        <p class="pipeline-step-desc" id="pipeStep5Desc">كتابة الإعلانات وسكربتات الريلز وصفحات الهبوط القاطعة.</p>
+                    </div>
+                    <div class="pipeline-step-box">
+                        <div class="pipeline-step-num">STEP 06</div>
+                        <div class="pipeline-step-name" id="pipeStep6Title">Testing</div>
+                        <p class="pipeline-step-desc" id="pipeStep6Desc">اختبار الزوايا الإعلانية مع الميديا باير لرصد الزاوية الرابحة.</p>
+                    </div>
+                    <div class="pipeline-step-box">
+                        <div class="pipeline-step-num">STEP 07</div>
+                        <div class="pipeline-step-name" id="pipeStep7Title">Optimization</div>
+                        <p class="pipeline-step-desc" id="pipeStep7Desc">تحليل أرقام الحملات (CPR, ROAS) وتطوير الكوبي باستمرار.</p>
+                    </div>
+                </div>
+
+                <!-- The 4 Craft Execution Pillars -->
+                <div style="margin-top: 32px;">
+                    <h4 style="color: #94a3b8; font-size: 0.88rem; font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; text-align: start;" id="craftPillarsHeader">
+                        [ معايير الصياغة والتنفيذ // THE 4 CRAFT PILLARS ]
+                    </h4>
+                    <div class="craft-pillars-grid" style="margin: 0;">
+                        <div class="pillar-box">
+                            <span class="pillar-icon">🧠</span>
+                            <h5 class="pillar-title" id="p1Title">سيكولوجية حطحوت</h5>
+                            <p class="pillar-desc" id="p1Desc">تشريح الدوافع الدفينة ومخاوف الزبون قبل كتابة حرف واحد، لفهم المحرك النفسي الحقيقي لقرار الشراء.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <span class="pillar-icon">🎯</span>
+                            <h5 class="pillar-title" id="p2Title">بيعية طوسون</h5>
+                            <p class="pillar-desc" id="p2Desc">هجوم مباشر وذكي على الاعتراضات، وصياغة عروض لا تُقاوم تحول المتردد إلى مشتري مؤكد فوراً.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <span class="pillar-icon">🗣️</span>
+                            <h5 class="pillar-title" id="p3Title">بساطة معاذ صلاح</h5>
+                            <p class="pillar-desc" id="p3Desc">لغة مصرية فصيحة بيضاء، خالية من التعالي المصطنع وكأنك بتدردش مع صاحبك على قهوة الصبح.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <span class="pillar-icon">🌊</span>
+                            <h5 class="pillar-title" id="p4Title">رشاقة عاطف</h5>
+                            <p class="pillar-desc" id="p4Desc">سرد قصصي انسيابي كأنه زحليقة ملساء تجر رجل القارئ بسلاسة من أول هوك لحد زرار الدفع.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Services Scope (#services / #packages) -->
+        <section class="section-wrap" id="services" style="border-top: 1px solid var(--border-subtle);">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-pill-tag" id="servicesPillTag">💼 نطاق الخدمات والتعاون</span>
+                    <h2 class="section-title" id="servicesSectionTitle">نطاق عمل محدد ومرن يضمن لبيزنسك أعلى عائد استثمار 🚀</h2>
+                    <p class="section-desc" id="servicesSectionDesc">مفيش حلول معلبة — كل تعاون بيتبني حسب مرحلة البيزنس ونوع المنتج والهدف البيعي المباشر:</p>
+                </div>
+
+                <div class="packages-grid" id="packagesContainer"></div>
+
+                <!-- Scope-based collaboration bar -->
+                <div class="scope-collaboration-bar">
+                    <div class="scope-collaboration-text" id="scopeCollabText">
+                        🤝 <strong>التعاون كـ Copywriter & Content Marketer متخصص:</strong> أنا شخص واحد وشريكك الفردي المباشر — مش شركة أو Full-Service Agency. تركيزي كله على دراسة الزبون وصياغة الكلمات والزوايا اللي بتبيع وتجيب عائد استثماري حقيقي (ROAS). بنقعد 10 دقائق على واتساب أو مكالمة سريعة ونحدد المطلوب بالظبط بدون أي التزام!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. About & The Craftsman Origin (#origin) -->
         <section class="section-wrap" id="origin" style="background: rgba(8, 11, 18, 0.6); border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="double-bezel-card">
                     <div class="double-bezel-inner">
-                        <span class="section-pill-tag" id="originPillTag">🧬 سر الصنعة وفلسفة الإقناع</span>
-                        <h2 class="section-title" id="originSectionTitle" style="margin-bottom: 24px;">من ورش اللحام وتشكيل الحديد — لمعمل صياغة الكلمات اللي بتبيع 🔥</h2>
+                        <span class="section-pill-tag" id="originPillTag">⚡ قصة البداية واستعارة الصنعة</span>
+                        <h2 class="section-title" id="originSectionTitle" style="margin-bottom: 24px;">سر "الزاوية" — من تشكيل الحديد لصياغة الكلمات اللي بتبيع</h2>
                         
                         <!-- Welding Quote Highlight Card -->
                         <div class="welding-quote-card">
                             <div class="welding-quote-text" id="weldingQuoteText">
-                                «في اللحام: زاوية غلط = وصلة ضعيفة. وفي الـCopy: زاوية غلط = رسالة ضعيفة. عشان كده قبل ما أكتب، بدور على الزاوية اللي بتلمس الزبون وتخليه يتحرك.»
+                                «في اللحام: زاوية غلط = وصلة ضعيفة. وفي الـCopy: زاوية غلط = رسالة ضعيفة. وفي الماركتنج: فهم غلط للزبون = ميزانية محروقة. عشان كده قبل ما أكتب كلمة، بدور على الزاوية اللي بتلمس الزبون وتخليه يتحرك.»
                             </div>
                             <div class="welding-quote-author" id="weldingQuoteAuthor">
-                                — محمود محمد متولي | مهندس الإقناع الواقعي
+                                — محمود محمد متولي | Copywriter & Content Marketer
                             </div>
                         </div>
 
@@ -2700,39 +2915,15 @@
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                                     <h4 style="color: var(--accent); font-size: 1.05rem; font-weight: 800; margin: 0;" id="originBox2Title">🔥 في صياغة الكوبي رايتنج المباشر</h4>
                                 </div>
-                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75; margin: 0;" id="originBox2Desc">الهوك في أول 3 ثواني، والتشريح النفسي للزبون بالعمق — لو الكلمات ملمستش وجع العميل ومخاوفه الحقيقية، ميزانيتك الإعلانية هتتحرق في الهوا والزبون هيعمل سكرول في ثانية!</p>
+                                <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.75; margin: 0;" id="originBox2Desc">الهوك في أول ثانيتين، والتشريح النفسي للزبون بالعمق — لو الكلمات ملمستش وجع العميل ومخاوفه الحقيقية، ميزانيتك الإعلانية هتتحرق في الهوا والزبون هيعمل سكرول في ثانية!</p>
                             </div>
                         </div>
 
-                        <!-- The 4 Pillars of Mahmoud's Persuasion Craft -->
-                        <div class="craft-pillars-grid">
-                            <div class="pillar-box">
-                                <span class="pillar-icon">🧠</span>
-                                <h5 class="pillar-title">سيكولوجية حطحوت</h5>
-                                <p class="pillar-desc">تشريح الدوافع الدفينة ومخاوف الزبون قبل كتابة حرف واحد، لفهم المحرك النفسي الحقيقي لقرار الشراء.</p>
-                            </div>
-                            <div class="pillar-box">
-                                <span class="pillar-icon">🎯</span>
-                                <h5 class="pillar-title">بيعية طوسون</h5>
-                                <p class="pillar-desc">هجوم مباشر وذكي على الاعتراضات، وصياغة عروض لا تُقاوم تحول المتردد إلى مشتري مؤكد فوراً.</p>
-                            </div>
-                            <div class="pillar-box">
-                                <span class="pillar-icon">🗣️</span>
-                                <h5 class="pillar-title">بساطة معاذ صلاح</h5>
-                                <p class="pillar-desc">لغة مصرية فصيحة بيضاء، خالية من التعالي المصطنع وكأنك بتدردش مع صاحبك على قهوة الصبح.</p>
-                            </div>
-                            <div class="pillar-box">
-                                <span class="pillar-icon">🌊</span>
-                                <h5 class="pillar-title">رشاقة عاطف</h5>
-                                <p class="pillar-desc">سرد قصصي انسيابي كأنه زحليقة ملساء تجر رجل القارئ بسلاسة من أول هوك لحد زرار الدفع.</p>
-                            </div>
-                        </div>
-
-                        <!-- AI Mindset Banner -->
+                        <!-- AI Philosophy (Thinking > Generation) -->
                         <div class="ai-mindset-banner">
-                            <div class="ai-mindset-title" id="aiMindsetTitle">🤖 فلسفتي في التعامل مع الذكاء الاصطناعي (AI):</div>
+                            <div class="ai-mindset-title" id="aiMindsetTitle">🤖 فلسفة الذكاء الاصطناعي: التفكير أولاً ثم التوليد (Thinking > Generation)</div>
                             <div class="ai-mindset-text" id="aiMindsetText">
-                                «بستخدم AI كأداة للمساعدة والسرعة والبحث، مش كبديل للتفكير البشري. الـInsight السيكولوجية والـAngle الذكية واستيعاب تردد الزبون في الشارع هما اللي بيخلوا الإعلان يبيع ويقفل الأوردر.»
+                                «المشكلة اليوم مش إنك تعرف تكتب كبسة زرار بـ AI — الذكاء الاصطناعي يقدر يولد ملايين الكلمات في ثواني. الشطارة والاحتراف إنك تقرر تكتب إيه.. وليه.. ولمين.. وبأي زاوية تقفل الأوردر وتزود مبيعات البيزنس.»
                             </div>
                         </div>
                     </div>
@@ -2740,21 +2931,7 @@
             </div>
         </section>
 
-        <!-- 5. Wall of Proof & Authority (#testimonials) -->
-        <section class="section-wrap" id="testimonials" style="border-top: 1px solid var(--border-subtle);">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="section-pill-tag" id="proofPillTag">⭐ نتائج حقيقية وتقييمات موثقة</span>
-                    <h2 class="section-title" id="proofSectionTitle">جدار الإثباتات والشهادات المعتمدة</h2>
-                    <p class="section-desc" id="proofSectionDesc">الأرقام مبتكدبش — دي نتائج حقيقية لتكلفة الرسائل ومحادثات واتساب وتقييمات من مدربين وعملاء اشتغلت معاهم:</p>
-                </div>
-
-                <div class="filter-bar-flex" id="proofFilterBar"></div>
-                <div class="proof-grid" id="proofCardsGrid"></div>
-            </div>
-        </section>
-
-        <!-- 6. Interactive Sales Laboratory (#showcase) -->
+        <!-- 7. Interactive Sales Laboratory (#showcase) -->
         <section class="section-wrap" id="showcase" style="border-top: 1px solid var(--border-subtle); background: rgba(8, 11, 18, 0.4);">
             <div class="container">
                 <div class="section-header-centered">
@@ -2833,7 +3010,7 @@
             </div>
         </section>
 
-        <!-- 7. Instant Sales Hook Generator (#hooks) -->
+        <!-- 8. Instant Sales Hook Generator (#hooks) -->
         <section class="section-wrap" id="hooks" style="background: rgba(8, 11, 18, 0.6); border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="section-header-centered">
@@ -2858,31 +3035,11 @@
             </div>
         </section>
 
-        <!-- 8. Services Scope (#services / #packages) -->
-        <section class="section-wrap" id="services" style="border-top: 1px solid var(--border-subtle);">
-            <div class="container">
-                <div class="section-header-centered">
-                    <span class="section-pill-tag" id="servicesPillTag">💼 نطاق الخدمات والتعاون</span>
-                    <h2 class="section-title" id="servicesSectionTitle">نطاق عمل مرن ومحدد يضمن لبيزنسك أعلى عائد 🚀</h2>
-                    <p class="section-desc" id="servicesSectionDesc">مفيش حلول معلبة — كل تعاون بيتبني حسب مرحلة البيزنس ونوع المنتج والهدف البيعي المباشر:</p>
-                </div>
-
-                <div class="packages-grid" id="packagesContainer"></div>
-
-                <!-- Scope-based collaboration bar -->
-                <div class="scope-collaboration-bar">
-                    <div class="scope-collaboration-text" id="scopeCollabText">
-                        🤝 <strong>التعاون المرن حسب النطاق (Scope-Based):</strong> مفيش أسعار معلبة أو مقاس واحد يناسب الكل. التعاون بيكون حسب احتياج الحملة ومرحلة نمو البيزنس — بنقعد 10 دقائق على واتساب أو مكالمة سريعة ونحدد المطلوب بالظبط بدون أي التزام!
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- 9. Grand Finale Contact Card (#contact) -->
         <section class="section-wrap" id="contact" style="border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="grand-finale-box">
-                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px;" id="contactSectionTitle">عندك Brand يستاهل يتسمع؟ خلينا نحدد الزاوية.</h2>
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px;" id="contactSectionTitle">عندك Brand محتاج زاوية أقوى؟ خلينا نحددها.</h2>
                     <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto; line-height: 1.8;" id="contactSectionDesc">
                         ابعتلي واتساب أو إيميل دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!
                     </p>
@@ -2955,17 +3112,52 @@
     <script>
         const store = {
             ar: {
-                docTitle: 'محمود محمد متولي | كاتب محتوى إعلاني وكوبي رايتر مبيعات',
+                docTitle: 'محمود محمد متولي | Copywriter & Content Marketer',
                 heroStatusText: 'متاح حالياً لاستلام مشاريع وحملات إعلانية جديدة',
                 heroHeadline: 'محمود محمد <span class="highlight">متولي</span>',
-                heroRoleBadge: 'Copywriter & Content Marketer | مهندس الإقناع الواقعي',
-                heroTaglineQuote: '«مش برص كلام وخلاص. بدور على الزاوية اللي تبيع.»',
+                heroRoleBadge: 'Copywriter & Content Marketer',
+                heroTaglineQuote: '«بفهم العميل الأول.. وبعدين بدور على الزاوية اللي تخليه يتحرك.»',
+                heroSupportingLine: 'Copywriting + Content Marketing مبنيين على فهم الـ Business والـ Audience قبل ما نكتب أول كلمة.',
                 heroBio: 'مش برص كلام وخلاص ولا بعمل بوستات تملى الصفحة — باخد منتجك أو خدمتك، بدرس الزبون وسيكولوجيته في السوق، وبكتبلك إعلانات وسكربتات ريلز وخطط محتوى تقفل الأوردر وتزود مبيعاتك بأعلى عائد استثمار',
                 equationTag: 'معادلة الصنعة ⚡',
                 equationFormula: '[سيكولوجية حطحوت + بيعية طوسون + بساطة معاذ صلاح + رشاقة عاطف] × صرامة ورشة الحديد = <strong>مهندس الإقناع الواقعي</strong>',
                 ctaMicroGuarantee: '⚡ فحص إعلاني وتشخيص مجاني لنصوصك الحالية في 10 دقائق على واتساب • بدون أي التزام',
-                btnHeroWa: 'خلّينا نشتغل سوا',
-                btnHeroWork: 'استعرض شغلي',
+                btnHeroWa: 'خلينا نتكلم',
+                btnHeroWork: 'شوف شغلي',
+                navLinkWork: 'سابقة الأعمال',
+                navLinkThink: 'طريقة التفكير',
+                navLinkProof: 'النتائج والإثباتات',
+                navLinkServices: 'نطاق الخدمات',
+                navLinkOrigin: 'عن محمود والصنعة',
+                navLinkContact: 'تواصل مباشر',
+                howIThinkPillTag: '🧠 فلسفة التفكير والمنظومة الاستراتيجية',
+                howIThinkSectionTitle: 'مش ببدأ بسؤال: "هننزل بوست إيه؟" — ببدأ بأسئلة البيزنس وسيكولوجية الزبون',
+                howIThinkSectionDesc: 'الـ Copywriting مش مجرد صياغة عبارات رنانة؛ هو فهم معمق لتردد العميل واعتراضاته الخفية واختيار الزاوية التي تحرك قرار الشراء:',
+                howIThinkQuote: '«مش ببدأ بسؤال: "هننزل بوست إيه النهاردة؟"<br>ببدأ بالأسئلة الحقيقية اللي بتبني البيزنس وتجيب مبيعات:»',
+                thinkQuestions: [
+                    'بنكلم مين بالظبط (Audience Psychology)؟',
+                    'عايزين إيه وبيخافوا من إيه (Fears & Desires)؟',
+                    'إيه نقطة الاحتكاك اللي معطلاهم عن الشراء (Friction & Objections)؟',
+                    'البيزنس محتاج إيه في المرحلة دي بالظبط (Business Need)؟',
+                    'إيه أقوى زاوية تلمسهم وتخليهم يهتموا (The Winning Angle)؟',
+                    'وإيه الإجراء الواضح المطلوب منهم دلوقتي (Clear Actionable CTA)؟'
+                ],
+                pipeSteps: [
+                    { title: 'Research', desc: 'تشريح السوق، دراسة المنافسين، وسماع شكاوى الزبائن الحقيقية.' },
+                    { title: 'Insight', desc: 'اكتشاف الدافع الخفي ونقطة الألم الحقيقية وراء قرار الشراء.' },
+                    { title: 'The Angle', desc: 'اختيار زاوية التناول الذكية والمدخل النفسي الذي يميزك.' },
+                    { title: 'Message', desc: 'صياغة الرسالة البيعية بلغة واضحة خالية من أي فذلكة أو تعالي.' },
+                    { title: 'Content & Copy', desc: 'كتابة الإعلانات وسكربتات الريلز وصفحات الهبوط القاطعة.' },
+                    { title: 'Testing', desc: 'اختبار الزوايا الإعلانية مع الميديا باير لرصد الزاوية الرابحة.' },
+                    { title: 'Optimization', desc: 'تحليل أرقام الحملات (CPR, ROAS) وتطوير الكوبي باستمرار.' }
+                ],
+                craftPillarsHeader: '[ معايير الصياغة والتنفيذ // THE 4 CRAFT PILLARS ]',
+                craftPillars: [
+                    { title: 'سيكولوجية حطحوت', desc: 'تشريح الدوافع الدفينة ومخاوف الزبون قبل كتابة حرف واحد، لفهم المحرك النفسي الحقيقي لقرار الشراء.' },
+                    { title: 'بيعية طوسون', desc: 'هجوم مباشر وذكي على الاعتراضات، وصياغة عروض لا تُقاوم تحول المتردد إلى مشتري مؤكد فوراً.' },
+                    { title: 'بساطة معاذ صلاح', desc: 'لغة مصرية فصيحة بيضاء، خالية من التعالي المصطنع وكأنك بتدردش مع صاحبك على قهوة الصبح.' },
+                    { title: 'رشاقة عاطف', desc: 'سرد قصصي انسيابي كأنه زحليقة ملساء تجر رجل القارئ بسلاسة من أول هوك لحد زرار الدفع.' }
+                ],
                 metric1Label: 'نمو وصول طبيعي • حملة شتاء Eleven 11',
                 metric2Label: 'تكلفة رسالة الشراء • إعلانات Meta للملابس',
                 metric3Label: 'ليدز وطلبات حجز • English Bloom وأكاديمية أجيال',
@@ -3366,26 +3558,28 @@
         ,
             en: {
                 langBtnText: 'العربية',
-                docTitle: 'Mahmoud Metwally | Direct-Response Copywriter & Content Marketer',
+                docTitle: 'Mahmoud Metwally | Copywriter & Content Marketer',
                 navBrandText: 'Mahmoud <span class="highlight">Metwally</span>',
-                navLinkWork: 'Selected Work & Case Studies',
-                navLinkOrigin: 'Craft & AI Philosophy',
-                navLinkProof: 'Verified Proof & Results',
+                navLinkWork: 'Selected Work',
+                navLinkThink: 'How I Think',
+                navLinkProof: 'Verified Proof',
                 navLinkShowcase: 'Interactive Sales Lab',
                 navLinkServices: 'Services Scope',
-                navLinkContact: 'Direct Contact',
+                navLinkOrigin: 'About & Craft',
+                navLinkContact: 'Get in Touch',
                 navCtaText: 'WhatsApp Chat',
                 mobDockWork: 'Work',
-                mobDockOrigin: 'Craft',
+                mobDockThink: 'Thinking',
                 mobDockProof: 'Proof',
                 mobDockServices: 'Services',
                 mobDockWa: 'WhatsApp',
 
                 // Hero
-                heroStatusText: 'Available for Selected Direct-Response & Content Projects',
-                heroRoleBadge: 'Copywriter & Content Marketer | The Real-World Conversion Engineer',
+                heroStatusText: 'Available for Selected Projects & Growth Campaigns',
+                heroRoleBadge: 'Copywriter & Content Marketer',
                 heroHeadline: 'Mahmoud <span class="highlight">Metwally</span>',
-                heroTaglineQuote: '“I don\'t chase fluffy ideas. I find the angle that sells.”',
+                heroTaglineQuote: '“I understand the audience first. Then I find the angle that moves them.”',
+                heroSupportingLine: 'Copywriting & Content Marketing grounded in business acumen and audience psychology before writing a single word.',
                 typewriterWords: [
                     'I write high-converting direct-response ads',
                     'I design full-funnel content architectures',
@@ -3396,8 +3590,36 @@
                 equationTag: 'The Persuasion Formula ⚡',
                 equationFormula: '[Psychological Depth + High-Stakes Selling + Radical Simplicity] × Industrial Metalworking Precision = <strong>The Real-World Conversion Engineer</strong>',
                 ctaMicroGuarantee: '⚡ Free 10-Minute Ad Copy Teardown on WhatsApp • Zero Obligation',
-                btnHeroWa: 'Let\'s Work Together',
+                btnHeroWa: 'Let\'s Talk',
                 btnHeroWork: 'See My Work',
+                howIThinkPillTag: '🧠 Strategic Thinking & Persuasion System',
+                howIThinkSectionTitle: 'I never start by asking "What post should we publish?" — I start with business and audience psychology',
+                howIThinkSectionDesc: 'Copywriting isn\'t about sounding clever; it is forensic empathy for buyer hesitation, neutralizing hidden friction, and engineering the winning angle:',
+                howIThinkQuote: '“I don\'t start with: ‘What should we post today?’<br>I start with the strategic questions that actually drive revenue:”',
+                thinkQuestions: [
+                    'Who exactly are we speaking to (Audience Psychology)?',
+                    'What do they crave and what do they fear (Fears & Desires)?',
+                    'What hidden friction is halting the purchase (Friction & Objections)?',
+                    'What does the business specifically require at this stage (Business Need)?',
+                    'What is the contrarian hook that commands attention (The Winning Angle)?',
+                    'What is the singular frictionless next step (Clear Actionable CTA)?'
+                ],
+                pipeSteps: [
+                    { title: 'Research', desc: 'Market dissection, competitor gap analysis, and listening to raw customer complaints.' },
+                    { title: 'Insight', desc: 'Uncovering the hidden trigger and visceral pain point driving buying decisions.' },
+                    { title: 'The Angle', desc: 'Crafting the sharp psychological angle and positioning hook that sets you apart.' },
+                    { title: 'Message', desc: 'Structuring the core proposition in clear, human, jargon-free language.' },
+                    { title: 'Content & Copy', desc: 'Writing high-converting ad copy, high-retention Reels, and decisive landing pages.' },
+                    { title: 'Testing', desc: 'Rapid-testing creative angles alongside the media buyer to isolate winners.' },
+                    { title: 'Optimization', desc: 'Tracking core metrics (CPR, ROAS) and continually sharpening copy performance.' }
+                ],
+                craftPillarsHeader: '[ EXECUTION STANDARDS // THE 4 CRAFT PILLARS ]',
+                craftPillars: [
+                    { title: 'Psychological Depth (Hathout)', desc: 'Dissecting hidden motivations and customer hesitation before typing a single letter.' },
+                    { title: 'Conversion Rigor (Tousson)', desc: 'Attacking buyer objections head-on and structuring irresistible, frictionless offers.' },
+                    { title: 'Radical Simplicity (Moaz)', desc: 'Accessible, conversational prose free of pretension — like talking to a trusted peer.' },
+                    { title: 'Narrative Slippery-Slope (Atef)', desc: 'Effortless story transitions pulling the reader seamlessly from hook to purchase.' }
+                ],
                 metric1Num: '+479%',
                 metric1Label: 'Organic Reach Growth • Eleven 11 Winter Campaign',
                 metric2Num: '4.41 EGP',
@@ -4068,44 +4290,45 @@
 
             bodyEl.innerHTML = `
                 <div class="cs-step-card">
-                    <div class="cs-step-num">${isAr ? 'الخطوة 01' : 'STEP 01'}</div>
-                    <div class="cs-step-title">⚠️ ${isAr ? 'المشكلة والتحدي (The Problem)' : 'The Problem & Bottleneck'}</div>
+                    <div class="cs-step-num">01 — THE PROBLEM</div>
+                    <div class="cs-step-title">⚠️ ${isAr ? 'المشكلة والتحدي التسويقي' : 'The Core Bottleneck & Challenge'}</div>
                     <div class="cs-step-content">${cs.problem}</div>
                 </div>
 
                 <div class="cs-step-card">
-                    <div class="cs-step-num">${isAr ? 'الخطوة 02' : 'STEP 02'}</div>
-                    <div class="cs-step-title">🎯 ${isAr ? 'الجمهور المستهدف (The Audience)' : 'The Target Audience'}</div>
+                    <div class="cs-step-num">02 — THE AUDIENCE</div>
+                    <div class="cs-step-title">🎯 ${isAr ? 'الجمهور المستهدف وسيكولوجيته' : 'Target Audience & Customer Profile'}</div>
                     <div class="cs-step-content">${cs.audience}</div>
                 </div>
 
                 <div class="cs-step-card">
-                    <div class="cs-step-num">${isAr ? 'الخطوة 03' : 'STEP 03'}</div>
-                    <div class="cs-step-title">🧠 ${isAr ? 'الرؤية السيكولوجية (Psychological Insight)' : 'The Core Psychological Insight'}</div>
+                    <div class="cs-step-num">03 — THE INSIGHT</div>
+                    <div class="cs-step-title">🧠 ${isAr ? 'الرؤية السيكولوجية العميقة' : 'The Core Psychological Insight'}</div>
                     <div class="cs-step-content">${cs.insight}</div>
                 </div>
 
-                <div class="cs-step-card">
-                    <div class="cs-step-num">${isAr ? 'الخطوة 04' : 'STEP 04'}</div>
-                    <div class="cs-step-title">⚡ ${isAr ? 'الزاوية الإعلانية (The Angle)' : 'The Hook & Strategic Angle'}</div>
+                <div class="cs-step-card" style="border-color: var(--accent); background: rgba(255, 85, 0, 0.05);">
+                    <div class="cs-step-num" style="color: var(--accent);">04 — THE ANGLE ★</div>
+                    <div class="cs-step-title" style="color: var(--accent);">⚡ ${isAr ? 'الزاوية الإعلانية الرابحة' : 'The Winning Strategic Angle'}</div>
                     <div class="cs-step-content">${cs.angle}</div>
                 </div>
 
                 <div class="cs-step-card">
-                    <div class="cs-step-num">${isAr ? 'الخطوة 05' : 'STEP 05'}</div>
-                    <div class="cs-step-title">✍️ ${isAr ? 'النص الإعلاني الفعلي (The Actual Copy)' : 'The Actual Converting Copy'}</div>
+                    <div class="cs-step-num">05 — THE COPY</div>
+                    <div class="cs-step-title">✍️ ${isAr ? 'النص الإعلاني الفعلي المنشور' : 'Actual Converting Ad Copy'}</div>
                     <div class="cs-copy-box">${cs.copy}</div>
                 </div>
 
                 <div class="cs-step-card">
-                    <div class="cs-step-num">${isAr ? 'الخطوة 06' : 'STEP 06'}</div>
-                    <div class="cs-step-title">🎬 ${isAr ? 'التوجيه الإبداعي (Creative Direction)' : 'Creative & Visual Direction'}</div>
+                    <div class="cs-step-num">06 — THE CREATIVE DIRECTION</div>
+                    <div class="cs-step-title">🎬 ${isAr ? 'التوجيه الإبداعي والمونتاج' : 'Creative & Visual Direction'}</div>
                     <div class="cs-step-content">${cs.creativeDirection}</div>
                 </div>
 
                 <div class="cs-result-highlight">
-                    <div class="cs-result-title">🚀 ${isAr ? 'النتيجة والأثر بالأرقام (Measurable Result)' : 'The Proven Business Result'}</div>
-                    <div class="cs-result-text">${cs.result}</div>
+                    <div class="cs-step-num" style="color: #34d399; font-weight: 800; margin-bottom: 6px;">07 — THE RESULT</div>
+                    <div class="cs-result-title">🚀 ${isAr ? 'النتيجة الموثقة والأثر بالأرقام' : 'The Proven Business Result'}</div>
+                    <div class="cs-result-text">${cs.result || cs.results || ''}</div>
                 </div>
 
                 <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 18px; flex-wrap: wrap;">
@@ -4429,26 +4652,26 @@
 
             // Navbar links
             const navWork = document.getElementById('navLinkWork');
-            const navOrigin = document.getElementById('navLinkOrigin');
-            const navTestimonials = document.getElementById('navLinkTestimonials');
-            const navShowcase = document.getElementById('navLinkShowcase');
+            const navThink = document.getElementById('navLinkThink');
+            const navProof = document.getElementById('navLinkProof') || document.getElementById('navLinkTestimonials');
             const navServices = document.getElementById('navLinkServices');
+            const navOrigin = document.getElementById('navLinkOrigin');
             const navContact = document.getElementById('navLinkContact');
 
-            if (navWork) navWork.textContent = isAr ? 'سابقة الأعمال ودراسات الحالة' : t.navLinkWork;
-            if (navOrigin) navOrigin.textContent = isAr ? 'سر الصنعة وفلسفة AI' : t.navLinkOrigin;
-            if (navTestimonials) navTestimonials.textContent = isAr ? 'النتائج والتقييمات' : t.navLinkProof;
-            if (navShowcase) navShowcase.textContent = isAr ? 'المختبر التفاعلي' : t.navLinkShowcase;
+            if (navWork) navWork.textContent = isAr ? 'سابقة الأعمال' : t.navLinkWork;
+            if (navThink) navThink.textContent = isAr ? 'طريقة التفكير' : t.navLinkThink;
+            if (navProof) navProof.textContent = isAr ? 'النتائج والإثباتات' : t.navLinkProof;
             if (navServices) navServices.textContent = isAr ? 'نطاق الخدمات' : t.navLinkServices;
+            if (navOrigin) navOrigin.textContent = isAr ? 'عن محمود والصنعة' : t.navLinkOrigin;
             if (navContact) navContact.textContent = isAr ? 'تواصل مباشر' : t.navLinkContact;
 
             // Mobile Dock
             const mobWork = document.getElementById('mobDockWork');
-            const mobOrigin = document.getElementById('mobDockOrigin');
+            const mobThink = document.getElementById('mobDockThink');
             const mobProof = document.getElementById('mobDockProof');
             const mobServices = document.getElementById('mobDockServices');
             if (mobWork) mobWork.textContent = isAr ? 'الأعمال' : 'Work';
-            if (mobOrigin) mobOrigin.textContent = isAr ? 'الصنعة' : 'Craft';
+            if (mobThink) mobThink.textContent = isAr ? 'التفكير' : 'Thinking';
             if (mobProof) mobProof.textContent = isAr ? 'النتائج' : 'Proof';
             if (mobServices) mobServices.textContent = isAr ? 'الخدمات' : 'Services';
 
@@ -4468,14 +4691,8 @@
             const taglineEl = document.getElementById('heroTaglineQuote');
             if (taglineEl && t.heroTaglineQuote) taglineEl.textContent = t.heroTaglineQuote;
 
-            const bioEl = document.getElementById('heroBioText');
-            if (bioEl && t.heroBio) bioEl.textContent = t.heroBio;
-
-            const eqTagEl = document.getElementById('brandEquationTag');
-            if (eqTagEl && t.equationTag) eqTagEl.textContent = t.equationTag;
-
-            const eqFormulaEl = document.getElementById('brandEquationFormula');
-            if (eqFormulaEl && t.equationFormula) eqFormulaEl.innerHTML = t.equationFormula;
+            const supportingEl = document.getElementById('heroSupportingLine');
+            if (supportingEl && t.heroSupportingLine) supportingEl.textContent = t.heroSupportingLine;
 
             const ctaGuarEl = document.getElementById('heroCtaGuarantee');
             if (ctaGuarEl && t.ctaMicroGuarantee) ctaGuarEl.textContent = t.ctaMicroGuarantee;
@@ -4495,6 +4712,38 @@
             if (m2 && t.metric2Label) m2.textContent = t.metric2Label;
             if (m3 && t.metric3Label) m3.textContent = t.metric3Label;
             if (m4 && t.metric4Label) m4.textContent = t.metric4Label;
+
+            // How I Think Section
+            const hitPill = document.getElementById('howIThinkPillTag');
+            const hitTitle = document.getElementById('howIThinkSectionTitle');
+            const hitDesc = document.getElementById('howIThinkSectionDesc');
+            const hitQuote = document.getElementById('howIThinkQuote');
+            if (hitPill && t.howIThinkPillTag) hitPill.textContent = t.howIThinkPillTag;
+            if (hitTitle && t.howIThinkSectionTitle) hitTitle.textContent = t.howIThinkSectionTitle;
+            if (hitDesc && t.howIThinkSectionDesc) hitDesc.textContent = t.howIThinkSectionDesc;
+            if (hitQuote && t.howIThinkQuote) hitQuote.innerHTML = t.howIThinkQuote;
+
+            ['thinkQ1', 'thinkQ2', 'thinkQ3', 'thinkQ4', 'thinkQ5', 'thinkQ6'].forEach((qId, idx) => {
+                const el = document.getElementById(qId);
+                if (el && t.thinkQuestions && t.thinkQuestions[idx]) el.textContent = t.thinkQuestions[idx];
+            });
+
+            for (let i = 1; i <= 7; i++) {
+                const titleEl = document.getElementById(`pipeStep${i}Title`);
+                const descEl = document.getElementById(`pipeStep${i}Desc`);
+                if (titleEl && t.pipeSteps && t.pipeSteps[i - 1]) titleEl.textContent = t.pipeSteps[i - 1].title;
+                if (descEl && t.pipeSteps && t.pipeSteps[i - 1]) descEl.textContent = t.pipeSteps[i - 1].desc;
+            }
+
+            const craftH = document.getElementById('craftPillarsHeader');
+            if (craftH && t.craftPillarsHeader) craftH.textContent = t.craftPillarsHeader;
+
+            for (let i = 1; i <= 4; i++) {
+                const titleEl = document.getElementById(`p${i}Title`);
+                const descEl = document.getElementById(`p${i}Desc`);
+                if (titleEl && t.craftPillars && t.craftPillars[i - 1]) titleEl.textContent = t.craftPillars[i - 1].title;
+                if (descEl && t.craftPillars && t.craftPillars[i - 1]) descEl.textContent = t.craftPillars[i - 1].desc;
+            }
 
             // Section headers
             const workPill = document.getElementById('workPillTag');
@@ -4572,8 +4821,8 @@
             const contactEmail = document.getElementById('contactBtnEmail');
             const contactCv = document.getElementById('contactBtnCv');
             const contactAudit = document.getElementById('contactAuditCallout');
-            if (contactTitle) contactTitle.textContent = isAr ? 'عندك Brand يستاهل يتسمع؟ خلينا نحدد الزاوية.' : 'Have a brand worth hearing? Let\'s find the angle.';
-            if (contactDesc) contactDesc.textContent = isAr ? 'ابعتلي واتساب أو إيميل دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!' : 'Send me a message on WhatsApp or email right now to audit your current campaigns and discover how to convert cold traffic into high-ROAS revenue.';
+            if (contactTitle) contactTitle.textContent = isAr ? 'عندك Brand محتاج زاوية أقوى؟ خلينا نحددها.' : 'Got a brand worth moving? Let\'s find the angle.';
+            if (contactDesc) contactDesc.textContent = isAr ? 'ابعتلي واتساب أو إيميل دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!' : 'Reach out on WhatsApp or email right now to audit your current campaigns and discover how to convert cold traffic into high-ROAS revenue.';
             if (contactWa) contactWa.textContent = isAr ? '🚀 ابدأ مشروعك (واتساب)' : '🚀 Start a Project (WhatsApp)';
             if (contactEmail) contactEmail.textContent = isAr ? '✉️ راسلني عبر الإيميل' : '✉️ Email Me';
             if (contactCv) contactCv.textContent = isAr ? '📄 تحميل الـ CV' : '📄 Download CV';
