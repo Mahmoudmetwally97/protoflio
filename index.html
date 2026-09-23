@@ -1888,6 +1888,70 @@
             color: #cbd5e1;
         }
 
+        /* Project Structured Spec Box */
+        .work-project-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 12px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            font-size: 0.82rem;
+        }
+        .work-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .work-meta-item.full-width {
+            grid-column: span 2;
+        }
+        .work-meta-k {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .work-meta-v {
+            color: #f1f5f9;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .work-meta-v.highlight-result {
+            color: #86efac;
+            font-weight: 700;
+        }
+
+        /* Visible Live Copy Box on Card */
+        .work-copy-preview-box {
+            background: rgba(255, 106, 0, 0.04);
+            border: 1px solid rgba(255, 106, 0, 0.22);
+            border-inline-start: 3px solid var(--accent);
+            border-radius: var(--radius-sm);
+            padding: 12px 15px;
+            margin-bottom: 14px;
+            font-size: 0.86rem;
+            line-height: 1.65;
+        }
+        .work-copy-preview-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .work-copy-text {
+            color: #fed7aa;
+            font-style: italic;
+        }
+
         /* Welding & AI Signature Styles */
         .welding-quote-card {
             background: rgba(255, 106, 0, 0.05);
@@ -2364,12 +2428,12 @@
                 <div class="hero-cta-flex">
                     <a href="#work" class="btn-luxury-primary">
                         <span class="btn-inner-icon-circle">💼</span>
-                        <span id="heroPrimaryCtaText">استعرض دراسات الحالة وشغلي لايف</span>
+                        <span id="heroPrimaryCtaText">استعرض شغلي</span>
                     </a>
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-luxury-secondary">
                             <span class="btn-inner-icon-circle">💬</span>
-                            <span id="heroSecondaryCtaText">اتكلم معايا واتساب فوراً</span>
+                            <span id="heroSecondaryCtaText">خلّينا نشتغل سوا</span>
                         </a>
                         <span class="cta-micro-guarantee" id="heroCtaGuarantee">⚡ فحص إعلاني وتشخيص مجاني لنصوصك الحالية في 10 دقائق على واتساب • بدون أي التزام</span>
                     </div>
@@ -2380,19 +2444,19 @@
                     <div class="metrics-hud-inner">
                         <div class="metric-unit">
                             <div class="metric-num highlight">+479%</div>
-                            <div class="metric-label" id="metricLabel1">قفزة وصول طبيعي (حملة شتاء Eleven 11)</div>
+                            <div class="metric-label" id="metricLabel1">نمو وصول طبيعي • حملة شتاء Eleven 11</div>
                         </div>
                         <div class="metric-unit">
                             <div class="metric-num highlight-cyan">4.41 ج</div>
-                            <div class="metric-label" id="metricLabel2">تكلفة رسالة الشراء (إعلانات Meta للملابس)</div>
+                            <div class="metric-label" id="metricLabel2">تكلفة رسالة الشراء • إعلانات Meta للملابس</div>
                         </div>
                         <div class="metric-unit">
                             <div class="metric-num highlight">890+</div>
-                            <div class="metric-label" id="metricLabel3">طلب حجز واستفسار مؤكد (English Bloom وأجيال)</div>
+                            <div class="metric-label" id="metricLabel3">ليدز وطلبات حجز • English Bloom وأكاديمية أجيال</div>
                         </div>
                         <div class="metric-unit">
                             <div class="metric-num highlight-cyan">93 / 105</div>
-                            <div class="metric-label" id="metricLabel4">رتبة Senior Copywriter (أكاديمية حذيفة الخولي)</div>
+                            <div class="metric-label" id="metricLabel4">رتبة Senior Copywriter • تقييم أكاديمية حذيفة الخولي</div>
                         </div>
                     </div>
                 </div>
@@ -2630,23 +2694,26 @@
         <section class="section-wrap" id="contact" style="border-top: 1px solid var(--border-subtle);">
             <div class="container">
                 <div class="grand-finale-box">
-                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px;" id="contactSectionTitle">عندك Brand محتاج كلام يشتغل ويجيب نتيجة؟ خلّينا نتكلم.</h2>
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 16px;" id="contactSectionTitle">عندك Brand محتاج كلام يشتغل؟ خلينا نتكلم.</h2>
                     <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto; line-height: 1.8;" id="contactSectionDesc">
-                        ابعتلي واتساب دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!
+                        ابعتلي واتساب أو إيميل دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!
                     </p>
 
                     <div class="grand-links-flex">
                         <a href="https://wa.me/201065760983?text=%D8%A3%D9%87%D9%84%D9%8B%D8%A7%20%D9%8A%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D9%86%D8%AA%D9%83%D9%84%D9%85%20%D9%81%D9%8A%20%D8%B4%D8%BA%D9%84" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="background: linear-gradient(135deg, #25D366, #128C7E); box-shadow: 0 10px 35px rgba(37, 211, 102, 0.45);">
-                            <span id="contactBtnWa">💬 شات واتساب فوري</span>
+                            <span id="contactBtnWa">🚀 ابدأ مشروعك (واتساب)</span>
+                        </a>
+                        <a href="mailto:mahmoud.metwally.copy@gmail.com?subject=مشروع%20جديد%20-%20استفسار%20عن%20خدمات%20الكوبي%20رايتنج" class="btn-luxury-secondary">
+                            <span id="contactBtnEmail">✉️ راسلني عبر الإيميل</span>
                         </a>
                         <a href="Mahmoud-Metwally-CV.pdf" target="_blank" download="Mahmoud-Metwally-CV.pdf" class="btn-luxury-secondary">
-                            <span id="contactBtnCv">📄 تحميل الـ CV الرسمي</span>
-                        </a>
-                        <a href="https://www.facebook.com/MahmoudMetwally97" target="_blank" rel="noopener noreferrer" class="btn-luxury-secondary">
-                            <span>🔵 فيسبوك</span>
+                            <span id="contactBtnCv">📄 تحميل الـ CV</span>
                         </a>
                         <a href="https://www.linkedin.com/in/mahmoud-metwally-499ba7381" target="_blank" rel="noopener noreferrer" class="btn-luxury-secondary">
                             <span>💼 لينكدإن</span>
+                        </a>
+                        <a href="https://www.facebook.com/MahmoudMetwally97" target="_blank" rel="noopener noreferrer" class="btn-luxury-secondary">
+                            <span>🔵 فيسبوك</span>
                         </a>
                     </div>
 
@@ -2709,12 +2776,12 @@
                 equationTag: 'معادلة الصنعة ⚡',
                 equationFormula: '[سيكولوجية حطحوت + بيعية طوسون + بساطة معاذ صلاح + رشاقة عاطف] × صرامة ورشة الحديد = <strong>مهندس الإقناع الواقعي</strong>',
                 ctaMicroGuarantee: '⚡ فحص إعلاني وتشخيص مجاني لنصوصك الحالية في 10 دقائق على واتساب • بدون أي التزام',
-                btnHeroWa: 'اتكلم معايا واتساب فوراً',
-                btnHeroWork: 'استعرض دراسات الحالة وشغلي لايف',
-                metric1Label: 'قفزة وصول طبيعي (حملة شتاء Eleven 11)',
-                metric2Label: 'تكلفة رسالة الشراء (إعلانات Meta للملابس)',
-                metric3Label: 'طلب حجز واستفسار مؤكد (English Bloom وأجيال)',
-                metric4Label: 'رتبة Senior Copywriter (أكاديمية حذيفة الخولي)',
+                btnHeroWa: 'خلّينا نشتغل سوا',
+                btnHeroWork: 'استعرض شغلي',
+                metric1Label: 'نمو وصول طبيعي • حملة شتاء Eleven 11',
+                metric2Label: 'تكلفة رسالة الشراء • إعلانات Meta للملابس',
+                metric3Label: 'ليدز وطلبات حجز • English Bloom وأكاديمية أجيال',
+                metric4Label: 'رتبة Senior Copywriter • تقييم أكاديمية حذيفة الخولي',
                 brands: [
                     'English Bloom Academy', 'Eleven 11 Fashion', 'أكاديمية أجيال للقرآن', 'Team NTY', 'HK Design Interior', 'ZAVN Growth Agency', 'منصة ينفع', 'OnTrack Egypt'
                 ],
@@ -3059,52 +3126,52 @@
                 packagesDesc: 'مفيش أسعار معلبة — بنحدد الركيزة التسويقية المناسبة لحجم شغلك وأهدافك الحالية:',
                 packages: [
                     {
-                        id: 'pkg-ads',
-                        icon: '🔥',
-                        title: 'إعلانات الاستجابة المباشرة وزوايا البيع',
-                        sub: 'Direct-Response Ad Angles & Creative Direction',
+                        id: 'pkg-copywriting',
+                        icon: '✍🏻',
+                        title: 'كتابة الإعلانات والنصوص البيعية (Copywriting)',
+                        sub: 'Social Media, Meta Ads, Landing Pages & Reels Scripts',
                         featured: false,
                         popular: '',
                         bullets: [
-                            '3 زوايا إعلانية نفسية لاختبار الحملات على Meta (A/B Testing)',
-                            'هوكات أول ثانيتين لمنع السكرول ومضاعفة المشاهدات',
-                            'سكربتات ريلز بيعية كاملة مع توجيهات المونتاج والتصوير',
-                            'سكربت واتساب بيعي لقفل استفسارات "بكام؟" وتحويلها لأوردرات',
-                            'متابعة واختبار النتائج مع الميديا باير وتعديل الكوبي باستمرار'
+                            'إعلانات منصات التواصل وMeta Ads المباشرة وعالية العائد',
+                            'سكربتات ريلز وهوكات أول 3 ثواني لمنع السكرول ومضاعفة التفاعل',
+                            'نصوص صفحات الهبوط (Landing Pages) وصياغة العروض البيعية',
+                            'معالجة ذكية ومباشرة لاعتراضات الشراء وتحفيز إجراء اتخاذ القرار',
+                            'توجيهات بصرية دقيقة للديزاينر والمونتير لضمان مطابقة الصورة للكلام'
                         ],
-                        wa: 'أهلاً يا محمود، عايز أحجز معاك باقة إعلانات الاستجابة المباشرة وزوايا البيع لبيزنسي!'
+                        wa: 'أهلاً يا محمود، عايز أحجز معاك خدمات كتابة الإعلانات والنصوص البيعية لبيزنسي!'
                     },
                     {
-                        id: 'pkg-funnel',
-                        icon: '🚀',
-                        title: 'قمع المحتوى الشهري المتكامل (شراكة إعلانية)',
-                        sub: 'Full-Funnel Content Engine (Monthly Partnership)',
+                        id: 'pkg-content',
+                        icon: '🧠',
+                        title: 'تسويق واستراتيجيات المحتوى (Content Marketing)',
+                        sub: 'Content Strategy, Content Pillars & 30-Day Execution Calendar',
                         featured: true,
-                        popular: '⭐ الأكثر طلباً للشراكات المستمرة',
+                        popular: '⭐ الأكثر طلباً للنمو المستمر',
                         bullets: [
-                            'استراتيجية وتقويم محتوى شهري شامل لـ 30 يوماً',
-                            'تغطية كاملة لمراحل القمع (وعي TOFU - اهتمام MOFU - بيع BOFU)',
-                            'نبرة صوت خاصة ومميزة للبراند تناسب الجمهور المستهدف',
-                            'مزج ذكي بين بوستات بناء السلطة والثقة وبوستات العروض والتحويل',
-                            'توجيهات بصرية دقيقة للديزاينر وسيناريوهات تصوير للفيديو'
+                            'استراتيجية محتوى متكاملة وتقويم شهري شامل لـ 30 يوماً',
+                            'تغطية مراحل القمع البيعي بالكامل (وعي TOFU - اهتمام MOFU - بيع BOFU)',
+                            'تشريح سيكولوجية الزبون ونقاط الألم ومحركات اتخاذ القرار',
+                            'تحديد وبناء نبرة صوت فريدة ومقنعة تميز البراند عن المنافسين',
+                            'صناعة محتوى يبني الثقة والسلطة في السوق ويحول المتابعين لعملاء'
                         ],
-                        wa: 'أهلاً يا محمود، عايز أحجز معاك باقة قمع المحتوى الشهري المتكامل والشراكة الكاملة!'
+                        wa: 'أهلاً يا محمود، عايز أحجز معاك استراتيجية وتقويم المحتوى الشهري المتكامل!'
                     },
                     {
-                        id: 'pkg-audit',
-                        icon: '🔍',
-                        title: 'فحص الحملات وإعادة هيكلة الإعلانات',
-                        sub: 'Creative Audit & Ad Revamp',
+                        id: 'pkg-performance',
+                        icon: '🚀',
+                        title: 'دعم الأداء ونمو التحويلات (Performance Support)',
+                        sub: 'Creative Testing, Ad Audits & Messaging Optimization',
                         featured: false,
                         popular: '',
                         bullets: [
-                            'تشخيص وفحص شامل لآخر 5 إعلانات وصفحة الهبوط',
-                            'كشف مواطن تسريب الميزانية الإعلانية والإجهاد الإبداعي (Ad Fatigue)',
-                            'إعادة صياغة أفضل 3 إعلانات بزوايا بيع جديدة ومقنعة',
-                            'بناء عروض لا تُقاوم تقلل تردد الزبون وتزيد معدل التحويل',
-                            'تقرير تشخيصي وتوصيات تسويقية مباشرة للتنفيذ الفوري'
+                            'تشخيص وفحص شامل لآخر إعلاناتك وصفحات الهبوط لكشف تسريب الميزانية',
+                            'اختبار زوايا إعلانية متعددة (A/B Testing) بالشراكة مع الميديا باير',
+                            'تطوير العروض وصياغة عروض لا تُقاوم (Risk-Reversal) تقلل تردد الزبون',
+                            'سكربتات واتساب بيعية لقفل الاستفسارات وتحويلها لأوردرات مؤكدة',
+                            'تحليل دوري لأرقام الحملات (CPR, ROAS) وتطوير الكوبي باستمرار'
                         ],
-                        wa: 'أهلاً يا محمود، عايز أطلب باقة فحص الحملات وإعادة هيكلة الإعلانات!'
+                        wa: 'أهلاً يا محمود، عايز أطلب خدمة دعم الأداء وفحص الحملات الإعلانية!'
                     }
                 ]
             }
@@ -3141,16 +3208,16 @@
                 equationTag: 'The Persuasion Formula ⚡',
                 equationFormula: '[Psychological Depth + High-Stakes Selling + Radical Simplicity] × Industrial Metalworking Precision = <strong>The Real-World Conversion Engineer</strong>',
                 ctaMicroGuarantee: '⚡ Free 10-Minute Ad Copy Teardown on WhatsApp • Zero Obligation',
-                btnHeroWa: 'Instant WhatsApp Chat',
-                btnHeroWork: 'Explore Case Studies & Live Work',
+                btnHeroWa: 'Let\'s Work Together',
+                btnHeroWork: 'See My Work',
                 metric1Num: '+479%',
-                metric1Label: 'Organic Reach Surge (Eleven 11 Winter Campaign)',
+                metric1Label: 'Organic Reach Growth • Eleven 11 Winter Campaign',
                 metric2Num: '4.41 EGP',
-                metric2Label: 'Cost Per Purchasing Lead (Meta Fashion Ads)',
+                metric2Label: 'Cost per Message • Eleven 11 Meta Ads',
                 metric3Num: '890+',
-                metric3Label: 'Qualified Bookings & Leads (Bloom & Ajyal Academies)',
+                metric3Label: 'Qualified Leads • English Bloom & Ajyal',
                 metric4Num: '93 / 105',
-                metric4Label: 'Senior Copywriter Rank (Hozaifa Elkholy Academy)',
+                metric4Label: 'Senior Assessment (93/105) • Hozaifa Elkholy Academy',
 
                 // Capabilities
                 capPillTag: 'Core Specializations',
@@ -3230,7 +3297,7 @@
                             insight: 'Men don\'t buy "cotton percentages"; they fear shirts shrinking or fading after two washes in summer heat',
                             angle: 'Peace-of-Mind & Durability: The t-shirt engineered to survive 3 full summers without shrinking or color fade',
                             copy: '«The t-shirt that will stay brand-new with you for 3 summers without stretching or fading! Pre-shrunk premium cotton, free inspection before delivery, and instant replacement guarantee.»',
-                            creativeDirection: 'Fast-paced Reel comparing fabric weave before and after washing, paired with a confident, street-smart voiceover eliminating doubts',
+                            creativeDirection: 'Dynamic, snappy Reel comparing fabric weave before and after washing, paired with a confident, street-smart voiceover eliminating doubts',
                             result: '+479% surge in organic page reach, cost-per-inquiry reduced to 4.41 EGP, and record seasonal sales volume'
                         }
                     },
@@ -3507,52 +3574,52 @@
                 packagesDesc: 'No cookie-cutter pricing — choose the strategic pillar fitting your exact business stage:',
                 packages: [
                     {
-                        id: 'pkg-ads',
-                        icon: '🔥',
-                        title: 'Direct-Response Ads & Conversion Hooks',
-                        sub: 'High-ROAS Ad Angles & Creative Direction',
+                        id: 'pkg-copywriting',
+                        icon: '✍🏻',
+                        title: 'Direct-Response Copywriting',
+                        sub: 'Social Media Copy, Meta Ads, Landing Pages & Reels Scripts',
                         featured: false,
                         popular: '',
                         bullets: [
-                            '3 Psychological Creative Ad Angles for Meta A/B Testing',
-                            'High-retention 2-second scroll-stoppers per angle',
-                            'Complete Reels & TikTok scripts with visual storytelling cues',
-                            'WhatsApp sales scripts to close "How much?" inquiries into paid orders',
-                            'Collaborative campaign testing & ongoing copy optimization with your media buyer'
+                            'High-converting Social Media & Meta Ads direct-response copy',
+                            'Pattern-interrupt Reels & TikTok scripts with 2-second scroll-stoppers',
+                            'High-impact Landing Page copy & irresistible value proposition structuring',
+                            'Surgical objection handling and action-driving Calls to Action',
+                            'Detailed creative direction for designers and video editors'
                         ],
-                        wa: 'Hi Mahmoud, I want to book the Direct-Response Ad Angles & Creative Direction for my business!'
+                        wa: 'Hi Mahmoud, I would like to book your Direct-Response Copywriting services!'
                     },
                     {
-                        id: 'pkg-funnel',
-                        icon: '🚀',
-                        title: 'Full-Funnel Content Engine (Monthly Partnership)',
-                        sub: 'Comprehensive Content Marketing & Conversion Architecture',
+                        id: 'pkg-content',
+                        icon: '🧠',
+                        title: 'Content Marketing & Strategy',
+                        sub: 'Audience Research, Content Pillars & 30-Day Execution Calendar',
                         featured: true,
-                        popular: '⭐ Most Requested for Partnerships',
+                        popular: '⭐ Most Requested for Sustainable Growth',
                         bullets: [
-                            'Complete 30-day content calendar & marketing masterplan',
-                            'End-to-end funnel coverage (TOFU Awareness, MOFU Consideration, BOFU Sales)',
-                            'Dialed-in brand voice resonant with real Egyptian & regional market psychology',
-                            'Strategic mix of authority-building posts and direct-response conversion ads',
-                            'Visual direction for graphic designers and detailed storyboards for video editors'
+                            'Comprehensive content strategy and 30-day editorial execution calendar',
+                            'Full-funnel coverage (TOFU Awareness, MOFU Consideration, BOFU Sales)',
+                            'Forensic audience research and behavioral customer psychology teardown',
+                            'Distinct brand voice tailored to real market vernacular and purchasing intent',
+                            'Strategic mix of authority-building content and conversion-focused posts'
                         ],
-                        wa: 'Hi Mahmoud, I would like to partner on the Full-Funnel Monthly Content Engine!'
+                        wa: 'Hi Mahmoud, I want to partner with you on Full Content Marketing & Strategy!'
                     },
                     {
-                        id: 'pkg-audit',
-                        icon: '🔍',
-                        title: 'Creative Ad Audit & Funnel Revamp',
-                        sub: 'Diagnostic Teardown & Conversion Optimization',
+                        id: 'pkg-performance',
+                        icon: '🚀',
+                        title: 'Performance & Growth Support',
+                        sub: 'Creative Testing, Ad Audits & Messaging Optimization',
                         featured: false,
                         popular: '',
                         bullets: [
-                            'Forensic diagnostic teardown of your last 5 ads & landing pages',
-                            'Pinpointing hidden budget leakages and creative ad fatigue',
-                            'Rewriting top 3 ad creatives with high-converting, tested angles',
-                            'Structuring irresistible, risk-reversal offers to slash buyer hesitation',
-                            'Actionable growth report with immediate execution steps'
+                            'Diagnostic audit of recent ad creatives & landing pages to stop budget leaks',
+                            'Creative angle testing (A/B Testing) in close alignment with your media buyer',
+                            'Structuring risk-reversal offers that eliminate friction and hesitation',
+                            'WhatsApp sales scripts to close "How much?" inquiries into paid orders',
+                            'Ongoing campaign metrics tracking (CPR, ROAS) and copy refinement'
                         ],
-                        wa: 'Hi Mahmoud, I want to request the Creative Ad Audit & Funnel Revamp!'
+                        wa: 'Hi Mahmoud, I want to book Performance & Growth Support for my campaigns!'
                     }
                 ]
             }
@@ -3688,25 +3755,63 @@
             grid.innerHTML = getStore().workCards.map(c => {
                 const cats = c.cats.split(' ');
                 const isHidden = currentWorkCat !== 'all' && !cats.includes(currentWorkCat);
-                const hasCaseStudy = !!c.caseStudy;
+                const cs = c.caseStudy;
+                const hasCaseStudy = !!cs;
                 const safeTitle = (c.modalCaption || c.title || '').replace(/'/g, "\\'");
                 const safeImg = c.modalImg || c.img;
 
-                // Challenge summary box if case study exists
-                let challengeHtml = '';
-                if (hasCaseStudy && c.caseStudy.problem && c.caseStudy.result) {
-                    challengeHtml = `
-                        <div class="work-challenge-box">
-                            <div class="work-challenge-item">
-                                <span class="work-challenge-label">${isAr ? 'التحدي:' : 'Challenge:'}</span>
-                                <span>${c.caseStudy.problem}</span>
+                // Structured spec grid if case study exists
+                let specsHtml = '';
+                let copyPreviewHtml = '';
+
+                if (hasCaseStudy) {
+                    const clientName = cs.client || c.title;
+                    const industryName = cs.industry || c.type || (isAr ? 'خدمات وتجارة' : 'Services & Commerce');
+                    const roleName = cs.role || (isAr ? 'كوبي رايتر ومسؤول استراتيجية' : 'Copywriter & Strategist');
+                    const challengeText = cs.problem || '';
+                    const deliverableText = cs.deliverable || (isAr ? 'زوايا إعلانية + سكربتات ريلز + توجيهات إبداعية' : 'Ad Angles + Reels Scripts + Creative Direction');
+                    const resultText = cs.result || '';
+
+                    specsHtml = `
+                        <div class="work-project-meta-grid">
+                            <div class="work-meta-item">
+                                <span class="work-meta-k">${isAr ? 'العميل / المشروع:' : 'Client / Project:'}</span>
+                                <span class="work-meta-v">${clientName}</span>
                             </div>
-                            <div class="work-challenge-item">
-                                <span class="work-challenge-label" style="color: #34d399;">${isAr ? 'النتيجة:' : 'Result:'}</span>
-                                <span style="color: #86efac; font-weight: 700;">${c.caseStudy.result}</span>
+                            <div class="work-meta-item">
+                                <span class="work-meta-k">${isAr ? 'المجال / الصناعة:' : 'Industry:'}</span>
+                                <span class="work-meta-v">${industryName}</span>
+                            </div>
+                            <div class="work-meta-item full-width">
+                                <span class="work-meta-k">${isAr ? 'دوري في المشروع:' : 'My Role:'}</span>
+                                <span class="work-meta-v">${roleName}</span>
+                            </div>
+                            <div class="work-meta-item full-width">
+                                <span class="work-meta-k">${isAr ? 'التحدي الأساسي:' : 'Main Challenge:'}</span>
+                                <span class="work-meta-v">${challengeText}</span>
+                            </div>
+                            <div class="work-meta-item full-width">
+                                <span class="work-meta-k">${isAr ? 'المخرجات المُسلّمة:' : 'Main Deliverables:'}</span>
+                                <span class="work-meta-v">${deliverableText}</span>
+                            </div>
+                            <div class="work-meta-item full-width">
+                                <span class="work-meta-k" style="color: #34d399;">${isAr ? 'النتيجة والأثر بالأرقام:' : 'Result & Impact:'}</span>
+                                <span class="work-meta-v highlight-result">${resultText}</span>
                             </div>
                         </div>
                     `;
+
+                    if (cs.copy) {
+                        copyPreviewHtml = `
+                            <div class="work-copy-preview-box">
+                                <div class="work-copy-preview-header">
+                                    <span>✍️ ${isAr ? 'الكوبي الإعلاني الفعلي المنشور' : 'Live Converting Copy Excerpt'}</span>
+                                    <span>${isAr ? 'منشور لايف' : 'Live Ad'}</span>
+                                </div>
+                                <div class="work-copy-text">${cs.copy}</div>
+                            </div>
+                        `;
+                    }
                 }
 
                 // Action buttons: View Case Study + Inspect Original Asset
@@ -3715,7 +3820,7 @@
                     actionsHtml = `
                         <div class="work-actions-row">
                             <button class="btn-view-case-study" onclick="openCaseStudy('${c.id}')">
-                                <span>${isAr ? '🔍 دراسة الحالة بالتفصيل' : '🔍 View Full Teardown'}</span>
+                                <span>${isAr ? '🔍 دراسة الحالة بالتفصيل' : '🔍 View Case Study'}</span>
                             </button>
                             <button class="btn-inspect-asset" onclick="openLightbox('${safeImg}', '${safeTitle}')" title="${isAr ? 'معاينة النموذج الأصلي' : 'Inspect Original Asset'}">
                                 <span>🖼️ ${isAr ? 'النموذج' : 'Asset'}</span>
@@ -3743,8 +3848,9 @@
                             <span class="work-type-tag">${c.type}</span>
                             <h3 class="work-heading">${c.title}</h3>
                             <p class="work-paragraph">${c.desc}</p>
-                            ${challengeHtml}
-                            <div class="work-meta-row">${c.meta}</div>
+                            ${specsHtml}
+                            ${copyPreviewHtml}
+                            ${!hasCaseStudy ? `<div class="work-meta-row">${c.meta}</div>` : ''}
                             ${actionsHtml}
                         </div>
                     </div>
@@ -4249,19 +4355,21 @@
             if (servDesc && t.packagesDesc) servDesc.textContent = t.packagesDesc;
             if (scopeCollab) {
                 scopeCollab.innerHTML = isAr ?
-                    '🤝 <strong>التعاون المرن حسب النطاق (Scope-Based):</strong> مفيش أسعار معلبة أو مقاس واحد يناسب الكل. التعاون بيكون حسب احتياج الحملة ومرحلة نمو البيزنس — بنقعد 10 دقائق على واتساب أو مكالمة سريعة ونحدد المطلوب بالظبط بدون أي التزام!' :
-                    '🤝 <strong>Flexible Scope-Based Collaboration:</strong> No generic pricing or one-size-fits-all retainers. Partnerships are tailored to your campaign requirements and business growth stage — let\'s connect for 10 minutes on WhatsApp to assess exactly what moves the needle.';
+                    '🤝 <strong>التعاون كـ Copywriter & Content Marketer متخصص:</strong> أنا شخص واحد وشريكك الفردي المباشر — مش شركة أو Full-Service Agency. تركيزي كله على دراسة الزبون وصياغة الكلمات والزوايا اللي بتبيع وتجيب عائد استثماري حقيقي (ROAS). بنقعد 10 دقائق على واتساب أو مكالمة سريعة ونحدد المطلوب بالظبط بدون أي التزام!' :
+                    '🤝 <strong>Direct Collaboration as a Dedicated Copywriter & Content Marketer:</strong> I work as your specialized solo partner — not a bloated agency. My entire focus is on deep customer psychology and writing words that sell and drive measurable ROAS. Let\'s connect for 10 minutes on WhatsApp to assess exactly what moves the needle.';
             }
 
             const contactTitle = document.getElementById('contactSectionTitle');
             const contactDesc = document.getElementById('contactSectionDesc');
             const contactWa = document.getElementById('contactBtnWa');
+            const contactEmail = document.getElementById('contactBtnEmail');
             const contactCv = document.getElementById('contactBtnCv');
             const contactAudit = document.getElementById('contactAuditCallout');
-            if (contactTitle) contactTitle.textContent = isAr ? 'عندك Brand محتاج كلام يشتغل ويجيب نتيجة؟ خلّينا نتكلم.' : 'Ready to turn your advertising copy into a predictable sales engine? Let\'s talk.';
-            if (contactDesc) contactDesc.textContent = isAr ? 'ابعتلي واتساب دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!' : 'Message me on WhatsApp right now to audit your current campaigns and discover how to convert cold traffic into high-ROAS revenue.';
-            if (contactWa) contactWa.textContent = isAr ? '💬 شات واتساب فوري' : '💬 Instant WhatsApp Chat';
-            if (contactCv) contactCv.textContent = isAr ? '📄 تحميل الـ CV الرسمي' : '📄 Download Official CV';
+            if (contactTitle) contactTitle.textContent = isAr ? 'عندك Brand محتاج كلام يشتغل؟ خلينا نتكلم.' : 'Have a brand that needs words that actually convert? Let\'s talk.';
+            if (contactDesc) contactDesc.textContent = isAr ? 'ابعتلي واتساب أو إيميل دلوقتي حالا، نشخص إعلاناتك الحالية ونشوف إزاي نحول الزوار لعملاء بيدفعوا بأعلى عائد استثمار!' : 'Send me a message on WhatsApp or email right now to audit your current campaigns and discover how to convert cold traffic into high-ROAS revenue.';
+            if (contactWa) contactWa.textContent = isAr ? '🚀 ابدأ مشروعك (واتساب)' : '🚀 Start a Project (WhatsApp)';
+            if (contactEmail) contactEmail.textContent = isAr ? '✉️ راسلني عبر الإيميل' : '✉️ Email Me';
+            if (contactCv) contactCv.textContent = isAr ? '📄 تحميل الـ CV' : '📄 Download CV';
             if (contactAudit) {
                 contactAudit.innerHTML = isAr ?
                     '<strong>عرض الفحص السريع (Zero Friction):</strong> ابعتلي لينك صفحتك أو آخر إعلانين عملتهم على واتساب، وهقولك في 10 دقائق فلوسك بتتسرب فين بالظبط وسر انخفاض المبيعات — مجاناً وبدون أي التزام!' :
