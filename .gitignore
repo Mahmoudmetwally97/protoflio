@@ -6,3 +6,8 @@ node_modules/
 browser_profile/
 mahmoud_automated_profile/
 docs/
+work/
+react-portfolio/
+*.backup.*
+*.bak
+

@@ -1,7 +1,7 @@
-# 🔥 Mahmoud Mohamed Metwally | Interactive Portfolio & Growth Copywriting Hub
+# Mahmoud Mohamed Metwally | Personal Portfolio & Copywriting Showcase
 
-> **Direct-Response Copywriter & Growth Content Strategist** based in Suez, Egypt.  
-> Transforming cold audiences into paying customers through consumer psychology, full-funnel marketing strategies (TOFU - MOFU - BOFU), and data-driven Meta Ads messaging.
+> **Copywriter & Content Marketer** based in Suez, Egypt.  
+> Focusing on consumer psychology, full-funnel content strategy, and direct-response advertising for brands and agencies across Egypt and the Gulf.
 
 <div align="center">
 
@@ -14,86 +14,59 @@
 
 ---
 
-## 🚀 Live Demo & Quick Access
-👉 **[Click Here to Explore the Live Interactive Portfolio](https://mahmoudmetwally97.github.io/protoflio/)**
+## 📌 About This Project
+
+هذا المستودع يحتوي على كود وتصميم **موقع البورتفوليو الشخصي لمحمود متولي**.  
+تم بناء الموقع يدويًا باستخدام تقنيات الويب الأساسية (**HTML5**, **CSS3**, **Vanilla JavaScript**) بدون أطر عمل معقدة، لضمان أعلى سرعة تحميل وتجربة مستخدم سلسة على كافة الأجهزة.
+
+الهدف من الموقع هو تقديم نموذج عملي يجمع بين **التفكير الاستراتيجي في صناعة المحتوى والكتابة الإعلانية**، وبين **الأدوات التفاعلية البسيطة** التي تساعد أصحاب المشروعات والوكالات على فهم طريقة عمل الحملات التسويقية ونماذج التفكير وراء كل نص.
 
 ---
 
-## 📊 Key Highlights & Proven Metrics
+## 🧭 محتويات وأقسام الموقع
 
-| Metric | Result | Impact |
-| :--- | :--- | :--- |
-| **📈 Page Reach** | **+479%** | Organic & paid organic reach expansion in 28 days |
-| **💬 Cost Per Conversation** | **4.41 EGP** | Hyper-targeted Meta Ads campaign CPR |
-| **🔥 Audience Engagement** | **+66.7%** | Significant uplift in comments, saves, and shares |
-| **👥 Community Growth** | **+400** | Targeted organic followers gained within 1 month |
+1. **التعريف والهوية المهنية (Hero & Positioning)**
+   - إبراز التخصص الدقيق في الـ Direct-Response Copywriting و Content Marketing.
+   - الفلسفة المهنية: الجمع بين دقة الصنعة العملية (Workshop Mindset) واستراتيجيات الإقناع وصناعة المحتوى.
 
----
+2. **الأدوات التفاعلية (Client-Facing Interactive Tools)**
+   - **مولد الأفكار الإعلانية (Hook Generator)**: أداة تفاعلية سريعة لعرض زوايا إعلانية مختلفة (مشكلة وألم، زوايا غير تقليدية، عروض قيمة) وتخصيصها حسب مجال البيزنس.
+   - **حاسبة ميزانية الحملات (Campaign Estimator)**: كالكوليتور تقديري يساعد العميل على فهم العلاقة بين ميزانية الإعلانات، تكلفة المحادثة المتوقعة، وتقدير النتائج.
+   - **طلب استشارة سريعة (Audit Request)**: إمكانية إرسال تفاصيل التحدي التسويقي مباشرة عبر واتساب بضغطة زر.
 
-## ✨ Features & Interactive Suite
+3. **دراسات الحالة ونماذج الأعمال (Case Studies & Work Breakdown)**
+   - استعراض تفصيلي لخطوات بناء الحملة: دراسة الجمهور، صياغة الزوايا، بناء محتوى مسار التحويل الكامل (TOFU - MOFU - BOFU)، ونصوص إغلاق المبيعات.
+   - نماذج حقيقية في مجالات: الملابس والستريت وير، المراكز الطبية وعيادات الأسنان، شركات الديكور، والخدمات التعليمية.
 
-### 1. ⚡ Free Ad & Creative Audit Widget (Lead Magnet)
-- Instant diagnosis tool for brand owners experiencing:
-  - 💸 *High CPA & Low ROAS*
-  - 🦗 *Lots of Inquiries but Zero Completed Orders*
-  - 💤 *Ad Creative Fatigue & Performance Collapse*
-  - 🎯 *New Campaign Angle & Hook Formulation*
-- Generates a customized, one-click WhatsApp message to initiate a targeted copy & creative audit.
+4. **الإثبات والتقييمات الواقعية (Social Proof & Credentials)**
+   - استعراض شهادات التخرج والتقييمات المعتمدة من مدربي ومديري محتوى بارزين.
+   - عينات من رسائل ومحادثات العملاء ونتائج الحملات السابقة.
 
-### 2. 🧠 The 4-Step Scientific Growth & Campaign Framework
-- **Step 01: Psychological Audience Diagnosis** — Deep PAS & FAB consumer profiling, mapping unspoken objections and desires.
-- **Step 02: Creative Angle Matrix (8 Angles)** — Developing 6 to 8 distinct angles per offer (Pain, Contrarian, Social Proof, Risk Reversal).
-- **Step 03: Full-Funnel Conversion Copy** — Full-spectrum assets from top-of-funnel Reels scripts (TOFU) down to closing copy (BOFU).
-- **Step 04: WhatsApp Sales Closing & ROAS** — Equipping sales and support teams with conversion scripts to close leads and maximize ROAS.
-
-### 3. 🎯 Smart Hook Studio & Psychological Copy Engine (13+ Niches)
-- **3 Dynamic Conversion Angles**: Instant direct-response hooks categorized into:
-  - 💥 *Pain & Problem Triggers (Loss Aversion)*
-  - 💡 *Contrarian Insights (Challenging Beliefs)*
-  - 🎁 *Irresistible Value Offers (No-Brainer Bundles)*
-- **🎲 Fresh Angle Reroller**: Generate infinite fresh copywriting angles on the fly.
-- **🏆 Live Hooks Leaderboard**: Community-driven upvoting ledger that ranks top hooks in real-time.
-- **💬 Direct WhatsApp Ordering**: One-click custom message generator prefilling WhatsApp with the chosen hook.
-
-### 4. ⚡ Interactive Growth & ROI Simulator
-- Real-time calculator estimating **Reach**, **Qualified Conversations**, and **Expected Revenue** based on dynamic monthly ad spend sliders.
-
-### 5. 📂 Comprehensive Case Studies & Copy Samples
-- **🦷 Dental Clinic Acquisition Funnel**: Step-by-step patient acquisition journey across TOFU, MOFU, and BOFU.
-- **👕 HALIM Streetwear**: 4 Detailed Buyer Personas, youth lifestyle storytelling, and product drops.
-- **💡 "Koby" Mascot Persona Bible**: Complete Brand Mascot Character Sheet and tone of voice guidelines.
-- **🕯️ Scented Candles & Home Decor**: 4-Week launch playbook, seasonal emotional triggers, and ASMR video scripts.
-
-### 6. 🏢 Brand Portfolio & Industry Experience
-- Real work samples and strategies across **Eleven 11 (Menswear)**, **Zeva Agency**, **Makka Store**, **Medical & Dental Clinics**, **Furniture**, **Cars & Detailing**, and **E-commerce Stores**.
-
-### 7. 🌍 Seamless Bilingual Experience & Modern UI
-- **100% Bilingual**: Instant zero-lag toggle between **Egyptian Arabic (RTL)** and **English (LTR)**.
-- **🌓 Dark & Light Mode Support**: Tailored high-contrast aesthetics and custom glassmorphism styling.
-- **📱 3D Tilt Physics & Micro-Interactions**: Engaging cards, hover animations, and fully responsive layout for all mobile and desktop screens.
+5. **تجربة استخدام متكاملة (UX & Performance)**
+   - دعم كامل للغتين: **العربية (RTL)** والإنجليزية (LTR).
+   - وضع ليلي ونهاري كامل (Dark/Light Mode).
+   - سرعة فائقة وتوافق 100% مع الهواتف الذكية عبر GitHub Pages.
 
 ---
 
-## 🛠️ Built With
+## 🛠️ المواصفات التقنية (Tech Stack)
 
-- **HTML5 Semantic Structure & Modern CSS3 Design System**
-- **Vanilla JavaScript (ES6+)** with modular state handling & localStorage persistence
-- **Responsive 3D Tilt & Glassmorphism Aesthetics**
-- **GitHub Pages** for ultra-fast, zero-latency hosting
-
----
-
-## 📬 Let's Connect & Scale Your Brand
-
-Ready to build high-converting ad copy, scale your brand awareness, or launch your next campaign?
-
-- 📱 **WhatsApp**: [+20 106 576 0983](https://wa.me/201065760983)
-- 💼 **LinkedIn**: [Mahmoud Metwally](https://www.linkedin.com/in/mahmoud-metwally-499ba7381)
-- 🌐 **Portfolio**: [mahmoudmetwally97.github.io/protoflio](https://mahmoudmetwally97.github.io/protoflio/)
-- 📘 **Facebook**: [Mahmoud Metwally](https://www.facebook.com/MahmoudMetwally97)
+- **Frontend**: HTML5 Semantic Markup
+- **Styling**: Modern CSS3 (Custom Properties, Flexbox, Grid, Glassmorphism)
+- **Interactivity**: Vanilla JavaScript (ES6+, DOM Manipulation, LocalStorage)
+- **Hosting**: GitHub Pages
 
 ---
 
+## 📬 تواصل معي | Contact
+
+إذا كنت صاحب علامة تجارية أو وكالة إعلانية تبحث عن كتابة إعلانية واستراتيجية محتوى ترفع من معدل التحويل والمبيعات:
+
+- **WhatsApp**: [+20 106 576 0983](https://wa.me/201065760983)
+- **LinkedIn**: [Mahmoud Metwally](https://www.linkedin.com/in/mahmoud-metwally-499ba7381)
+- **Live Portfolio**: [mahmoudmetwally97.github.io/protoflio](https://mahmoudmetwally97.github.io/protoflio/)
+
+---
 <div align="center">
-  <sub>© 2026 Mahmoud Mohamed Metwally. Crafted with Conversion Psychology & Direct-Response Strategy.</sub>
+  <sub>© 2026 Mahmoud Mohamed Metwally. All rights reserved.</sub>
 </div>
