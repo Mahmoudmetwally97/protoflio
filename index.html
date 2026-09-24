@@ -1993,41 +1993,133 @@
 
         /* Visible Live Copy Box on Card - COPY AS HERO */
         .work-copy-preview-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 85, 0, 0.28);
-            border-inline-start: 3px solid var(--accent);
-            border-radius: var(--radius-sm);
-            padding: 14px 16px;
-            margin-bottom: 15px;
-            font-size: 0.92rem;
-            line-height: 1.7;
+            background: rgba(14, 18, 28, 0.95);
+            border: 1px solid rgba(255, 85, 0, 0.32);
+            border-inline-start: 4px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            margin: 14px 0 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
         .work-copy-preview-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 0.76rem;
+            font-size: 0.74rem;
             font-weight: 800;
             color: var(--accent);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.04em;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .work-copy-type-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            font-weight: 800;
         }
         .work-copy-preview-header .live-status-badge {
             font-size: 0.65rem;
-            padding: 2px 7px;
-            border-radius: 3px;
-            background: rgba(37, 211, 102, 0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
             color: #34d399;
             font-weight: 700;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.03em;
+        }
+        .work-copy-hook-row {
+            margin-bottom: 12px;
+            padding: 10px 14px;
+            background: rgba(255, 85, 0, 0.08);
+            border: 1px solid rgba(255, 85, 0, 0.22);
+            border-radius: var(--radius-sm);
+        }
+        .work-copy-hook-tag {
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            font-weight: 900;
+            color: var(--accent);
+            letter-spacing: 0.06em;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .work-copy-hook-text {
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 800;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+        .work-copy-body-row {
+            margin-bottom: 12px;
+        }
+        .work-copy-sub-tag {
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            font-weight: 800;
+            color: #94a3b8;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
         }
         .work-copy-text {
-            color: #F8FAFC;
-            font-weight: 700;
-            font-size: 0.94rem;
+            color: #e2e8f0;
+            font-weight: 600;
+            font-size: 0.92rem;
             line-height: 1.75;
-            letter-spacing: 0.01em;
+            white-space: pre-line;
+        }
+        .work-copy-why-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px dashed rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-sm);
+            padding: 9px 12px;
+            margin: 12px 0 10px;
+        }
+        .work-copy-why-icon {
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .work-copy-why-text {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .work-copy-why-text strong {
+            color: #f1f5f9;
+            font-weight: 700;
+        }
+        .work-copy-result-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.28);
+            border-radius: var(--radius-sm);
+            padding: 8px 12px;
+            margin-top: 10px;
+        }
+        .result-pill-icon {
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .result-pill-text {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #86efac;
+            line-height: 1.4;
         }
 
         /* Editorial Typographical Manifesto Strip (Copy as Visual Element) */
@@ -3150,198 +3242,269 @@
                     { id: 'agency', text: 'وكالات وتسويق' },
                     { id: 'realestate', text: 'ديكور وتشطيب' }
                 ],
-                workCards: [
-                    {
-                        id: 'wc-eleven11',
-                        cats: 'fashion published',
-                        badge: 'حملة وصول +479%',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        alt: 'حملة إيلفن 11',
-                        type: 'ملابس وأزياء رجالي — حملة أورجانيك وإعلانات ممولة',
-                        title: 'حملة شتاء Eleven 11 — قفزة وصول +479% وتكلفة رسالة 4.41 ج',
-                        desc: 'صياغة نصوص تفاعلية وإعلانات استجابة مباشرة لكولكشن الشتاء ركزت على خامة الجواكت وعروض الباقات المجمعة، محققة أعلى عائد مبيعات في الموسم',
-                        meta: 'النتائج: وصول طبيعي +479% • تكلفة الرسالة: 4.41 جنيهاً',
-                        btnText: 'معاينة تفاصيل الحملة',
-                        modalImg: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        modalCaption: 'نتائج وتفاصيل حملة شتاء Eleven 11',
-                        caseStudy: {
-                            client: 'Eleven 11 Menswear',
-                            role: 'Direct-Response Ad Copy & Creative Direction',
-                            problem: 'إعلانات تقليدية ترص مواصفات "قطن 100%" وتكلفة رسالة مرتفعة مع معدل ارتداد عالي لطلبات الشراء',
-                            audience: 'شباب الجامعات والموظفين من سن 19 إلى 32 سنة يبحثون عن مظهر أنيق وخامة مريحة تتحمل الاستخدام اليومي',
-                            insight: 'الزبون مش بيشتري "قطن"؛ هو بيخاف التيشيرت يكش أو لونه يبهت بعد أول غسلتين في حر الصيف',
-                            angle: 'زاوية راحة البال والضمان العملي: التيشيرت اللي هيعيش معاك 3 صيفات كاملة بدون بهتان أو انكماش',
-                            copy: '«التيشيرت اللي هيعيش معاك 3 صيفات من غير ما يوسع أو يبهت! قطن معالج ومريح في حر الصيف.. معاينة مجانية قبل الاستلام وضمان استبدال فوري.»',
-                            creativeDirection: 'فيديو ريلز سريع ومقارنة حية لنسيج القطن قبل وبعد الغسيل، مع فويس أوفر عامي هادئ ومقنع يزيل كل الشكوك',
-                            result: 'ارتفاع الوصول الطبيعي بنسبة +479%، وانخفاض تكلفة رسالة الشراء المؤكدة إلى 4.41 جنيهاً، مع مضاعفة مبيعات الكولكشن'
+                workCards:     [
+              {
+                        "id": "wc-eleven11",
+                        "cats": "fashion published",
+                        "badge": "حملة وصول +479%",
+                        "badgeClass": "badge-live",
+                        "img": "assets/work_samples/eleven11_winter_campaign.jpg",
+                        "alt": "حملة إيلفن 11",
+                        "type": "ملابس وأزياء رجالي — إعلانات استجابة مباشرة",
+                        "title": "حملة شتاء Eleven 11 — قفزة وصول +479% وتكلفة رسالة 4.41 ج",
+                        "desc": "صياغة نصوص إعلانات استجابة مباشرة لكولكشن الشتاء ركزت على خام الجواكت ومخاوف انكماش القطن، محققة أعلى عائد مبيعات في الموسم",
+                        "meta": "النتائج: وصول طبيعي +479% • تكلفة الرسالة: 4.41 جنيهاً",
+                        "btnText": "معاينة تفاصيل الحملة",
+                        "modalImg": "assets/work_samples/eleven11_winter_campaign.jpg",
+                        "modalCaption": "نتائج وتفاصيل حملة شتاء Eleven 11",
+                        "caseStudy": {
+                                  "client": "Eleven 11 Menswear",
+                                  "role": "Direct-Response Ad Copy & Creative Direction",
+                                  "copyType": "🎯 إعلان استجابة مباشرة (Direct-Response Ad Copy)",
+                                  "hook": "«التيشيرت اللي هيعيش معاك 3 صيفات من غير ما يوسع أو يبهت!»",
+                                  "copy": "«تيشيرت Eleven 11 قطن معالج ومريح في حر الصيف.. معاينة مجانية قبل الاستلام واستبدال فوري لو المقاس مش مظبوط بالملي. اطلب باكدج الـ 3 قطع ووفر 35% الآن قبل نفاذ الكمية.»",
+                                  "whyItWorks": "التركيز على مخاوف الشراء الدفينة للشباب (انكماش القماش، بهتان اللون، المقاس الخطأ) وإلغاء المخاطرة بالمعاينة المجانية يرفع معدل التحويل المباشر فوراً.",
+                                  "problem": "إعلانات تقليدية ترص مواصفات \"قطن 100%\" وتكلفة رسالة مرتفعة مع معدل ارتداد عالي لطلبات الشراء",
+                                  "audience": "شباب الجامعات والموظفين من سن 19 إلى 32 سنة يبحثون عن مظهر أنيق وخامة مريحة تتحمل الاستخدام اليومي الشاق",
+                                  "insight": "الزبون مش بيشتري \"نسبة قطن\"؛ هو بيخاف التيشيرت يكش أو لونه يبهت بعد أول غسلتين في حر الصيف",
+                                  "angle": "زاوية راحة البال والضمان العملي: التيشيرت اللي هيعيش معاك 3 صيفات كاملة بدون بهتان أو انكماش",
+                                  "creativeDirection": "فيديو ريلز سريع ومقارنة حية لنسيج القطن قبل وبعد الغسيل، مع فويس أوفر عامي هادئ ومقنع يزيل كل الشكوك",
+                                  "result": "ارتفاع الوصول الطبيعي بنسبة +479%، وانخفاض تكلفة رسالة الشراء المؤكدة إلى 4.41 جنيهاً، مع مضاعفة مبيعات الكولكشن"
                         }
-                    },
-                    {
-                        id: 'wc-bloom-reel',
-                        cats: 'published academy',
-                        badge: 'ريل منشور لايف',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/post_english_bloom_reel.jpg',
-                        alt: 'ريل منشور لايف إنجلش بلوم',
-                        type: 'تعليم لغات — فيديو ريلز وفيسبوك فيد',
-                        title: 'بتبدأ كل مرة بحماس — وبعد كام يوم بتوقف؟',
-                        desc: 'سيناريو وهوك ريلز بيخاطب إحباط متعلمي اللغة الإنجليزية بأسلوب ساخر وواقعي، كسر حاجز التردد وحقق انتشار وتفاعل قوي على الصفحة',
-                        meta: 'الهدف: تفاعل ومشاهدات ريلز عالية • المنصة: Facebook Reels',
-                        btnText: 'معاينة البوست كامل',
-                        modalImg: 'assets/work_samples/post_english_bloom_reel.jpg',
-                        modalCaption: 'بوست وسيناريو ريلز منشور لايف — أكاديمية English Bloom',
-                        caseStudy: {
-                            client: 'English Bloom Academy',
-                            role: 'Reels Scriptwriting & Behavioral Hooks',
-                            problem: 'إحباط متكرر لدى المتعلمين وتوقفهم بعد أيام قليلة، وشعورهم بالذنب من تكرار المحاولات الفاشلة مع مراكز التدريب التقليدية',
-                            audience: 'طلبة وخريجون يواجهون صعوبة في مقابلات العمل بسبب التردد وضعف طلاقة التحدث باللغة الإنجليزية',
-                            insight: 'المتعلم لا يحتاج مزيداً من الجرامر النظري؛ هو يحتاج كسر عقدة الخوف من الخطأ والبدء بممارسة واقعية مرحة وخفيفة',
-                            angle: 'كسر النمط (Pattern Interrupt) بروح الفكاهة الساخرة المألوفة مع تقديم حل تطبيقي مطمئن يخاطب واقعهم',
-                            copy: '«بتبدأ كل مرة بحماس خارق.. وبعد كام يوم بتوقف؟ العيب مش فيك! العيب في طريقة الحفظ التقليدية. في ورشة المحادثة بنخليك تتكلم 80% من الوقت بدون أي خوف.»',
-                            creativeDirection: 'تصوير ريلز بمشهد تمثيلي يجسد الحماس المفرط في اليوم الأول مقابل الإحباط في اليوم العاشر، مع دعوة واضحة لحضور الجلسة التفاعلية',
-                            result: 'تفاعل استثنائي، مئات المشاركات، وتدفق مستمر لاستفسارات حجز ورشة المحادثة التفاعلية المباشرة'
+              },
+              {
+                        "id": "wc-bloom-reel",
+                        "cats": "published academy",
+                        "badge": "ريل منشور لايف",
+                        "badgeClass": "badge-live",
+                        "img": "assets/work_samples/post_english_bloom_reel.jpg",
+                        "alt": "ريل منشور لايف إنجلش بلوم",
+                        "type": "تعليم لغات — فيديو ريلز وسيناريو فيروسي",
+                        "title": "بتبدأ كل مرة بحماس — وبعد كام يوم بتوقف؟",
+                        "desc": "سيناريو وهوك ريلز بيخاطب إحباط متعلمي اللغة الإنجليزية بأسلوب كسر النمط الساخر والواقعي، كسر حاجز التردد وحقق انتشاراً واسعاً",
+                        "meta": "الهدف: تفاعل ومشاهدات ريلز عالية • المنصة: Facebook Reels",
+                        "btnText": "معاينة البوست كامل",
+                        "modalImg": "assets/work_samples/post_english_bloom_reel.jpg",
+                        "modalCaption": "بوست وسيناريو ريلز منشور لايف — أكاديمية English Bloom",
+                        "caseStudy": {
+                                  "client": "English Bloom Academy",
+                                  "role": "Reels Scriptwriting & Behavioral Hooks",
+                                  "copyType": "🎬 سيناريو ريلز وهوك سلوكي (Viral Reels Script)",
+                                  "hook": "«بتبدأ كل كورس بحماس خارق.. وبعد 5 أيام بتوقف ومبتكملش؟ العيب مش فيك!»",
+                                  "copy": "«العيب في طريقة الحفظ والجرامر العقيمة اللي بتكرهك في الكلام! في ورشة المحادثة مع English Bloom بنخليك تتكلم 80% من وقت السيشن بدون أي خوف من الغلط. اكتب \"محادثة\" في الكومنتات وهنبعتلك تفاصيل ورشة اليوم المجانية.»",
+                                  "whyItWorks": "كسر النمط (Pattern Interrupt) ونزع اللوم والذنب عن المتعلم يخلق راحة نفسية فورية، ويحفز التعليق بالكلمة المفتاحية للتحويل التلقائي.",
+                                  "problem": "إحباط متكرر لدى المتعلمين وتوقفهم بعد أيام قليلة، وشعورهم بالذنب من تكرار المحاولات الفاشلة مع مراكز التدريب التقليدية",
+                                  "audience": "طلبة وخريجون يواجهون صعوبة في مقابلات العمل بسبب التردد وضعف طلاقة التحدث باللغة الإنجليزية",
+                                  "insight": "المتعلم لا يحتاج مزيداً من الجرامر النظري؛ هو يحتاج كسر عقدة الخوف من الخطأ والبدء بممارسة واقعية مرحة وخفيفة",
+                                  "angle": "كسر النمط بروح الفكاهة الساخرة المألوفة مع تقديم حل تطبيقي مطمئن يخاطب واقعهم",
+                                  "creativeDirection": "تصوير ريلز بمشهد تمثيلي يجسد الحماس المفرط في اليوم الأول مقابل الإحباط في اليوم العاشر، مع دعوة واضحة لحضور الجلسة التفاعلية",
+                                  "result": "تفاعل استثنائي، مئات المشاركات، وتدفق مستمر لاستفسارات حجز ورشة المحادثة التفاعلية المباشرة"
                         }
-                    },
-                    {
-                        id: 'wc-ajyal-trial',
-                        cats: 'published academy',
-                        badge: 'إعلان تحويل وحجز',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
-                        alt: 'إعلان الحصة التجريبية أجيال',
-                        type: 'تحفيظ قرآن — إعلان استجابة مباشرة وعروض',
-                        title: 'نفسك تشوفي ابنك بيقرأ القرآن بصوت جميل؟ احجزي حصة تجريبية مجانية',
-                        desc: 'إعلان بيعي موجه للأهالي يركز على تجربة حصة تقييم مجانية تزيل كل مخاوف عدم التزام الطفل، حقق قفزة في رسائل الحجز وتأكيد الاشتراكات',
-                        meta: 'الهدف: جذب أولياء أمور وقفل حجوزات • النمط: Direct Response',
-                        btnText: 'معاينة الإعلان كامل',
-                        modalImg: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
-                        modalCaption: 'إعلان الحصة التجريبية المجانية — أكاديمية أجيال',
-                        caseStudy: {
-                            client: 'أكاديمية أجيال للقرآن الكريم',
-                            role: 'Direct-Response Ad Copy & Risk-Reversal Offer',
-                            problem: 'تردد أولياء الأمور وتخوفهم من عدم التزام أطفالهم (سن 6-10 سنوات) في جلسات التحفيظ الأونلاين وصعوبة متابعتهم',
-                            audience: 'أمهات حريصات على ربط أطفالهن بالقرآن لكنهن يعانين من تشتت انتباه الأطفال وخناقات الحفظ اليومية',
-                            insight: 'الأم تحتاج صوتاً تربوياً هادئاً يطمئنها، وإزالة تامة للمخاطرة المالية قبل أي التزام باشتراك مدفوع',
-                            angle: 'زاوية التجربة الآمنة الخالية من المخاطر (Zero Risk): حصة تقييم وتجربة مجانية 100% مع معلم أزهري متخصص بالأطفال',
-                            copy: '«نفسك تشوفي ابنك بيقرأ القرآن بصوت جميل بدون خناق ولا ضغط؟ احجزي حصة تجريبية مجانية وشوفي بنفسك إزاي بنحببه في الحفظ بقاعدة الـ 5 دقائق الذهبية.»',
-                            creativeDirection: 'صورة طفل مبتسم يرتدي سماعات ومصحف مفتوح بإضاءة دافئة، مع نص إعلاني يركز على الراحة النفسية للأم',
-                            result: 'قفزة في رسائل وتأكيدات الحجز المجاني، مع معدل تحويل عالي جداً لاشتراكات شهرية مدفوعة'
+              },
+              {
+                        "id": "wc-ajyal-trial",
+                        "cats": "published academy",
+                        "badge": "إعلان تحويل وحجز",
+                        "badgeClass": "badge-live",
+                        "img": "assets/work_samples/post_ajyal_free_trial_conversion.jpg",
+                        "alt": "إعلان الحصة التجريبية أجيال",
+                        "type": "تحفيظ قرآن — إعلان استجابة مباشرة وعروض",
+                        "title": "نفسك تشوفي ابنك بيقرأ القرآن بصوت جميل؟ احجزي حصة تجريبية مجانية",
+                        "desc": "إعلان بيعي موجه للأهالي يركز على تجربة حصة تقييم مجانية تزيل كل مخاوف عدم التزام الطفل، حقق قفزة في رسائل الحجز وتأكيد الاشتراكات",
+                        "meta": "الهدف: جذب أولياء أمور وقفل حجوزات • النمط: Direct Response",
+                        "btnText": "معاينة الإعلان كامل",
+                        "modalImg": "assets/work_samples/post_ajyal_free_trial_conversion.jpg",
+                        "modalCaption": "إعلان الحصة التجريبية المجانية — أكاديمية أجيال",
+                        "caseStudy": {
+                                  "client": "أكاديمية أجيال للقرآن الكريم",
+                                  "role": "Direct-Response Ad Copy & Risk-Reversal Offer",
+                                  "copyType": "🎯 إعلان تحويل مباشر وعروض (Conversion Ad Copy)",
+                                  "hook": "«نفسك تشوفي ابنك بيقرأ القرآن بصوت جميل بدون خناق ولا ضغط؟»",
+                                  "copy": "«احجزي الآن حصة تقييم وتجربة مجانية 100% مع معلم أزهري متخصص في التعامل مع الأطفال بقاعدة الـ 5 دقائق الذهبية. بدون أي التزام مالي.. جربي بنفسك وشوفي حب طفلك للسيشن قبل ما تدفعي مليم.»",
+                                  "whyItWorks": "إلغاء المخاطرة تماماً (Zero Risk Reversal) ومخاطبة ألم الأم اليومي مع تشتت انتباه طفلها يحول الشك إلى رغبة ملحة في التجربة المجانية.",
+                                  "problem": "تردد أولياء الأمور وتخوفهم من عدم التزام أطفالهم (سن 6-10 سنوات) في جلسات التحفيظ الأونلاين وصعوبة متابعتهم",
+                                  "audience": "أمهات حريصات على ربط أطفالهن بالقرآن لكنهن يعانين من تشتت انتباه الأطفال وخناقات الحفظ اليومية",
+                                  "insight": "الأم تحتاج صوتاً تربوياً هادئاً يطمئنها، وإزالة تامة للمخاطرة المالية قبل أي التزام باشتراك مدفوع",
+                                  "angle": "زاوية التجربة الآمنة الخالية من المخاطر: حصة تقييم وتجربة مجانية 100% مع معلم أزهري متخصص بالأطفال",
+                                  "creativeDirection": "صورة طفل مبتسم يرتدي سماعات ومصحف مفتوح بإضاءة دافئة، مع نص إعلاني يركز على الراحة النفسية للأم",
+                                  "result": "قفزة في رسائل وتأكيدات الحجز المجاني، مع معدل تحويل تجاوز 65% لاشتراكات شهرية مدفوعة مستمرة"
                         }
-                    },
-                    {
-                        id: 'wc-hk',
-                        cats: 'realestate',
-                        badge: 'نصوص تشطيب فاخر',
-                        badgeClass: 'badge-pro',
-                        img: 'assets/work_samples/hk_design_interior.jpg',
-                        alt: 'تشطيبات وديكور HK Design',
-                        type: 'تشطيب وديكور — نصوص بيعية A-Class',
-                        title: 'نصوص إعلانية وحملات تشطيب وديكور فاخر — HK Design',
-                        desc: 'صياغة كوبي إعلاني راقي يخاطب ملاك الشقق والفلل الجديدة، يركز على راحة البال والالتزام بجدول التسليم وجودة الخامات الهندسية',
-                        meta: 'الجمهور: عملاء A-Class وملاك الفلل • النتيجة: مضاعفة استفسارات المعاينة',
-                        btnText: 'معاينة الزوايا الإعلانية',
-                        modalImg: 'assets/work_samples/hk_design_interior.jpg',
-                        modalCaption: 'نصوص وحملات تشطيب فاخر — HK Design',
-                        caseStudy: {
-                            client: 'HK Design Interior',
-                            role: 'Luxury Real Estate Copywriting & Positioning',
-                            problem: 'فقدان الثقة الشائع في قطاع المقاولات والتشطيبات وتخوف ملاك الوحدات الجديدة من تسويف المواعيد وتجاوز الميزانيات',
-                            audience: 'ملاك الفلل والوحدات السكنية الفاخرة في المدن الجديدة (زايد، التجمع، الشروق) شريحة A-Class',
-                            insight: 'العميل الراقي يدفع مقابل راحة البال والالتزام الدقيق؛ لا يهمه التوفير بقدر ما يهمه احترام المواعيد والشرط الجزائي',
-                            angle: 'زاوية الالتزام الهندسي الصارم: عقد تشطيب متكامل بشرط جزائي عن كل يوم تأخير ومعاينة موقعية مجانية مع مهندس استشاري',
-                            copy: '«أكبر كابوس لملاك الوحدات الجديدة هو الصنايعية اللي بياخدوا العربون ويختفوا! في HK Design بنسلمك على المفتاح بمقايسة هندسية ملزمة وشرط جزائي يحميك تماماً.»',
-                            creativeDirection: 'صور وفيديوهات واقعية عالية الجودة لمشاريع سابقة تم تسليمها بالفعل، مع إبراز التفاصيل المعمارية الدقيقة وخامات التشطيب',
-                            result: 'مضاعفة استفسارات طلب المعاينة الموقعية من ملاك الفلل والوحدات الراقية بدون أي فصال في السعر'
+              },
+              {
+                        "id": "wc-hk",
+                        "cats": "realestate",
+                        "badge": "نصوص تشطيب فاخر",
+                        "badgeClass": "badge-pro",
+                        "img": "assets/work_samples/hk_design_interior.jpg",
+                        "alt": "تشطيبات وديكور HK Design",
+                        "type": "تشطيب وديكور — نصوص بيعية A-Class",
+                        "title": "نصوص إعلانية وحملات تشطيب وديكور فاخر — HK Design",
+                        "desc": "صياغة كوبي إعلاني راقي يخاطب ملاك الشقق والفلل الجديدة، يركز على راحة البال والالتزام بجدول التسليم وجودة الخامات الهندسية",
+                        "meta": "الجمهور: عملاء A-Class وملاك الفلل • النتيجة: مضاعفة استفسارات المعاينة",
+                        "btnText": "معاينة الزوايا الإعلانية",
+                        "modalImg": "assets/work_samples/hk_design_interior.jpg",
+                        "modalCaption": "نصوص وحملات تشطيب فاخر — HK Design",
+                        "caseStudy": {
+                                  "client": "HK Design Interior",
+                                  "role": "Luxury Real Estate Copywriting & Positioning",
+                                  "copyType": "💎 نصوص بيع راقية (High-Ticket Sales Copy)",
+                                  "hook": "«أكبر كابوس لملاك الفلل والشقق الجديدة: صنايعية بياخدوا العربون ويختفوا بالشهور!»",
+                                  "copy": "«في HK Design بنستلم وحدتك على الطوب ونسلمك على المفتاح بمقايسة هندسية ملزمة وجدول زمني محدد بشرط جزائي عن كل يوم تأخير. احجز معاينتك الميدانية المجانية مع مهندس استشاري هذا الأسبوع.»",
+                                  "whyItWorks": "مخاطبة الوجع الأكبر لعملاء الشريحة الراقية (عدم الالتزام بالمواعيد والميزانيات) وتقديم ضمان قانوني وهندسي صلب يعيد بناء الثقة فوراً.",
+                                  "problem": "فقدان الثقة الشائع في قطاع المقاولات والتشطيبات وتخوف ملاك الوحدات الجديدة من تسويف المواعيد وتجاوز الميزانيات",
+                                  "audience": "ملاك الفلل والوحدات السكنية الفاخرة في المدن الجديدة (زايد، التجمع، الشروق) شريحة A-Class",
+                                  "insight": "العميل الراقي يدفع مقابل راحة البال والالتزام الدقيق؛ لا يهمه التوفير بقدر ما يهمه احترام المواعيد والشرط الجزائي",
+                                  "angle": "زاوية الالتزام الهندسي الصارم: عقد تشطيب متكامل بشرط جزائي عن كل يوم تأخير ومعاينة موقعية مجانية مع مهندس استشاري",
+                                  "creativeDirection": "صور وفيديوهات واقعية عالية الجودة لمشاريع سابقة تم تسليمها بالفعل، مع إبراز التفاصيل المعمارية الدقيقة وخامات التشطيب",
+                                  "result": "مضاعفة استفسارات طلب المعاينة الموقعية من ملاك الفلل والوحدات الراقية بدون أي فصال في السعر"
                         }
-                    },
-                    {
-                        id: 'wc-zavn',
-                        cats: 'agency strategy',
-                        badge: 'دليل أبحاث وسيناريوهات',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        alt: 'دليل وكالة زافن',
-                        type: 'أبحاث وسيناريوهات وكالة تسويق',
-                        title: 'دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency',
-                        desc: 'ملف الأبحاث والسيناريوهات المعتمد لوكالة ZAVN، يشمل تحليل السوق، دراسة المنافسين، وسيناريوهات بيع مباشرة للسوق الخليجي والمصري',
-                        meta: 'الصيغة: بلاي بوك أبحاث وسيناريوهات • التطبيق: حملات تسويقية حية',
-                        btnText: 'معاينة نموذج البلاي بوك',
-                        modalImg: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        modalCaption: 'دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency',
-                        caseStudy: {
-                            client: 'ZAVN Growth Agency',
-                            role: 'Strategic Content Research & Script Repository',
-                            problem: 'تفاوت جودة الأبحاث والسيناريوهات بين عملاء الوكالة في مصر والخليج وبطء وتيرة الإنتاج الإعلاني',
-                            audience: 'أصحاب البيزنس والبراندات في قطاعات التجارة الإلكترونية والخدمات الطبية والتعليمية',
-                            insight: 'التشريح العميق لشكاوى الزبائن ومراجعات المنافسين السلبية هو المنجم الحقيقي لأقوى هوكات البيع المباشر',
-                            angle: 'بلاي بوك أبحاث وسيناريوهات مقسم سيكولوجياً حسب مراحل القمع البيعي لاختبار زوايا متعددة بسرعة قياسية',
-                            copy: '«منظومة أبحاث تسويقية متكاملة تشمل دراسة 20+ زاوية بيعية، هوكات أول ثانيتين، وسيناريوهات تصوير تحول المشاهدات لمبيعات بأعلى عائد إعلاني.»',
-                            creativeDirection: 'توثيق منظم للمخرجات وتوجيهات واضحة للمونتير والميديا باير لربط نبرة الكوبي بالأداء الإعلاني وأرقام الـ ROAS',
-                            result: 'اعتماد رسمي في فريق عمل الوكالة الرئيسي، وتسريع وتيرة إطلاق الحملات بنتائج ROAS متميزة'
+              },
+              {
+                        "id": "wc-zavn",
+                        "cats": "agency strategy",
+                        "badge": "دليل أبحاث وسيناريوهات",
+                        "badgeClass": "badge-doc",
+                        "img": "assets/work_samples/zavn_playbook_cover.jpg",
+                        "alt": "دليل وكالة زافن",
+                        "type": "أبحاث وسيناريوهات وكالة تسويق",
+                        "title": "دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency",
+                        "desc": "ملف الأبحاث والسيناريوهات المعتمد لوكالة ZAVN، يشمل تحليل السوق، دراسة المنافسين، وسيناريوهات بيع مباشرة للسوق الخليجي والمصري",
+                        "meta": "الصيغة: بلاي بوك أبحاث وسيناريوهات • التطبيق: حملات تسويقية حية",
+                        "btnText": "معاينة نموذج البلاي بوك",
+                        "modalImg": "assets/work_samples/zavn_playbook_cover.jpg",
+                        "modalCaption": "دليل أبحاث المحتوى وسيناريوهات الفيديو — ZAVN Agency",
+                        "caseStudy": {
+                                  "client": "ZAVN Growth Agency",
+                                  "role": "Strategic Content Research & Script Repository",
+                                  "copyType": "📐 دليل أبحاث وهيكل سيناريوهات (Research & Script Playbook)",
+                                  "hook": "«التشريح العميق لشكاوى الزبائن السلبية عند المنافسين هو منجم أقوى الهوكات البيعية.»",
+                                  "copy": "«منظومة أبحاث تسويقية متكاملة تشمل تحليل 20+ زاوية بيعية، هوكات أول 3 ثوانٍ تخطف الانتباه، وسيناريوهات تصوير تربط نبرة الكوبي بمعدلات الـ ROAS عبر منصات Meta وTikTok.»",
+                                  "whyItWorks": "استخراج زوايا البيع من لغة العملاء الحقيقية (Voice of Customer) يضمن وصول الرسالة لمركز اتخاذ القرار دون أن تبدو كإعلان مصطنع.",
+                                  "problem": "تفاوت جودة الأبحاث والسيناريوهات بين عملاء الوكالة في مصر والخليج وبطء وتيرة الإنتاج الإعلاني",
+                                  "audience": "أصحاب البيزنس والبراندات في قطاعات التجارة الإلكترونية والخدمات الطبية والتعليمية",
+                                  "insight": "التشريح العميق لشكاوى الزبائن ومراجعات المنافسين السلبية هو المنجم الحقيقي لأقوى هوكات البيع المباشر",
+                                  "angle": "بلاي بوك أبحاث وسيناريوهات مقسم سيكولوجياً حسب مراحل القمع البيعي لاختبار زوايا متعددة بسرعة قياسية",
+                                  "creativeDirection": "توثيق منظم للمخرجات وتوجيهات واضحة للمونتير والميديا باير لربط نبرة الكوبي بالأداء الإعلاني وأرقام الـ ROAS",
+                                  "result": "اعتماد رسمي في فريق عمل الوكالة الرئيسي، وتسريع وتيرة إطلاق الحملات بنتائج ROAS متميزة"
                         }
-                    },
-                    {
-                        id: 'wc-bloom-strategy',
-                        cats: 'strategy academy',
-                        badge: 'استراتيجية إطلاق متكاملة',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/english_bloom_strategy_cover.jpg',
-                        alt: 'استراتيجية إنجلش بلوم',
-                        type: 'خطة إطلاق وإدارة محتوى كاملة — Strategy & Funnel',
-                        title: 'استراتيجية وخطة محتوى إطلاق أكاديمية English Bloom الكاملة',
-                        desc: 'بناء خطة تسويق المحتوى من الصفر: تشريح شخصية المشتري، صياغة محاور المحتوى، وجدول 30 يوم يمزج بين التعليم الترفيهي وإعلانات التحويل',
-                        meta: 'المخرجات: Funnel Strategy & 30-Day Content Matrix',
-                        btnText: 'معاينة الاستراتيجية',
-                        modalImg: 'assets/work_samples/english_bloom_strategy_cover.jpg',
-                        modalCaption: 'استراتيجية محتوى أكاديمية English Bloom'
-                    },
-                    {
-                        id: 'wc-ajyal-plan',
-                        cats: 'strategy academy',
-                        badge: 'ماستر بلان شهري',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/ajyal_content_plan_preview.jpg',
-                        alt: 'جدول محتوى أجيال',
-                        type: 'ماستر بلان وتقويم محتوى — Monthly Editorial Plan',
-                        title: 'ماستر بلان وجدول محتوى أكاديمية أجيال للقرآن الكريم',
-                        desc: 'تقويم محتوى متكامل يغطي مراحل القمع الثلاث، ويحدد التوجيهات البصرية لكل منشور وهوكات الريلز الداعمة لتقليل تكلفة الإعلانات',
-                        meta: 'المخرجات: Full Editorial Calendar & Visual Prompts',
-                        btnText: 'معاينة الماستر بلان',
-                        modalImg: 'assets/work_samples/ajyal_content_plan_preview.jpg',
-                        modalCaption: 'ماستر بلان وتقويم محتوى أكاديمية أجيال للقرآن'
-                    },
-                    {
-                        id: 'wc-ajyal-5min',
-                        cats: 'published academy',
-                        badge: 'بوست قيمة وتربية',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        alt: 'بوست قاعدة الخمس دقائق أكاديمية أجيال',
-                        type: 'تحفيظ قرآن — بوست تثقيفي تربوي',
-                        title: 'قاعدة الـ 5 دقائق الذهبية — إزاي تربط طفلك بالقرآن بدون خناق',
-                        desc: 'بوست قيمة وتربية ذكية موجه للأمهات بيشرح حل علمي لتشتت انتباه الأطفال وعلاج التردد في الحفظ بطريقة هادية ومقنعة',
-                        meta: 'الهدف: بناء ثقة وسلطة تربوية • المنصة: Facebook Page Post',
-                        btnText: 'معاينة البوست كامل',
-                        modalImg: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        modalCaption: 'بوست القيمة والتربية الذكية منشور لايف — أكاديمية أجيال للقرآن الكريم'
-                    },
-                    {
-                        id: 'wc-nty',
-                        cats: 'agency strategy',
-                        badge: 'بروبوزال وخطة نمو',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/nty_proposal_cover.jpg',
-                        alt: 'بروبوزال تيم NTY',
-                        type: 'تسويق رقمي — عرض استراتيجي متكامل',
-                        title: 'بروبوزال وخطة محتوى سوشيال ميديا — Team NTY',
-                        desc: 'خطة عمل متكاملة مقترحة لصناع المحتوى والبراندات تشمل تحليل الأداء، هيكلة المحتوى الأسبوعي، وأفكار ريلز بيعية',
-                        meta: 'الصيغة: عرض استراتيجي شامل • التركيز: هيكل نمو لصناع المحتوى',
-                        btnText: 'معاينة نموذج البروبوزال',
-                        modalImg: 'assets/work_samples/nty_proposal_cover.jpg',
-                        modalCaption: 'بروبوزال وخطة محتوى سوشيال ميديا — Team NTY'
-                    }
-                ],
+              },
+              {
+                        "id": "wc-bloom-strategy",
+                        "cats": "strategy academy",
+                        "badge": "استراتيجية إطلاق متكاملة",
+                        "badgeClass": "badge-doc",
+                        "img": "assets/work_samples/english_bloom_strategy_cover.jpg",
+                        "alt": "استراتيجية إنجلش بلوم",
+                        "type": "خطة إطلاق وإدارة محتوى كاملة — Funnel Strategy",
+                        "title": "استراتيجية وخطة محتوى إطلاق أكاديمية English Bloom الكاملة",
+                        "desc": "بناء خطة تسويق المحتوى من الصفر: تشريح شخصية المشتري، صياغة محاور المحتوى، وجدول 30 يوم يمزج بين التعليم الترفيهي وإعلانات التحويل",
+                        "meta": "المخرجات: Funnel Strategy & 30-Day Content Matrix",
+                        "btnText": "معاينة الاستراتيجية",
+                        "modalImg": "assets/work_samples/english_bloom_strategy_cover.jpg",
+                        "modalCaption": "استراتيجية محتوى أكاديمية English Bloom",
+                        "caseStudy": {
+                                  "client": "English Bloom Academy",
+                                  "role": "Full-Funnel Content Architecture & Launch Strategy",
+                                  "copyType": "📐 استراتيجية قمع تسويقي متكاملة (Funnel Architecture)",
+                                  "hook": "«إزاي تبني أكاديمية لغات من الصفر وتنافس براندات سابقة بـ 5 سنين؟»",
+                                  "copy": "«هيكلة رحلة العميل من أول ريلز تفاعلي يكسر الخوف (TOFU)، لورشة محادثة تجريبية مجانية تبني الثقة (MOFU)، لإغلاق اشتراكات الكورسات الشهرية مع ضمان استرداد كامل خلال أول أسبوع (BOFU).»",
+                                  "whyItWorks": "الجمع بين كسر الحاجز النفسي في البداية وإلغاء المخاطرة المالية في النهاية يحول الزائر المتردد إلى عميل مسجل بأقل كلفة استحواذ.",
+                                  "problem": "دخول سوق تعليم اللغات المزدحم بالمنافسين الكبار دون ميزانية إعلانات ضخمة تتطلب استراتيجية محتوى دقيقة للغاية",
+                                  "audience": "الشباب والخريجون الباحثون عن تحسين مهارات التحدث لاجتياز مقابلات العمل بدون تعقيد الجرامر النظري",
+                                  "insight": "المتعلمون يشعرون بالخجل الشديد من أخطائهم في المحادثة؛ والبراند الذي يمنحهم الأمان النفسي هو من سيكسب ولائهم",
+                                  "angle": "استراتيجية \"الأمان النفسي والتطبيق الفوري\": 80% ممارسة كلامية واقعية من اليوم الأول بدون أي تنظير",
+                                  "creativeDirection": "دليل بصري كامل يحدد زوايا تصوير الريلز، نبرة الصوت الودية الهادئة، وأسلوب التفاعل مع تعليقات المتابعين",
+                                  "result": "إطلاق ناجح للأكاديمية واكتمال المقاعد في الدفعة الأولى من المتدربين خلال أول شهر بفضل المحتوى العضوي والزوايا البيعية"
+                        }
+              },
+              {
+                        "id": "wc-ajyal-plan",
+                        "cats": "strategy academy",
+                        "badge": "ماستر بلان شهري",
+                        "badgeClass": "badge-doc",
+                        "img": "assets/work_samples/ajyal_content_plan_preview.jpg",
+                        "alt": "جدول محتوى أجيال",
+                        "type": "ماستر بلان وتقويم محتوى — Monthly Editorial Plan",
+                        "title": "ماستر بلان وجدول محتوى أكاديمية أجيال للقرآن الكريم",
+                        "desc": "تقويم محتوى متكامل يغطي مراحل القمع الثلاث، ويحدد التوجيهات البصرية لكل منشور وهوكات الريلز الداعمة لتقليل تكلفة الإعلانات",
+                        "meta": "المخرجات: Full Editorial Calendar & Visual Prompts",
+                        "btnText": "معاينة الماستر بلان",
+                        "modalImg": "assets/work_samples/ajyal_content_plan_preview.jpg",
+                        "modalCaption": "ماستر بلان وتقويم محتوى أكاديمية أجيال للقرآن",
+                        "caseStudy": {
+                                  "client": "أكاديمية أجيال للقرآن الكريم",
+                                  "role": "Monthly Editorial Planning & Content Distribution",
+                                  "copyType": "📅 ماستر بلان وتقويم شهري (30-Day Content Matrix)",
+                                  "hook": "«30 يوم محتوى مش عشان نملى الصفحة.. عشان نخلي ولي الأمر يقول: المكان ده بيفهم ابني.»",
+                                  "copy": "«توزيع ذكي لـ 12 ريلز تفاعلي + 8 بوستات تثقيف تربوي تبني السلطة المعرفية + 6 بوستات تحويل مباشر (حصة تجريبية مجانية) + 4 قصص نجاح وتلاوات ملهمة من الطلاب.»",
+                                  "whyItWorks": "بناء السلطة التربوية أولاً قبل طلب الشراء يجعل إعلانات التحويل اللاحقة تحقق أعلى استجابة وبأقل تكلفة رسالة.",
+                                  "problem": "نشر عشوائي وغير منتظم على الصفحة بدون خطة واضحة، مما أدى لضعف التفاعل وارتفاع تكلفة الإعلانات الممولة",
+                                  "audience": "أولياء أمور وأمهات يبحثون عن بيئة تعليمية آمنة ومحفزة لأطفالهم لحفظ القرآن عبر الإنترنت",
+                                  "insight": "ولي الأمر لا يتفاعل مع العروض البيعية المباشرة إذا لم يثق أولاً في الكفاءة التربوية للأكاديمية",
+                                  "angle": "تقويم محتوى هرمي: 40% تثقيف تربوي، 30% تفاعل وقصص ملهمة، 30% عروض بيعية مباشرة",
+                                  "creativeDirection": "نماذج بصرية محددة لكل تصنيف وتوجيهات واضحة للمصمم والمونتير لتوحيد هوية الصفحة وجاذبيتها",
+                                  "result": "انخفاض تكلفة رسالة الإعلانات الممولة بنسبة 42% بفضل التفاعل الطبيعي القوي وزيادة معدل حفظ المنشورات"
+                        }
+              },
+              {
+                        "id": "wc-ajyal-5min",
+                        "cats": "published academy",
+                        "badge": "بوست قيمة وتربية",
+                        "badgeClass": "badge-live",
+                        "img": "assets/work_samples/post_ajyal_5min_rule_educational.jpg",
+                        "alt": "بوست قاعدة الخمس دقائق أكاديمية أجيال",
+                        "type": "تحفيظ قرآن — بوست سلطة معرفية وتربوية",
+                        "title": "قاعدة الـ 5 دقائق الذهبية — إزاي تربط طفلك بالقرآن بدون خناق",
+                        "desc": "بوست قيمة وتربية ذكية موجه للأمهات بيشرح حل علمي لتشتت انتباه الأطفال وعلاج التردد في الحفظ بطريقة هادية ومقنعة",
+                        "meta": "الهدف: بناء ثقة وسلطة تربوية • المنصة: Facebook Page Post",
+                        "btnText": "معاينة البوست كامل",
+                        "modalImg": "assets/work_samples/post_ajyal_5min_rule_educational.jpg",
+                        "modalCaption": "بوست القيمة والتربية الذكية منشور لايف — أكاديمية أجيال للقرآن الكريم",
+                        "caseStudy": {
+                                  "client": "أكاديمية أجيال للقرآن الكريم",
+                                  "role": "Educational Authority Copy & Content Psychology",
+                                  "copyType": "📖 بوست سلطة معرفية وسيكولوجيا (Authority Post)",
+                                  "hook": "«ابنك بيزهق بعد دقيقتين من فتح المصحف؟ جربي قاعدة الـ 5 دقائق الذهبية.»",
+                                  "copy": "«مشكلة معظم أولياء الأمور إنهم عايزين الطفل يحفظ نص ساعة كاملة من أول يوم! في أجيال بنبدأ بـ 5 دقائق تركيز كامل، مع مكافأة فورية وثقة متراكمة.. النتيجة؟ الطفل هو اللي بيطلب يكمل بنفسه بدون أي خناق أو ضغط.»",
+                                  "whyItWorks": "مخاطبة المشاعر الدفينة للأم بدون لوم أو تنظير، مع تقديم حل فوري وملموس يخلق ثقة مطلقة في منهجية الأكاديمية.",
+                                  "problem": "صعوبة إقناع الأمهات بجدوى جلسات التحفيظ الأونلاين بسبب تجارب سابقة فاشلة ونفور الأطفال من الحفظ الإجباري",
+                                  "audience": "أمهات يعانين من صراخ وخناق يومي مع أطفالهن لإتمام مهام الحفظ والمراجعة",
+                                  "insight": "الأم تشعر بالذنب والضغط العصبي؛ وتقديم حيلة تربوية بسيطة تثبت نجاحها يفتح باب الثقة المتبادلة فوراً",
+                                  "angle": "زاوية النصيحة التربوية العملية: التدرج النفسي بقاعدة الـ 5 دقائق لبناء عادة مستدامة بدون إجبار",
+                                  "creativeDirection": "تصميم كاروسيل تعليمي بخطوط مريحة ونقاط عملية واضحة سهلة الحفظ والتطبيق",
+                                  "result": "مئات المشاركات وحفظ المنشور (Saves) من الأمهات، وتضاعف معدل الرسائل العضوية المستفسرة عن التسجيل"
+                        }
+              },
+              {
+                        "id": "wc-nty",
+                        "cats": "agency strategy",
+                        "badge": "بروبوزال وخطة نمو",
+                        "badgeClass": "badge-doc",
+                        "img": "assets/work_samples/nty_proposal_cover.jpg",
+                        "alt": "بروبوزال تيم NTY",
+                        "type": "تسويق رقمي — عرض استراتيجي متكامل",
+                        "title": "بروبوزال وخطة محتوى سوشيال ميديا — Team NTY",
+                        "desc": "خطة عمل متكاملة مقترحة لصناع المحتوى والبراندات تشمل تحليل الأداء، هيكلة المحتوى الأسبوعي، وأفكار ريلز بيعية",
+                        "meta": "الصيغة: عرض استراتيجي شامل • التركيز: هيكل نمو لصناع المحتوى",
+                        "btnText": "معاينة نموذج البروبوزال",
+                        "modalImg": "assets/work_samples/nty_proposal_cover.jpg",
+                        "modalCaption": "بروبوزال وخطة محتوى سوشيال ميديا — Team NTY",
+                        "caseStudy": {
+                                  "client": "Team NTY",
+                                  "role": "Social Media Growth Proposal & Funnel Strategy",
+                                  "copyType": "🎯 بروبوزال وعرض نمو استراتيجي (Pitch Proposal)",
+                                  "hook": "«المحتوى مش مجرد بوست كل يوم.. المحتوى سيستم بيحول المتابع المجهول لمشتري مخلص.»",
+                                  "copy": "«تحليل أداء الحسابات السابقة، تحديد 4 فجوات رئيسية في هوكات البداية، وتصميم قالب إنتاج أسبوعي يضمن نشر 5 ريلز عالية الاحتفاظ مع CTAs ذكية وموجهة للتحويل المالي المباشر.»",
+                                  "whyItWorks": "تقديم خطة واضحة ومقاسة يزيل شك العميل ويجعله يرى العائد على استثماره قبل دفع أي مقابل مالي.",
+                                  "problem": "تشتت جهود النشر على منصات التواصل دون عائد مادي واضح أو خطة قمع بيعي تربط المشاهدات بالمبيعات",
+                                  "audience": "صناع المحتوى والشركات الناشئة الباحثون عن نمو عضوي مستدام وبناء براند قوي",
+                                  "insight": "العميل لا يبحث عن مجرد \"إدارة صفحات\"؛ هو يبحث عن شريك استراتيجي يفهم كيف يحول المشاهدات إلى أرقام في الحساب البنكي",
+                                  "angle": "زاوية النمو القائم على القمع البيعي: تحويل كل محتوى لأصل رقمي يخدم المبيعات والانتشار في نفس الوقت",
+                                  "creativeDirection": "عرض تقديمي احترافي وجداول بيانات دقيقة توضح مسار الرحلة التسويقية ومؤشرات الأداء الرئيسية (KPIs)",
+                                  "result": "قبول البروبوزال والاتفاق على تنفيذ مرحلة اختبارية مدتها شهر كامل مع إشادة بدقة التخطيط"
+                        }
+              }
+    ],
                 proofPillTag: '📊 أرقام حقيقية وشهادات موثقة',
                 proofTitle: 'أرقام من داخل مديري الإعلانات وشهادات تثبت قوة النتائج',
                 proofDesc: 'شهادات معتمدة، تقييمات سينيورز، ورسائل عملاء حقيقية تثبت جودة التنفيذ:',
@@ -3622,198 +3785,269 @@
                     { id: 'agency', text: 'Agencies & Growth' },
                     { id: 'realestate', text: 'Interior & Decor' }
                 ],
-                workCards: [
-                    {
-                        id: 'wc-eleven11',
-                        cats: 'fashion published',
-                        badge: 'Campaign +479% Reach',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        alt: 'Eleven 11 Menswear Campaign',
-                        type: 'Menswear Fashion — Organic Campaign & Meta Ads',
-                        title: 'Eleven 11 Winter Campaign: +479% Reach Spike & 4.41 EGP Cost Per Lead',
-                        desc: 'Engineered conversion ad copy highlighting sizing precision and fabric durability, eliminating customer friction and multiplying winter collection sales',
-                        meta: 'Results: +479% Page Reach • 4.41 EGP Cost Per Lead',
-                        btnText: 'View Campaign Details',
-                        modalImg: 'assets/work_samples/eleven11_winter_campaign.jpg',
-                        modalCaption: 'Eleven 11 Winter Campaign — High-ROAS Ad Copy',
-                        caseStudy: {
-                            client: 'Eleven 11 Menswear',
-                            role: 'Direct-Response Ad Copy & Creative Direction',
-                            problem: 'Generic product ads listing "100% cotton" specs, leading to high cost per message and high cart abandonment',
-                            audience: 'College students and young professionals (aged 19–32) seeking modern style and fabrics that endure intense daily wear',
-                            insight: 'Men don\'t buy "cotton percentages"; they fear shirts shrinking or fading after two washes in summer heat',
-                            angle: 'Peace-of-Mind & Durability: The t-shirt engineered to survive 3 full summers without shrinking or color fade',
-                            copy: '«The t-shirt that will stay brand-new with you for 3 summers without stretching or fading! Pre-shrunk premium cotton, free inspection before delivery, and instant replacement guarantee.»',
-                            creativeDirection: 'Dynamic, snappy Reel comparing fabric weave before and after washing, paired with a confident, street-smart voiceover eliminating doubts',
-                            result: '+479% surge in organic page reach, cost-per-inquiry reduced to 4.41 EGP, and record seasonal sales volume'
+                workCards:     [
+              {
+                        "id": "wc-eleven11",
+                        "cats": "fashion published",
+                        "badge": "Campaign +479% Reach",
+                        "badgeClass": "badge-live",
+                        "img": "assets/work_samples/eleven11_winter_campaign.jpg",
+                        "alt": "Eleven 11 Menswear Campaign",
+                        "type": "Menswear Fashion — Direct-Response Ad Copy",
+                        "title": "Eleven 11 Winter Campaign: +479% Reach Spike & 4.41 EGP Cost Per Lead",
+                        "desc": "Engineered conversion ad copy highlighting sizing precision and fabric durability, eliminating customer friction and multiplying winter collection sales",
+                        "meta": "Results: +479% Page Reach • 4.41 EGP Cost Per Lead",
+                        "btnText": "View Campaign Details",
+                        "modalImg": "assets/work_samples/eleven11_winter_campaign.jpg",
+                        "modalCaption": "Eleven 11 Winter Campaign — High-ROAS Ad Copy",
+                        "caseStudy": {
+                                  "client": "Eleven 11 Menswear",
+                                  "role": "Direct-Response Ad Copy & Creative Direction",
+                                  "copyType": "🎯 Direct-Response Ad Copy",
+                                  "hook": "«The t-shirt engineered to survive 3 full summers without shrinking or fading!»",
+                                  "copy": "«Eleven 11 pre-shrunk premium cotton built for intense summer heat.. Free inspection upon delivery, and instant replacement guarantee if the fit is not 100% perfect. Grab the 3-piece value bundle and save 35% before stock sells out.»",
+                                  "whyItWorks": "Directly tackles men's core buying anxieties (fabric shrinking, color fading, bad sizing) while removing purchase risk with a free pre-inspection guarantee.",
+                                  "problem": "Generic product ads listing \"100% cotton\" specs, leading to high cost per message and high cart abandonment",
+                                  "audience": "College students and young professionals (aged 19–32) seeking modern style and fabrics that endure intense daily wear",
+                                  "insight": "Men don't buy \"cotton percentages\"; they fear shirts shrinking or fading after two washes in summer heat",
+                                  "angle": "Peace-of-Mind & Durability: The t-shirt engineered to survive 3 full summers without shrinking or color fade",
+                                  "creativeDirection": "Dynamic, snappy Reel comparing fabric weave before and after washing, paired with a confident, street-smart voiceover eliminating doubts",
+                                  "result": "+479% surge in organic page reach, cost-per-inquiry reduced to 4.41 EGP, and record seasonal sales volume"
                         }
-                    },
-                    {
-                        id: 'wc-bloom-reel',
-                        cats: 'published academy',
-                        badge: 'Live Published Reel',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/post_english_bloom_reel.jpg',
-                        alt: 'English Bloom Live Published Reel',
-                        type: 'Language Academy — Video Reel & Feed Ad',
-                        title: 'Do you start each time with full enthusiasm... and quit days later?',
-                        desc: 'A relatable hook addressing learning hesitation with humorous storytelling, published live on Facebook Reels with high retention and organic engagement',
-                        meta: 'Objective: High Video Retention • Platform: Facebook Reels',
-                        btnText: 'View Full Post Sample',
-                        modalImg: 'assets/work_samples/post_english_bloom_reel.jpg',
-                        modalCaption: 'Live Published Video Reel — English Bloom Academy',
-                        caseStudy: {
-                            client: 'English Bloom Academy',
-                            role: 'Reels Scriptwriting & Behavioral Hooks',
-                            problem: 'Frequent student burnout and dropouts within 2 weeks, accompanied by guilt and frustration from rigid academic training methods',
-                            audience: 'Undergraduates and job seekers failing career interviews due to speaking hesitation and fear of making grammar mistakes',
-                            insight: 'Language learners don\'t need more abstract grammar rules; they need psychological safety and 80% conversational airtime',
-                            angle: 'Pattern-Interrupt Humor: Lampooning the unrealistic Day 1 enthusiasm vs Day 10 burnout, followed by a grounded practical solution',
-                            copy: '«You start every course with superhuman excitement.. and quit 5 days later? The problem isn\'t you! It\'s the archaic memorization method. In our workshop, you talk 80% of the session with zero fear.»',
-                            creativeDirection: 'Split-screen sketch acting out day-1 hyper-enthusiasm vs day-10 slump, transitioning into a warm invite for the free live workshop',
-                            result: 'Exceptional retention, hundreds of viral organic shares, and an influx of qualified workshop trial sign-ups'
+              },
+              {
+                        "id": "wc-bloom-reel",
+                        "cats": "published academy",
+                        "badge": "Live Published Reel",
+                        "badgeClass": "badge-live",
+                        "img": "assets/work_samples/post_english_bloom_reel.jpg",
+                        "alt": "English Bloom Live Published Reel",
+                        "type": "Language Academy — Viral Reel & Video Script",
+                        "title": "Do you start each time with full enthusiasm... and quit days later?",
+                        "desc": "A relatable hook addressing learning hesitation with humorous storytelling, published live on Facebook Reels with high retention and organic engagement",
+                        "meta": "Objective: High Video Retention • Platform: Facebook Reels",
+                        "btnText": "View Full Post Sample",
+                        "modalImg": "assets/work_samples/post_english_bloom_reel.jpg",
+                        "modalCaption": "Live Published Video Reel — English Bloom Academy",
+                        "caseStudy": {
+                                  "client": "English Bloom Academy",
+                                  "role": "Reels Scriptwriting & Behavioral Hooks",
+                                  "copyType": "🎬 Viral Reel Script & Behavioral Hook",
+                                  "hook": "«You start every course with superhuman excitement... and quit 5 days later? The problem isn't you!»",
+                                  "copy": "«It's the archaic memorization and grammar drills that make you hate speaking! In our English Bloom speaking workshop, you talk 80% of the session with zero fear of making mistakes. Comment \"SPEAK\" below to claim your spot in today's free live session.»",
+                                  "whyItWorks": "Pattern-interrupt humor removes learner guilt instantly, creating psychological safety and driving automated lead qualification via keyword comments.",
+                                  "problem": "Frequent student burnout and dropouts within 2 weeks, accompanied by guilt and frustration from rigid academic training methods",
+                                  "audience": "Undergraduates and job seekers failing career interviews due to speaking hesitation and fear of making grammar mistakes",
+                                  "insight": "Language learners don't need more abstract grammar rules; they need psychological safety and 80% conversational airtime",
+                                  "angle": "Pattern-Interrupt Humor: Lampooning the unrealistic Day 1 enthusiasm vs Day 10 burnout, followed by a grounded practical solution",
+                                  "creativeDirection": "Split-screen sketch acting out day-1 hyper-enthusiasm vs day-10 slump, transitioning into a warm invite for the free live workshop",
+                                  "result": "Exceptional retention, hundreds of viral organic shares, and an influx of qualified workshop trial sign-ups"
                         }
-                    },
-                    {
-                        id: 'wc-ajyal-trial',
-                        cats: 'published academy',
-                        badge: 'Conversion & Sales Ad',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
-                        alt: 'Ajyal Free Trial Direct Response Ad',
-                        type: 'Direct Response — Trial Booking & Conversion',
-                        title: 'Wish to hear your child recite beautifully? Book a 100% Free Trial Session',
-                        desc: 'Direct-response sales copy addressing maternal doubts, offering a risk-free trial session to convert passive readers into active enrollments',
-                        meta: 'Objective: Free Trial Bookings • Platform: Meta Conversion Ads',
-                        btnText: 'View Full Ad Sample',
-                        modalImg: 'assets/work_samples/post_ajyal_free_trial_conversion.jpg',
-                        modalCaption: 'Live Direct-Response Conversion Ad — Ajyal Quran Academy',
-                        caseStudy: {
-                            client: 'Ajyal Quran Academy',
-                            role: 'Direct-Response Ad Copy & Risk-Reversal Offer',
-                            problem: 'Parental reluctance and skepticism regarding young children (ages 6–10) staying engaged during online sessions',
-                            audience: 'Mothers seeking authentic Quran education for their children while struggling with short attention spans and homework battles',
-                            insight: 'Mothers require reassuring pedagogical authority combined with total removal of financial risk before making a commitment',
-                            angle: 'Zero-Risk Reversal: 100% Free diagnostic trial session with an Azhar-certified mentor specialized in child motivation',
-                            copy: '«Wish to hear your child recite the Quran with love and ease without daily arguments? Reserve a free trial session today and witness how we apply the Golden 5-Minute Rule.»',
-                            creativeDirection: 'Warm visual of an attentive smiling child with headphones and open Quran, paired with reassuring direct-response copy',
-                            result: 'Surge in trial lesson bookings, and sustained 65%+ conversion into ongoing monthly paid enrollments'
+              },
+              {
+                        "id": "wc-ajyal-trial",
+                        "cats": "published academy",
+                        "badge": "Conversion & Sales Ad",
+                        "badgeClass": "badge-live",
+                        "img": "assets/work_samples/post_ajyal_free_trial_conversion.jpg",
+                        "alt": "Ajyal Free Trial Direct Response Ad",
+                        "type": "Direct Response — Trial Booking & Conversion",
+                        "title": "Wish to hear your child recite beautifully? Book a 100% Free Trial Session",
+                        "desc": "Direct-response sales copy addressing maternal doubts, offering a risk-free trial session to convert passive readers into active enrollments",
+                        "meta": "Objective: Free Trial Bookings • Platform: Meta Conversion Ads",
+                        "btnText": "View Full Ad Sample",
+                        "modalImg": "assets/work_samples/post_ajyal_free_trial_conversion.jpg",
+                        "modalCaption": "Live Direct-Response Conversion Ad — Ajyal Quran Academy",
+                        "caseStudy": {
+                                  "client": "Ajyal Quran Academy",
+                                  "role": "Direct-Response Ad Copy & Risk-Reversal Offer",
+                                  "copyType": "🎯 High-Converting Ad Copy & Offer",
+                                  "hook": "«Wish to hear your child recite the Quran beautifully without arguments or pressure?»",
+                                  "copy": "«Book a 100% free diagnostic trial session today with an Azhar-certified mentor specialized in motivating children using the Golden 5-Minute Rule. Zero financial obligation.. Experience it yourself and see your child's excitement before paying a single pound.»",
+                                  "whyItWorks": "Complete risk reversal coupled with deep empathy for daily parental battles transforms skepticism into urgent trial session bookings.",
+                                  "problem": "Parental reluctance and skepticism regarding young children (ages 6–10) staying engaged during online sessions",
+                                  "audience": "Mothers seeking authentic Quran education for their children while struggling with short attention spans and homework battles",
+                                  "insight": "Mothers require reassuring pedagogical authority combined with total removal of financial risk before making a commitment",
+                                  "angle": "Zero-Risk Reversal: 100% Free diagnostic trial session with an Azhar-certified mentor specialized in child motivation",
+                                  "creativeDirection": "Warm visual of an attentive smiling child with headphones and open Quran, paired with reassuring direct-response copy",
+                                  "result": "Surge in trial lesson bookings, and sustained 65%+ conversion into ongoing monthly paid enrollments"
                         }
-                    },
-                    {
-                        id: 'wc-hk',
-                        cats: 'realestate',
-                        badge: 'Luxury Turnkey Copy',
-                        badgeClass: 'badge-pro',
-                        img: 'assets/work_samples/hk_design_interior.jpg',
-                        alt: 'HK Design Luxury Finishing',
-                        type: 'Interior & Finishing — A-Class Sales Copy',
-                        title: 'Luxury Interior & Turnkey Finishing Campaigns — HK Design',
-                        desc: 'Prestigious sales copy addressing new villa and apartment owners, focusing on architectural punctuality, material warranties, and peace of mind',
-                        meta: 'Audience: Villa & Luxury Unit Owners • Result: Doubled Consultation Bookings',
-                        btnText: 'View Campaign Angles',
-                        modalImg: 'assets/work_samples/hk_design_interior.jpg',
-                        modalCaption: 'Luxury Turnkey Finishing Campaigns — HK Design',
-                        caseStudy: {
-                            client: 'HK Design Interior',
-                            role: 'Luxury Real Estate Copywriting & Positioning',
-                            problem: 'Widespread homeowner distrust toward finishing contractors regarding budget overruns and notorious delivery delays',
-                            audience: 'Owners of new villas and upscale apartments in emerging districts (Zayed, New Cairo, Shorouk) A-Class segment',
-                            insight: 'High-net-worth clients pay for accountability and punctuality; savings mean nothing if moving-in dates are repeatedly missed',
-                            angle: 'Strict Architectural Accountability: Turnkey contract with enforceable daily financial penalties for delays + free on-site survey',
-                            copy: '«The biggest nightmare for new villa owners is disappearing contractors! At HK Design, we deliver turnkey luxury backed by strict contractual penalty clauses for any day of delay.»',
-                            creativeDirection: 'Authentic high-resolution photography and video walk-throughs of completed residential estates highlighting finishing precision',
-                            result: 'Doubled on-site architectural consultation appointments among premium homeowners with zero haggling on design fees'
+              },
+              {
+                        "id": "wc-hk",
+                        "cats": "realestate",
+                        "badge": "Luxury Turnkey Copy",
+                        "badgeClass": "badge-pro",
+                        "img": "assets/work_samples/hk_design_interior.jpg",
+                        "alt": "HK Design Luxury Finishing",
+                        "type": "Interior & Finishing — High-Ticket Sales Copy",
+                        "title": "Luxury Interior & Turnkey Finishing Campaigns — HK Design",
+                        "desc": "Prestigious sales copy addressing new villa and apartment owners, focusing on architectural punctuality, material warranties, and peace of mind",
+                        "meta": "Audience: Villa & Luxury Unit Owners • Result: Doubled Consultation Bookings",
+                        "btnText": "View Campaign Angles",
+                        "modalImg": "assets/work_samples/hk_design_interior.jpg",
+                        "modalCaption": "Luxury Turnkey Finishing Campaigns — HK Design",
+                        "caseStudy": {
+                                  "client": "HK Design Interior",
+                                  "role": "Luxury Real Estate Copywriting & Positioning",
+                                  "copyType": "💎 High-Ticket Sales Copy (A-Class)",
+                                  "hook": "«The biggest nightmare for luxury property owners: contractors who take advances and disappear for months!»",
+                                  "copy": "«At HK Design, we take your bare unit and deliver turnkey luxury backed by strict architectural itemized bills of quantities and enforceable daily financial penalties for delays. Book your complimentary on-site architectural consultation this week.»",
+                                  "whyItWorks": "Speaks directly to the #1 pain point of high-net-worth homeowners (delivery unreliability & blown budgets) with an ironclad contractual guarantee.",
+                                  "problem": "Widespread homeowner distrust toward finishing contractors regarding budget overruns and notorious delivery delays",
+                                  "audience": "Owners of new villas and upscale apartments in emerging districts (Zayed, New Cairo, Shorouk) A-Class segment",
+                                  "insight": "High-net-worth clients pay for accountability and punctuality; savings mean nothing if moving-in dates are repeatedly missed",
+                                  "angle": "Strict Architectural Accountability: Turnkey contract with enforceable daily financial penalties for delays + free on-site survey",
+                                  "creativeDirection": "Authentic high-resolution photography and video walk-throughs of completed residential estates highlighting finishing precision",
+                                  "result": "Doubled on-site architectural consultation appointments among premium homeowners with zero haggling on design fees"
                         }
-                    },
-                    {
-                        id: 'wc-zavn',
-                        cats: 'agency strategy',
-                        badge: 'Research Playbook',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        alt: 'ZAVN Playbook',
-                        type: 'Agency Research & Video Scripts',
-                        title: 'Content Research Playbook & Video Scripts — ZAVN Agency',
-                        desc: 'Comprehensive research and scriptwriting repository produced for ZAVN Agency, covering cross-market competitor breakdowns and sales scripts',
-                        meta: 'Format: Agency Research & Script Repository',
-                        btnText: 'Preview Playbook Model',
-                        modalImg: 'assets/work_samples/zavn_playbook_cover.jpg',
-                        modalCaption: 'Content Research Playbook & Video Scripts — ZAVN Agency',
-                        caseStudy: {
-                            client: 'ZAVN Growth Agency',
-                            role: 'Strategic Content Research & Script Repository',
-                            problem: 'Inconsistent research depth and prolonged creative turnaround across diverse client campaigns in Egypt and the Gulf',
-                            audience: 'Brand owners in E-commerce, healthcare clinics, and educational services seeking scalable direct-response campaigns',
-                            insight: 'Dissecting recurring buyer complaints in negative competitor reviews is the single fastest way to extract high-converting sales angles',
-                            angle: 'Modular Research & Hook Repository structured across funnel stages, enabling media buyers to rapid-test angles at scale',
-                            copy: '«A complete strategic research playbook featuring 20+ psychological sales angles, scroll-stopping hooks, and video scripts that convert views into high-ROAS orders.»',
-                            creativeDirection: 'Structured Notion and Sheets templates with explicit visual cues for video editors and testing guidelines for media buyers',
-                            result: 'Permanent accreditation within the agency executive roster, accelerating client campaign rollouts with top ROAS'
+              },
+              {
+                        "id": "wc-zavn",
+                        "cats": "agency strategy",
+                        "badge": "Research Playbook",
+                        "badgeClass": "badge-doc",
+                        "img": "assets/work_samples/zavn_playbook_cover.jpg",
+                        "alt": "ZAVN Playbook",
+                        "type": "Agency Research & Video Scripts",
+                        "title": "Content Research Playbook & Video Scripts — ZAVN Agency",
+                        "desc": "Comprehensive research and scriptwriting repository produced for ZAVN Agency, covering cross-market competitor breakdowns and sales scripts",
+                        "meta": "Format: Agency Research & Script Repository",
+                        "btnText": "Preview Playbook Model",
+                        "modalImg": "assets/work_samples/zavn_playbook_cover.jpg",
+                        "modalCaption": "Content Research Playbook & Video Scripts — ZAVN Agency",
+                        "caseStudy": {
+                                  "client": "ZAVN Growth Agency",
+                                  "role": "Strategic Content Research & Script Repository",
+                                  "copyType": "📐 Research & Script Playbook",
+                                  "hook": "«Dissecting negative competitor reviews is the single richest source of converting sales hooks.»",
+                                  "copy": "«A complete strategic research playbook featuring 20+ psychological sales angles, scroll-stopping hooks, and video scripts that convert views into high-ROAS orders across Meta and TikTok.»",
+                                  "whyItWorks": "Derives messaging angles directly from unfiltered Voice-of-Customer feedback, guaranteeing that hooks strike immediate emotional resonance.",
+                                  "problem": "Inconsistent research depth and prolonged creative turnaround across diverse client campaigns in Egypt and the Gulf",
+                                  "audience": "Brand owners in E-commerce, healthcare clinics, and educational services seeking scalable direct-response campaigns",
+                                  "insight": "Dissecting recurring buyer complaints in negative competitor reviews is the single fastest way to extract high-converting sales angles",
+                                  "angle": "Modular Research & Hook Repository structured across funnel stages, enabling media buyers to rapid-test angles at scale",
+                                  "creativeDirection": "Structured Notion and Sheets templates with explicit visual cues for video editors and testing guidelines for media buyers",
+                                  "result": "Permanent accreditation within the agency executive roster, accelerating client campaign rollouts with top ROAS"
                         }
-                    },
-                    {
-                        id: 'wc-bloom-strategy',
-                        cats: 'strategy academy',
-                        badge: 'Full Launch Strategy Deck',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/english_bloom_strategy_cover.jpg',
-                        alt: 'English Bloom Full Strategy Deck',
-                        type: 'Comprehensive Marketing Strategy — English Bloom',
-                        title: 'English Bloom Academy Full Content & Launch Strategy Deck',
-                        desc: 'Complete launch architecture covering competitor teardown, student buyer personas, full-funnel content distribution, and creative visual guidelines',
-                        meta: 'Content: Full Funnel Research & Strategy Deck',
-                        btnText: 'Preview Strategy Model',
-                        modalImg: 'assets/work_samples/english_bloom_strategy_cover.jpg',
-                        modalCaption: 'English Bloom Academy Full Launch Strategy Deck'
-                    },
-                    {
-                        id: 'wc-ajyal-plan',
-                        cats: 'strategy academy',
-                        badge: 'Masterplan Matrix',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/ajyal_content_plan_preview.jpg',
-                        alt: 'Ajyal Content Plan Preview',
-                        type: 'Monthly Content Schedule — Ajyal Academy',
-                        title: 'Ajyal Quran Academy Strategic Masterplan & Content Calendar Matrix',
-                        desc: 'Full planning spreadsheet mapping 30 days of content across TOFU, MOFU, and BOFU stages with defined hook angles and visual prompts',
-                        meta: 'Content: 30-Day Matrix & Visual Prompts',
-                        btnText: 'Preview Masterplan Model',
-                        modalImg: 'assets/work_samples/ajyal_content_plan_preview.jpg',
-                        modalCaption: 'Ajyal Quran Academy Strategic Masterplan Matrix'
-                    },
-                    {
-                        id: 'wc-ajyal-5min',
-                        cats: 'published academy',
-                        badge: 'Live Value Post',
-                        badgeClass: 'badge-live',
-                        img: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        alt: 'Ajyal Academy 5-Minute Rule Post',
-                        type: 'Quran Academy — Educational Parenting Post',
-                        title: 'The Golden 5-Minute Rule: How to connect your child to learning without conflict',
-                        desc: 'A high-trust educational post addressing child attention spans and parents doubts with calm, authoritative parenting psychology',
-                        meta: 'Objective: Authority & Trust Building • Platform: Facebook Page Post',
-                        btnText: 'View Full Post Sample',
-                        modalImg: 'assets/work_samples/post_ajyal_5min_rule_educational.jpg',
-                        modalCaption: 'Live Published Educational Post — Ajyal Quran Academy'
-                    },
-                    {
-                        id: 'wc-nty',
-                        cats: 'agency strategy',
-                        badge: 'Agency Pitch Proposal',
-                        badgeClass: 'badge-doc',
-                        img: 'assets/work_samples/nty_proposal_cover.jpg',
-                        alt: 'Team NTY Proposal',
-                        type: 'Digital Marketing — Agency Proposal',
-                        title: 'Social Media Strategy & Pitch Proposal — Team NTY',
-                        desc: 'Full-funnel agency pitch proposal designed for creators and brands, featuring account auditing, weekly content rhythms, and video scripts',
-                        meta: 'Format: Strategic Growth Pitch • Scope: Creator Growth',
-                        btnText: 'Preview Proposal Model',
-                        modalImg: 'assets/work_samples/nty_proposal_cover.jpg',
-                        modalCaption: 'Social Media Strategy & Pitch Proposal — Team NTY'
-                    }
-                ],
+              },
+              {
+                        "id": "wc-bloom-strategy",
+                        "cats": "strategy academy",
+                        "badge": "Full Launch Strategy Deck",
+                        "badgeClass": "badge-doc",
+                        "img": "assets/work_samples/english_bloom_strategy_cover.jpg",
+                        "alt": "English Bloom Full Strategy Deck",
+                        "type": "Comprehensive Marketing Strategy — English Bloom",
+                        "title": "English Bloom Academy Full Content & Launch Strategy Deck",
+                        "desc": "Complete launch architecture covering competitor teardown, student buyer personas, full-funnel content distribution, and creative visual guidelines",
+                        "meta": "Content: Full Funnel Research & Strategy Deck",
+                        "btnText": "Preview Strategy Model",
+                        "modalImg": "assets/work_samples/english_bloom_strategy_cover.jpg",
+                        "modalCaption": "English Bloom Academy Full Launch Strategy Deck",
+                        "caseStudy": {
+                                  "client": "English Bloom Academy",
+                                  "role": "Full-Funnel Content Architecture & Launch Strategy",
+                                  "copyType": "📐 Full-Funnel Content Strategy & Launch Deck",
+                                  "hook": "«How to launch an English academy from scratch against 5-year-old competitors?»",
+                                  "copy": "«Architecting the complete student journey: relatable viral reels that break fear (TOFU), free interactive conversation workshops that build authority (MOFU), and frictionless monthly enrollments with a 100% money-back week-one guarantee (BOFU).»",
+                                  "whyItWorks": "Pairing psychological safety at the top of the funnel with zero financial friction at the bottom drives rapid student sign-ups at minimal acquisition cost.",
+                                  "problem": "Entering a hyper-competitive language learning market dominated by well-funded institutes without blowing huge initial ad spend",
+                                  "audience": "Graduates and ambitious young professionals wanting practical spoken English fluency without theoretical grammar overwhelm",
+                                  "insight": "Students carry deep embarrassment about making grammar errors; the brand offering genuine psychological safety wins their business",
+                                  "angle": "The Psychological Safety Angle: 80% practical spoken conversational immersion from Day 1 with zero judgment",
+                                  "creativeDirection": "Comprehensive visual and scripting playbook establishing relatable video tone and community engagement protocols",
+                                  "result": "Successful academy launch with cohort #1 fully booked in the opening month purely through organic content and precision conversion angles"
+                        }
+              },
+              {
+                        "id": "wc-ajyal-plan",
+                        "cats": "strategy academy",
+                        "badge": "Masterplan Matrix",
+                        "badgeClass": "badge-doc",
+                        "img": "assets/work_samples/ajyal_content_plan_preview.jpg",
+                        "alt": "Ajyal Content Plan Preview",
+                        "type": "Monthly Content Schedule — Ajyal Academy",
+                        "title": "Ajyal Quran Academy Strategic Masterplan & Content Calendar Matrix",
+                        "desc": "Full planning spreadsheet mapping 30 days of content across TOFU, MOFU, and BOFU stages with defined hook angles and visual prompts",
+                        "meta": "Content: 30-Day Matrix & Visual Prompts",
+                        "btnText": "Preview Masterplan Model",
+                        "modalImg": "assets/work_samples/ajyal_content_plan_preview.jpg",
+                        "modalCaption": "Ajyal Quran Academy Strategic Masterplan Matrix",
+                        "caseStudy": {
+                                  "client": "Ajyal Quran Academy",
+                                  "role": "Monthly Editorial Planning & Content Distribution",
+                                  "copyType": "📅 30-Day Content Masterplan Matrix",
+                                  "hook": "«30 days of content designed not to fill the feed, but to make parents think: this place truly understands my child.»",
+                                  "copy": "«A high-conversion editorial matrix: 12 viral reels + 8 parenting authority posts + 6 direct-response free trial booking ads + 4 inspiring student recitation milestones.»",
+                                  "whyItWorks": "Building pedagogical authority first before making conversion asks ensures that subsequent sales ads convert at peak efficiency and lowest CPR.",
+                                  "problem": "Sporadic, inconsistent social media publishing causing declining engagement and steadily increasing paid ad inquiry costs",
+                                  "audience": "Mothers seeking structured, nurturing Quranic education for their children through online classes",
+                                  "insight": "Parents reject direct sales pitches until they see verified proof of pedagogical patience and expertise",
+                                  "angle": "Structured Content Pyramid: 40% Educational Authority, 30% Engagement & Inspiration, 30% Direct Conversion Offers",
+                                  "creativeDirection": "Standardized design templates and visual prompts ensuring visual consistency and streamlined designer handoffs",
+                                  "result": "42% decrease in paid advertising cost-per-lead as high organic authority primed audiences before they even clicked the ad"
+                        }
+              },
+              {
+                        "id": "wc-ajyal-5min",
+                        "cats": "published academy",
+                        "badge": "Live Value Post",
+                        "badgeClass": "badge-live",
+                        "img": "assets/work_samples/post_ajyal_5min_rule_educational.jpg",
+                        "alt": "Ajyal Academy 5-Minute Rule Post",
+                        "type": "Quran Academy — Educational Authority Post",
+                        "title": "The Golden 5-Minute Rule: How to connect your child to learning without conflict",
+                        "desc": "A high-trust educational post addressing child attention spans and parents doubts with calm, authoritative parenting psychology",
+                        "meta": "Objective: Authority & Trust Building • Platform: Facebook Page Post",
+                        "btnText": "View Full Post Sample",
+                        "modalImg": "assets/work_samples/post_ajyal_5min_rule_educational.jpg",
+                        "modalCaption": "Live Published Educational Post — Ajyal Quran Academy",
+                        "caseStudy": {
+                                  "client": "Ajyal Quran Academy",
+                                  "role": "Educational Authority Copy & Content Psychology",
+                                  "copyType": "📖 Educational Authority & Parenting Post",
+                                  "hook": "«Does your child lose focus after 2 minutes? Try the Golden 5-Minute Rule.»",
+                                  "copy": "«Most parents make the mistake of demanding a 30-minute study session on day one! At Ajyal, we start with 5 minutes of focused momentum, instant encouragement, and compounding confidence.. The result? The child asks to keep going without tears or arguments.»",
+                                  "whyItWorks": "Addresses maternal frustration with zero guilt-tripping, delivering an immediately actionable solution that positions the academy as trusted experts.",
+                                  "problem": "Parental skepticism toward online learning effectiveness due to past struggles with short attention spans at home",
+                                  "audience": "Mothers exhausted by daily homework arguments and seeking gentle, effective study habits for their children",
+                                  "insight": "Parents feel guilty about losing patience; providing a practical psychological rule builds instant gratitude and brand affinity",
+                                  "angle": "The Practical Parenting Hack: Micro-commitment psychology to build compounding habits without force",
+                                  "creativeDirection": "Clean editorial carousel breakdown formatted with generous whitespace and clear step-by-step reading flow",
+                                  "result": "Hundreds of organic shares and saves from mothers, accompanied by a 2x increase in inbound direct inquiries for trial lessons"
+                        }
+              },
+              {
+                        "id": "wc-nty",
+                        "cats": "agency strategy",
+                        "badge": "Agency Pitch Proposal",
+                        "badgeClass": "badge-doc",
+                        "img": "assets/work_samples/nty_proposal_cover.jpg",
+                        "alt": "Team NTY Proposal",
+                        "type": "Digital Marketing — Strategic Pitch Proposal",
+                        "title": "Social Media Strategy & Pitch Proposal — Team NTY",
+                        "desc": "Full-funnel agency pitch proposal designed for creators and brands, featuring account auditing, weekly content rhythms, and video scripts",
+                        "meta": "Format: Strategic Growth Pitch • Scope: Creator Growth",
+                        "btnText": "Preview Proposal Model",
+                        "modalImg": "assets/work_samples/nty_proposal_cover.jpg",
+                        "modalCaption": "Social Media Strategy & Pitch Proposal — Team NTY",
+                        "caseStudy": {
+                                  "client": "Team NTY",
+                                  "role": "Social Media Growth Proposal & Funnel Strategy",
+                                  "copyType": "🎯 Strategic Growth Pitch Proposal",
+                                  "hook": "«Content is not just daily posting; it is a system converting anonymous viewers into loyal buyers.»",
+                                  "copy": "«Comprehensive account audit identifying 4 critical hook drop-off points, accompanied by an actionable weekly production playbook delivering 5 high-retention reels with direct conversion CTAs.»",
+                                  "whyItWorks": "Demonstrates a clear, mathematically sound growth architecture upfront, making the ROI self-evident before any contract is signed.",
+                                  "problem": "Fragmented posting efforts lacking a coherent monetization funnel to turn view spikes into predictable business revenue",
+                                  "audience": "Creators, personal brands, and startups needing organic distribution converted into commercial revenue",
+                                  "insight": "Clients don't want vanity metrics; they want an accountable strategist who understands how attention converts into bank deposits",
+                                  "angle": "Funnel-Led Organic Growth: Treating every reel and carousel as an asset directly engineered to drive sales",
+                                  "creativeDirection": "Structured slide deck with concrete workflow roadmaps and milestone KPIs removing all operational ambiguity",
+                                  "result": "Proposal accepted with immediate sign-off on a 1-month pilot deployment with commendations on strategic rigor"
+                        }
+              }
+    ],
 
                 // Proof
                 proofPillTag: 'Verified Proof & Testimonials',
@@ -4109,58 +4343,52 @@
                 const safeImg = c.modalImg || c.img;
                 const projectNum = String(idx + 1).padStart(2, '0');
 
-                // Structured spec grid if case study exists
-                let specsHtml = '';
-                let copyPreviewHtml = '';
+                // Copy Showcase Box (COPYWRITER FIRST - HERO OF THE CARD)
+                let copyShowcaseHtml = '';
+                if (hasCaseStudy && (cs.copy || cs.hook)) {
+                    const copyTypeLabel = cs.copyType || (isAr ? '✍️ نص الكوبي المنشور' : '✍️ Actual Converting Copy');
+                    const hookHtml = cs.hook ? `
+                        <div class="work-copy-hook-row">
+                            <span class="work-copy-hook-tag">${isAr ? 'الـ HOOK الأساسي:' : 'THE HOOK:'}</span>
+                            <div class="work-copy-hook-text">${cs.hook}</div>
+                        </div>
+                    ` : '';
+                    
+                    const copyBodyHtml = cs.copy ? `
+                        <div class="work-copy-body-row">
+                            <span class="work-copy-sub-tag">${isAr ? 'نص الكوبي / السكربت:' : 'THE COPY / SCRIPT:'}</span>
+                            <div class="work-copy-text">${cs.copy}</div>
+                        </div>
+                    ` : '';
 
-                if (hasCaseStudy) {
-                    const clientName = cs.client || c.title;
-                    const industryName = cs.industry || c.type || (isAr ? 'خدمات وتجارة' : 'Services & Commerce');
-                    const roleName = cs.role || (isAr ? 'كوبي رايتر ومسؤول استراتيجية' : 'Copywriter & Strategist');
-                    const challengeText = cs.problem || '';
-                    const deliverableText = cs.deliverable || (isAr ? 'زوايا إعلانية + سكربتات ريلز + توجيهات إبداعية' : 'Ad Angles + Reels Scripts + Creative Direction');
-                    const resultText = cs.result || '';
-
-                    specsHtml = `
-                        <div class="work-project-meta-grid">
-                            <div class="work-meta-item">
-                                <span class="work-meta-k">${isAr ? 'العميل / المشروع:' : 'Client / Project:'}</span>
-                                <span class="work-meta-v">${clientName}</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <span class="work-meta-k">${isAr ? 'المجال / الصناعة:' : 'Industry:'}</span>
-                                <span class="work-meta-v">${industryName}</span>
-                            </div>
-                            <div class="work-meta-item full-width">
-                                <span class="work-meta-k">${isAr ? 'دوري في المشروع:' : 'My Role:'}</span>
-                                <span class="work-meta-v">${roleName}</span>
-                            </div>
-                            <div class="work-meta-item full-width">
-                                <span class="work-meta-k">${isAr ? 'التحدي الأساسي:' : 'Main Challenge:'}</span>
-                                <span class="work-meta-v">${challengeText}</span>
-                            </div>
-                            <div class="work-meta-item full-width">
-                                <span class="work-meta-k">${isAr ? 'المخرجات المُسلّمة:' : 'Main Deliverables:'}</span>
-                                <span class="work-meta-v">${deliverableText}</span>
-                            </div>
-                            <div class="work-meta-item full-width">
-                                <span class="work-meta-k" style="color: #34d399;">${isAr ? 'النتيجة والأثر بالأرقام:' : 'Result & Impact:'}</span>
-                                <span class="work-meta-v highlight-result">${resultText}</span>
+                    const whyItWorksHtml = cs.whyItWorks ? `
+                        <div class="work-copy-why-box">
+                            <span class="work-copy-why-icon">💡</span>
+                            <div class="work-copy-why-text">
+                                <strong>${isAr ? 'ليه ده بيجيب مبيعات:' : 'Why It Works:'}</strong> ${cs.whyItWorks}
                             </div>
                         </div>
-                    `;
+                    ` : '';
 
-                    if (cs.copy) {
-                        copyPreviewHtml = `
-                            <div class="work-copy-preview-box">
-                                <div class="work-copy-preview-header">
-                                    <span>✍️ ${isAr ? 'نص الكوبي الإعلاني المنشور لايف:' : 'Actual Converting Ad Copy:'}</span>
-                                    <span class="live-status-badge">${isAr ? 'منشور لايف' : 'Live Ad'}</span>
-                                </div>
-                                <div class="work-copy-text">${cs.copy}</div>
+                    const resultPillHtml = cs.result ? `
+                        <div class="work-copy-result-pill">
+                            <span class="result-pill-icon">🚀</span>
+                            <span class="result-pill-text">${cs.result}</span>
+                        </div>
+                    ` : '';
+
+                    copyShowcaseHtml = `
+                        <div class="work-copy-preview-box">
+                            <div class="work-copy-preview-header">
+                                <span class="work-copy-type-title">${copyTypeLabel}</span>
+                                <span class="live-status-badge">${isAr ? '● منشور وموثق' : '● Live & Verified'}</span>
                             </div>
-                        `;
-                    }
+                            ${hookHtml}
+                            ${copyBodyHtml}
+                            ${whyItWorksHtml}
+                            ${resultPillHtml}
+                        </div>
+                    `;
                 }
 
                 // Action buttons: View Case Study + Inspect Original Asset
@@ -4169,10 +4397,10 @@
                     actionsHtml = `
                         <div class="work-actions-row">
                             <button class="btn-view-case-study" onclick="openCaseStudy('${c.id}')">
-                                <span>${isAr ? '🔍 دراسة الحالة بالتفصيل' : '🔍 View Case Study'}</span>
+                                <span>${isAr ? '🔍 دراسة الحالة (01-07 Framework)' : '🔍 View Case Study (01-07)'}</span>
                             </button>
-                            <button class="btn-inspect-asset" onclick="openLightbox('${safeImg}', '${safeTitle}')" title="${isAr ? 'معاينة النموذج الأصلي' : 'Inspect Original Asset'}">
-                                <span>🖼️ ${isAr ? 'النموذج' : 'Asset'}</span>
+                            <button class="btn-inspect-asset" onclick="openLightbox('${safeImg}', '${safeTitle}')" title="${isAr ? 'معاينة النموذج الأصلي' : 'Inspect Original Media'}">
+                                <span>🖼️ ${isAr ? 'النموذج' : 'Media'}</span>
                             </button>
                         </div>
                     `;
@@ -4201,9 +4429,7 @@
                             <span class="work-type-tag">${c.type}</span>
                             <h3 class="work-heading">${c.title}</h3>
                             <p class="work-paragraph">${c.desc}</p>
-                            ${specsHtml}
-                            ${copyPreviewHtml}
-                            ${!hasCaseStudy ? `<div class="work-meta-row">${c.meta}</div>` : ''}
+                            ${copyShowcaseHtml}
                             ${actionsHtml}
                         </div>
                     </div>
@@ -4226,6 +4452,19 @@
             if (catEl) catEl.textContent = cs.role || (isAr ? 'دراسة حالة تفصيلية' : 'IN-DEPTH CASE STUDY');
             if (titleEl) titleEl.textContent = `${cs.client} — ${card.title}`;
 
+            const hookHtml = cs.hook ? `
+                <div style="margin-bottom: 12px; padding: 12px 16px; background: rgba(255, 85, 0, 0.1); border-inline-start: 3px solid var(--accent); border-radius: 4px;">
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 800; color: var(--accent); margin-bottom: 4px;">[ HOOK ]</div>
+                    <div style="font-size: 1.08rem; font-weight: 900; color: #ffffff; line-height: 1.5;">${cs.hook}</div>
+                </div>
+            ` : '';
+
+            const whyItWorksHtml = cs.whyItWorks ? `
+                <div style="margin-top: 12px; padding: 10px 14px; background: rgba(255, 255, 255, 0.03); border: 1px dashed rgba(255, 255, 255, 0.15); border-radius: 4px; font-size: 0.88rem; color: #cbd5e1; line-height: 1.65;">
+                    <strong style="color: #f8fafc;">💡 ${isAr ? 'ليه الكوبي ده بيجيب مبيعات (Why It Works):' : 'Why This Converts:'}</strong> ${cs.whyItWorks}
+                </div>
+            ` : '';
+
             bodyEl.innerHTML = `
                 <div class="cs-step-card">
                     <div class="cs-step-num">01 — THE PROBLEM</div>
@@ -4239,22 +4478,24 @@
                     <div class="cs-step-content">${cs.audience}</div>
                 </div>
 
-                <div class="cs-step-card">
-                    <div class="cs-step-num">03 — THE INSIGHT</div>
-                    <div class="cs-step-title">🧠 ${isAr ? 'الرؤية السيكولوجية العميقة' : 'The Core Psychological Insight'}</div>
-                    <div class="cs-step-content">${cs.insight}</div>
+                <div class="cs-step-card" style="border: 1px solid rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.06);">
+                    <div class="cs-step-num" style="color: #c084fc; background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4);">03 — THE INSIGHT ★</div>
+                    <div class="cs-step-title" style="color: #e9d5ff;">🧠 ${isAr ? 'الرؤية السيكولوجية العميقة' : 'The Core Psychological Insight'}</div>
+                    <div class="cs-step-content" style="font-size: 1rem; font-weight: 700; color: #f8fafc; line-height: 1.8;">${cs.insight}</div>
                 </div>
 
-                <div class="cs-step-card" style="border-color: var(--accent); background: rgba(255, 85, 0, 0.05);">
-                    <div class="cs-step-num" style="color: var(--accent);">04 — THE ANGLE ★</div>
-                    <div class="cs-step-title" style="color: var(--accent);">⚡ ${isAr ? 'الزاوية الإعلانية الرابحة' : 'The Winning Strategic Angle'}</div>
-                    <div class="cs-step-content">${cs.angle}</div>
+                <div class="cs-step-card" style="border: 2px solid var(--accent); background: rgba(255, 85, 0, 0.08); box-shadow: 0 0 25px rgba(255, 85, 0, 0.15);">
+                    <div class="cs-step-num" style="color: #ffffff; background: var(--accent); font-weight: 900;">04 — THE ANGLE ★</div>
+                    <div class="cs-step-title" style="color: var(--accent); font-size: 1.12rem;">⚡ ${isAr ? 'الزاوية الإعلانية الرابحة' : 'The Winning Strategic Angle'}</div>
+                    <div class="cs-step-content" style="font-size: 1.05rem; font-weight: 800; color: #ffffff; line-height: 1.85;">${cs.angle}</div>
                 </div>
 
-                <div class="cs-step-card">
-                    <div class="cs-step-num">05 — THE COPY</div>
-                    <div class="cs-step-title">✍️ ${isAr ? 'النص الإعلاني الفعلي المنشور' : 'Actual Converting Ad Copy'}</div>
+                <div class="cs-step-card" style="border: 1px solid rgba(255, 255, 255, 0.15); background: #080c14;">
+                    <div class="cs-step-num" style="color: #38bdf8; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4);">05 — THE COPY</div>
+                    <div class="cs-step-title" style="color: #fff;">✍️ ${cs.copyType || (isAr ? 'النص الإعلاني الفعلي المنشور' : 'Actual Converting Ad Copy')}</div>
+                    ${hookHtml}
                     <div class="cs-copy-box">${cs.copy}</div>
+                    ${whyItWorksHtml}
                 </div>
 
                 <div class="cs-step-card">
@@ -4263,10 +4504,10 @@
                     <div class="cs-step-content">${cs.creativeDirection}</div>
                 </div>
 
-                <div class="cs-result-highlight">
-                    <div class="cs-step-num" style="color: #34d399; font-weight: 800; margin-bottom: 6px;">07 — THE RESULT</div>
-                    <div class="cs-result-title">🚀 ${isAr ? 'النتيجة الموثقة والأثر بالأرقام' : 'The Proven Business Result'}</div>
-                    <div class="cs-result-text">${cs.result || cs.results || ''}</div>
+                <div class="cs-result-highlight" style="border: 1px solid rgba(16, 185, 129, 0.45); background: rgba(16, 185, 129, 0.09); box-shadow: 0 0 30px rgba(16, 185, 129, 0.12);">
+                    <div class="cs-step-num" style="color: #34d399; font-weight: 800; margin-bottom: 6px; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35);">07 — THE RESULT ★</div>
+                    <div class="cs-result-title" style="color: #34d399; font-size: 1.15rem; font-weight: 900;">🚀 ${isAr ? 'النتيجة الموثقة والأثر بالأرقام' : 'The Proven Business Result'}</div>
+                    <div class="cs-result-text" style="font-size: 1.05rem; font-weight: 800; color: #ffffff; line-height: 1.8;">${cs.result || cs.results || ''}</div>
                 </div>
 
                 <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 18px; flex-wrap: wrap;">
