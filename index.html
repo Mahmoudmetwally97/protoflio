@@ -42,21 +42,21 @@
         }
 
         :root {
-            --bg-base: #06070a;
-            --bg-surface: #0b0f17;
-            --bg-card: rgba(14, 19, 30, 0.72);
-            --bg-inner: rgba(20, 27, 43, 0.65);
+            --bg-base: #050609;
+            --bg-surface: #090c14;
+            --bg-card: rgba(13, 17, 27, 0.78);
+            --bg-inner: rgba(19, 26, 40, 0.65);
             
-            --border-subtle: rgba(255, 255, 255, 0.07);
+            --border-subtle: rgba(255, 255, 255, 0.08);
             --border-card: rgba(255, 255, 255, 0.12);
-            --border-glow: rgba(255, 106, 0, 0.35);
+            --border-glow: rgba(255, 106, 0, 0.4);
             
             --accent: #FF6A00;
             --accent-hover: #ff8533;
             --accent-glow: rgba(255, 106, 0, 0.28);
-            --accent-cyan: #00f2fe;
+            --accent-gold: #f59e0b;
             --accent-green: #25D366;
-            --accent-purple: #a855f7;
+            --accent-platinum: #e2e8f0;
             
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
@@ -106,9 +106,10 @@
             min-height: 100vh;
             position: relative;
             background-image: 
-                radial-gradient(circle at 15% 10%, rgba(255, 106, 0, 0.09) 0%, transparent 45%),
-                radial-gradient(circle at 85% 45%, rgba(0, 242, 254, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 55%);
+                radial-gradient(circle at 50% 0%, rgba(255, 106, 0, 0.14) 0%, transparent 55%),
+                radial-gradient(circle at 15% 30%, rgba(255, 133, 51, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 85% 60%, rgba(255, 106, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 90%, rgba(255, 106, 0, 0.04) 0%, transparent 50%);
         }
 
         /* Subtle SVG Matrix Grid Background Overlay */
@@ -156,7 +157,7 @@
             -webkit-text-fill-color: transparent;
         }
         .highlight-cyan {
-            background: linear-gradient(135deg, var(--accent-cyan) 0%, #38ef7d 100%);
+            background: linear-gradient(135deg, #FFF7ED 0%, #FDBA74 50%, #FF8533 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -308,27 +309,28 @@
 
         .hero-avatar-wrap {
             position: relative;
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 24px;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 28px;
         }
 
         .hero-avatar-ring {
             position: absolute;
-            inset: -8px;
+            inset: -7px;
             border-radius: 50%;
-            border: 2px dashed rgba(255, 106, 0, 0.5);
-            animation: spinSlow 20s linear infinite;
+            border: 1.5px solid rgba(255, 106, 0, 0.45);
+            box-shadow: 0 0 25px rgba(255, 106, 0, 0.25), inset 0 0 15px rgba(255, 106, 0, 0.12);
+            animation: none;
         }
 
         .hero-avatar-glow {
             position: absolute;
-            inset: -4px;
+            inset: -14px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-cyan));
-            opacity: 0.4;
-            filter: blur(14px);
-            animation: pulseGlow 3s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255, 106, 0, 0.45) 0%, rgba(255, 133, 51, 0.18) 50%, transparent 75%);
+            opacity: 0.65;
+            filter: blur(20px);
+            animation: pulseGlow 4s ease-in-out infinite;
         }
 
         .hero-avatar-img {
@@ -337,9 +339,14 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border: none;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 20px 45px rgba(0,0,0,0.9);
             z-index: 2;
+            transition: var(--transition-smooth);
+        }
+        .hero-avatar-wrap:hover .hero-avatar-img {
+            transform: scale(1.03);
+            box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.6), 0 25px 60px rgba(0,0,0,0.95);
         }
 
         @keyframes spinSlow { 100% { transform: rotate(360deg); } }
@@ -1604,17 +1611,134 @@
             padding: 22px !important;
         }
 
-        /* Kill spinning dashed avatar ring */
-        .hero-avatar-ring {
-            border: 2px solid rgba(255, 255, 255, 0.12) !important;
-            animation: none !important;
-            border-style: solid !important;
-            box-shadow: 0 0 25px rgba(255, 106, 0, 0.18) !important;
+        /* ==========================================================================
+           OpenDesign Visual Lab Showcase Styles
+           ========================================================================== */
+        .opendesign-showcase-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 28px;
+            margin-top: 36px;
         }
-        .hero-avatar-glow {
-            animation: none !important;
-            opacity: 0.35 !important;
-            filter: blur(16px) !important;
+
+        .opendesign-card {
+            background: rgba(13, 17, 27, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-xl);
+            padding: 10px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 20px 50px -15px rgba(0, 0, 0, 0.85);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .opendesign-card:hover {
+            border-color: rgba(255, 106, 0, 0.4);
+            transform: translateY(-4px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 25px 60px -10px rgba(0, 0, 0, 0.95), 0 0 35px rgba(255, 106, 0, 0.18);
+        }
+
+        .opendesign-card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            background: rgba(19, 26, 40, 0.6);
+            border-radius: calc(var(--radius-xl) - 4px) calc(var(--radius-xl) - 4px) 0 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .opendesign-badge {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .opendesign-sub {
+            font-size: 0.76rem;
+            color: var(--accent);
+            font-family: var(--font-en);
+            font-weight: 700;
+            background: rgba(255, 106, 0, 0.12);
+            padding: 3px 10px;
+            border-radius: 99px;
+            border: 1px solid rgba(255, 106, 0, 0.25);
+        }
+
+        .opendesign-media-frame {
+            position: relative;
+            width: 100%;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 10px;
+        }
+
+        .opendesign-media-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .opendesign-media-frame.poster-frame img {
+            max-height: 480px;
+            object-fit: contain;
+            background: #050608;
+        }
+
+        .opendesign-card:hover .opendesign-media-frame img {
+            transform: scale(1.02);
+        }
+
+        .opendesign-card-body {
+            padding: 22px 18px 16px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .opendesign-card-body h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .opendesign-card-body p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .opendesign-tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .opendesign-tags-row span {
+            font-size: 0.74rem;
+            font-weight: 600;
+            font-family: var(--font-en);
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #94a3b8;
+        }
+
+        @media (max-width: 960px) {
+            .opendesign-showcase-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Navbar sleekness */
@@ -1653,6 +1777,7 @@
 
             <ul class="nav-menu">
                 <li><a href="#work" class="nav-link-btn">سابقة الأعمال</a></li>
+                <li><a href="#visual-lab" class="nav-link-btn">معمل التصميم</a></li>
                 <li><a href="#testimonials" class="nav-link-btn">النتائج والتقييمات</a></li>
                 <li><a href="#showcase" class="nav-link-btn">المختبر التفاعلي</a></li>
                 <li><a href="#hooks" class="nav-link-btn">معمل الهوكات</a></li>
@@ -1780,6 +1905,63 @@
 
                 <!-- Cards Grid -->
                 <div class="work-grid" id="workCardsGrid"></div>
+            </div>
+        </section>
+
+        <!-- 4.5. OpenDesign Visual Lab Showcase (#visual-lab) -->
+        <section class="section-wrap" id="visual-lab" style="border-top: 1px solid var(--border-subtle); background: radial-gradient(circle at 50% 25%, rgba(255, 106, 0, 0.05) 0%, transparent 75%);">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-pill-tag">🎨 معمل التصميم البصري وصفحات الهبوط</span>
+                    <h2 class="section-title">من مجرد كلمات.. لواجهات حية وتصاميم تبيع لايف 🔥</h2>
+                    <p class="section-desc">مش بنسلمك ملف وورد فيه رص كلام ونسيبك تايه مع المصممين — بنحول استراتيجيات الكوبي رايتنج لواجهات كاملة وتصاميم إعلانية بصرية جاهزة للإطلاق فورا:</p>
+                </div>
+
+                <div class="opendesign-showcase-grid">
+                    <!-- Left Card: OpenDesign Dashboard UI -->
+                    <div class="opendesign-card">
+                        <div class="opendesign-card-head">
+                            <span class="opendesign-badge">🖥️ واجهات مستخدم وتطبيقات ويب</span>
+                            <span class="opendesign-sub">OpenDesign + Antigravity Engine</span>
+                        </div>
+                        <div class="opendesign-media-frame">
+                            <img src="opendesign_dashboard_ui.jpg" alt="واجهة تحليلات وكتابة الإعلانات OpenDesign" loading="lazy">
+                        </div>
+                        <div class="opendesign-card-body">
+                            <div>
+                                <h3>تصميم لوحات تحكم وصفحات هبوط تفاعلية</h3>
+                                <p>تصميم واجهات SaaS ولوحات قياس الأداء الإعلاني بستايل Modern Minimal متجاوب يخدم التحويل البيعي بأعلى تباين بصري ممكن</p>
+                            </div>
+                            <div class="opendesign-tags-row">
+                                <span>Dark Luxury UI</span>
+                                <span>Conversion Optimized</span>
+                                <span>High CTR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Card: Branded Social Media Poster -->
+                    <div class="opendesign-card">
+                        <div class="opendesign-card-head">
+                            <span class="opendesign-badge">📱 بوسترات وهوية محتوى سوشيال</span>
+                            <span class="opendesign-sub">Mahmoud Metwally Brand DNA</span>
+                        </div>
+                        <div class="opendesign-media-frame poster-frame">
+                            <img src="mahmoud_quote_design.jpg" alt="بوستر كواليس الكوبي رايتنج والمبيعات" loading="lazy">
+                        </div>
+                        <div class="opendesign-card-body">
+                            <div>
+                                <h3>بوسترات اقتباس وهوية بصرية تخطف العين</h3>
+                                <p>صياغة الكلمات البؤرية الحارقة مع تمييز لوني ناري يعزل المحتوى ويجبر عين العميل على التوقف والقراءة في أول ثانية</p>
+                            </div>
+                            <div class="opendesign-tags-row">
+                                <span>Electric Orange Accent</span>
+                                <span>Typography Hierarchy</span>
+                                <span>8K Vector Clarity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
