@@ -3278,18 +3278,20 @@
             if (navLinks.length >= 6) {
                 if (lang === 'en') {
                     navLinks[0].textContent = t.linkWork;
-                    navLinks[1].textContent = t.linkProof;
-                    navLinks[2].textContent = t.linkShowcase;
-                    navLinks[3].textContent = t.linkHooks;
-                    navLinks[4].textContent = t.linkPackages;
-                    navLinks[5].textContent = t.linkOrigin;
+                    if (navLinks[1]) navLinks[1].textContent = 'Design Lab';
+                    if (navLinks[2]) navLinks[2].textContent = t.linkProof;
+                    if (navLinks[3]) navLinks[3].textContent = t.linkShowcase;
+                    if (navLinks[4]) navLinks[4].textContent = t.linkHooks;
+                    if (navLinks[5]) navLinks[5].textContent = t.linkPackages;
+                    if (navLinks[6]) navLinks[6].textContent = t.linkOrigin;
                 } else {
                     navLinks[0].textContent = 'سابقة الأعمال';
-                    navLinks[1].textContent = 'النتائج والتقييمات';
-                    navLinks[2].textContent = 'المختبر التفاعلي';
-                    navLinks[3].textContent = 'معمل الهوكات';
-                    navLinks[4].textContent = 'باقات التعاقد';
-                    navLinks[5].textContent = 'سر الصنعة';
+                    if (navLinks[1]) navLinks[1].textContent = 'معمل التصميم';
+                    if (navLinks[2]) navLinks[2].textContent = 'النتائج والتقييمات';
+                    if (navLinks[3]) navLinks[3].textContent = 'المختبر التفاعلي';
+                    if (navLinks[4]) navLinks[4].textContent = 'معمل الهوكات';
+                    if (navLinks[5]) navLinks[5].textContent = 'باقات التعاقد';
+                    if (navLinks[6]) navLinks[6].textContent = 'سر الصنعة';
                 }
             }
 
