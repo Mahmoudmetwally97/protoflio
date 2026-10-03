@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معاينة موقع كابتن عمر وائل — شاشات الموبايل والديسكتوب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07080A;
+      --card-bg: #11141A;
+      --orange: #FF5500;
+      --orange-glow: rgba(255, 85, 0, 0.35);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #F3F4F6;
+      --text-muted: #9CA3AF;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Alexandria', sans-serif;
+      padding: 24px 16px 80px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .header-box {
+      text-align: center;
+      padding: 24px 16px;
+      margin-bottom: 24px;
+      background: linear-gradient(180deg, rgba(255,85,0,0.12) 0%, transparent 100%);
+      border-radius: 20px;
+      border: 1px solid rgba(255,85,0,0.25);
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(255,85,0,0.15);
+      color: var(--orange);
+      border: 1px solid rgba(255,85,0,0.4);
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    p.lead {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #FF6A00 0%, #FF3D00 100%);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      box-shadow: 0 8px 24px var(--orange-glow);
+    }
+    .screen-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .card-info {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-info h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-info h3 span {
+      color: var(--orange);
+    }
+    .card-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .screen-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #000;
+    }
+    .sticky-bar {
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      max-width: 480px;
+      margin: 0 auto;
+      background: rgba(17, 20, 26, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 85, 0, 0.4);
+      padding: 12px 18px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+    .sticky-bar span {
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .sticky-btn {
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 8px 18px;
+      border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header-box">
+      <span class="tag">معاينة مباشرة لشاشات الموبايل</span>
+      <h1>موقع كابتن عمر وائل</h1>
+      <p class="lead">تقدر تشوف كل الشاشات بوضوح تام وتفتح الموقع التفاعلي الحي مباشرة</p>
+      <a href="index.html" class="cta-btn">فتح الموقع التفاعلي الحي ⚡</a>
+    </div>
+
+    <!-- 1. Hero Mobile -->
+    <div class="screen-card">
+      <div class="card-info">
+        <h3><span>1</span> واجهة الهيرو الرئيسية على الموبايل</h3>
+        <p>الألوان الرسمية وشارة المقاعد المتاحة وزر حجز الواتساب العائم</p>
+      </div>
+      <img src="screenshots/omar_mobile_hero_luxury.png" alt="واجهة الموبايل" class="screen-img">
+    </div>
+
+    <!-- 2. Coach Photo Card -->
+    <div class="screen-card">
+      <div class="card-info">
+        <h3><span>2</span> صورة كابتن عمر الحقيقية في صالة التدريب</h3>
+        <p>بطاقة الهوية الرياضية مع شارات الكتلة العضلية ونسبة التنشيف</p>
+      </div>
+      <img src="screenshots/omar_mobile_hero_coach.png" alt="صورة كابتن عمر" class="screen-img">
+    </div>
+
+    <!-- 3. Transformations & Slider -->
+    <div class="screen-card">
+      <div class="card-info">
+        <h3><span>3</span> سلايدر المقارنة التفاعلي وبطاقات التحول</h3>
+        <p>سلايدر يسحب باللمس على الموبايل مع إحصائيات المتدربين</p>
+      </div>
+      <img src="screenshots/omar_mobile_transformations.png" alt="سلايدر المقارنة" class="screen-img">
+    </div>
+
+    <!-- 4. Calculator -->
+    <div class="screen-card">
+      <div class="card-info">
+        <h3><span>4</span> حاسبة السعرات والماكروز التفاعلية</h3>
+        <p>حاسبة ذكية تحسب استهلاك الجسم وتنقله فورا للواتساب</p>
+      </div>
+      <img src="screenshots/omar_mobile_calculator.png" alt="حاسبة السعرات" class="screen-img">
+    </div>
+
+    <!-- 5. Pricing Plans -->
+    <div class="screen-card">
+      <div class="card-info">
+        <h3><span>5</span> جدول الباقات والأسعار الرسمية المعتمدة</h3>
+        <p>باقة 6 شهور بـ 8100 ج وباقة سنة بـ 13500 ج مع عرض الصحاب</p>
+      </div>
+      <img src="screenshots/omar_mobile_pricing.png" alt="جدول الأسعار" class="screen-img">
+    </div>
+
+    <!-- 6. Desktop Hero Overview -->
+    <div class="screen-card">
+      <div class="card-info">
+        <h3><span>6</span> مظهر الموقع على شاشات الكمبيوتر واللابتوب</h3>
+        <p>شبكة متكاملة واسعة بتصميم Dark Athletic Luxury</p>
+      </div>
+      <img src="screenshots/omar_desktop_hero_luxury.png" alt="المظهر على الكمبيوتر" class="screen-img">
+    </div>
+  </div>
+
+  <div class="sticky-bar">
+    <span>تصفح الموقع الحي</span>
+    <a href="index.html" class="sticky-btn">جرب الموقع لايف ←</a>
+  </div>
+
+</body>
+</html>

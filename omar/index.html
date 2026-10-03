@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كابتن عُمر وائل — التدريب الرياضي وهندسة الأجسام القوية | Omar Wael Fitness</title>
+
+  <!-- Technical SEO & Meta Tags -->
+  <meta name="description" content="اصنع جسماً قوياً لا يُقهر على أسس علمية وتشريحية مع كابتن عُمر وائل. برامج تدريب وتغذية مرنة بدون حرمان، وتدقيق تكنيك لحماية المفاصل وضمان أعلى نتائج.">
+  <meta name="keywords" content="عمر وائل, كابتن عمر وائل, تدريب شخصي, مدرب لياقة, كوتش فتنس, دايت مرن, جيم العاشر من رمضان, تدريب أونلاين, تنشيف, تضخيم">
+  <meta name="author" content="Omar Wael">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="كابتن عُمر وائل — تدريب شخصي وتغذية رياضية متقدمة">
+  <meta property="og:description" content="اصنع جسماً قوياً لا يُقهر على أسس علمية وتشريحية. برامج مخصصة لجيناتك ويومك مع متابعة 1-on-1.">
+  <meta property="og:image" content="brand/logo-full-orange.png">
+  <meta property="og:locale" content="ar_EG">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="brand/logo-mark-orange.svg">
+
+  <!-- Structured Data: JSON-LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "#coach",
+        "name": "عُمر وائل",
+        "alternateName": "Omar Wael",
+        "jobTitle": "Certified Fitness & Nutrition Coach",
+        "description": "مدرب لياقة بدنية وتغذية رياضية متخصص في الهندسة التشريحية وبناء الأجسام القوية",
+        "image": "brand/logo-full-orange.png"
+      },
+      {
+        "@type": "SportsClub",
+        "@id": "#club",
+        "name": "Omar Wael Fitness Coaching",
+        "founder": { "@id": "#coach" },
+        "priceRange": "$$",
+        "areaServed": ["مصر", "العاشر من رمضان", "الخليج العربي"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "150",
+          "bestRating": "5"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Alexandria (Arabic Display), Space Grotesk (Numbers), Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       1. Design Tokens: Dark Athletic Luxury (Gymshark / Nike / Whoop Tier)
+       ========================================================================== */
+    :root {
+      --bg-dark: #07080A;
+      --bg-surface: #0E1015;
+      --bg-surface-tint: rgba(255, 85, 0, 0.05);
+      --bg-card: #12151D;
+      
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+
+      --orange-main: #FF5500;
+      --orange-fire: #FF7700;
+      --orange-glow: rgba(255, 85, 0, 0.35);
+      --grad-orange: linear-gradient(135deg, #FF5500 0%, #FF6A00 50%, #FFAA00 100%);
+      --grad-dark-mesh: radial-gradient(circle at 50% 0%, rgba(255, 85, 0, 0.12) 0%, transparent 60%);
+
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-orange: rgba(255, 85, 0, 0.4);
+
+      --radius-pill: 999px;
+      --radius-card: 26px;
+      --radius-inner: 18px;
+
+      --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+      --shadow-orange: 0 16px 40px -10px rgba(255, 85, 0, 0.45);
+      --transition-fluid: all 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+
+      --font-display: 'Alexandria', sans-serif;
+      --font-body: 'Alexandria', sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+    }
+
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+      font-size: 15.5px;
+      letter-spacing: -0.01em;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--text-main);
+    }
+
+    a { color: inherit; text-decoration: none; transition: var(--transition-fluid); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .orange-text {
+      background: var(--grad-orange);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    /* Double-Bezel Card (Machined Luxury Enclosure) */
+    .bezel-shell {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 8px;
+      box-shadow: var(--shadow-subtle);
+      transition: var(--transition-fluid);
+      position: relative;
+    }
+    .bezel-shell:hover {
+      border-color: var(--border-orange);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-orange);
+    }
+    .bezel-core {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: var(--radius-inner);
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Button-in-Button Architecture */
+    .btn-island-primary {
+      background: var(--grad-orange);
+      color: #FFFFFF;
+      padding: 8px 12px 8px 24px;
+      border-radius: var(--radius-pill);
+      font-weight: 800;
+      font-size: 14.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow-orange);
+      cursor: pointer;
+      border: none;
+      transition: var(--transition-fluid);
+    }
+    .btn-island-primary .icon-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: var(--transition-fluid);
+    }
+    .btn-island-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 20px 45px -8px rgba(255, 85, 0, 0.6);
+    }
+    .btn-island-primary:hover .icon-circle {
+      transform: translateX(-4px);
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-pill-subtle {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: var(--transition-fluid);
+    }
+    .btn-pill-subtle:hover {
+      border-color: var(--orange-main);
+      color: var(--orange-main);
+      background: var(--bg-surface-tint);
+    }
+
+    /* Eyebrow Pill */
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 85, 0, 0.1);
+      border: 1px solid var(--border-orange);
+      color: var(--orange-main);
+      padding: 5px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 48px;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 900;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Flow Dividers */
+    .flow-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 48px 0;
+    }
+    .flow-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(180deg, var(--border-subtle) 0%, var(--orange-main) 50%, var(--border-subtle) 100%);
+    }
+    .flow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange-main);
+      box-shadow: 0 0 12px var(--orange-fire);
+      margin-top: -4px;
+    }
+
+    /* ==========================================================================
+       2. Site Navigation
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 8, 10, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      padding: 6px 0;
+    }
+    .nav-links a:hover {
+      color: var(--orange-main);
+    }
+
+    /* ==========================================================================
+       3. Hero Section
+       ========================================================================== */
+    .hero-section {
+      padding: 70px 0 60px;
+      position: relative;
+      background: var(--grad-dark-mesh);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-badge-slots {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 85, 0, 0.08);
+      border: 1px solid var(--border-orange);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--orange-main);
+      margin-bottom: 20px;
+    }
+    .hero-badge-slots .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 8px #10B981;
+    }
+    .hero-title {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.18;
+      margin-bottom: 22px;
+      letter-spacing: -0.02em;
+    }
+    .hero-desc {
+      font-size: clamp(15px, 2vw, 17.5px);
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .hero-stat-item h4 {
+      font-family: var(--font-mono);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--orange-main);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .hero-stat-item p {
+      font-size: 12.5px;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    /* Hero Media Showcase */
+    .hero-media-box {
+      position: relative;
+    }
+    .hero-image-frame {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border-subtle);
+      background: #000;
+      box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.9);
+    }
+    .hero-coach-img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .hero-float-badge {
+      position: absolute;
+      background: rgba(14, 16, 21, 0.88);
+      border: 1px solid var(--border-orange);
+      backdrop-filter: blur(12px);
+      padding: 12px 18px;
+      border-radius: var(--radius-inner);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+      z-index: 10;
+    }
+    .hero-float-badge.top-badge {
+      top: 20px;
+      left: -20px;
+    }
+    .hero-float-badge.bottom-badge {
+      bottom: 20px;
+      right: -20px;
+    }
+    .badge-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-val {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--orange-main);
+    }
+
+    /* ==========================================================================
+       4. Problem & Agitation (ليه 90% مش بيوصلوا؟)
+       ========================================================================== */
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .problem-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 28px 24px;
+      transition: var(--transition-fluid);
+      position: relative;
+    }
+    .problem-card:hover {
+      border-color: rgba(239, 68, 68, 0.4);
+      transform: translateY(-4px);
+    }
+    .problem-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(239, 68, 68, 0.1);
+      color: #EF4444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+    .problem-card h3 {
+      font-size: 17.5px;
+      margin-bottom: 10px;
+    }
+    .problem-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       5. The 4 Science Pillars
+       ========================================================================== */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .pillar-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 26px 20px;
+      text-align: center;
+      transition: var(--transition-fluid);
+    }
+    .pillar-card:hover {
+      border-color: var(--border-orange);
+      transform: translateY(-4px);
+    }
+    .pillar-num {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--orange-main);
+      margin-bottom: 8px;
+    }
+    .pillar-card h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .pillar-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       6. Interactive Before & After Slider (Touch & Drag)
+       ========================================================================== */
+    .slider-section-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 32px;
+      padding: 40px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .comparison-container {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      border-radius: 20px;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: pan-y;
+      background: #000;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+    }
+    .comparison-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .comparison-img.after-img {
+      z-index: 1;
+    }
+    .comparison-before-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+      border-left: 2px solid var(--orange-main);
+    }
+    .comparison-before-wrap .comparison-img {
+      width: 960px;
+      max-width: none;
+    }
+    .comparison-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--orange-main);
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 0 20px var(--orange-glow);
+      z-index: 10;
+      cursor: ew-resize;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+    }
+    .comparison-tag {
+      position: absolute;
+      bottom: 20px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 800;
+      z-index: 5;
+      backdrop-filter: blur(8px);
+    }
+    .comparison-tag.tag-before {
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .comparison-tag.tag-after {
+      left: 20px;
+      background: var(--orange-main);
+      color: #fff;
+    }
+
+    /* Transformation Cards Grid */
+    .transformations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .trans-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 10px;
+      transition: var(--transition-fluid);
+    }
+    .trans-card:hover {
+      border-color: var(--border-orange);
+      transform: translateY(-4px);
+    }
+    .trans-img-wrap {
+      height: 260px;
+      border-radius: var(--radius-inner);
+      overflow: hidden;
+      position: relative;
+    }
+    .trans-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .trans-stats-pill {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid var(--border-orange);
+      color: var(--orange-main);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .trans-body {
+      padding: 16px 12px 10px;
+    }
+    .trans-client-name {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .trans-result-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       7. Interactive Fitness Calculator
+       ========================================================================== */
+    .calculator-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 32px;
+      padding: 48px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-subtle);
+    }
+    .calc-inputs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .calc-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .calc-field input, .calc-field select {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: var(--radius-inner);
+      font-size: 14.5px;
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition-fluid);
+    }
+    .calc-field input:focus, .calc-field select:focus {
+      border-color: var(--orange-main);
+      background: rgba(255, 85, 0, 0.05);
+    }
+    .calc-result-panel {
+      background: rgba(255, 85, 0, 0.06);
+      border: 1px solid var(--border-orange);
+      border-radius: 20px;
+      padding: 24px;
+      margin-top: 24px;
+      display: none;
+      text-align: center;
+    }
+    .calc-result-panel.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    .calc-res-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .calc-res-item {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .calc-res-num {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--orange-main);
+    }
+    .calc-res-lbl {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* ==========================================================================
+       8. Official Pricing & Packages
+       ========================================================================== */
+    .pricing-tabs-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .price-tab-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-fluid);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+    }
+    .price-tab-btn.active, .price-tab-btn:hover {
+      background: var(--orange-main);
+      color: #fff;
+      border-color: var(--orange-main);
+      box-shadow: var(--shadow-orange);
+    }
+
+    .pricing-grid {
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pricing-grid.active {
+      display: grid;
+    }
+
+    .pricing-card-shell {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 10px;
+      transition: var(--transition-fluid);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .pricing-card-shell.featured {
+      border-color: var(--orange-main);
+      box-shadow: 0 16px 45px -12px var(--orange-glow);
+    }
+    .price-badge-pop {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--grad-orange);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+    .pricing-card-core {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: var(--radius-inner);
+      padding: 30px 22px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .price-plan-name {
+      font-size: 21px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .price-display {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 16px 0 8px;
+    }
+    .price-number {
+      font-family: var(--font-mono);
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--orange-main);
+      line-height: 1;
+    }
+    .price-old {
+      font-size: 16px;
+      color: var(--text-dim);
+      text-decoration: line-through;
+    }
+    .price-currency {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .price-save-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10B981;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 20px;
+    }
+    .price-features-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .price-features-list li {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+    .price-features-list li i {
+      color: var(--orange-main);
+      margin-top: 3px;
+    }
+
+    /* Friends / Group Offer */
+    .friends-offer-box {
+      background: linear-gradient(135deg, rgba(255, 85, 0, 0.12) 0%, rgba(14, 16, 21, 0.95) 100%);
+      border: 1px solid var(--border-orange);
+      border-radius: 28px;
+      padding: 32px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .friends-offer-text h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .friends-offer-text p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       9. FAQ Section
+       ========================================================================== */
+    .faq-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: var(--transition-fluid);
+    }
+    .faq-header {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .faq-header i {
+      color: var(--orange-main);
+      transition: transform 0.3s ease;
+    }
+    .faq-body {
+      padding: 0 24px 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      display: none;
+    }
+    .faq-item.active {
+      border-color: var(--border-orange);
+    }
+    .faq-item.active .faq-header i {
+      transform: rotate(180deg);
+    }
+    .faq-item.active .faq-body {
+      display: block;
+    }
+
+    /* ==========================================================================
+       10. Final CTA Box & Footer
+       ========================================================================== */
+    .final-cta-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-orange);
+      border-radius: 36px;
+      padding: 64px 32px;
+      text-align: center;
+      max-width: 920px;
+      margin: 60px auto 80px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-orange);
+    }
+    .final-cta-box::before {
+      content: "";
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--orange-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 36px 0;
+      text-align: center;
+      font-size: 13.5px;
+      color: var(--text-dim);
+    }
+
+    /* Mobile Sticky WhatsApp Pill */
+    .sticky-whatsapp-mobile {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 99;
+      background: var(--grad-orange);
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 16px 36px rgba(255, 85, 0, 0.55);
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    /* ==========================================================================
+       11. Responsive Styles (<992px & <768px)
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-stats-row {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .hero-media-box {
+        max-width: 460px;
+        margin: 0 auto;
+      }
+      .problems-grid,
+      .pillars-grid,
+      .transformations-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .calc-inputs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .sticky-whatsapp-mobile { display: flex; }
+      .hero-section { padding: 40px 0 30px; }
+      .hero-image-frame .hero-coach-img { height: 400px; }
+      .hero-float-badge.top-badge { left: 10px; top: 10px; }
+      .hero-float-badge.bottom-badge { right: 10px; bottom: 10px; }
+      .problems-grid,
+      .pillars-grid,
+      .transformations-grid,
+      .pricing-grid,
+      .calc-inputs-grid,
+      .calc-res-grid {
+        grid-template-columns: 1fr;
+      }
+      .comparison-container { height: 350px; }
+      .calculator-box { padding: 24px; }
+      .final-cta-box { padding: 40px 20px; }
+      .friends-offer-box { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="brand-logo-wrap">
+          <img src="brand/logo-full-orange.svg" alt="Omar Wael Fitness" class="brand-logo-img">
+        </a>
+
+        <nav class="nav-links">
+          <a href="#hero">الرئيسية</a>
+          <a href="#why">المنظومة</a>
+          <a href="#transformations">قصص النجاح</a>
+          <a href="#calculator">حاسبة السعرات</a>
+          <a href="#pricing">الباقات والأسعار</a>
+          <a href="#faq">الأسئلة الشائعة</a>
+        </nav>
+
+        <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، شفت موقعك وعايز استفسر عن باقات التدريب والمتابعة" target="_blank" class="btn-island-primary">
+          <span>تواصل واتساب</span>
+          <span class="icon-circle"><i class="fa-brands fa-whatsapp"></i></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Text -->
+        <div>
+          <div class="hero-badge-slots">
+            <span class="dot"></span>
+            <span>متاح حالياً 4 مقاعد فقط لشهر أكتوبر</span>
+          </div>
+
+          <h1 class="hero-title">
+            اصنع جسماً قوياً لا يُقهر على<br>
+            <span class="orange-text">أسس علمية وتشريحية</span>
+          </h1>
+
+          <p class="hero-desc">
+            مش مجرد دايت قاسي أو تمارين عشوائية في الجيم
+            ده نظام حياة متكامل مصمم خصيصاً لجيناتك ويومك بإشراف تكنيك لحظي يحمي مفاصلك ويضمن لك أقصى نمو عضلي وحرق دهون حقيقي
+          </p>
+
+          <div class="hero-actions">
+            <a href="#pricing" class="btn-island-primary" style="font-size: 16px; padding: 10px 14px 10px 28px;">
+              <span>اختر باقة التدريب الخاصة بك</span>
+              <span class="icon-circle">←</span>
+            </a>
+            <a href="#calculator" class="btn-pill-subtle">
+              <i class="fa-solid fa-calculator"></i>
+              <span>احسب سعراتك مجاناً</span>
+            </a>
+          </div>
+
+          <!-- Hero Quick Stats -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <h4>+150</h4>
+              <p>متدرب حققوا أفضل فورمة في حياتهم</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>100%</h4>
+              <p>دايت مرن محسوب الماكروز بدون حرمان</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>1-on-1</h4>
+              <p>متابعة شخصية وتدقيق تكنيك بالفيديو</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Coach Media -->
+        <div class="hero-media-box">
+          <div class="hero-image-frame">
+            <img src="coach-front.jpg" alt="كابتن عمر وائل" class="hero-coach-img">
+            
+            <div class="hero-float-badge top-badge">
+              <div class="badge-label">عضل صافي ونحت</div>
+              <div class="badge-val">+10.5 KG LEAN GAIN</div>
+            </div>
+
+            <div class="hero-float-badge bottom-badge">
+              <div class="badge-label">نسبة دهون مشدودة</div>
+              <div class="badge-val">CHISELED SHRED 11%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-divider">
+    <span class="flow-line"></span>
+    <span class="flow-dot"></span>
+  </div>
+
+  <!-- 2. Problem Section (ليه 90% مش بيوصلوا؟) -->
+  <section class="section-wrap" id="why" style="padding: 20px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow-pill">الواقع بدون تجميل</span>
+        <h2 class="section-title">ليه 90% من شباب الجيم بيمر عليهم سنين <span class="orange-text">بدون ما يبان عليهم تمرين؟</span></h2>
+        <p class="section-desc">المشكلة عمرها ما كانت في قلة المجهود، المشكلة في تكرار نفس الأخطاء الشائعة اللي بتضيع وقتك وصحتك:</p>
+      </div>
+
+      <div class="problems-grid">
+        <div class="problem-card">
+          <div class="problem-icon-wrap"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h3>التخبط العشوائي وإصابات المفاصل</h3>
+          <p>شيل أوزان بتكنيك غلط بيحمل على المفاصل والغضاريف بدل الألياف العضلية، وده بينتهي بإصابات توقفك شهور عن التمرين.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon-wrap"><i class="fa-solid fa-ban"></i></div>
+          <h3>تجويع الدايت القاسي والارتداد السريع</h3>
+          <p>الحرمان الشديد من الكارب والسكريات بيوقع حرق جسمك ويخليك تخسر عضلاتك، وأول ما تبطل ترجع تتخن أضعاف اللي خسيته.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-icon-wrap"><i class="fa-solid fa-user-xmark"></i></div>
+          <h3>غياب المحاسبية والإشراف الحقيقي</h3>
+          <p>جداول PDF مطبوعة ومكررة بتبعتها صفحات بدون ما حد يراجع معاك تطورك الأسبوعي أو يرد على أسئلتك اليومية في الجيم.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-divider">
+    <span class="flow-line"></span>
+    <span class="flow-dot"></span>
+  </div>
+
+  <!-- 3. The 4 Science Pillars -->
+  <section class="section-wrap" style="padding: 20px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow-pill">منظومة عُمر وائل</span>
+        <h2 class="section-title">4 ركائز علمية تضمن لك <span class="orange-text">التميز والنتائج الحقيقية</span></h2>
+        <p class="section-desc">هندسة متكاملة مصممة لنقل جسمك للمستوى التالي بأعلى معايير الأمان والتطور المستمر:</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-num">01</div>
+          <h3>حماية تامة من الإصابات</h3>
+          <p>تدقيق التكنيك والمسار الحركي بالفيديو لكل تمرين لضمان أقصى استفادة عضلية بدون إجهاد للمفاصل.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">02</div>
+          <h3>برامج مخصصة لجيناتك</h3>
+          <p>تصميم جدول التمرين حسب نقاط ضعفك وجدول يومك سواء كان تمرينك في الجيم أو من البيت.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">03</div>
+          <h3>دايت مرن من أكل بيتك</h3>
+          <p>نظام تغذية محسوب السعرات والماكروز بالأكل اللي بتحبه بدون أكلات غالية أو حرمان يزهقك.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">04</div>
+          <h3>متابعة شخصية 1-on-1</h3>
+          <p>متابعة أسبوعية بالصور والقياسات، وتعديل مستمر للخطط لكسر أي ثبات في الوزن أو العضلات.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-divider">
+    <span class="flow-line"></span>
+    <span class="flow-dot"></span>
+  </div>
+
+  <!-- 4. Interactive Transformation Slider (Before & After) -->
+  <section class="section-wrap" id="transformations" style="padding: 20px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow-pill">النتائج بتتكلم</span>
+        <h2 class="section-title">أجسام اتغيرت وحياة اتبدلت <span class="orange-text">مع كابتن عُمر</span></h2>
+        <p class="section-desc">اسحب المقبض بصباعك أو بالماوس وشوف التحول الحقيقي قبل وبعد الالتزام بالمنظومة:</p>
+      </div>
+
+      <div class="slider-section-wrap">
+        <div class="comparison-container" id="compContainer">
+          <!-- After Image -->
+          <img src="asst/Omar wael/jpg/jpg-04.jpg" alt="فورمة بعد التدريب" class="comparison-img after-img">
+          <span class="comparison-tag tag-after">بعد: عضل صافي ونحت</span>
+
+          <!-- Before Image Wrapper -->
+          <div class="comparison-before-wrap" id="beforeWrap">
+            <img src="asst/Omar wael/jpg/jpg-08.jpg" alt="قبل التدريب" class="comparison-img">
+            <span class="comparison-tag tag-before">قبل: دهون وثبات</span>
+          </div>
+
+          <!-- Draggable Handle -->
+          <div class="comparison-handle" id="compHandle">
+            <i class="fa-solid fa-left-right"></i>
+          </div>
+        </div>
+
+        <!-- 3 Success Story Cards -->
+        <div class="transformations-grid">
+          <div class="trans-card">
+            <div class="trans-img-wrap">
+              <img src="asst/Omar wael/jpg/jpg-02.jpg" alt="تحول أحمد مصطفى">
+              <span class="trans-stats-pill">-14 كجم دهون</span>
+            </div>
+            <div class="trans-body">
+              <div class="trans-client-name">أحمد مصطفى (32 سنة)</div>
+              <p class="trans-result-desc">«كنت فاكر إني مستحيل أعمل عضلات بطن مع شغلي المكتبي.. كابتن عمر نظملي أكلي وتمريني في 90 يوم بس.»</p>
+            </div>
+          </div>
+
+          <div class="trans-card">
+            <div class="trans-img-wrap">
+              <img src="asst/Omar wael/jpg/jpg-03.jpg" alt="تحول محمود سمير">
+              <span class="trans-stats-pill">+8 كجم عضل صافي</span>
+            </div>
+            <div class="trans-body">
+              <div class="trans-client-name">محمود سمير (24 سنة)</div>
+              <p class="trans-result-desc">«عانيت سنين من النحافة وثبات الوزن، المنظومة خلتني أزيد عضل بدون دهون زايدة وبأكل صحي بيتي.»</p>
+            </div>
+          </div>
+
+          <div class="trans-card">
+            <div class="trans-img-wrap">
+              <img src="asst/Omar wael/jpg/jpg-06.jpg" alt="تحول كريم سامي">
+              <span class="trans-stats-pill">-18 كجم وتفصيل جسم</span>
+            </div>
+            <div class="trans-body">
+              <div class="trans-client-name">كريم سامي (28 سنة)</div>
+              <p class="trans-result-desc">«أهم ميزة مع عمر هي المتابعة وتصحيح التكنيك.. وجع الكتف اللي كان مأزمني اختفى بعد أول أسبوعين.»</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-divider">
+    <span class="flow-line"></span>
+    <span class="flow-dot"></span>
+  </div>
+
+  <!-- 5. Interactive Calorie & Macro Calculator -->
+  <section class="section-wrap" id="calculator" style="padding: 20px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow-pill">أداة مجانية للتقييم</span>
+        <h2 class="section-title">احسب سعراتك واحتياج جسمك <span class="orange-text">في ثوانٍ</span></h2>
+        <p class="section-desc">ادخل بياناتك بدقة لمعرفة معدل حرق جسمك والسعرات المقترحة لبدء خطتك فوراً:</p>
+      </div>
+
+      <div class="calculator-box">
+        <div class="calc-inputs-grid">
+          <div class="calc-field">
+            <label>الوزن الحالي (كجم)</label>
+            <input type="number" id="calcWeight" placeholder="مثال: 80" value="80">
+          </div>
+          <div class="calc-field">
+            <label>الطول (سم)</label>
+            <input type="number" id="calcHeight" placeholder="مثال: 175" value="175">
+          </div>
+          <div class="calc-field">
+            <label>العمر (سنة)</label>
+            <input type="number" id="calcAge" placeholder="مثال: 25" value="25">
+          </div>
+          <div class="calc-field">
+            <label>الجنس</label>
+            <select id="calcGender">
+              <option value="male">ذكر</option>
+              <option value="female">أنثى</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>مستوى النشاط اليومي</label>
+            <select id="calcActivity">
+              <option value="1.2">قليل الحركة (مكتبي)</option>
+              <option value="1.375" selected>متوسط (تمرين 2-3 أيام)</option>
+              <option value="1.55">نشط (تمرين 4-5 أيام)</option>
+              <option value="1.725">نشط جداً (تمرين يومي مكثف)</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>هدفك البدني</label>
+            <select id="calcGoal">
+              <option value="cut" selected>تنشيف وحرق دهون</option>
+              <option value="bulk">بناء عضل صافي (تضخيم)</option>
+              <option value="maintain">تثبيت ونحت القوام</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button type="button" onclick="calculateMacros()" class="btn-island-primary" style="padding: 10px 30px;">
+            <span>احسب خطتي الآن</span>
+            <span class="icon-circle"><i class="fa-solid fa-bolt"></i></span>
+          </button>
+        </div>
+
+        <!-- Calculated Results -->
+        <div class="calc-result-panel" id="calcResultPanel">
+          <h3 style="font-size: 18px; margin-bottom: 6px;">نتائجك التقريبية لبدء التحول:</h3>
+          <p style="font-size: 13.5px; color: var(--text-muted);" id="calcResultNote"></p>
+          <div class="calc-res-grid">
+            <div class="calc-res-item">
+              <div class="calc-res-num" id="resCalories">2,150</div>
+              <div class="calc-res-lbl">سعرة حرارية يومياً</div>
+            </div>
+            <div class="calc-res-item">
+              <div class="calc-res-num" id="resProtein">160g</div>
+              <div class="calc-res-lbl">بروتين صافي</div>
+            </div>
+            <div class="calc-res-item">
+              <div class="calc-res-num" id="resWater">3.5L</div>
+              <div class="calc-res-lbl">احتياج الماء اليومي</div>
+            </div>
+          </div>
+          <div style="margin-top: 20px;">
+            <a id="calcWhatsappLink" href="#" target="_blank" class="btn-island-primary">
+              <span>ابعت نتيجتي لكابتن عمر للبدء</span>
+              <span class="icon-circle"><i class="fa-brands fa-whatsapp"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-divider">
+    <span class="flow-line"></span>
+    <span class="flow-dot"></span>
+  </div>
+
+  <!-- 6. Official Pricing & Packages (With Verified 8100 & 13500 Updates) -->
+  <section class="section-wrap" id="pricing" style="padding: 20px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow-pill">الأسعار والباقات الرسمية</span>
+        <h2 class="section-title">اختر باقة التدريب <span class="orange-text">GYM & ONLINE</span></h2>
+        <p class="section-desc">خطط اشتراك واضحة ومحددة تضمن لك الوصول لأهدافك مع أعلى عائد من المتابعة الشخصية:</p>
+      </div>
+
+      <!-- Pricing Category Switcher -->
+      <div class="pricing-tabs-wrap">
+        <button type="button" class="price-tab-btn active" id="tabBtnOnline" onclick="switchPricing('online')">
+          <i class="fa-solid fa-globe"></i>
+          <span>تدريب ومتابعة أونلاين (خصومات موسمية)</span>
+        </button>
+        <button type="button" class="price-tab-btn" id="tabBtnGym" onclick="switchPricing('gym')">
+          <i class="fa-solid fa-dumbbell"></i>
+          <span>تدريب شخصي بالجيم (العاشر من رمضان)</span>
+        </button>
+      </div>
+
+      <!-- Grid 1: Online Packages -->
+      <div class="pricing-grid active" id="gridOnline">
+        <!-- Online 3 Months -->
+        <div class="pricing-card-shell">
+          <div class="pricing-card-core">
+            <div>
+              <div class="price-plan-name">أونلاين 3 شهور</div>
+              <div class="price-display">
+                <span class="price-number">4,799</span>
+                <span class="price-currency">EGP</span>
+              </div>
+              <span class="price-save-badge">تأسيس ونحت 90 يوم</span>
+              <ul class="price-features-list">
+                <li><i class="fa-solid fa-check"></i> <span>جدول تدريب مخصص لأدوات جيمك أو بيتك</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>دايت مرن محسوب الماكروز بدون حرمان</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>تدقيق التكنيك بالفيديو لكل تمرين أسبوعياً</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>متابعة وتحديث مستمر للقياسات كل 7 أيام</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، أرغب بالاشتراك في باقة الـ 3 شهور أونلاين (4,799 EGP)" target="_blank" class="btn-pill-subtle" style="justify-content: center;">
+              <span>احجز باقة 3 شهور ←</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Online 6 Months (HERO FEATURED - UPDATED 8100) -->
+        <div class="pricing-card-shell featured">
+          <span class="price-badge-pop">الأكثر طلباً 🔥 وفر 899 ج</span>
+          <div class="pricing-card-core">
+            <div>
+              <div class="price-plan-name">أونلاين 6 شهور</div>
+              <div class="price-display">
+                <span class="price-number">8,100</span>
+                <span class="price-old">8,999</span>
+                <span class="price-currency">EGP</span>
+              </div>
+              <span class="price-save-badge">تحول جذري شامل • نصف سنوي</span>
+              <ul class="price-features-list">
+                <li><i class="fa-solid fa-check"></i> <span>تصميم وتحديث خطط التمرين شهرياً لكسر الثبات</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>نظام غذائي ديناميكي يتغير مع نزول دهونك</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>دعم واستشارات يومية مباشرة عبر الواتساب</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>توجيه كامل للمكملات وتوقيت الوجبات والاستشفاء</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>أولوية كاملة في سرعة الرد وتصحيح التكنيك</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، أرغب بالاشتراك في عرض الـ 6 شهور أونلاين بسعر 8,100 EGP بدل 8,999 EGP" target="_blank" class="btn-island-primary" style="justify-content: center;">
+              <span>احجز باقة 6 شهور</span>
+              <span class="icon-circle">←</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Online 1 Year (UPDATED 13500) -->
+        <div class="pricing-card-shell">
+          <span class="price-badge-pop" style="background: #10B981;">وفر 2,499 ج 🏆</span>
+          <div class="pricing-card-core">
+            <div>
+              <div class="price-plan-name">أونلاين سنة كاملة</div>
+              <div class="price-display">
+                <span class="price-number">13,500</span>
+                <span class="price-old">15,999</span>
+                <span class="price-currency">EGP</span>
+              </div>
+              <span class="price-save-badge">لايف ستايل دائم • 365 يوم</span>
+              <ul class="price-features-list">
+                <li><i class="fa-solid fa-check"></i> <span>إشراف كامل طوال العام على كافة مراحل الفتنس</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>فترات تنشيف وبناء عضلات مدروسة وموسمية</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>إمكانية تجميد الاشتراك (Freeze) حتى شهرين</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>مكالمات فيديو استشارية شهرية مع كابتن عمر</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، أرغب بالاشتراك في باقة السنة أونلاين بسعر 13,500 EGP بدل 15,999 EGP" target="_blank" class="btn-pill-subtle" style="justify-content: center;">
+              <span>احجز باقة السنة ←</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid 2: Gym Packages (العاشر من رمضان) -->
+      <div class="pricing-grid" id="gridGym">
+        <!-- Gym 1 Month -->
+        <div class="pricing-card-shell">
+          <div class="pricing-card-core">
+            <div>
+              <div class="price-plan-name">شهر بالجيم (12 حصة)</div>
+              <div class="price-display">
+                <span class="price-number">2,199</span>
+                <span class="price-currency">EGP</span>
+              </div>
+              <span class="price-save-badge">تدريب شخصي 1-on-1</span>
+              <ul class="price-features-list">
+                <li><i class="fa-solid fa-check"></i> <span>12 حصة تدريب شخصي مع الكابتن مباشرة</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>تصميم جدول تدريب كامل ومخصص</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>خطة تغذية مرنة محسوبة الماكروز</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>تصحيح التكنيك لحظة بلحظة أثناء التمرين</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، أرغب بالاشتراك في باقة الشهر جيم بالعاشر من رمضان (2,199 EGP)" target="_blank" class="btn-pill-subtle" style="justify-content: center;">
+              <span>احجز باقة الشهر بالجيم ←</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gym 3 Months (Featured) -->
+        <div class="pricing-card-shell featured">
+          <span class="price-badge-pop">الأفضل لرواد الجيم 🔥</span>
+          <div class="pricing-card-core">
+            <div>
+              <div class="price-plan-name">3 شهور بالجيم (36 حصة)</div>
+              <div class="price-display">
+                <span class="price-number">5,899</span>
+                <span class="price-currency">EGP</span>
+              </div>
+              <span class="price-save-badge">تحول بدني مباشر • 36 تمرينة</span>
+              <ul class="price-features-list">
+                <li><i class="fa-solid fa-check"></i> <span>36 حصة تدريب شخصي مكثفة داخل الجيم</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>تطوير تدريجي للأوزان مع ضمان الأمان التام</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>دايت متغير أسبوعياً حسب سرعة استجابة جسمك</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>متابعة يومية للنشاط والنوم والاستشفاء</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، أرغب بالاشتراك في باقة الـ 3 شهور جيم بالعاشر من رمضان (5,899 EGP)" target="_blank" class="btn-island-primary" style="justify-content: center;">
+              <span>احجز 3 شهور بالجيم</span>
+              <span class="icon-circle">←</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Gym 6 Months -->
+        <div class="pricing-card-shell">
+          <div class="pricing-card-core">
+            <div>
+              <div class="price-plan-name">6 شهور بالجيم (72 حصة)</div>
+              <div class="price-display">
+                <span class="price-number">10,999</span>
+                <span class="price-currency">EGP</span>
+              </div>
+              <span class="price-save-badge">فورمة وتكنيك احترافي</span>
+              <ul class="price-features-list">
+                <li><i class="fa-solid fa-check"></i> <span>72 حصة تدريب شخصي 1-on-1 بالجيم</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>بناء أساس عضلي صلب يفضل معاك سنين</span></li>
+                <li><i class="fa-solid fa-check"></i> <span>إمكانية تجميد الاشتراك خلال فترات السفر</span></li>
+              </ul>
+            </div>
+            <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، أرغب بالاشتراك في باقة الـ 6 شهور جيم بالعاشر من رمضان (10,999 EGP)" target="_blank" class="btn-pill-subtle" style="justify-content: center;">
+              <span>احجز 6 شهور بالجيم ←</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Friends Offer Box -->
+      <div class="friends-offer-box">
+        <div class="friends-offer-text">
+          <h3>👥 اشترك أنت وصحابك ووفروا كتير! (عرض الصحاب)</h3>
+          <p>اشترك أنت و2 من صحابك في نفس الباقة واحصلوا على <strong>خصم إضافي 15% لكل واحد فيكم</strong> لزيادة الحماس والالتزام.</p>
+        </div>
+        <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، حابب استفسر عن عرض الصحاب لـ 3 أفراد" target="_blank" class="btn-island-primary">
+          <span>احجز عرض الصحاب</span>
+          <span class="icon-circle"><i class="fa-solid fa-users"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-divider">
+    <span class="flow-line"></span>
+    <span class="flow-dot"></span>
+  </div>
+
+  <!-- 7. FAQ Section -->
+  <section class="section-wrap" id="faq" style="padding: 20px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow-pill">وضوح وشفافية</span>
+        <h2 class="section-title">كل ما تريد معرفته <span class="orange-text">قبل البدء</span></h2>
+        <p class="section-desc">إجابات واضحة ومباشرة على أكثر الأسئلة اللي بتشغل بال المتدربين:</p>
+      </div>
+
+      <div class="faq-wrapper">
+        <div class="faq-item active" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>أنا عمري ما دخلت جيم قبل كده، هل التدريب مناسب للمبتدئين؟</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-body">
+            طبعاً! 60% من المتدربين بيبدأوا معايا من الصفر تماماً. بنبدأ بتعليم التكنيك السليم خطوة بخطوة وبأوزان خفيفة تناسب لياقتك الحالية لحماية مفاصلك من أي إصابة وبناء ثقتك في التمرين.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>هل نظام الدايت فيه حرمان أو أكلات غالية وصعبة التحضير؟</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-body">
+            نهائياً! المنظومة مبنية على الدايت المرن (Flexible Dieting) من أكل البيت العادي (رز، فراخ، لحمة، بيض، شوفان، خضار وفواكه) وبسعرات وماكروز محسوبة بالجرام بدون أي تجويع أو مصاريف مرهقة.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>هل التدريب الشخصي متاح فقط في العاشر من رمضان؟</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-body">
+            التدريب الشخصي المباشر 1-on-1 متاح داخل الجيم في العاشر من رمضان، أما التدريب الأونلاين فهو متاح لأي مكان في مصر وجميع دول الخليج والعالم عبر المتابعة اليومية المكثفة على الواتساب وتدقيق التكنيك بالفيديو.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-header">
+            <span>هل أحتاج مكملات غذائية للوصول إلى نتيجة؟</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-body">
+            المكملات ليست شرطاً أساسياً للنتيجة. الأساس 90% هو أكلك وتمرينك ونومك، وإذا احتجت مكملات بنرشحلك فقط الضروري والمناسب لميزانيتك وصحتك بعد مراجعة حالتك.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Final CTA Section -->
+  <section class="container">
+    <div class="final-cta-box">
+      <span class="eyebrow-pill">ابدأ رحلتك اليوم</span>
+      <h2 style="font-size: clamp(26px, 4vw, 44px); margin-bottom: 16px;">
+        جاهز تبني جسماً قوياً وتشوف نسختك الأفضل؟
+      </h2>
+      <p style="font-size: 16px; color: var(--text-muted); max-width: 620px; margin: 0 auto 32px; line-height: 1.7;">
+        الأماكن محدودة جداً شهرياً لضمان جودة المتابعة الفردية لكل متدرب. تواصل مع كابتن عمر الآن وابدأ أول خطوة عملية في التغيير.
+      </p>
+      <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، جاهز للبدء وعايز استشارة لتحديد الباقة المناسبة لهدفي" target="_blank" class="btn-island-primary" style="font-size: 16.5px; padding: 12px 14px 12px 32px;">
+        <span>تواصل مباشرة عبر واتساب</span>
+        <span class="icon-circle"><i class="fa-brands fa-whatsapp"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin-bottom: 10px;">
+        <img src="brand/logo-full-white.svg" alt="Omar Wael" style="height: 30px; margin: 0 auto 12px; opacity: 0.85;">
+      </p>
+      <p>© 2026 كابتن عُمر وائل — Omar Wael Fitness Coaching. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky WhatsApp Button -->
+  <a href="https://wa.me/201117591588?text=مرحباً كابتن عمر، شفت موقعك وعايز ابدأ التدريب معاك" target="_blank" class="sticky-whatsapp-mobile">
+    <span>احجز مكانك مع كابتن عمر</span>
+    <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+  </a>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // 1. Before/After Interactive Comparison Slider (Mouse & Touch)
+    (function initComparisonSlider() {
+      const container = document.getElementById('compContainer');
+      const beforeWrap = document.getElementById('beforeWrap');
+      const handle = document.getElementById('compHandle');
+      if (!container || !beforeWrap || !handle) return;
+
+      let isDragging = false;
+
+      function updateSlider(clientX) {
+        const rect = container.getBoundingClientRect();
+        let posX = clientX - rect.left;
+        if (posX < 0) posX = 0;
+        if (posX > rect.width) posX = rect.width;
+        
+        const percent = (posX / rect.width) * 100;
+        beforeWrap.style.width = percent + '%';
+        handle.style.left = percent + '%';
+      }
+
+      function onStart(e) {
+        isDragging = true;
+        updateSlider(e.clientX || (e.touches && e.touches[0].clientX));
+      }
+
+      function onMove(e) {
+        if (!isDragging) return;
+        updateSlider(e.clientX || (e.touches && e.touches[0].clientX));
+      }
+
+      function onEnd() {
+        isDragging = false;
+      }
+
+      container.addEventListener('mousedown', onStart);
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onEnd);
+
+      container.addEventListener('touchstart', onStart, { passive: true });
+      window.addEventListener('touchmove', onMove, { passive: true });
+      window.addEventListener('touchend', onEnd);
+    })();
+
+    // 2. Pricing Switcher (Online vs Gym)
+    function switchPricing(mode) {
+      const btnOnline = document.getElementById('tabBtnOnline');
+      const btnGym = document.getElementById('tabBtnGym');
+      const gridOnline = document.getElementById('gridOnline');
+      const gridGym = document.getElementById('gridGym');
+
+      if (mode === 'online') {
+        btnOnline.classList.add('active');
+        btnGym.classList.remove('active');
+        gridOnline.classList.add('active');
+        gridGym.classList.remove('active');
+      } else {
+        btnGym.classList.add('active');
+        btnOnline.classList.remove('active');
+        gridGym.classList.add('active');
+        gridOnline.classList.remove('active');
+      }
+    }
+
+    // 3. Interactive Calorie & Macro Calculator
+    function calculateMacros() {
+      const weight = parseFloat(document.getElementById('calcWeight').value) || 80;
+      const height = parseFloat(document.getElementById('calcHeight').value) || 175;
+      const age = parseFloat(document.getElementById('calcAge').value) || 25;
+      const gender = document.getElementById('calcGender').value;
+      const activity = parseFloat(document.getElementById('calcActivity').value) || 1.375;
+      const goal = document.getElementById('calcGoal').value;
+
+      // Mifflin-St Jeor Equation
+      let bmr = (10 * weight) + (6.25 * height) - (5 * age);
+      if (gender === 'male') {
+        bmr += 5;
+      } else {
+        bmr -= 161;
+      }
+
+      let tdee = Math.round(bmr * activity);
+      let targetCalories = tdee;
+      let note = '';
+
+      if (goal === 'cut') {
+        targetCalories = Math.round(tdee - 500);
+        note = 'خطة تنشيف مع عجز سعرات 500 سعرة يومياً لحرق الدهون مع الحفاظ على الكتلة العضلية.';
+      } else if (goal === 'bulk') {
+        targetCalories = Math.round(tdee + 350);
+        note = 'خطة تضخيم مع فائض سعرات 350 سعرة يومياً لبناء ألياف عضلية جديدة بدون دهون زائدة.';
+      } else {
+        note = 'خطة تثبيت سعرات لتحسين الأداء الرياضي ونحت شكل القوام.';
+      }
+
+      // Protein: ~2g per kg
+      const protein = Math.round(weight * 2.0);
+      const water = (weight * 0.04).toFixed(1);
+
+      document.getElementById('resCalories').textContent = targetCalories.toLocaleString();
+      document.getElementById('resProtein').textContent = protein + 'g';
+      document.getElementById('resWater').textContent = water + 'L';
+      document.getElementById('calcResultNote').textContent = note;
+
+      const panel = document.getElementById('calcResultPanel');
+      panel.classList.add('active');
+
+      const waMsg = encodeURIComponent('مرحباً كابتن عمر، حسبت سعراتي على موقعك: ' + targetCalories + ' سعرة، وبروتين ' + protein + ' جرام، وزني ' + weight + ' كجم، وهدفي ' + (goal === 'cut' ? 'تنشيف' : (goal === 'bulk' ? 'تضخيم' : 'تثبيت')) + '. عايز أبدأ معاك.');
+      document.getElementById('calcWhatsappLink').href = 'https://wa.me/201117591588?text=' + waMsg;
+    }
+
+    // 4. FAQ Accordion Toggle
+    function toggleFaq(element) {
+      const isActive = element.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+      if (!isActive) {
+        element.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
