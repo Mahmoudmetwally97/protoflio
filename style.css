@@ -49,3 +49,26 @@ body{background:var(--ground);color:var(--ink)}.hero{background:#20231f;color:va
 .case .decision-receipt>summary{display:flex;grid-template-columns:none;padding:14px 16px;min-height:54px;gap:12px}.case .decision-receipt>summary small{font-size:10px}.case .decision-receipt>summary span{font-size:15px}.case .decision-receipt>summary b{font-size:16px}
 
 .pdf-preview{display:block;margin-top:14px;background:#242721;border:1px solid #ffffff25}.pdf-preview img{width:100%;height:auto;max-height:420px;object-fit:cover;object-position:top}.pdf-preview span{display:block;padding:10px 14px;font-size:13px;color:#e8a16d}
+
+/* light motion: transform/opacity only, enabled by motion.js */
+.mo .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.mo .rv.in{opacity:1;transform:none}
+.mo .hero h1 span{animation:heroIn .8s cubic-bezier(.2,.7,.2,1) both}
+.mo .hero h1 span:nth-child(2){animation-delay:.15s}
+.mo .hero-bottom{animation:heroIn .8s .3s cubic-bezier(.2,.7,.2,1) both}
+.mo .hero .portrait{animation:portraitIn .9s .35s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes portraitIn{from{opacity:0;transform:translateY(40px) rotate(-12deg)}to{opacity:.95;transform:rotate(-7deg)}}
+.mo .desk-line,.mo .desk h3{animation:lineIn .5s cubic-bezier(.2,.7,.2,1) both}
+.mo .desk-line:nth-of-type(1){animation-delay:.05s}.mo .desk-line:nth-of-type(2){animation-delay:.15s}.mo .desk-line:nth-of-type(3){animation-delay:.25s}
+@keyframes lineIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.mo .process article .n{display:inline-block;transition:transform .5s cubic-bezier(.2,.7,.2,1) .2s}
+.mo .process article.rv:not(.in) .n{transform:scale(.6)}
+.mo .comparison .arrow{animation:nudge 2.2s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(-8px)}}
+.mo .case[open] .case-body{animation:lineIn .5s ease both}
+.mo .evidence-strip .stamp{display:inline-block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.mo .evidence-strip.rv:not(.in) .stamp{transform:rotate(-8deg) scale(1.25)}
+.mo .evidence-strip.rv.in .stamp{transform:rotate(-2deg)}
+.metric .cnt{font-variant-numeric:tabular-nums}
+@media(max-width:720px){.mo .rv{transform:translateY(14px)}.mo .comparison .arrow{animation:none}}
